@@ -1,3 +1,4 @@
+
 # Hotels static data
 
 ## Globals
