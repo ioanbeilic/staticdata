@@ -26,7 +26,7 @@ AppModule.port = this._configService.get(Configuration.PORT);
 - database module -- database provider(s), one or multiple provider depend of needs. Must contain all database configuration  
    Ex:
 
-  ```javascript
+  ``` ts
   export const databaseProviders = [
   TypeOrmModule.forRootAsync({
   imports: [ConfigModule],
