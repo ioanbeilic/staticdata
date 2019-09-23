@@ -4,9 +4,18 @@ import { ConfigModule } from '../../config/config.module';
 import { ConfigService } from '../../config/config.service';
 import { RabbitMqService } from './services/rabbit-mq/rabbit-mq.service';
 import { RabbitMqController } from './controllers/rabbit-mq/rabbit-mq.controller';
+import { MongooseModule } from '@nestjs/mongoose';
+import { WorkToMeSchema } from './schemas/work-to-me.chema';
+import { WotkToMeService } from './services/wotk-to-me/wotk-to-me.service';
 
 @Module({
   imports: [
+    /**
+     * Mongoose for feature - make disposable to this module mongo connection
+     * accept as parameter an array of schemas
+     * name  field on schema object is optional
+     */
+    MongooseModule.forFeature([{ name: 'work_to_me', schema: WorkToMeSchema }]),
     /**
      * Inject configModule and ConfigService to RabbitMqModule
      * exchanges are te que name.
@@ -32,7 +41,7 @@ import { RabbitMqController } from './controllers/rabbit-mq/rabbit-mq.controller
 
     HttpModule,
   ],
-  providers: [RabbitMqService],
+  providers: [RabbitMqService, WotkToMeService],
   controllers: [RabbitMqController],
 })
 export class RabbitMqModule {}
