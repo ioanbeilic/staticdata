@@ -6,7 +6,7 @@ import { RabbitMqService } from './services/rabbit-mq/rabbit-mq.service';
 import { RabbitMqController } from './controllers/rabbit-mq/rabbit-mq.controller';
 import { MongooseModule } from '@nestjs/mongoose';
 import { WorkToMeSchema } from './schemas/work-to-me.chema';
-import { WotkToMeService } from './services/wotk-to-me/wotk-to-me.service';
+import { WorkToMeService } from './services/work-to-me/work-to-me.service';
 
 @Module({
   imports: [
@@ -41,7 +41,7 @@ import { WotkToMeService } from './services/wotk-to-me/wotk-to-me.service';
 
     HttpModule,
   ],
-  providers: [RabbitMqService, WotkToMeService],
+  providers: [RabbitMqService, WorkToMeService],
   controllers: [RabbitMqController],
 })
 export class RabbitMqModule {}
