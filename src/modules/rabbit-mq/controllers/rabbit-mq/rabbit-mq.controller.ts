@@ -1,11 +1,11 @@
-import { Controller, Get, HttpCode, HttpStatus } from '@nestjs/common';
+import { Controller, Get, HttpCode, HttpStatus, Param } from '@nestjs/common';
 import { AmqpConnection } from '@nestjs-plus/rabbitmq';
 import {
   ApiOperation,
   ApiNoContentResponse,
   ApiBadRequestResponse,
 } from '@nestjs/swagger';
-import { ApiIdParamPage } from '../find-one.params';
+import { ApiIdParamPage, FindOneParamPage } from '../find-one.params';
 
 @Controller('rabbit-mq')
 export class RabbitMqController {
@@ -29,12 +29,11 @@ export class RabbitMqController {
     description: 'The message has ben successfully added to queue',
   })
   @ApiBadRequestResponse({ description: 'The page number does not exist' })
-  public async publishWorkToMe() {
+  public async publishWorkToMe(@Param() { page }: FindOneParamPage): Promise<
+    void
+  > {
     await this.amqpConnection.publish('exchange2', 'work-to-me', {
-      message: 42,
+      page,
     });
-    return {
-      result: 'Published message',
-    };
   }
 }

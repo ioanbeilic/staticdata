@@ -6,9 +6,9 @@ export class FindOneParamPage {
 
 export function ApiIdParamPage() {
   return ApiImplicitParam({
-    name: 'id',
-    type: 'string',
-    description: 'request data identifier',
+    name: 'page',
+    type: 'number',
+    description: 'Number of page to be requested',
     required: true,
   });
 }
