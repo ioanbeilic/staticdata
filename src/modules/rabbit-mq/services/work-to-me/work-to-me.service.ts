@@ -58,8 +58,8 @@ export class WorkToMeService {
       },
     );
 
-    data.subscribe(async _data => {
-      const json = parser.parse(_data.data, this.options);
+    data.subscribe(async _ => {
+      const json = parser.parse(_.data, this.options);
 
       fs.writeFile('./revived.json', JSON.stringify(json), err => {
         if (err) {
