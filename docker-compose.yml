@@ -1,0 +1,37 @@
+# Use root/example as user/password credentials
+version: '3.3'
+
+services:
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    volumes:
+      - ./data/db:/data/db
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: example
+
+  # open http://$(docker-machine ip default):15672/
+
+  rabbitmq:
+    image: rabbitmq:3.7.5-management
+    hostname: app-rabbitmq
+    ports:
+      - 5672:5672
+      - 15672:15672
+    volumes:
+      - ./data/rabbitmq:/var/lib/rabbitmq/mnesia/rabbit@app-rabbitmq:cached
+    environment:
+      RABBITMQ_ERLANG_COOKIE: 6085e2412b6fa88647466c6a81c0cea0
+      RABBITMQ_DEFAULT_USER: rabbitmq
+      RABBITMQ_DEFAULT_PASS: rabbitmq
+      RABBITMQ_DEFAULT_VHOST: /

@@ -21,6 +21,7 @@ export class ConfigService {
       // to do - load all variable from process.env
       this.envConfig = {
         PORT: process.env.PORT,
+        MONGODB_URI: process.env.PORT,
       };
     }
   }
