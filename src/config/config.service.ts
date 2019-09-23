@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import { parse } from 'dotenv';
 
 export class ConfigService {
-  private readonly envConfig: { [key: string]: string | undefined };
+  private readonly envConfig: { [key: string]: string };
 
   constructor() {
     const isDevelopmentEnv = process.env.NODE_ENV !== 'production';
@@ -20,9 +20,9 @@ export class ConfigService {
     } else {
       // to do - load all variable from process.env
       this.envConfig = {
-        PORT: process.env.PORT,
-        MONGODB_URI: process.env.PORT,
-        RABBITMQ_URI: process.env.RABBITMQ_URI,
+        PORT: process.env.PORT as string,
+        MONGODB_URI: process.env.PORT as string,
+        RABBITMQ_URI: process.env.RABBITMQ_URI as string,
       };
     }
   }
