@@ -22,6 +22,7 @@ export class ConfigService {
       this.envConfig = {
         PORT: process.env.PORT,
         MONGODB_URI: process.env.PORT,
+        RABBITMQ_URI: process.env.RABBITMQ_URI,
       };
     }
   }
