@@ -8,8 +8,8 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
-    volumes:
-      - ./data/db:/data/db
+  #  volumes:
+  #    - ./data/db:/data/db
 
   mongo-express:
     image: mongo-express
@@ -28,8 +28,8 @@ services:
     ports:
       - 5672:5672
       - 15672:15672
-    volumes:
-      - ./data/rabbitmq:/var/lib/rabbitmq/mnesia/rabbit@app-rabbitmq:cached
+    # volumes:
+    #   - ./data/rabbitmq:/var/lib/rabbitmq/mnesia/rabbit@app-rabbitmq:cached
     environment:
       RABBITMQ_ERLANG_COOKIE: 6085e2412b6fa88647466c6a81c0cea0
       RABBITMQ_DEFAULT_USER: rabbitmq

@@ -1,33 +1,14 @@
 import { Module } from '@nestjs/common';
-import { MongooseModule } from '@nestjs/mongoose';
-import { ConfigModule } from '../config/config.module';
-import { ConfigService } from '../config/config.service';
-import { RabbitMQModule } from '@nestjs-plus/rabbitmq';
+import { databaseProviders } from './database.service';
+import { AmqpConnection } from '@nestjs-plus/rabbitmq';
+
+/**
+ * database connection module
+ * this module create all database connection module
+ */
 
 @Module({
-  imports: [
-    MongooseModule.forRootAsync({
-      imports: [ConfigModule],
-      useFactory: async (configService: ConfigService) => ({
-        uri: configService.get('MONGODB_URI'),
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      }),
-      inject: [ConfigService],
-    }),
-    RabbitMQModule.forRootAsync({
-      imports: [ConfigModule],
-      useFactory: async (configService: ConfigService) => ({
-        exchanges: [
-          {
-            name: 'work_to_me',
-            type: 'topic',
-          },
-        ],
-        uri: configService.get('RABBITMQ_URI'),
-      }),
-      inject: [ConfigService],
-    }),
-  ],
+  imports: [...databaseProviders, AmqpConnection],
+  exports: [...databaseProviders, AmqpConnection],
 })
 export class DatabaseModule {}

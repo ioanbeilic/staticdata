@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import { parse } from 'dotenv';
 
 export class ConfigService {
-  private readonly envConfig: { [key: string]: string };
+  private readonly envConfig: { [key: string]: string | undefined };
 
   constructor() {
     const isDevelopmentEnv = process.env.NODE_ENV !== 'production';
@@ -12,7 +12,7 @@ export class ConfigService {
       const existPath = fs.existsSync(envFilePath);
 
       if (!existPath) {
-        console.error('.env file does not exist');
+        console.error('.env file does not exist'); // tslint:disable-line
         process.exit(0);
       }
 

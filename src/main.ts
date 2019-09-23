@@ -1,12 +1,22 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
+import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   /**
    * prefix for application endpoint
    */
-  app.setGlobalPrefix('api');
+  // app.setGlobalPrefix('api');
+
+  const options = new DocumentBuilder()
+    .setTitle('Static Data Api')
+    .setDescription('Static data for all hotels')
+    .setVersion('1.0')
+    .addTag('hotels')
+    .build();
+  const document = SwaggerModule.createDocument(app, options);
+  SwaggerModule.setup('api', app, document);
 
   /**
    * load start port from AppModule
