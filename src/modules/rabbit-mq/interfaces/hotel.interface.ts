@@ -1,16 +1,14 @@
-export interface IHotel {
-  Name: string;
-  Zone: {
-    attr: {
-      JPDCode: string;
-      Code: string;
-    };
-    Name: string;
-  };
-  Address: string;
-  ZipCode: number;
-  Latitude: string;
-  Longitude: string;
-  HotelCategory: string;
-  City: string;
+import { Document } from 'mongoose';
+
+export interface Hotel extends Document {
+  jPCode: string;
+  hasSynonyms: boolean;
+  name: string;
+  zone: string;
+  address: string;
+  zipCode: number;
+  latitude: number;
+  longitude: number;
+  hotelCategory: string;
+  city: string;
 }

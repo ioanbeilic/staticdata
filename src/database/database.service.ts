@@ -1,7 +1,6 @@
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigService } from '../config/config.service';
 import { ConfigModule } from '../config/config.module';
-import { RabbitMQModule } from '@nestjs-plus/rabbitmq';
 
 export const databaseProviders = [
   /**

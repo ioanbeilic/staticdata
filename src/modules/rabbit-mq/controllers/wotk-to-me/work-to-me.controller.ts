@@ -8,17 +8,17 @@ import { WorkToMeService } from '../../services/work-to-me/work-to-me.service';
 
 @Controller('work-to-me')
 export class WorkToMeController {
-  constructor(private readonly workToMeService: WorkToMeService) {}
+  constructor(private workToMeService: WorkToMeService) {}
 
-  @Get('/work-to-me/{page}')
+  @Get('/init')
   @HttpCode(HttpStatus.OK)
-  @ApiOperation({ title: 'Add url to be processed with RabbitMq' })
+  @ApiOperation({ title: 'initialize process for RabbitMq' })
   // @ApiIdParamPage()
   @ApiNoContentResponse({
-    description: 'The message has ben successfully added to queue',
+    description: 'Call app first time an get number of pages',
   })
-  @ApiBadRequestResponse({ description: 'The page number does not exist' })
-  public async publishWorkToMe(): Promise<any[]> {
-    return this.workToMeService.getHotels();
+  @ApiBadRequestResponse({ description: 'The provider server is down' })
+  public publishWorkToMe() {
+    this.workToMeService.getHotelsPageNumber();
   }
 }

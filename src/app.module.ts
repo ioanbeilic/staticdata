@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { Module, HttpModule } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from './config/config.module';
@@ -10,7 +10,7 @@ import { RabbitMqModule } from './modules/rabbit-mq/rabbit-mq.module';
 import { WorkToMeService } from './modules/rabbit-mq/services/work-to-me/work-to-me.service';
 
 @Module({
-  imports: [ConfigModule, DatabaseModule, RabbitMqModule],
+  imports: [ConfigModule, DatabaseModule, RabbitMqModule, HttpModule],
   controllers: [AppController],
   providers: [AppService, AmqpConnection, WorkToMeService],
 })
