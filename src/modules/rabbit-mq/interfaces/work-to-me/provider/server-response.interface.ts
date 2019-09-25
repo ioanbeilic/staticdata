@@ -1,4 +1,4 @@
-import { Hotel } from './hotel.interface';
+import { WorkToMeHotel } from './hotel.interface';
 
 export interface IHotelServerResponse {
   Envelope: {
@@ -13,7 +13,7 @@ export interface IHotelServerResponse {
             TotalPages: number;
             TotalRecords: number;
             NextToken: string;
-            Hotel?: Hotel[];
+            Hotel?: WorkToMeHotel[];
           };
         };
       };

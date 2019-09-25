@@ -7,12 +7,11 @@ import { ConfigService } from './config/config.service';
 import { Configuration } from './config/config.keys';
 import { AmqpConnection } from '@nestjs-plus/rabbitmq';
 import { RabbitMqModule } from './modules/rabbit-mq/rabbit-mq.module';
-import { WorkToMeService } from './modules/rabbit-mq/services/work-to-me/work-to-me.service';
 
 @Module({
   imports: [ConfigModule, DatabaseModule, RabbitMqModule, HttpModule],
   controllers: [AppController],
-  providers: [AppService, AmqpConnection, WorkToMeService],
+  providers: [AppService, AmqpConnection],
 })
 export class AppModule {
   static port: number | string;

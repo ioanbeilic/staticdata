@@ -1,4 +1,4 @@
-import { IHotelServerResponse } from './hotel-server-response.interface';
+import { IHotelServerResponse } from './provider/server-response.interface';
 
 export class Page {
   page: number;

@@ -13,7 +13,7 @@ export class RabbitMqService {
   public async pubSubHandler(msg: {}) {
     console.log(`Received message: ${JSON.stringify(msg)}`); // tslint:disable-line
   }
-
+  /*
   @RabbitSubscribe({
     exchange: 'exchange2',
     routingKey: 'work-to-me',
@@ -22,4 +22,5 @@ export class RabbitMqService {
   public async subscribeWorkToMe(msg: {}) {
     console.log(`Received message: ${JSON.stringify(msg)}`); // tslint:disable-line
   }
+  */
 }

@@ -1,14 +1,17 @@
-import { Injectable, HttpService, Inject } from '@nestjs/common';
+import { Injectable, HttpService } from '@nestjs/common';
 import * as parser from 'fast-xml-parser';
-import fs from 'fs';
 import { Observable } from 'rxjs';
 import { AxiosResponse } from 'axios';
-import { Hotel } from '../../interfaces/hotel.interface';
-import { IHotelServerResponse } from '../../interfaces/hotel-server-response.interface';
-import { Page } from '../../interfaces/pages.class';
-import { AmqpConnection, RabbitSubscribe } from '@nestjs-plus/rabbitmq';
+import { WorkToMeHotel } from '../../interfaces/work-to-me/provider/hotel.interface';
+import { IHotelServerResponse } from '../../interfaces/work-to-me/provider/server-response.interface';
+import { Page } from '../../interfaces/work-to-me/pages.class';
+import { AmqpConnection, RabbitSubscribe, Nack } from '@nestjs-plus/rabbitmq';
 import { CreateHotelDto } from '../../dto/create-hotel.dto';
 import { Model } from 'mongoose';
+import { InjectModel } from '@nestjs/mongoose';
+import { Hotel } from '../../interfaces/hotel.interface';
+import { HotelSchema } from '../../schemas/hotelschema';
+import fs from 'fs';
 
 @Injectable()
 export class WorkToMeService {
@@ -22,10 +25,10 @@ export class WorkToMeService {
    * ignoreAttributes - get attribute field from xml
    */
 
-  pagesOptions = {
+  options = {
     attributeNamePrefix: '',
     attrNodeName: '', // false, string, undefined
-    textNodeName: '_',
+    textNodeName: 'name',
     ignoreAttributes: false,
     ignoreNameSpace: true,
     allowBooleanAttributes: false,
@@ -37,19 +40,12 @@ export class WorkToMeService {
     attrValueProcessor: (a: any) => a,
     tagValueProcessor: (a: any) => a,
   };
-
-  /**
-   * hotel Option get only the values from xml
-   */
-  hotelOptions = {
-    ignoreAttributes: true,
-    parseNodeValue: true,
-  };
+  hotels: WorkToMeHotel[] | undefined;
 
   constructor(
     private readonly httpService: HttpService,
     private readonly amqpConnection: AmqpConnection,
-    @Inject('HOTEL_MODEL') private readonly hotelModel: Model<Hotel>,
+    @InjectModel('hotels') private readonly hotelModel: Model<Hotel>,
   ) {}
 
   getHotelsPageNumber() {
@@ -80,29 +76,17 @@ export class WorkToMeService {
     );
 
     data.subscribe(async (_: AxiosResponse) => {
-      const json: IHotelServerResponse = parser.parse(
-        _.data,
-        this.pagesOptions,
-      );
+      const json: IHotelServerResponse = parser.parse(_.data, this.options);
 
       const pages = new Page(json);
 
-      for (let i = 0; i < pages.totalPages; i++) {
-        await this.amqpConnection.publish('workToMe', 'hotels', {
-          i,
-        });
-      }
+      if (pages.totalPages > 0) {
+        this.hotelModel.collection.drop();
 
-      /*
-
-      fs.writeFile('./revived.json', JSON.stringify(pages), err => {
-        if (err) {
-          return console.log(err); // tslint:disable-line
+        for (let i = 1; i <= pages.totalPages; i++) {
+          await this.amqpConnection.publish('workToMe', 'hotels', i);
         }
-
-        console.log('The file was saved!'); // tslint:disable-line
-      });
-      */
+      }
     });
   }
 
@@ -111,7 +95,9 @@ export class WorkToMeService {
     routingKey: 'hotels',
     queue: 'hotels',
   })
-  getHotels(page: number): Observable<AxiosResponse<Hotel[]>> {
+  async getHotels(page: number): Promise<any> {
+    // console.log(page);
+
     const request = `
     <soapenv:Envelope
         xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
@@ -127,7 +113,7 @@ export class WorkToMeService {
     </soapenv:Envelope>
     `;
 
-    const data = this.httpService.post(
+    const data = await this.httpService.post(
       'https://xml-uat.bookingengine.es/WebService/JP/Operations/StaticDataTransactions.asmx?WSDL',
       request,
       {
@@ -139,21 +125,25 @@ export class WorkToMeService {
     );
 
     data.subscribe(async (_: AxiosResponse) => {
-      const json: IHotelServerResponse = parser.parse(
+      const json: IHotelServerResponse = await parser.parse(
         _.data,
-        this.hotelOptions,
+        this.options,
       );
-      const hotels =
-        json.Envelope.Body.HotelPortfolioResponse.HotelPortfolioRS
-          .HotelPortfolio.Hotel;
 
-      if (hotels !== undefined) {
-        hotels.forEach(hotel => {
-          this.create(hotel);
+      this.hotels =
+        json.Envelope.Body.HotelPortfolioResponse.HotelPortfolioRS.HotelPortfolio.Hotel;
+
+      if (this.hotels !== undefined) {
+        this.hotels.forEach(async (hotel: WorkToMeHotel) => {
+          const newHotel = new CreateHotelDto(hotel);
+          try {
+            await this.create(newHotel);
+          } catch (error) {
+            // msgReturn(new Nack(false));
+          }
         });
       }
     });
-    return data;
   }
 
   async create(createHotelDto: CreateHotelDto): Promise<void> {

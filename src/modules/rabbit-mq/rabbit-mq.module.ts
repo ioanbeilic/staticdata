@@ -5,18 +5,12 @@ import { ConfigService } from '../../config/config.service';
 import { RabbitMqService } from './services/rabbit-mq/rabbit-mq.service';
 import { RabbitMqController } from './controllers/rabbit-mq/rabbit-mq.controller';
 import { MongooseModule } from '@nestjs/mongoose';
-import { Hotel } from './schemas/work-to-me.chema';
+import { HotelSchema } from './schemas/hotelschema';
 import { WorkToMeService } from './services/work-to-me/work-to-me.service';
 import { WorkToMeController } from './controllers/wotk-to-me/work-to-me.controller';
 
 @Module({
   imports: [
-    /**
-     * Mongoose for feature - make disposable to this module mongo connection
-     * accept as parameter an array of schemas
-     * name  field on schema object is optional
-     */
-    MongooseModule.forFeature([{ name: 'hotels', schema: Hotel }]),
     /**
      * Inject configModule and ConfigService to RabbitMqModule
      * exchanges are te que name.
@@ -37,16 +31,31 @@ import { WorkToMeController } from './controllers/wotk-to-me/work-to-me.controll
           {
             name: 'workToMe',
             type: 'fanout',
+            /*
+            options: {
+              durable?: boolean;
+              internal?: boolean;
+              autoDelete?: boolean;
+              alternateExchange?: string;
+            }
+            */
           },
         ],
         uri: configService.get('RABBITMQ_URI'),
+        prefetchCount: 1,
       }),
       inject: [ConfigService],
     }),
+    /**
+     * Mongoose for feature - make disposable to this module mongo connection
+     * accept as parameter an array of schemas
+     * name  field on schema object is optional
+     */
+    MongooseModule.forFeature([{ name: 'hotels', schema: HotelSchema }]),
     // library import
     HttpModule,
   ],
-  providers: [RabbitMqService, AmqpConnection, WorkToMeService],
   controllers: [RabbitMqController, WorkToMeController],
+  providers: [RabbitMqService, WorkToMeService],
 })
 export class RabbitMqModule {}

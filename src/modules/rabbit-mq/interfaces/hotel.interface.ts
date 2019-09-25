@@ -1,12 +1,11 @@
 import { Document } from 'mongoose';
 
 export interface Hotel extends Document {
-  jPCode: string;
-  hasSynonyms: boolean;
+  hotelId: string;
   name: string;
   zone: string;
   address: string;
-  zipCode: number;
+  zipCode: string;
   latitude: number;
   longitude: number;
   hotelCategory: string;

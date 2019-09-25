@@ -1,6 +1,5 @@
 import { Module } from '@nestjs/common';
 import { databaseProviders } from './database.service';
-import { AmqpConnection } from '@nestjs-plus/rabbitmq';
 
 /**
  * database connection module
@@ -8,7 +7,7 @@ import { AmqpConnection } from '@nestjs-plus/rabbitmq';
  */
 
 @Module({
-  imports: [...databaseProviders, AmqpConnection],
-  exports: [...databaseProviders, AmqpConnection],
+  imports: [...databaseProviders],
+  exports: [...databaseProviders],
 })
 export class DatabaseModule {}

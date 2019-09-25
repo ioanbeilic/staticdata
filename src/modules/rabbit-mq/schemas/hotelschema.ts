@@ -1,12 +1,11 @@
 import { Schema } from 'mongoose';
 
-export const Hotel = new Schema({
-  jPCode: String,
-  hasSynonyms: Boolean,
+export const HotelSchema = new Schema({
+  idHotel: String,
   name: String,
   zone: String,
   address: String,
-  zipCode: Number,
+  zipCode: String,
   latitude: Number,
   longitude: Number,
   hotelCategory: String,
