@@ -42,7 +42,7 @@ import { WorkToMeController } from './controllers/wotk-to-me/work-to-me.controll
           },
         ],
         uri: configService.get('RABBITMQ_URI'),
-        prefetchCount: 1,
+        prefetchCount: 1, // only 1 request each time default 10
       }),
       inject: [ConfigService],
     }),

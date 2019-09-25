@@ -12,6 +12,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Hotel } from '../../interfaces/hotel.interface';
 import { HotelSchema } from '../../schemas/hotelschema';
 import fs from 'fs';
+import axios from 'axios';
 
 @Injectable()
 export class WorkToMeService {
@@ -48,7 +49,7 @@ export class WorkToMeService {
     @InjectModel('hotels') private readonly hotelModel: Model<Hotel>,
   ) {}
 
-  getHotelsPageNumber() {
+  async getHotelsPageNumber() {
     const request = `
     <soapenv:Envelope
         xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
@@ -64,19 +65,24 @@ export class WorkToMeService {
     </soapenv:Envelope>
     `;
 
-    const data = this.httpService.post(
-      'https://xml-uat.bookingengine.es/WebService/JP/Operations/StaticDataTransactions.asmx?WSDL',
-      request,
-      {
-        headers: {
-          'Content-Type': 'text/xml',
-          'Accept-Encoding': 'gzip, deflate',
-        },
-      },
-    );
+    let response: AxiosResponse;
 
-    data.subscribe(async (_: AxiosResponse) => {
-      const json: IHotelServerResponse = parser.parse(_.data, this.options);
+    try {
+      response = await axios.post(
+        'https://xml-uat.bookingengine.es/WebService/JP/Operations/StaticDataTransactions.asmx?WSDL',
+        request,
+        {
+          headers: {
+            'Content-Type': 'text/xml',
+            'Accept-Encoding': 'gzip, deflate',
+          },
+        },
+      );
+
+      const json: IHotelServerResponse = parser.parse(
+        response.data,
+        this.options,
+      );
 
       const pages = new Page(json);
 
@@ -84,10 +90,12 @@ export class WorkToMeService {
         this.hotelModel.collection.drop();
 
         for (let i = 1; i <= pages.totalPages; i++) {
-          await this.amqpConnection.publish('workToMe', 'hotels', i);
+          this.amqpConnection.publish('workToMe', 'hotels', i);
         }
       }
-    });
+    } catch (error) {
+      throw error;
+    }
   }
 
   @RabbitSubscribe({
@@ -96,8 +104,6 @@ export class WorkToMeService {
     queue: 'hotels',
   })
   async getHotels(page: number): Promise<any> {
-    // console.log(page);
-
     const request = `
     <soapenv:Envelope
         xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
@@ -112,42 +118,46 @@ export class WorkToMeService {
         </soapenv:Body>
     </soapenv:Envelope>
     `;
-
-    const data = await this.httpService.post(
-      'https://xml-uat.bookingengine.es/WebService/JP/Operations/StaticDataTransactions.asmx?WSDL',
-      request,
-      {
-        headers: {
-          'Content-Type': 'text/xml',
-          'Accept-Encoding': 'gzip, deflate',
+    let response;
+    try {
+      response = await axios.post(
+        'https://xml-uat.bookingengine.es/WebService/JP/Operations/StaticDataTransactions.asmx?WSDL',
+        request,
+        {
+          headers: {
+            'Content-Type': 'text/xml',
+            'Accept-Encoding': 'gzip, deflate',
+          },
         },
-      },
-    );
-
-    data.subscribe(async (_: AxiosResponse) => {
-      const json: IHotelServerResponse = await parser.parse(
-        _.data,
-        this.options,
       );
+    } catch (error) {
+      // provider error repeat this request request
+      return new Nack(true);
+    }
 
-      this.hotels =
-        json.Envelope.Body.HotelPortfolioResponse.HotelPortfolioRS.HotelPortfolio.Hotel;
+    const json: IHotelServerResponse = await parser.parse(
+      response.data,
+      this.options,
+    );
+    this.hotels =
+      json.Envelope.Body.HotelPortfolioResponse.HotelPortfolioRS.HotelPortfolio.Hotel;
 
-      if (this.hotels !== undefined) {
-        this.hotels.forEach(async (hotel: WorkToMeHotel) => {
-          const newHotel = new CreateHotelDto(hotel);
-          try {
-            await this.create(newHotel);
-          } catch (error) {
-            // msgReturn(new Nack(false));
-          }
-        });
-      }
-    });
-  }
-
-  async create(createHotelDto: CreateHotelDto): Promise<void> {
-    const createdCat = new this.hotelModel(createHotelDto);
-    await createdCat.save();
+    if (this.hotels) {
+      this.hotels.forEach(async (hotel: WorkToMeHotel) => {
+        const newHotel = new CreateHotelDto(hotel);
+        try {
+          return await this.hotelModel.findOneAndUpdate(
+            newHotel.hotelId,
+            new this.hotelModel(newHotel),
+            {
+              upsert: true,
+              new: true,
+            },
+          );
+        } catch (error) {
+          return new Nack(true);
+        }
+      });
+    }
   }
 }
