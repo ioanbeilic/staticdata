@@ -1,4 +1,4 @@
-export interface WorkToMeHotel {
+export interface ServerHotelInterface {
   type: string;
   JPCode: string;
   HasSynonyms: boolean;

@@ -1,6 +1,6 @@
-import { WorkToMeHotel } from './hotel.interface';
+import { ServerHotelInterface } from './hotel.interface';
 
-export interface IHotelServerResponse {
+export interface HotelServerResponse {
   Envelope: {
     Body: {
       HotelPortfolioResponse: {
@@ -13,7 +13,7 @@ export interface IHotelServerResponse {
             TotalPages: number;
             TotalRecords: number;
             NextToken: string;
-            Hotel?: WorkToMeHotel[];
+            Hotel?: ServerHotelInterface[];
           };
         };
       };

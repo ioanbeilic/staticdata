@@ -1,4 +1,5 @@
-import { WorkToMeHotel } from '../interfaces/work-to-me/provider/hotel.interface';
+import { ServerHotelInterface } from '../interfaces/work-to-me/provider/hotel.interface';
+import t from 'typy';
 
 export class CreateHotelDto {
   hotelId: string;
@@ -11,7 +12,9 @@ export class CreateHotelDto {
   hotelCategory: string;
   city: string;
 
-  constructor(originalData: WorkToMeHotel) {
+  constructor(originalData: ServerHotelInterface) {
+    this.address = t(originalData, 'Adress.Adress').safeObject || '';
+
     this.hotelId = originalData.JPCode ? originalData.JPCode : '';
     this.name = originalData.Name ? originalData.Name : '';
     this.zone = originalData.Zone.Name ? originalData.Zone.Name : '';

@@ -1,7 +1,7 @@
 import { Schema } from 'mongoose';
 
 export const HotelSchema = new Schema({
-  idHotel: String,
+  hotelId: String,
   name: String,
   zone: String,
   address: String,
