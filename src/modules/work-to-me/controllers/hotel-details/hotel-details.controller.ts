@@ -4,8 +4,10 @@ import {
   ApiOperation,
   ApiNoContentResponse,
   ApiBadRequestResponse,
+  ApiUseTags,
 } from '@nestjs/swagger';
 
+@ApiUseTags('Work To Me / hotel-details')
 @Controller('hotel-details')
 export class HotelDetailsController {
   constructor(private hotelDetailsService: HotelDetailsService) {}

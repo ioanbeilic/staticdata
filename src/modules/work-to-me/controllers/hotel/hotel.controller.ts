@@ -3,6 +3,7 @@ import {
   ApiOperation,
   ApiNoContentResponse,
   ApiBadRequestResponse,
+  ApiUseTags,
 } from '@nestjs/swagger';
 import { HotelService } from '../../services/hotel/hotel.service';
 import {
@@ -14,6 +15,7 @@ import {
   FindOneHotel,
 } from '../parameters/find-one-hotel.params';
 
+@ApiUseTags('Work To Me / hotels')
 @Controller('hotel')
 export class HotelController {
   constructor(private hotelService: HotelService) {}

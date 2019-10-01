@@ -8,10 +8,11 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { HotelContent } from '../../interfaces/hotel-content.interface';
 import { RabbitSubscribe, Nack } from '@nestjs-plus/rabbitmq';
-import axios from 'axios';
+import axios, { AxiosResponse } from 'axios';
 import { ServerContentResponse } from '../../interfaces/provider/server-content-response.interface';
 import * as parser from 'fast-xml-parser';
 import { CreateHotelContentDto } from '../../dto/create-hotel-content.dto';
+import fs from 'fs';
 
 @Injectable()
 export class HotelDetailsService {
@@ -28,24 +29,6 @@ export class HotelDetailsService {
   };
   url =
     'https://xml-uat.bookingengine.es/WebService/JP/Operations/StaticDataTransactions.asmx?WSDL';
-
-  request = `
-      <soapenv:Envelope
-      xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-      xmlns="http://www.juniper.es/webservice/2007/">
-      <soapenv:Header/>
-      <soapenv:Body>
-          <HotelContent>
-              <HotelContentRQ Version="${this.version}" Language="${this.language}">
-                  <Login Password="${this.pass}" Email="${this.login}"/>
-                  <HotelContentList>
-                      <Hotel Code="${this.hotelId}"/>
-                  </HotelContentList>
-              </HotelContentRQ>
-          </HotelContent>
-      </soapenv:Body>
-  </soapenv:Envelope>
-        `;
 
   /**
    * pages Options - convert xml to json
@@ -81,26 +64,52 @@ export class HotelDetailsService {
 
   async publishALlhHotelContent() {
     const hotels = await this.hotelService.getHotels();
+    // console.log('hotel-details');
     hotels.forEach((hotel: Hotel) => {
-      this.amqpConnection.publish('workToMe', 'hotelsContent', hotel.hotelId);
+      this.amqpConnection.publish(
+        'work_to_me_hotel-detail',
+        'hotelsContent',
+        hotel.hotelId,
+      );
     });
   }
 
   async publishHotelContent(hotelId: string) {
-    this.amqpConnection.publish('workToMe', 'hotelsContent', hotelId);
+    this.amqpConnection.publish(
+      'work_to_me_hotel-detail',
+      'hotelsContent',
+      hotelId,
+    );
   }
 
   @RabbitSubscribe({
-    exchange: 'work-to-me',
+    exchange: 'work_to_me_hotel-detail',
     routingKey: 'hotelsContent',
     queue: 'hotelsContent',
   })
   async HotelContent(hotelId: string): Promise<Nack | undefined> {
-    this.hotelId = hotelId;
-    let response;
+    // console.log(hotelId);
+    let response: AxiosResponse;
+    const request = `
+      <soapenv:Envelope
+      xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+      xmlns="http://www.juniper.es/webservice/2007/">
+      <soapenv:Header/>
+          <soapenv:Body>
+              <HotelContent>
+                  <HotelContentRQ Version="${this.version}" Language="${this.language}">
+                      <Login Password="${this.pass}" Email="${this.login}"/>
+                      <HotelContentList>
+                          <Hotel Code="${hotelId}"/>
+                      </HotelContentList>
+                  </HotelContentRQ>
+              </HotelContent>
+          </soapenv:Body>
+      </soapenv:Envelope>
+        `;
 
     try {
-      response = await axios.post(this.url, this.request, {
+      response = await axios.post(this.url, request, {
         headers: this.headers,
       });
     } catch (error) {
@@ -114,9 +123,17 @@ export class HotelDetailsService {
     );
 
     this.hotelContent =
-      json.Envelope.Body.HotelContentResponse.ContentRS.Contents;
+      json.Envelope.Body.HotelContentResponse.ContentRS.Contents.HotelContent;
 
-    if (this.hotelContent) {
+    /*
+    fs.appendFile('./hotel-content.json', JSON.stringify(json), err => {
+      if (err) {
+        return console.log(err);
+      }
+      console.log('The file was saved!');
+    });
+*/
+    if (this.hotelContent !== undefined) {
       const createHotelContent = new CreateHotelContentDto(this.hotelContent);
       const newHotel = new this.hotelContentModel(createHotelContent);
 
@@ -150,6 +167,7 @@ export class HotelDetailsService {
         );
       } catch (error) {
         // do do - implement log
+        // console.log(error);
         this.HaveError = true;
       }
     }

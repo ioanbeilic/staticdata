@@ -36,6 +36,14 @@ import { HotelDetailsService } from './services/hotel-details/hotel-details.serv
             }
             */
           },
+          {
+            name: 'work_to_me_hotels',
+            type: 'fanout',
+          },
+          {
+            name: 'work_to_me_hotel-detail',
+            type: 'fanout',
+          },
         ],
         uri: configService.get('RABBITMQ_URI'),
         prefetchCount: 1, // only 1 request each time default 10

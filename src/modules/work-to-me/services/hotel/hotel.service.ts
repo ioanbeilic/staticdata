@@ -27,21 +27,6 @@ export class HotelService {
   url =
     'https://xml-uat.bookingengine.es/WebService/JP/Operations/StaticDataTransactions.asmx?WSDL';
 
-  request = `
-    <soapenv:Envelope
-        xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-        xmlns="http://www.juniper.es/webservice/2007/">
-        <soapenv:Header/>
-        <soapenv:Body>
-            <HotelPortfolio>
-                <HotelPortfolioRQ Version="${this.version}" Language="${this.language}" Page="${this.page}" RecordsPerPage="500" >
-                    <Login Password="${this.pass}" Email="${this.login}"/>
-                </HotelPortfolioRQ>
-            </HotelPortfolio>
-        </soapenv:Body>
-    </soapenv:Envelope>
-    `;
-
   /**
    * pages Options - convert xml to json
    * ignoreAttributes - get attribute field from xml
@@ -74,8 +59,23 @@ export class HotelService {
   async publishHotels(): Promise<void> {
     let response: AxiosResponse;
 
+    const request = `
+    <soapenv:Envelope
+        xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+        xmlns="http://www.juniper.es/webservice/2007/">
+        <soapenv:Header/>
+        <soapenv:Body>
+            <HotelPortfolio>
+                <HotelPortfolioRQ Version="${this.version}" Language="${this.language}"  >
+                    <Login Password="${this.pass}" Email="${this.login}"/>
+                </HotelPortfolioRQ>
+            </HotelPortfolio>
+        </soapenv:Body>
+    </soapenv:Envelope>
+    `;
+
     try {
-      response = await axios.post(this.url, this.request, {
+      response = await axios.post(this.url, request, {
         headers: this.headers,
       });
 
@@ -105,18 +105,18 @@ export class HotelService {
       if (pages.totalPages > 0) {
         for (let i = 1; i <= pages.totalPages; i++) {
           // lunch first que
-          this.amqpConnection.publish('workToMe', 'hotels', i);
+          this.amqpConnection.publish('work_to_me_hotels', 'hotels', i);
         }
       }
     } catch (error) {
       this.HaveError = true;
-      throw error;
+      // console.log(error);
     }
   }
 
   async publishHotelsPages(page: number): Promise<void> {
     try {
-      this.amqpConnection.publish('workToMe', 'hotels', page);
+      this.amqpConnection.publish('work_to_me_hotels', 'hotels', page);
     } catch (error) {
       this.HaveError = true;
       throw error;
@@ -124,19 +124,32 @@ export class HotelService {
   }
 
   @RabbitSubscribe({
-    exchange: 'work-to-me',
+    exchange: 'work_to_me_hotels',
     routingKey: 'hotels',
     queue: 'hotels',
   })
   async subscribeHotels(page: number): Promise<Nack | undefined> {
-    this.page = page;
+    const request = `
+    <soapenv:Envelope
+    xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns="http://www.juniper.es/webservice/2007/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <HotelPortfolio>
+            <HotelPortfolioRQ Version="${this.version}" Language="${this.language}" Page="${page}">
+                <Login Password="${this.pass}" Email="${this.login}"/>
+            </HotelPortfolioRQ>
+        </HotelPortfolio>
+    </soapenv:Body>
+</soapenv:Envelope>
+    `;
 
     /**
      * xml server response as type AxiosResponse
      */
     let response: AxiosResponse;
     try {
-      response = await axios.post(this.url, this.request, {
+      response = await axios.post(this.url, request, {
         headers: this.headers,
       });
 
@@ -148,6 +161,7 @@ export class HotelService {
         json.Envelope.Body.HotelPortfolioResponse.HotelPortfolioRS.HotelPortfolio.Hotel;
     } catch (error) {
       // provider error repeat this request request
+      // console.log(error, 'hotes from query');
       this.HaveError = true;
       // do do - implement log
     }
@@ -184,6 +198,7 @@ export class HotelService {
           );
         } catch (error) {
           // do do - implement log
+          // console.log(error, 'hotel-database');
           this.HaveError = true;
         }
       });
@@ -196,10 +211,19 @@ export class HotelService {
         return new Nack(true);
       }
 
+      // to du automatic init next task
+      /**
+       * total pages init to 0 and pages init to 1
+       * only corresponded the last page
+       */
       if (Number(this.totalPages) === Number(page)) {
         // publish-hotels-content
-
-        await axios.post('./work-to-me/publish-hotels-content');
+        // console.log('run ');
+        const _ = await axios.get('hotel-details/publish-hotels-content');
+        // console.log(_.status);
+        if (_.status === 204) {
+          this.totalPages = 0;
+        }
       }
     }
   }

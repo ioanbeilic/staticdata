@@ -1,48 +1,59 @@
 import { ServerHotelContentInterface } from '../interfaces/provider/content.interface';
 import t from 'typy';
-import { ApiModelProperty } from '@nestjs/swagger';
 
 export class CreateHotelContentDto {
-  @ApiModelProperty()
   public hotelId: string;
-  @ApiModelProperty()
   public name: string;
-  @ApiModelProperty()
-  public description: string;
-  @ApiModelProperty()
+  public description!: string;
   public location: Location = {
     latitude: '',
     longitude: '',
   };
-  @ApiModelProperty()
   public city: string;
-  @ApiModelProperty()
   public address: string;
-  @ApiModelProperty()
   public province: string;
-  @ApiModelProperty()
   public country: string;
-  @ApiModelProperty()
   public postalCode: string;
-  @ApiModelProperty()
   public web: string;
-  @ApiModelProperty()
-  public phones: Phone[];
-  @ApiModelProperty()
+  public phones: Phone[] = [];
   public email: string;
-  @ApiModelProperty()
   public category: Category;
-  @ApiModelProperty()
   public photos: Image[];
-  @ApiModelProperty()
   public facilities: Facility[];
-  @ApiModelProperty()
   public currency: string;
 
   constructor(originalData: ServerHotelContentInterface) {
     this.hotelId = t(originalData, 'JPCode').safeObject || '';
     this.name = t(originalData, 'HotelName').safeObject || '';
     this.address = t(originalData, 'Address.Address').safeObject || '';
+
+    if (t(originalData, 'Descriptions.Description').isObject) {
+      this.getDescription(
+        t(originalData, 'Descriptions.Description').safeObject || '',
+      );
+    } else {
+      this.description = '';
+    }
+    /*
+    console.log(
+      this.hotelId,
+      this.name,
+      this.address,
+      this.description,
+      //this.location,
+      //this.city,
+      //this.province,
+      //this.country,
+      //this.postalCode,
+      //this.web,
+      //this.phones,
+      //this.email,
+      //this.category,
+      //this.photos,
+      //this.facilities,
+      //this.currency,
+    );
+*/
     this.postalCode = t(originalData, 'Address.PostalCode').safeObject || '';
 
     this.location = {
@@ -50,24 +61,34 @@ export class CreateHotelContentDto {
       longitude: t(originalData, 'Address.Longitude').safeObject || '',
     };
 
-    this.description = this.getDescription(
-      t(originalData, 'Address.Longitude').safeObject || '',
-    );
+    if (t(originalData, 'Address.Zone.Name').isString) {
+      this.province = this.getProvince(
+        t(originalData, 'Address.Zone.Name').safeObject || '',
+      );
+      this.city = this.province;
+    } else {
+      this.province = '';
+      this.city = '';
+    }
 
-    this.province = this.getProvince(
-      t(originalData, 'Address.Zone.Name').safeObject || '',
-    );
-
-    this.city = this.province;
-    this.country = this.getCountry(
-      t(originalData, 'Address.Zone.Name').safeObject || '',
-    );
+    if (t(originalData, 'Address.Zone.Name').isString) {
+      this.country = this.getCountry(
+        t(originalData, 'Address.Zone.Name').safeObject || '',
+      );
+    } else {
+      this.country = '';
+    }
 
     this.web = '';
 
-    this.phones = this.getPhones(
-      t(originalData, 'ContactInfo.PhoneNumbers').safeObject || '',
-    );
+    if (
+      t(originalData, 'ContactInfo.PhoneNumbers').isString ||
+      t(originalData, 'ContactInfo.PhoneNumbers').isObject
+    ) {
+      this.getPhones(
+        t(originalData, 'ContactInfo.PhoneNumbers').safeObject || '',
+      );
+    }
 
     this.email = '';
     this.category = t(originalData, 'HotelCategory').safeObject || '';
@@ -76,15 +97,16 @@ export class CreateHotelContentDto {
     this.currency = '';
   }
 
-  getDescription(descriptions: Description[]): string {
-    let des: string = '';
-
-    descriptions.forEach(el => {
-      if (el.type === 'LNG') {
-        des = el.description;
-      }
-    });
-    return des;
+  getDescription(descriptions: any): void {
+    if (Array.isArray(descriptions)) {
+      descriptions.forEach((el: { Type: string; name: string }) => {
+        if (el.Type === 'LNG') {
+          this.description = el.name;
+        }
+      });
+    } else {
+      this.description = descriptions.name;
+    }
   }
 
   getProvince(city: string) {
@@ -95,17 +117,14 @@ export class CreateHotelContentDto {
     return city.split(',')[1];
   }
 
-  getPhones(phones: Phone[] | Phone): Phone[] {
-    const newPhones: Phone[] = [];
-
+  getPhones(phones: Phone[] | Phone): void {
     if (Array.isArray(phones)) {
       phones.forEach((phone: Phone) => {
-        newPhones.push(phone);
+        this.phones.push(phone);
       });
     } else {
-      newPhones.push(phones);
+      this.phones.push(phones);
     }
-    return newPhones;
   }
 }
 

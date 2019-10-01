@@ -14,7 +14,9 @@ export interface ServerContentResponse {
               Text: string;
             };
           };
-          Contents: ServerHotelContentInterface;
+          Contents: {
+            HotelContent: ServerHotelContentInterface;
+          };
         };
       };
     };
