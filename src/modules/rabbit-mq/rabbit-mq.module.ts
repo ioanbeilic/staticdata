@@ -9,6 +9,8 @@ import { HotelService } from './services/work-to-me/hotel.service';
 import { WorkToMeController } from './controllers/wotk-to-me/work-to-me.controller';
 import { HotelContentService } from './services/work-to-me/hotel-content.service';
 import { HotelContentSchema } from './schemas/work-to-me/hotel-content.schema';
+import { BedsOnlineController } from './controllers/beds-online/beds-online.controller';
+import { BedsOnlineService } from './services/beds-online/beds-online.service';
 
 @Module({
   imports: [
@@ -51,7 +53,7 @@ import { HotelContentSchema } from './schemas/work-to-me/hotel-content.schema';
     // library import
     HttpModule,
   ],
-  controllers: [WorkToMeController],
-  providers: [RabbitMqService, HotelContentService, HotelService],
+  controllers: [WorkToMeController, BedsOnlineController],
+  providers: [RabbitMqService, HotelContentService, HotelService, BedsOnlineService],
 })
 export class RabbitMqModule {}
