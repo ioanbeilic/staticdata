@@ -10,8 +10,8 @@ export interface ServerHotelInterface {
   };
   Address: string;
   ZipCode: string;
-  Latitude: number;
-  Longitude: number;
+  Latitude: string;
+  Longitude: string;
   HotelCategory: {
     name: string;
     Type: string;

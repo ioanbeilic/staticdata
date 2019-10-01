@@ -14,16 +14,11 @@ export interface ServerHotelContentInterface {
   Address: {
     Address: string;
     PostalCode: string;
-    Latitude: number;
-    Longitude: number;
+    Latitude: string;
+    Longitude: string;
   };
   ContactInfo: {
-    PhoneNumbers: {
-      PhoneNumber: {
-        name: string;
-        Type: string;
-      };
-    };
+    PhoneNumbers: PhoneNumber[];
   };
   Images: {
     Image: Image[];
@@ -40,12 +35,16 @@ export interface ServerHotelContentInterface {
   };
 }
 
-interface Image {
+export interface Image {
   Type: string;
   FileName: string;
   Title: string;
 }
-interface Description {
+export interface Description {
+  name: string;
+  Type: string;
+}
+export interface PhoneNumber {
   name: string;
   Type: string;
 }

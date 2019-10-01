@@ -4,7 +4,7 @@ import { RabbitSubscribe } from '@nestjs-plus/rabbitmq';
 @Injectable()
 export class RabbitMqService {
   constructor(private readonly http: HttpService) {}
-
+  /*
   @RabbitSubscribe({
     exchange: 'exchange2',
     routingKey: 'subscribe-route',

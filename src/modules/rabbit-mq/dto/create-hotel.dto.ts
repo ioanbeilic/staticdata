@@ -1,5 +1,6 @@
 import { ServerHotelInterface } from '../interfaces/work-to-me/provider/hotel.interface';
 import t from 'typy';
+import { ApiModelProperty } from '@nestjs/swagger';
 
 export class CreateHotelDto {
   hotelId: string;
@@ -7,24 +8,20 @@ export class CreateHotelDto {
   zone: string;
   address: string;
   zipCode: string;
-  latitude: number;
-  longitude: number;
+  latitude: string;
+  longitude: string;
   hotelCategory: string;
   city: string;
 
   constructor(originalData: ServerHotelInterface) {
-    this.address = t(originalData, 'Adress.Adress').safeObject || '';
-
-    this.hotelId = originalData.JPCode ? originalData.JPCode : '';
-    this.name = originalData.Name ? originalData.Name : '';
-    this.zone = originalData.Zone.Name ? originalData.Zone.Name : '';
-    this.address = originalData.Address ? originalData.Address : '';
-    this.zipCode = originalData.ZipCode ? originalData.ZipCode : '';
-    this.latitude = originalData.Latitude ? originalData.Latitude : 0;
-    this.longitude = originalData.Longitude ? originalData.Longitude : 0;
-    this.hotelCategory = originalData.HotelCategory
-      ? originalData.HotelCategory.name
-      : '';
-    this.city = originalData.City ? originalData.City.name : '';
+    this.hotelId = t(originalData, 'JPCode').safeObject || '';
+    this.name = t(originalData, 'Name').safeObject || '';
+    this.zone = t(originalData, 'Zone.Name').safeObject || '';
+    this.address = t(originalData, 'Zone.Address').safeObject || '';
+    this.zipCode = t(originalData, 'ZipCode').safeObject || '';
+    this.latitude = t(originalData, 'Latitude').safeObject || '';
+    this.longitude = t(originalData, 'Longitude').safeObject || '';
+    this.hotelCategory = t(originalData, 'HotelCategory.name').safeObject || '';
+    this.city = t(originalData, 'HotelCategory.City').safeObject || '';
   }
 }

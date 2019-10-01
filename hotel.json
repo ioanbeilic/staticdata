@@ -1,0 +1,2510 @@
+{
+  "Envelope": {
+    "Body": {
+      "HotelPortfolioResponse": {
+        "HotelPortfolioRS": {
+          "Url": "http://xml-uat.bookingengine.es",
+          "TimeStamp": "2019-09-30T09:26:03.8327729+02:00",
+          "IntCode": "gdBu3Crf7vTm5Dm6tvZiKKaaKa0lId/stNqknIweJV0=",
+          "HotelPortfolio": {
+            "Page": "16",
+            "TotalPages": "76",
+            "TotalRecords": "7589",
+            "Hotel": [
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP849265",
+                "HasSynonyms": "false",
+                "Name": "Hotel ibis Bilbao Barakaldo",
+                "Zone": {
+                  "JPDCode": "JPD038757",
+                  "Code": "3793",
+                  "Name": "Barakaldo|Vizcaya Province|Spain"
+                },
+                "Address": "Retuerto, 69 Barrio De Kareaga Norte, 48903 Barakaldo, Bizkaia, Spain",
+                "ZipCode": 48903,
+                "Latitude": 43.288784,
+                "Longitude": -3.010154,
+                "HotelCategory": {
+                  "name": "1 Star",
+                  "Type": "1Est",
+                  "Code": "1"
+                },
+                "City": {
+                  "name": "Barakaldo",
+                  "Id": "3793",
+                  "JPDCode": "JPD038757"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP025977",
+                "HasSynonyms": "false",
+                "Name": "Hotel Tres Torres",
+                "Zone": {
+                  "JPDCode": "JPD038766",
+                  "Code": "3802",
+                  "Name": "Santa Eulalia del Rio|Ibiza (Island)|Spain"
+                },
+                "Address": "Bahía Ses Estaques, 07840 Santa Eulalia del Río, Islas Baleares, Illes Balears, Spain",
+                "ZipCode": 7840,
+                "Latitude": 38.9864006,
+                "Longitude": 1.5400198,
+                "HotelCategory": {
+                  "name": "4 Stars",
+                  "Type": "4Est",
+                  "Code": "4"
+                },
+                "City": {
+                  "name": "Santa Eulalia del Rio",
+                  "Id": "3802",
+                  "JPDCode": "JPD038766"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP046620",
+                "HasSynonyms": "false",
+                "Name": "Hotel Juma",
+                "Zone": {
+                  "JPDCode": "JPD038769",
+                  "Code": "3805",
+                  "Name": "Pollensa|Majorca|Spain"
+                },
+                "Address": "Plaça Major, 9, 07460 Pollença, Illes Balears, Spain",
+                "ZipCode": 7460,
+                "Latitude": 39.8771356,
+                "Longitude": 3.0167288,
+                "HotelCategory": {
+                  "name": "3 Stars",
+                  "Type": "3Est",
+                  "Code": "3"
+                },
+                "City": {
+                  "name": "Pollensa",
+                  "Id": "3805",
+                  "JPDCode": "JPD038769"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP153612",
+                "HasSynonyms": "false",
+                "Name": "Hotel Catalonia Mirador des Port",
+                "Zone": {
+                  "JPDCode": "JPD038782",
+                  "Code": "3815",
+                  "Name": "Mahon|Menorca|Spain"
+                },
+                "Address": "Calle Dalt Vilanova, 1, 07701 Mahón, Islas Baleares, Spain",
+                "ZipCode": 7701,
+                "Latitude": 39.8915544,
+                "Longitude": 4.259214,
+                "HotelCategory": {
+                  "name": "3 Stars",
+                  "Type": "3Est",
+                  "Code": "3"
+                },
+                "City": {
+                  "name": "Mahon",
+                  "Id": "3815",
+                  "JPDCode": "JPD038782"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP686627",
+                "HasSynonyms": "true",
+                "Name": "Artiem Capri",
+                "Zone": {
+                  "JPDCode": "JPD038782",
+                  "Code": "3815",
+                  "Name": "Mahon|Menorca|Spain"
+                },
+                "Address": "Calle San Esteban, 8, 07703 Maó, Illes Balears, Spain",
+                "ZipCode": 7703,
+                "Latitude": 39.8886954,
+                "Longitude": 4.256486,
+                "HotelCategory": {
+                  "name": "4 Stars",
+                  "Type": "4Est",
+                  "Code": "4"
+                },
+                "City": {
+                  "name": "Mahon",
+                  "Id": "3815",
+                  "JPDCode": "JPD038782"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP054550",
+                "HasSynonyms": "false",
+                "Name": "Occidental Cala Viñas",
+                "Zone": {
+                  "JPDCode": "JPD038790",
+                  "Code": "3820",
+                  "Name": "Cala Viñas|Majorca|Spain"
+                },
+                "Address": "Calle Coral, 2-4. Cala Vinyes, 07181 Calviá, Islas Baleares, Spain",
+                "ZipCode": 7181,
+                "Latitude": 39.4940752,
+                "Longitude": 2.5343255,
+                "HotelCategory": {
+                  "name": "4 Stars",
+                  "Type": "4Est",
+                  "Code": "4"
+                },
+                "City": {
+                  "name": "Cala Viñas",
+                  "Id": "3820",
+                  "JPDCode": "JPD038790"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP148385",
+                "HasSynonyms": "false",
+                "Name": "Jumeirah Port Soller Hotel &amp; Spa",
+                "Zone": {
+                  "JPDCode": "JPD038792",
+                  "Code": "3821",
+                  "Name": "Port Of Soller|Majorca|Spain"
+                },
+                "Address": "Calle Belgica s/n, 07108 Port de Sóller, Mallorca, Spain",
+                "ZipCode": 7108,
+                "Latitude": 39.802468,
+                "Longitude": 2.695655,
+                "HotelCategory": {
+                  "name": "5 Stars",
+                  "Type": "5Est",
+                  "Code": "5"
+                },
+                "City": {
+                  "name": "Port Of Soller",
+                  "Id": "3821",
+                  "JPDCode": "JPD038792"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP240085",
+                "HasSynonyms": "true",
+                "Name": "Hotel Playa Blanca",
+                "Zone": {
+                  "JPDCode": "JPD038793",
+                  "Code": "3822",
+                  "Name": "S&amp;#39;illot|Majorca|Spain"
+                },
+                "Address": "Carrer Llevant, 12, 07687 S'Illot, Islas Baleares, Illes Balears, Spain",
+                "ZipCode": 7687,
+                "Latitude": 39.570094,
+                "Longitude": 3.372721,
+                "HotelCategory": {
+                  "name": "2 Stars",
+                  "Type": "2Est",
+                  "Code": "2"
+                },
+                "City": {
+                  "name": "S'illot",
+                  "Id": "3822",
+                  "JPDCode": "JPD038793"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP322400",
+                "HasSynonyms": "false",
+                "Name": "Hotel Pinomar",
+                "Zone": {
+                  "JPDCode": "JPD038793",
+                  "Code": "3822",
+                  "Name": "S&amp;#39;illot|Majorca|Spain"
+                },
+                "Address": "Av. dels Pins, 1, 07687 S'Illot-Cala Morlanda, Illes Balears, Spain",
+                "ZipCode": 7687,
+                "Latitude": 39.563359,
+                "Longitude": 3.373876,
+                "HotelCategory": {
+                  "name": "1 Star",
+                  "Type": "1Est",
+                  "Code": "1"
+                },
+                "City": {
+                  "name": "S'illot",
+                  "Id": "3822",
+                  "JPDCode": "JPD038793"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP407629",
+                "HasSynonyms": "false",
+                "Name": "Arcos Playa Apartments",
+                "Zone": {
+                  "JPDCode": "JPD038793",
+                  "Code": "3822",
+                  "Name": "S&amp;#39;illot|Majorca|Spain"
+                },
+                "Address": "Plaça Savina, 07687 SILLOT, Illes Balears, Spain",
+                "ZipCode": 7687,
+                "Latitude": 39.564826,
+                "Longitude": 3.3711879,
+                "HotelCategory": {
+                  "name": "1 Star",
+                  "Type": "1Est",
+                  "Code": "1"
+                },
+                "City": {
+                  "name": "S'illot",
+                  "Id": "3822",
+                  "JPDCode": "JPD038793"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP031462",
+                "HasSynonyms": "false",
+                "Name": "Hotel Aroi Ponferrada",
+                "Zone": {
+                  "JPDCode": "JPD038796",
+                  "Code": "3824",
+                  "Name": "Ponferrada|Leon Province|Spain"
+                },
+                "Address": "Calle Marcelo Macías, 4, 24400 Ponferrada, León, Spain",
+                "ZipCode": 24400,
+                "Latitude": 42.5471132,
+                "Longitude": -6.6010263,
+                "HotelCategory": {
+                  "name": "4 Stars",
+                  "Type": "4Est",
+                  "Code": "4"
+                },
+                "City": {
+                  "name": "Ponferrada",
+                  "Id": "3824",
+                  "JPDCode": "JPD038796"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP031465",
+                "HasSynonyms": "false",
+                "Name": "El Castillo",
+                "Zone": {
+                  "JPDCode": "JPD038796",
+                  "Code": "3824",
+                  "Name": "Ponferrada|Leon Province|Spain"
+                },
+                "Address": "Av. el Castillo, 115, 24400 Ponferrada, León, Spain",
+                "ZipCode": 24400,
+                "Latitude": 42.5427944,
+                "Longitude": -6.5920122,
+                "HotelCategory": {
+                  "name": "3 Stars",
+                  "Type": "3Est",
+                  "Code": "3"
+                },
+                "City": {
+                  "name": "Ponferrada",
+                  "Id": "3824",
+                  "JPDCode": "JPD038796"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP031475",
+                "HasSynonyms": "false",
+                "Name": "Hotel Temple Ponferrada",
+                "Zone": {
+                  "JPDCode": "JPD038796",
+                  "Code": "3824",
+                  "Name": "Ponferrada|Leon Province|Spain"
+                },
+                "Address": "Av. Portugal, 2, 24400 Ponferrada, León, Spain",
+                "ZipCode": 24400,
+                "Latitude": 42.5469182,
+                "Longitude": -6.6054898,
+                "HotelCategory": {
+                  "name": "4 Stars",
+                  "Type": "4Est",
+                  "Code": "4"
+                },
+                "City": {
+                  "name": "Ponferrada",
+                  "Id": "3824",
+                  "JPDCode": "JPD038796"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP980872",
+                "HasSynonyms": "false",
+                "Name": "Hilton Molino Stucky Venice",
+                "Zone": {
+                  "JPDCode": "JPD038797",
+                  "Code": "3825",
+                  "Name": "Giudecca|Venice|Veneto|Italy"
+                },
+                "Address": "Giudecca, 810, 30133 Venezia, Italy",
+                "ZipCode": 30133,
+                "Latitude": 45.428224,
+                "Longitude": 12.320102,
+                "HotelCategory": {
+                  "name": "5 Stars",
+                  "Type": "5Est",
+                  "Code": "5"
+                },
+                "City": {
+                  "name": "Venice",
+                  "Id": "11020",
+                  "JPDCode": "JPD050210"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP01868W",
+                "HasSynonyms": "true",
+                "Name": "Apogia Sirio",
+                "Zone": {
+                  "JPDCode": "JPD038798",
+                  "Code": "3826",
+                  "Name": "Mestre|Venice|Veneto|Italy"
+                },
+                "Address": "Via Circonvallazione, 109, 30173 Venezia, Italy",
+                "ZipCode": 30173,
+                "Latitude": 45.4971658,
+                "Longitude": 12.2363087,
+                "HotelCategory": {
+                  "name": "4 Stars",
+                  "Type": "4Est",
+                  "Code": "4"
+                },
+                "City": {
+                  "name": "Venice",
+                  "Id": "11020",
+                  "JPDCode": "JPD050210"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP061266",
+                "HasSynonyms": "false",
+                "Name": "Hotel Centrale",
+                "Zone": {
+                  "JPDCode": "JPD038798",
+                  "Code": "3826",
+                  "Name": "Mestre|Venice|Veneto|Italy"
+                },
+                "Address": "Piazzale Donatori di Sangue, 14, 30171 Mestre VE, Italy",
+                "ZipCode": 30171,
+                "Latitude": 45.4916232,
+                "Longitude": 12.2387887,
+                "HotelCategory": {
+                  "name": "3 Stars",
+                  "Type": "3Est",
+                  "Code": "3"
+                },
+                "City": {
+                  "name": "Venice",
+                  "Id": "11020",
+                  "JPDCode": "JPD050210"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP061287",
+                "HasSynonyms": "false",
+                "Name": "Best Western Hotel Tritone",
+                "Zone": {
+                  "JPDCode": "JPD038798",
+                  "Code": "3826",
+                  "Name": "Mestre|Venice|Veneto|Italy"
+                },
+                "Address": "Viale Stazione 16, Mestre, 30171, Italy",
+                "ZipCode": 30171,
+                "Latitude": 45.482682,
+                "Longitude": 12.233405,
+                "HotelCategory": {
+                  "name": "4 Stars",
+                  "Type": "4Est",
+                  "Code": "4"
+                },
+                "City": {
+                  "name": "Venice",
+                  "Id": "11020",
+                  "JPDCode": "JPD050210"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP061360",
+                "HasSynonyms": "false",
+                "Name": "Hotel The Plaza",
+                "Zone": {
+                  "JPDCode": "JPD038798",
+                  "Code": "3826",
+                  "Name": "Mestre|Venice|Veneto|Italy"
+                },
+                "Address": "Viale Stazione, 36, 30171 Mestre, Venezia VE, Italy",
+                "ZipCode": 30171,
+                "Latitude": 45.482672,
+                "Longitude": 12.23277,
+                "HotelCategory": {
+                  "name": "4 Stars",
+                  "Type": "4Est",
+                  "Code": "4"
+                },
+                "City": {
+                  "name": "Venice",
+                  "Id": "11020",
+                  "JPDCode": "JPD050210"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP061383",
+                "HasSynonyms": "false",
+                "Name": "Hotel Ariston",
+                "Zone": {
+                  "JPDCode": "JPD038798",
+                  "Code": "3826",
+                  "Name": "Mestre|Venice|Veneto|Italy"
+                },
+                "Address": "Via Guido Bergamo, 12, 30174 Mestre, Venezia VE, Italy",
+                "ZipCode": 30174,
+                "Latitude": 45.5059161,
+                "Longitude": 12.2375931,
+                "HotelCategory": {
+                  "name": "3 Stars",
+                  "Type": "3Est",
+                  "Code": "3"
+                },
+                "City": {
+                  "name": "Venice",
+                  "Id": "11020",
+                  "JPDCode": "JPD050210"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP065469",
+                "HasSynonyms": "false",
+                "Name": "Hotel NH Laguna Palace",
+                "Zone": {
+                  "JPDCode": "JPD038798",
+                  "Code": "3826",
+                  "Name": "Mestre|Venice|Veneto|Italy"
+                },
+                "Address": "Viale Ancona, 2, 30172 Mestre, Venezia VE, Italy",
+                "ZipCode": 30172,
+                "Latitude": 45.4818737,
+                "Longitude": 12.2488732,
+                "HotelCategory": {
+                  "name": "4 Stars",
+                  "Type": "4Est",
+                  "Code": "4"
+                },
+                "City": {
+                  "name": "Venice",
+                  "Id": "11020",
+                  "JPDCode": "JPD050210"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP069567",
+                "HasSynonyms": "true",
+                "Name": "Quality Hotel Delfino Venezia Mestre",
+                "Zone": {
+                  "JPDCode": "JPD038798",
+                  "Code": "3826",
+                  "Name": "Mestre|Venice|Veneto|Italy"
+                },
+                "Address": "Corso del Popolo, 211, 30172 Venezia, Italy",
+                "ZipCode": 30172,
+                "Latitude": 45.4843058,
+                "Longitude": 12.2416433,
+                "HotelCategory": {
+                  "name": "4 Stars",
+                  "Type": "4Est",
+                  "Code": "4"
+                },
+                "City": {
+                  "name": "Venice",
+                  "Id": "11020",
+                  "JPDCode": "JPD050210"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP108000",
+                "HasSynonyms": "false",
+                "Name": "Hotel Kappa",
+                "Zone": {
+                  "JPDCode": "JPD038798",
+                  "Code": "3826",
+                  "Name": "Mestre|Venice|Veneto|Italy"
+                },
+                "Address": "Via Trezzo, 8, 30174 Mestre, Venezia VE, Italy",
+                "ZipCode": 30174,
+                "Latitude": 45.505471,
+                "Longitude": 12.2502262,
+                "HotelCategory": {
+                  "name": "3 Stars",
+                  "Type": "3Est",
+                  "Code": "3"
+                },
+                "City": {
+                  "name": "Venice",
+                  "Id": "11020",
+                  "JPDCode": "JPD050210"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP138206",
+                "HasSynonyms": "true",
+                "Name": "Hotel Venezia",
+                "Zone": {
+                  "JPDCode": "JPD038798",
+                  "Code": "3826",
+                  "Name": "Mestre|Venice|Veneto|Italy"
+                },
+                "Address": "Piazza 27 Ottobre, 91 (angolo Via Teatro Vecchio) Mestre Centro - Venezia (Italy)",
+                "ZipCode": "",
+                "Latitude": 45.4922593,
+                "Longitude": 12.2429312,
+                "HotelCategory": {
+                  "name": "3 Stars",
+                  "Type": "3Est",
+                  "Code": "3"
+                },
+                "City": {
+                  "name": "Venice",
+                  "Id": "11020",
+                  "JPDCode": "JPD050210"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP157028",
+                "HasSynonyms": "false",
+                "Name": "Hotel President",
+                "Zone": {
+                  "JPDCode": "JPD038798",
+                  "Code": "3826",
+                  "Name": "Mestre|Venice|Veneto|Italy"
+                },
+                "Address": "Via Forte Marghera, 99A, 30173 Mestre, Venezia VE, Italy",
+                "ZipCode": 30173,
+                "Latitude": 45.4896399,
+                "Longitude": 12.2489378,
+                "HotelCategory": {
+                  "name": "4 Stars",
+                  "Type": "4Est",
+                  "Code": "4"
+                },
+                "City": {
+                  "name": "Venice",
+                  "Id": "11020",
+                  "JPDCode": "JPD050210"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP302199",
+                "HasSynonyms": "false",
+                "Name": "Smart Hotel Holiday Venezia",
+                "Zone": {
+                  "JPDCode": "JPD038798",
+                  "Code": "3826",
+                  "Name": "Mestre|Venice|Veneto|Italy"
+                },
+                "Address": "Via dell'Essiccatoio, 38, 30173 Venezia, Italy",
+                "ZipCode": 30173,
+                "Latitude": 45.504773,
+                "Longitude": 12.270833,
+                "HotelCategory": {
+                  "name": "4 Stars",
+                  "Type": "4Est",
+                  "Code": "4"
+                },
+                "City": {
+                  "name": "Venice",
+                  "Id": "11020",
+                  "JPDCode": "JPD050210"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP464092",
+                "HasSynonyms": "false",
+                "Name": "Hotel Novotel Venezia Mestre Castellana",
+                "Zone": {
+                  "JPDCode": "JPD038798",
+                  "Code": "3826",
+                  "Name": "Mestre|Venice|Veneto|Italy"
+                },
+                "Address": "Via Alfredo Ceccherini, 21, 30174 Mestre, Venezia, VE, Italy",
+                "ZipCode": 30174,
+                "Latitude": 45.5032545,
+                "Longitude": 12.2343765,
+                "HotelCategory": {
+                  "name": "4 Stars",
+                  "Type": "4Est",
+                  "Code": "4"
+                },
+                "City": {
+                  "name": "Venice",
+                  "Id": "11020",
+                  "JPDCode": "JPD050210"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP978332",
+                "HasSynonyms": "false",
+                "Name": "Hotel Palladio",
+                "Zone": {
+                  "JPDCode": "JPD038798",
+                  "Code": "3826",
+                  "Name": "Mestre|Venice|Veneto|Italy"
+                },
+                "Address": "Via Malcontenta 40, 30176 Mestre, VE",
+                "ZipCode": 30176,
+                "Latitude": 45.4379493,
+                "Longitude": 12.2050166,
+                "HotelCategory": {
+                  "name": "3 Stars",
+                  "Type": "3Est",
+                  "Code": "3"
+                },
+                "City": {
+                  "name": "Venice",
+                  "Id": "11020",
+                  "JPDCode": "JPD050210"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP044267",
+                "HasSynonyms": "false",
+                "Name": "Hotel Aurora",
+                "Zone": {
+                  "JPDCode": "JPD038812",
+                  "Code": "3840",
+                  "Name": "Amalfi|Campania|Italy"
+                },
+                "Address": "Piazzale dei Protontini, 7, 84011 Amalfi SA, Italy",
+                "ZipCode": 84011,
+                "Latitude": 40.631956,
+                "Longitude": 14.596862,
+                "HotelCategory": {
+                  "name": "4 Stars",
+                  "Type": "4Est",
+                  "Code": "4"
+                },
+                "City": {
+                  "name": "Amalfi",
+                  "Id": "3840",
+                  "JPDCode": "JPD038812"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP050845",
+                "HasSynonyms": "false",
+                "Name": "Hotel Miramalfi",
+                "Zone": {
+                  "JPDCode": "JPD038812",
+                  "Code": "3840",
+                  "Name": "Amalfi|Campania|Italy"
+                },
+                "Address": "Via Quasimodo, 3, 84011 Amalfi SA, Italy",
+                "ZipCode": 84011,
+                "Latitude": 40.630571,
+                "Longitude": 14.594686,
+                "HotelCategory": {
+                  "name": "4 Stars",
+                  "Type": "4Est",
+                  "Code": "4"
+                },
+                "City": {
+                  "name": "Amalfi",
+                  "Id": "3840",
+                  "JPDCode": "JPD038812"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP01013G",
+                "HasSynonyms": "true",
+                "Name": "Wyndham Garden Playa del Carmen",
+                "Zone": {
+                  "JPDCode": "JPD038931",
+                  "Code": "3954",
+                  "Name": "Playa del Carmen|Quintana Roo|Mexico"
+                },
+                "Address": "Lote 5, Manzana 29 Fraccionamiento Playacar, Playacar, 77710 Playa del Carmen, Q.R., Mexico",
+                "ZipCode": 77710,
+                "Latitude": 20.622279,
+                "Longitude": -87.0870897,
+                "HotelCategory": {
+                  "name": "3 Stars",
+                  "Type": "3Est",
+                  "Code": "3"
+                },
+                "City": {
+                  "name": "Playa del Carmen",
+                  "Id": "3954",
+                  "JPDCode": "JPD038931"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP013324",
+                "HasSynonyms": "false",
+                "Name": "Thompson Playa del Carmen",
+                "Zone": {
+                  "JPDCode": "JPD038931",
+                  "Code": "3954",
+                  "Name": "Playa del Carmen|Quintana Roo|Mexico"
+                },
+                "Address": "Calle 12 entre 5ta Ave. y 10 S/N Centro, Calica, Gonzalo Guerrero, 77710 Playa del Carmen, Q.R., Mexico",
+                "ZipCode": 77710,
+                "Latitude": 20.6279481,
+                "Longitude": -87.0721337,
+                "HotelCategory": {
+                  "name": "4 Stars",
+                  "Type": "4Est",
+                  "Code": "4"
+                },
+                "City": {
+                  "name": "Playa del Carmen",
+                  "Id": "3954",
+                  "JPDCode": "JPD038931"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP01697R",
+                "HasSynonyms": "true",
+                "Name": "The Fives Beach Hotel &amp; Residences",
+                "Zone": {
+                  "JPDCode": "JPD038931",
+                  "Code": "3954",
+                  "Name": "Playa del Carmen|Quintana Roo|Mexico"
+                },
+                "Address": "El Limonar 1, Xcalacoco, 77710 Playa del Carmen, QROO",
+                "ZipCode": 77710,
+                "Latitude": 20.665404,
+                "Longitude": -87.034677,
+                "HotelCategory": {
+                  "name": "5 Stars",
+                  "Type": "5Est",
+                  "Code": "5"
+                },
+                "City": {
+                  "name": "Playa del Carmen",
+                  "Id": "3954",
+                  "JPDCode": "JPD038931"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP02709J",
+                "HasSynonyms": "false",
+                "Name": "The Fives Downtown Hotel &amp; Residences, Curio Collection by Hilton",
+                "Zone": {
+                  "JPDCode": "JPD038931",
+                  "Code": "3954",
+                  "Name": "Playa del Carmen|Quintana Roo|Mexico"
+                },
+                "Address": "Avenida 10 Norte Calle 2, Playa del Carmen, Quintana Roo, 77710, Mexico",
+                "ZipCode": 77710,
+                "Latitude": 20.624081,
+                "Longitude": -87.075544,
+                "HotelCategory": {
+                  "name": "5 Stars",
+                  "Type": "5Est",
+                  "Code": "5"
+                },
+                "City": {
+                  "name": "Playa del Carmen",
+                  "Id": "3954",
+                  "JPDCode": "JPD038931"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP02719N",
+                "HasSynonyms": "false",
+                "Name": "Grand Fifty Suites",
+                "Zone": {
+                  "JPDCode": "JPD038931",
+                  "Code": "3954",
+                  "Name": "Playa del Carmen|Quintana Roo|Mexico"
+                },
+                "Address": "Calle 50 Nte, Av. 1ra y 5ta, Playa Del Carmen, Q. Roo, Mexico, 77720",
+                "ZipCode": "",
+                "Latitude": 20.63842,
+                "Longitude": -87.063023,
+                "HotelCategory": {
+                  "name": "4 Stars",
+                  "Type": "4Est",
+                  "Code": "4"
+                },
+                "City": {
+                  "name": "Playa del Carmen",
+                  "Id": "3954",
+                  "JPDCode": "JPD038931"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP02736Y",
+                "HasSynonyms": "false",
+                "Name": "Platinum at Grand Riviera &amp; Sunset Princess",
+                "Zone": {
+                  "JPDCode": "JPD038931",
+                  "Code": "3954",
+                  "Name": "Playa del Carmen|Quintana Roo|Mexico"
+                },
+                "Address": "Prolongación 5ta Avenida Mza 20,77710 Quintana Roo México",
+                "ZipCode": 77710,
+                "Latitude": 20.6694646,
+                "Longitude": -87.028523,
+                "HotelCategory": {
+                  "name": "5 Stars",
+                  "Type": "5Est",
+                  "Code": "5"
+                },
+                "City": {
+                  "name": "Playa del Carmen",
+                  "Id": "3954",
+                  "JPDCode": "JPD038931"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP033103",
+                "HasSynonyms": "false",
+                "Name": "Ocean Riviera Paradise",
+                "Zone": {
+                  "JPDCode": "JPD038931",
+                  "Code": "3954",
+                  "Name": "Playa del Carmen|Quintana Roo|Mexico"
+                },
+                "Address": "Prolongación 5ta Avenida, Playa del Carmen, 77710 Playa del Carmen, Q.R.",
+                "ZipCode": 77710,
+                "Latitude": 20.666779,
+                "Longitude": -87.030453,
+                "HotelCategory": {
+                  "name": "4 Stars",
+                  "Type": "4Est",
+                  "Code": "4"
+                },
+                "City": {
+                  "name": "Playa del Carmen",
+                  "Id": "3954",
+                  "JPDCode": "JPD038931"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP044435",
+                "HasSynonyms": "false",
+                "Name": "Hotel Casa Melissa",
+                "Zone": {
+                  "JPDCode": "JPD038931",
+                  "Code": "3954",
+                  "Name": "Playa del Carmen|Quintana Roo|Mexico"
+                },
+                "Address": "Ave. Juarez, entre 1ra y 5ta Norte, Centro, 77710 Playa del Carmen, Qroo, Mexico",
+                "ZipCode": 77710,
+                "Latitude": 20.6222819,
+                "Longitude": -87.0747399,
+                "HotelCategory": {
+                  "name": "3 Stars",
+                  "Type": "3Est",
+                  "Code": "3"
+                },
+                "City": {
+                  "name": "Playa del Carmen",
+                  "Id": "3954",
+                  "JPDCode": "JPD038931"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP044449",
+                "HasSynonyms": "false",
+                "Name": "Illusion Boutique Hotel",
+                "Zone": {
+                  "JPDCode": "JPD038931",
+                  "Code": "3954",
+                  "Name": "Playa del Carmen|Quintana Roo|Mexico"
+                },
+                "Address": "Calle 8 entre Quinta Avenida y Playa, Centro, 77710 Playa del Carmen, Q.R., Mexico",
+                "ZipCode": 77710,
+                "Latitude": 20.6255446,
+                "Longitude": -87.0725363,
+                "HotelCategory": {
+                  "name": "4 Stars",
+                  "Type": "4Est",
+                  "Code": "4"
+                },
+                "City": {
+                  "name": "Playa del Carmen",
+                  "Id": "3954",
+                  "JPDCode": "JPD038931"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP049692",
+                "HasSynonyms": "false",
+                "Name": "Hotel Tukan &amp; Beach Club",
+                "Zone": {
+                  "JPDCode": "JPD038931",
+                  "Code": "3954",
+                  "Name": "Playa del Carmen|Quintana Roo|Mexico"
+                },
+                "Address": "MZA 1 LTE 1, Calle 16 Norte Bis, Centro, 77710 Playa del Carmen, Quintana Roo, México",
+                "ZipCode": 77710,
+                "Latitude": 20.628975,
+                "Longitude": -87.070424,
+                "HotelCategory": {
+                  "name": "3 Stars",
+                  "Type": "3Est",
+                  "Code": "3"
+                },
+                "City": {
+                  "name": "Playa del Carmen",
+                  "Id": "3954",
+                  "JPDCode": "JPD038931"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP054868",
+                "HasSynonyms": "false",
+                "Name": "Nina Hotel &amp; Beach Club by Tukan",
+                "Zone": {
+                  "JPDCode": "JPD038931",
+                  "Code": "3954",
+                  "Name": "Playa del Carmen|Quintana Roo|Mexico"
+                },
+                "Address": "Calle 6 Entre 10 y 15, Centro, 77710 Playa del Carmen, Q.R., Mexico",
+                "ZipCode": 77710,
+                "Latitude": 20.6256355,
+                "Longitude": -87.0748132,
+                "HotelCategory": {
+                  "name": "3 Stars",
+                  "Type": "3Est",
+                  "Code": "3"
+                },
+                "City": {
+                  "name": "Playa del Carmen",
+                  "Id": "3954",
+                  "JPDCode": "JPD038931"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP102598",
+                "HasSynonyms": "false",
+                "Name": "Hotel Maria Candelaria",
+                "Zone": {
+                  "JPDCode": "JPD038931",
+                  "Code": "3954",
+                  "Name": "Playa del Carmen|Quintana Roo|Mexico"
+                },
+                "Address": "10 Av. Norte, Centro, Gonzalo Guerrero, 77710 Playa del Carmen, Q.R., Mexico",
+                "ZipCode": 77710,
+                "Latitude": 20.6273926,
+                "Longitude": -87.0731954,
+                "HotelCategory": {
+                  "name": "2 Stars",
+                  "Type": "2Est",
+                  "Code": "2"
+                },
+                "City": {
+                  "name": "Playa del Carmen",
+                  "Id": "3954",
+                  "JPDCode": "JPD038931"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP102602",
+                "HasSynonyms": "true",
+                "Name": "Hilton Playa Del Carmen, An All-Inclusive Adult Only Resort",
+                "Zone": {
+                  "JPDCode": "JPD038931",
+                  "Code": "3954",
+                  "Name": "Playa del Carmen|Quintana Roo|Mexico"
+                },
+                "Address": "Avenida Constituyentes 2 Gonzalo Guerrero, Playa Del Carmen,Quintana Roo, 77710, Mexico",
+                "ZipCode": 77710,
+                "Latitude": 20.629517,
+                "Longitude": -87.067713,
+                "HotelCategory": {
+                  "name": "5 Stars",
+                  "Type": "5Est",
+                  "Code": "5"
+                },
+                "City": {
+                  "name": "Playa del Carmen",
+                  "Id": "3954",
+                  "JPDCode": "JPD038931"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP102614",
+                "HasSynonyms": "false",
+                "Name": "The Reef Coco Beach",
+                "Zone": {
+                  "JPDCode": "JPD038931",
+                  "Code": "3954",
+                  "Name": "Playa del Carmen|Quintana Roo|Mexico"
+                },
+                "Address": "Costera Norte Lte. 1 Mza. 7 S/N, Región 6, Luis Donaldo Colosio, 77728 Playa del Carmen, QROO, Mexico",
+                "ZipCode": 77728,
+                "Latitude": 20.636576,
+                "Longitude": -87.0599027,
+                "HotelCategory": {
+                  "name": "4 Stars",
+                  "Type": "4Est",
+                  "Code": "4"
+                },
+                "City": {
+                  "name": "Playa del Carmen",
+                  "Id": "3954",
+                  "JPDCode": "JPD038931"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP107467",
+                "HasSynonyms": "false",
+                "Name": "Grand Hyatt Playa del Carmen Resort",
+                "Zone": {
+                  "JPDCode": "JPD038931",
+                  "Code": "3954",
+                  "Name": "Playa del Carmen|Quintana Roo|Mexico"
+                },
+                "Address": "1a Avenida esquina Calle 26 Colonia Centro, Gonzalo Guerrero, 77710 Playa del Carmen, Q.R., Mexico",
+                "ZipCode": 77710,
+                "Latitude": 20.6315398,
+                "Longitude": -87.0683289,
+                "HotelCategory": {
+                  "name": "4 Stars",
+                  "Type": "4Est",
+                  "Code": "4"
+                },
+                "City": {
+                  "name": "Playa del Carmen",
+                  "Id": "3954",
+                  "JPDCode": "JPD038931"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP116636",
+                "HasSynonyms": "false",
+                "Name": "Hacienda Paradise Boutique Hotel",
+                "Zone": {
+                  "JPDCode": "JPD038931",
+                  "Code": "3954",
+                  "Name": "Playa del Carmen|Quintana Roo|Mexico"
+                },
+                "Address": "Avenida 10 Nte. entre calles 20 y 22 Col. Centro, Gonzalo Guerrero, 77710 Playa del Carmen, QROO, Mexico",
+                "ZipCode": 77710,
+                "Latitude": 20.6314205,
+                "Longitude": -87.0700508,
+                "HotelCategory": {
+                  "name": "3 Stars",
+                  "Type": "3Est",
+                  "Code": "3"
+                },
+                "City": {
+                  "name": "Playa del Carmen",
+                  "Id": "3954",
+                  "JPDCode": "JPD038931"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP131887",
+                "HasSynonyms": "false",
+                "Name": "Banyan Tree Mayakoba",
+                "Zone": {
+                  "JPDCode": "JPD038931",
+                  "Code": "3954",
+                  "Name": "Playa del Carmen|Quintana Roo|Mexico"
+                },
+                "Address": "Carretera Federal Chetumal-Puerto Juárez KM 298, Riviera Maya, 77710 Playa del Carmen, QROO, Mexico",
+                "ZipCode": 77710,
+                "Latitude": 20.679979,
+                "Longitude": -87.022125,
+                "HotelCategory": {
+                  "name": "5 Stars",
+                  "Type": "5Est",
+                  "Code": "5"
+                },
+                "City": {
+                  "name": "Playa del Carmen",
+                  "Id": "3954",
+                  "JPDCode": "JPD038931"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP133587",
+                "HasSynonyms": "true",
+                "Name": "Hotel Costa Del Mar",
+                "Zone": {
+                  "JPDCode": "JPD038931",
+                  "Code": "3954",
+                  "Name": "Playa del Carmen|Quintana Roo|Mexico"
+                },
+                "Address": "1a. Avenida Norte S/N entre calle 10 y 12, Centro, Gonzalo Guerrero, 77710 Playa del Carmen, Q.R., Mexico",
+                "ZipCode": 77710,
+                "Latitude": 20.6266045,
+                "Longitude": -87.0709538,
+                "HotelCategory": {
+                  "name": "3 Stars",
+                  "Type": "3Est",
+                  "Code": "3"
+                },
+                "City": {
+                  "name": "Playa del Carmen",
+                  "Id": "3954",
+                  "JPDCode": "JPD038931"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP144647",
+                "HasSynonyms": "true",
+                "Name": "Fairmont Mayakoba Riviera Maya",
+                "Zone": {
+                  "JPDCode": "JPD038931",
+                  "Code": "3954",
+                  "Name": "Playa del Carmen|Quintana Roo|Mexico"
+                },
+                "Address": "Carretera Federal Cancún- Playa del Carmen km 298, Playa del Carmen, Solidaridad, Quintana Roo, Riviera Maya, Quintana Roo, 77710, México",
+                "ZipCode": 77710,
+                "Latitude": 20.6863996,
+                "Longitude": -87.0275849,
+                "HotelCategory": {
+                  "name": "5 Stars",
+                  "Type": "5Est",
+                  "Code": "5"
+                },
+                "City": {
+                  "name": "Playa del Carmen",
+                  "Id": "3954",
+                  "JPDCode": "JPD038931"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP153422",
+                "HasSynonyms": "true",
+                "Name": "Sandos Caracol Eco Resort",
+                "Zone": {
+                  "JPDCode": "JPD038931",
+                  "Code": "3954",
+                  "Name": "Playa del Carmen|Quintana Roo|Mexico"
+                },
+                "Address": "Carretera Puerto Juarez-Chetumal Km. 295, Solidaridad, 77710 Playa del Carmen, QROO, Mexico",
+                "ZipCode": 77710,
+                "Latitude": 20.6608728,
+                "Longitude": -87.0380661,
+                "HotelCategory": {
+                  "name": "5 Stars",
+                  "Type": "5Est",
+                  "Code": "5"
+                },
+                "City": {
+                  "name": "Playa del Carmen",
+                  "Id": "3954",
+                  "JPDCode": "JPD038931"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP259829",
+                "HasSynonyms": "false",
+                "Name": "Hotel Riviera Caribe Maya",
+                "Zone": {
+                  "JPDCode": "JPD038931",
+                  "Code": "3954",
+                  "Name": "Playa del Carmen|Quintana Roo|Mexico"
+                },
+                "Address": "10 Avenida Norte Mza 61 Lte 8, Centro, Gonzalo Guerrero, 77710 Playa del Carmen, QROO, Mexico",
+                "ZipCode": 77710,
+                "Latitude": 20.6333303,
+                "Longitude": -87.0686942,
+                "HotelCategory": {
+                  "name": "3 Stars",
+                  "Type": "3Est",
+                  "Code": "3"
+                },
+                "City": {
+                  "name": "Playa del Carmen",
+                  "Id": "3954",
+                  "JPDCode": "JPD038931"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP263193",
+                "HasSynonyms": "true",
+                "Name": "Paradisus Playa del Carmen La Esmeralda",
+                "Zone": {
+                  "JPDCode": "JPD038931",
+                  "Code": "3954",
+                  "Name": "Playa del Carmen|Quintana Roo|Mexico"
+                },
+                "Address": "5ª Avenida S/N esq. Calle 88 Mz 569, Luis Donaldo Colosio, 77719 Playa del Carmen, Q.R., Mexico",
+                "ZipCode": 77719,
+                "Latitude": 20.6475839,
+                "Longitude": -87.0554705,
+                "HotelCategory": {
+                  "name": "5 Stars",
+                  "Type": "5Est",
+                  "Code": "5"
+                },
+                "City": {
+                  "name": "Playa del Carmen",
+                  "Id": "3954",
+                  "JPDCode": "JPD038931"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP278239",
+                "HasSynonyms": "true",
+                "Name": "Mareazul Beach Family CondoHotel Playa del Carmen",
+                "Zone": {
+                  "JPDCode": "JPD038931",
+                  "Code": "3954",
+                  "Name": "Playa del Carmen|Quintana Roo|Mexico"
+                },
+                "Address": "Complejo Grand Coral Riviera Maya Carr Federal Puerto Juárez Km 294+700 Playa del Carmen, Q.Roo,  C.P. 77710, México",
+                "ZipCode": "C.P. 77710",
+                "Latitude": 20.6527022,
+                "Longitude": -87.0482888,
+                "HotelCategory": {
+                  "name": "4 Stars",
+                  "Type": "4Est",
+                  "Code": "4"
+                },
+                "City": {
+                  "name": "Playa del Carmen",
+                  "Id": "3954",
+                  "JPDCode": "JPD038931"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP284044",
+                "HasSynonyms": "false",
+                "Name": "Hotel HM Playa del Carmen",
+                "Zone": {
+                  "JPDCode": "JPD038931",
+                  "Code": "3954",
+                  "Name": "Playa del Carmen|Quintana Roo|Mexico"
+                },
+                "Address": "Av Constituyentes 180, 28 de Julio, 77720 Playa del Carmen, Q.R., Mexico",
+                "ZipCode": 77720,
+                "Latitude": 20.6313294,
+                "Longitude": -87.0717376,
+                "HotelCategory": {
+                  "name": "3 Stars",
+                  "Type": "3Est",
+                  "Code": "3"
+                },
+                "City": {
+                  "name": "Playa del Carmen",
+                  "Id": "3954",
+                  "JPDCode": "JPD038931"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP379213",
+                "HasSynonyms": "false",
+                "Name": "Dolce Vita Caribe B&amp;B",
+                "Zone": {
+                  "JPDCode": "JPD038931",
+                  "Code": "3954",
+                  "Name": "Playa del Carmen|Quintana Roo|Mexico"
+                },
+                "Address": "Playacar, 77717 Playa del Carmen, Q.R., Mexico",
+                "ZipCode": 77717,
+                "Latitude": 20.6215975,
+                "Longitude": -87.0845834,
+                "HotelCategory": {
+                  "Code": "13"
+                },
+                "City": {
+                  "name": "Playa del Carmen",
+                  "Id": "3954",
+                  "JPDCode": "JPD038931"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP379493",
+                "HasSynonyms": "false",
+                "Name": "Maya del Mar",
+                "Zone": {
+                  "JPDCode": "JPD038931",
+                  "Code": "3954",
+                  "Name": "Playa del Carmen|Quintana Roo|Mexico"
+                },
+                "Address": "Calle Quinta Avenida s/n, Centro, Gonzalo Guerrero, 77710 Playa del Carmen, QROO, Mexico",
+                "ZipCode": 77710,
+                "Latitude": 20.6259697,
+                "Longitude": -87.0726585,
+                "HotelCategory": {
+                  "name": "3 Stars",
+                  "Type": "3Est",
+                  "Code": "3"
+                },
+                "City": {
+                  "name": "Playa del Carmen",
+                  "Id": "3954",
+                  "JPDCode": "JPD038931"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP401594",
+                "HasSynonyms": "true",
+                "Name": "Hotel Casaejido",
+                "Zone": {
+                  "JPDCode": "JPD038931",
+                  "Code": "3954",
+                  "Name": "Playa del Carmen|Quintana Roo|Mexico"
+                },
+                "Address": "Calle 3 Sur, entre Avenidas 65 y 70, Manzana 11 lote 9, Colonia Ejidal",
+                "ZipCode": "",
+                "Latitude": 20.6282577,
+                "Longitude": -87.0883925,
+                "HotelCategory": {
+                  "name": "2 Stars",
+                  "Type": "2Est",
+                  "Code": "2"
+                },
+                "City": {
+                  "name": "Playa del Carmen",
+                  "Id": "3954",
+                  "JPDCode": "JPD038931"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP407661",
+                "HasSynonyms": "true",
+                "Name": "One Playa del Carmen",
+                "Zone": {
+                  "JPDCode": "JPD038931",
+                  "Code": "3954",
+                  "Name": "Playa del Carmen|Quintana Roo|Mexico"
+                },
+                "Address": "Avenida 25 Norte Mz 97 s/n, Centro, Gonzalo Guerrero, 77710 Playa del Carmen, QROO, Mexico",
+                "ZipCode": 77710,
+                "Latitude": 20.6302053,
+                "Longitude": -87.0753044,
+                "HotelCategory": {
+                  "name": "3 Stars",
+                  "Type": "3Est",
+                  "Code": "3"
+                },
+                "City": {
+                  "name": "Playa del Carmen",
+                  "Id": "3954",
+                  "JPDCode": "JPD038931"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP487469",
+                "HasSynonyms": "false",
+                "Name": "Aspira Hotel &amp; Beach Club by Tukan",
+                "Zone": {
+                  "JPDCode": "JPD038931",
+                  "Code": "3954",
+                  "Name": "Playa del Carmen|Quintana Roo|Mexico"
+                },
+                "Address": "Calle 16 entre avenida 10 y Avenida 15 Playa del Carmen 77710, Mexico",
+                "ZipCode": 77710,
+                "Latitude": 20.630187,
+                "Longitude": -87.071607,
+                "HotelCategory": {
+                  "name": "3 Stars",
+                  "Type": "3Est",
+                  "Code": "3"
+                },
+                "City": {
+                  "name": "Playa del Carmen",
+                  "Id": "3954",
+                  "JPDCode": "JPD038931"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP528484",
+                "HasSynonyms": "false",
+                "Name": "MAYA DEL CENTRO",
+                "Zone": {
+                  "JPDCode": "JPD038931",
+                  "Code": "3954",
+                  "Name": "Playa del Carmen|Quintana Roo|Mexico"
+                },
+                "Address": "MZA 5 A LTE 1-4, Calle 6 Nte, Centro, 77710 Playa del Carmen, Q.R., Mexico",
+                "ZipCode": 77710,
+                "Latitude": 20.625304,
+                "Longitude": -87.07369,
+                "HotelCategory": {
+                  "name": "2 Stars",
+                  "Type": "2Est",
+                  "Code": "2"
+                },
+                "City": {
+                  "name": "Playa del Carmen",
+                  "Id": "3954",
+                  "JPDCode": "JPD038931"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP543179",
+                "HasSynonyms": "false",
+                "Name": "The Fives Azul Beach Resort Playa del Carmen",
+                "Zone": {
+                  "JPDCode": "JPD038931",
+                  "Code": "3954",
+                  "Name": "Playa del Carmen|Quintana Roo|Mexico"
+                },
+                "Address": "Predio El Limonar Fraccion 2, Acceso Xcalacoco, 77710 Playa del Carmen, Q.R., Mexico",
+                "ZipCode": 77710,
+                "Latitude": 20.6648915,
+                "Longitude": -87.0345872,
+                "HotelCategory": {
+                  "name": "4 Stars",
+                  "Type": "4Est",
+                  "Code": "4"
+                },
+                "City": {
+                  "name": "Playa del Carmen",
+                  "Id": "3954",
+                  "JPDCode": "JPD038931"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP658169",
+                "HasSynonyms": "false",
+                "Name": "Hotel Tukan",
+                "Zone": {
+                  "JPDCode": "JPD038931",
+                  "Code": "3954",
+                  "Name": "Playa del Carmen|Quintana Roo|Mexico"
+                },
+                "Address": "Quinta Avenida entre Calle 14 bis y Calle 16, Centro, Gonzalo Guerrero, 77710 Playa del Carmen, QROO",
+                "ZipCode": 77710,
+                "Latitude": 20.629148,
+                "Longitude": -87.07061,
+                "HotelCategory": {
+                  "name": "4 Stars",
+                  "Type": "4Est",
+                  "Code": "4"
+                },
+                "City": {
+                  "name": "Playa del Carmen",
+                  "Id": "3954",
+                  "JPDCode": "JPD038931"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP734698",
+                "HasSynonyms": "false",
+                "Name": "Maya del Carmen",
+                "Zone": {
+                  "JPDCode": "JPD038931",
+                  "Code": "3954",
+                  "Name": "Playa del Carmen|Quintana Roo|Mexico"
+                },
+                "Address": "Av. 10 Manzana 38 Lote 1, Solidaridad, Gonzalo Guerrero, 77720 Playa del Carmen, Q.R., Mexico",
+                "ZipCode": 77720,
+                "Latitude": 20.6369674,
+                "Longitude": -87.0667201,
+                "HotelCategory": {
+                  "name": "3 Stars",
+                  "Type": "3Est",
+                  "Code": "3"
+                },
+                "City": {
+                  "name": "Playa del Carmen",
+                  "Id": "3954",
+                  "JPDCode": "JPD038931"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP737925",
+                "HasSynonyms": "false",
+                "Name": "The Royal Haciendas",
+                "Zone": {
+                  "JPDCode": "JPD038931",
+                  "Code": "3954",
+                  "Name": "Playa del Carmen|Quintana Roo|Mexico"
+                },
+                "Address": "Carretera Federal Cancun-Chetumal Km. 289+10, Centro, 77710 Playa del Carmen, Q.R., Mexico",
+                "ZipCode": 77710,
+                "Latitude": 20.6561998,
+                "Longitude": -87.0424944,
+                "HotelCategory": {
+                  "name": "5 Stars",
+                  "Type": "5Est",
+                  "Code": "5"
+                },
+                "City": {
+                  "name": "Playa del Carmen",
+                  "Id": "3954",
+                  "JPDCode": "JPD038931"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP762191",
+                "HasSynonyms": "true",
+                "Name": "Reina Roja",
+                "Zone": {
+                  "JPDCode": "JPD038931",
+                  "Code": "3954",
+                  "Name": "Playa del Carmen|Quintana Roo|Mexico"
+                },
+                "Address": "Calle 20 #298, Col. Centro, Playa del Carmen, Quintana Roo, México, C.P. 77710.",
+                "ZipCode": 77710,
+                "Latitude": 20.6310089,
+                "Longitude": -87.0701419,
+                "HotelCategory": {
+                  "name": "3 Stars",
+                  "Type": "3Est",
+                  "Code": "3"
+                },
+                "City": {
+                  "name": "Playa del Carmen",
+                  "Id": "3954",
+                  "JPDCode": "JPD038931"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP794395",
+                "HasSynonyms": "true",
+                "Name": "Grand Velas Riviera Maya",
+                "Zone": {
+                  "JPDCode": "JPD038931",
+                  "Code": "3954",
+                  "Name": "Playa del Carmen|Quintana Roo|Mexico"
+                },
+                "Address": "Km. 62, Carr. Cancún - Tulum, Marietta, 77710 Playa del Carmen, Q.R., Mexico",
+                "ZipCode": 77710,
+                "Latitude": 20.673918,
+                "Longitude": -87.0234502,
+                "HotelCategory": {
+                  "name": "5 Stars",
+                  "Type": "5Est",
+                  "Code": "5"
+                },
+                "City": {
+                  "name": "Playa del Carmen",
+                  "Id": "3954",
+                  "JPDCode": "JPD038931"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP817378",
+                "HasSynonyms": "false",
+                "Name": "Gran Porto Resort",
+                "Zone": {
+                  "JPDCode": "JPD038931",
+                  "Code": "3954",
+                  "Name": "Playa del Carmen|Quintana Roo|Mexico"
+                },
+                "Address": "Av. Constituyentes 1 x 10 y 5ta Av.., Col. Gonzalo Guerrero, Gonzalo Guerrero, 77720 Playa del Carmen, Q.R., Mexico",
+                "ZipCode": 77720,
+                "Latitude": 20.6285269,
+                "Longitude": -87.0683879,
+                "HotelCategory": {
+                  "name": "5 Stars",
+                  "Type": "5Est",
+                  "Code": "5"
+                },
+                "City": {
+                  "name": "Playa del Carmen",
+                  "Id": "3954",
+                  "JPDCode": "JPD038931"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP864316",
+                "HasSynonyms": "true",
+                "Name": "Las Golondrinas",
+                "Zone": {
+                  "JPDCode": "JPD038931",
+                  "Code": "3954",
+                  "Name": "Playa del Carmen|Quintana Roo|Mexico"
+                },
+                "Address": "Av Constituyentes 178, Centro, 77710 Playa del Carmen, Q.R., Mexico",
+                "ZipCode": 77710,
+                "Latitude": 20.631458,
+                "Longitude": -87.072678,
+                "HotelCategory": {
+                  "name": "3 Stars",
+                  "Type": "3Est",
+                  "Code": "3"
+                },
+                "City": {
+                  "name": "Playa del Carmen",
+                  "Id": "3954",
+                  "JPDCode": "JPD038931"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP054095",
+                "HasSynonyms": "true",
+                "Name": "Movich Hotel de Pereira",
+                "Zone": {
+                  "JPDCode": "JPD038940",
+                  "Code": "3963",
+                  "Name": "Pereira|Risaralda|Colombia"
+                },
+                "Address": "Cra 13 No 15-73, Pereira 662001, Pereira, Risaralda, Colombia",
+                "ZipCode": 660003,
+                "Latitude": 4.808818,
+                "Longitude": -75.691862,
+                "HotelCategory": {
+                  "name": "5 Stars",
+                  "Type": "5Est",
+                  "Code": "5"
+                },
+                "City": {
+                  "name": "Pereira",
+                  "Id": "3963",
+                  "JPDCode": "JPD038940"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP430788",
+                "HasSynonyms": "false",
+                "Name": "Marina Hotel",
+                "Zone": {
+                  "JPDCode": "JPD038977",
+                  "Code": "3999",
+                  "Name": "Port Lincoln|South Australia|Australia"
+                },
+                "Address": "13 Jubilee Dr, Port Lincoln SA 5606, Australia",
+                "ZipCode": 5606,
+                "Latitude": -34.742936,
+                "Longitude": 135.8744595,
+                "HotelCategory": {
+                  "name": "4 Stars",
+                  "Type": "4Est",
+                  "Code": "4"
+                },
+                "City": {
+                  "name": "Port Lincoln",
+                  "Id": "3999",
+                  "JPDCode": "JPD038977"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP904984",
+                "HasSynonyms": "true",
+                "Name": "Hotel Finis Terrae",
+                "Zone": {
+                  "JPDCode": "JPD039038",
+                  "Code": "4056",
+                  "Name": "Punta Arenas|Magallanes|Chile"
+                },
+                "Address": "Chile",
+                "Latitude": -53.1601013,
+                "Longitude": -70.9050145,
+                "HotelCategory": {
+                  "name": "3 Stars",
+                  "Type": "3Est",
+                  "Code": "3"
+                },
+                "City": {
+                  "name": "Punta Arenas",
+                  "Id": "4056",
+                  "JPDCode": "JPD039038"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP083413",
+                "HasSynonyms": "false",
+                "Name": "Courtyard Provo",
+                "Zone": {
+                  "JPDCode": "JPD039042",
+                  "Code": "4060",
+                  "Name": "Provo|Utah|USA"
+                },
+                "Address": "1600 Freedom Blvd 200 W, Provo, UT 84604, USA",
+                "ZipCode": 84604,
+                "Latitude": 40.255767,
+                "Longitude": -111.660461,
+                "HotelCategory": {
+                  "name": "3 Stars",
+                  "Type": "3Est",
+                  "Code": "3"
+                },
+                "City": {
+                  "name": "Provo",
+                  "Id": "4060",
+                  "JPDCode": "JPD039042"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP054422",
+                "HasSynonyms": "false",
+                "Name": "Pestana Tropico Hotel",
+                "Zone": {
+                  "JPDCode": "JPD039058",
+                  "Code": "4076",
+                  "Name": "Praia|Santiago|Cape Verde"
+                },
+                "Address": "Praia, Cape Verde",
+                "Latitude": 14.906761,
+                "Longitude": -23.5110014,
+                "HotelCategory": {
+                  "name": "4 Stars",
+                  "Type": "4Est",
+                  "Code": "4"
+                },
+                "City": {
+                  "name": "Praia",
+                  "Id": "4076",
+                  "JPDCode": "JPD039058"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP821991",
+                "HasSynonyms": "false",
+                "Name": "Radisson Blu Hotel, Rostock",
+                "Zone": {
+                  "JPDCode": "JPD039090",
+                  "Code": "4108",
+                  "Name": "Rostock|Mecklenburg-Western Pomerania|Germany"
+                },
+                "Address": "Lange Str. 40, 18055 Rostock, Germany",
+                "ZipCode": 18055,
+                "Latitude": 54.08929,
+                "Longitude": 12.12904,
+                "HotelCategory": {
+                  "name": "4 Stars",
+                  "Type": "4Est",
+                  "Code": "4"
+                },
+                "City": {
+                  "name": "Rostock",
+                  "Id": "4108",
+                  "JPDCode": "JPD039090"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP060212",
+                "HasSynonyms": "false",
+                "Name": "Best Western Bungil Creek Motel",
+                "Zone": {
+                  "JPDCode": "JPD039091",
+                  "Code": "4109",
+                  "Name": "Rome|Queensland|Australia"
+                },
+                "Address": "5/7 Bowen St, Roma QLD 4455, Australia",
+                "ZipCode": 4455,
+                "Latitude": -26.5744948,
+                "Longitude": 148.7977802,
+                "HotelCategory": {
+                  "name": "4 Stars",
+                  "Type": "4Est",
+                  "Code": "4"
+                },
+                "City": {
+                  "name": "Rome",
+                  "Id": "4109",
+                  "JPDCode": "JPD039091"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP050851",
+                "HasSynonyms": "false",
+                "Name": "Grand Hotel De La Ville",
+                "Zone": {
+                  "JPDCode": "JPD039108",
+                  "Code": "4126",
+                  "Name": "Sorrento|Campania|Italy"
+                },
+                "Address": "Via Bernardino Rota, 15, 80067 Sorrento NA, Italy",
+                "ZipCode": 80067,
+                "Latitude": 40.6285344,
+                "Longitude": 14.3820706,
+                "HotelCategory": {
+                  "name": "4 Stars",
+                  "Type": "4Est",
+                  "Code": "4"
+                },
+                "City": {
+                  "name": "Sorrento",
+                  "Id": "4126",
+                  "JPDCode": "JPD039108"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP123060",
+                "HasSynonyms": "false",
+                "Name": "Grand Hotel Royal",
+                "Zone": {
+                  "JPDCode": "JPD039108",
+                  "Code": "4126",
+                  "Name": "Sorrento|Campania|Italy"
+                },
+                "Address": "Via Correale, 42, 80067 Sorrento NA, Italy",
+                "ZipCode": 80067,
+                "Latitude": 40.628372,
+                "Longitude": 14.379591,
+                "HotelCategory": {
+                  "name": "5 Stars",
+                  "Type": "5Est",
+                  "Code": "5"
+                },
+                "City": {
+                  "name": "Sorrento",
+                  "Id": "4126",
+                  "JPDCode": "JPD039108"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP907147",
+                "HasSynonyms": "false",
+                "Name": "Crowne Plaza San Pedro Sula",
+                "Zone": {
+                  "JPDCode": "JPD039131",
+                  "Code": "4149",
+                  "Name": "San Pedro Sula|Cortés|Honduras"
+                },
+                "Address": "Blvd Morazan Avenida 10 Y 11, San Pedro Sula 21102, Honduras",
+                "ZipCode": 21102,
+                "Latitude": 15.506663,
+                "Longitude": -88.030745,
+                "HotelCategory": {
+                  "name": "3 Stars",
+                  "Type": "3Est",
+                  "Code": "3"
+                },
+                "City": {
+                  "name": "San Pedro Sula",
+                  "Id": "4149",
+                  "JPDCode": "JPD039131"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP079312",
+                "HasSynonyms": "true",
+                "Name": "Golden Tulip",
+                "Zone": {
+                  "JPDCode": "JPD039176",
+                  "Code": "4191",
+                  "Name": "Sharjah|Sharjah|United Arab Emirates"
+                },
+                "Address": "Al Fardan Center,Buheira Corniche, Corniche Street - Sharjah - United Arab Emirates",
+                "Latitude": 25.3242591,
+                "Longitude": 55.382167,
+                "HotelCategory": {
+                  "name": "4 Stars",
+                  "Type": "4Est",
+                  "Code": "4"
+                },
+                "City": {
+                  "name": "Sharjah",
+                  "Id": "4191",
+                  "JPDCode": "JPD039176"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP148574",
+                "HasSynonyms": "false",
+                "Name": "Holiday International Hotel",
+                "Zone": {
+                  "JPDCode": "JPD039176",
+                  "Code": "4191",
+                  "Name": "Sharjah|Sharjah|United Arab Emirates"
+                },
+                "Address": "P.O. Box 5802, Buheira Corniche, Sharjah, UAE",
+                "ZipCode": "",
+                "Latitude": 25.3400485,
+                "Longitude": 55.3841966,
+                "HotelCategory": {
+                  "name": "4 Stars",
+                  "Type": "4Est",
+                  "Code": "4"
+                },
+                "City": {
+                  "name": "Sharjah",
+                  "Id": "4191",
+                  "JPDCode": "JPD039176"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP154734",
+                "HasSynonyms": "false",
+                "Name": "TIME Ruby Hotel Apartments",
+                "Zone": {
+                  "JPDCode": "JPD039176",
+                  "Code": "4191",
+                  "Name": "Sharjah|Sharjah|United Arab Emirates"
+                },
+                "Address": "Al Khan road, Al khan area, Opp Sharjah Aquarium - Sharjah - United Arab Emirates",
+                "Latitude": 25.3334176,
+                "Longitude": 55.3617743,
+                "HotelCategory": {
+                  "name": "3 Stars",
+                  "Type": "3Est",
+                  "Code": "3"
+                },
+                "City": {
+                  "name": "Sharjah",
+                  "Id": "4191",
+                  "JPDCode": "JPD039176"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP202095",
+                "HasSynonyms": "false",
+                "Name": "Hilton Sharjah",
+                "Zone": {
+                  "JPDCode": "JPD039176",
+                  "Code": "4191",
+                  "Name": "Sharjah|Sharjah|United Arab Emirates"
+                },
+                "Address": "Corniche Road - Al Majaz 3 - Sharjah - United Arab Emirates",
+                "Latitude": 25.327643,
+                "Longitude": 55.378052,
+                "HotelCategory": {
+                  "name": "5 Stars",
+                  "Type": "5Est",
+                  "Code": "5"
+                },
+                "City": {
+                  "name": "Sharjah",
+                  "Id": "4191",
+                  "JPDCode": "JPD039176"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP205594",
+                "HasSynonyms": "false",
+                "Name": "Swiss-Belhotel Sharjah",
+                "Zone": {
+                  "JPDCode": "JPD039176",
+                  "Code": "4191",
+                  "Name": "Sharjah|Sharjah|United Arab Emirates"
+                },
+                "Address": "Al Arouba Street,Rolla - Sharjah - United Arab Emirates",
+                "Latitude": 25.362466,
+                "Longitude": 55.391607,
+                "HotelCategory": {
+                  "name": "4 Stars",
+                  "Type": "4Est",
+                  "Code": "4"
+                },
+                "City": {
+                  "name": "Sharjah",
+                  "Id": "4191",
+                  "JPDCode": "JPD039176"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP216666",
+                "HasSynonyms": "false",
+                "Name": "Golden Sands Hotel Sharjah",
+                "Zone": {
+                  "JPDCode": "JPD039176",
+                  "Code": "4191",
+                  "Name": "Sharjah|Sharjah|United Arab Emirates"
+                },
+                "Address": "Al Nahda Street 115, Opposite Sahara Center, P.O. Box: 60553, Sharjah, United Arab Emirates",
+                "ZipCode": 60553,
+                "Latitude": 25.2984376,
+                "Longitude": 55.3721469,
+                "HotelCategory": {
+                  "name": "4 Stars",
+                  "Type": "4Est",
+                  "Code": "4"
+                },
+                "City": {
+                  "name": "Sharjah",
+                  "Id": "4191",
+                  "JPDCode": "JPD039176"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP969522",
+                "HasSynonyms": "false",
+                "Name": "RADISSON BLU RESORT, SHARJAH-UNITED ARAB EMIRATES",
+                "Zone": {
+                  "JPDCode": "JPD039176",
+                  "Code": "4191",
+                  "Name": "Sharjah|Sharjah|United Arab Emirates"
+                },
+                "Address": "Corniche Street, P.O. Box 3527, Sharjah, United Arab Emirates",
+                "ZipCode": 3527,
+                "Latitude": 25.3716589,
+                "Longitude": 55.3914523,
+                "HotelCategory": {
+                  "name": "5 Stars",
+                  "Type": "5Est",
+                  "Code": "5"
+                },
+                "City": {
+                  "name": "Sharjah",
+                  "Id": "4191",
+                  "JPDCode": "JPD039176"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP204212",
+                "HasSynonyms": "true",
+                "Name": "Wyndham Tashkent",
+                "Zone": {
+                  "JPDCode": "JPD039279",
+                  "Code": "4289",
+                  "Name": "Tashkent|Provincia de Taskent|Uzbekistan"
+                },
+                "Address": "Amir Temur Avenue, Tashkent, Uzbekistan",
+                "Latitude": 41.3174479,
+                "Longitude": 69.2799675,
+                "HotelCategory": {
+                  "name": "4 Stars",
+                  "Type": "4Est",
+                  "Code": "4"
+                },
+                "City": {
+                  "name": "Tashkent",
+                  "Id": "4289",
+                  "JPDCode": "JPD039279"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP190265",
+                "HasSynonyms": "true",
+                "Name": "Clarion Hotel Real Tegucigalpa",
+                "Zone": {
+                  "JPDCode": "JPD039308",
+                  "Code": "4318",
+                  "Name": "Tegucigalpa|Francisco Morazán|Honduras"
+                },
+                "Address": "Col. Alameda, calle principal, avenida Juan Manuel Galvez, Tegucigalpa, Honduras",
+                "Latitude": 14.090119,
+                "Longitude": -87.193564,
+                "HotelCategory": {
+                  "name": "3 Stars",
+                  "Type": "3Est",
+                  "Code": "3"
+                },
+                "City": {
+                  "name": "Tegucigalpa",
+                  "Id": "4318",
+                  "JPDCode": "JPD039308"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP874732",
+                "HasSynonyms": "true",
+                "Name": "Holiday Inn Express Tegucigalpa",
+                "Zone": {
+                  "JPDCode": "JPD039308",
+                  "Code": "4318",
+                  "Name": "Tegucigalpa|Francisco Morazán|Honduras"
+                },
+                "Address": "Colonia Lomas del Mayab frente a la Curacao Distrito Central, Tegucigalpa, 11101, Honduras",
+                "ZipCode": 11101,
+                "Latitude": 14.0868307,
+                "Longitude": -87.1878058,
+                "HotelCategory": {
+                  "name": "3 Stars",
+                  "Type": "3Est",
+                  "Code": "3"
+                },
+                "City": {
+                  "name": "Tegucigalpa",
+                  "Id": "4318",
+                  "JPDCode": "JPD039308"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP702163",
+                "HasSynonyms": "false",
+                "Name": "Holiday Inn Express Tuxtla Gutierrez La Marimba",
+                "Zone": {
+                  "JPDCode": "JPD039309",
+                  "Code": "4319",
+                  "Name": "Tuxtla Gutierrez|Chiapas|Mexico"
+                },
+                "Address": "Av Central Pte 1254, El Cerrito, 29000 Tuxtla Gutiérrez, Chis., Mexico",
+                "ZipCode": 29000,
+                "Latitude": 16.7550961,
+                "Longitude": -93.1263399,
+                "HotelCategory": {
+                  "name": "3 Stars",
+                  "Type": "3Est",
+                  "Code": "3"
+                },
+                "City": {
+                  "name": "Tuxtla Gutierrez",
+                  "Id": "4319",
+                  "JPDCode": "JPD039309"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP845621",
+                "HasSynonyms": "false",
+                "Name": "Hotel del Carmen",
+                "Zone": {
+                  "JPDCode": "JPD039309",
+                  "Code": "4319",
+                  "Name": "Tuxtla Gutierrez|Chiapas|Mexico"
+                },
+                "Address": "2ª. Avenida Sur Pte. No. 826, Centro, El Cerrito, 29000 Tuxtla Gutiérrez, Chis., Mexico",
+                "ZipCode": 29000,
+                "Latitude": 16.7527987,
+                "Longitude": -93.1226985,
+                "HotelCategory": {
+                  "name": "3 Stars",
+                  "Type": "3Est",
+                  "Code": "3"
+                },
+                "City": {
+                  "name": "Tuxtla Gutierrez",
+                  "Id": "4319",
+                  "JPDCode": "JPD039309"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP058912",
+                "HasSynonyms": "false",
+                "Name": "Tallink City Hotel",
+                "Zone": {
+                  "JPDCode": "JPD039330",
+                  "Code": "4340",
+                  "Name": "Tallinn|Harju County|Estonia"
+                },
+                "Address": "A. Laikmaa 5, 10145 Tallinn, Estonia",
+                "ZipCode": 10145,
+                "Latitude": 59.4363992,
+                "Longitude": 24.7578109,
+                "HotelCategory": {
+                  "name": "4 Stars",
+                  "Type": "4Est",
+                  "Code": "4"
+                },
+                "City": {
+                  "name": "Tallinn",
+                  "Id": "4340",
+                  "JPDCode": "JPD039330"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP016711",
+                "HasSynonyms": "true",
+                "Name": "Grand Bahía Príncipe Coba",
+                "Zone": {
+                  "JPDCode": "JPD039371",
+                  "Code": "4381",
+                  "Name": "Tulum|Quintana Roo|Mexico"
+                },
+                "Address": "Carretera Chetumal - Cancún Km 250. México",
+                "ZipCode": "",
+                "Latitude": 20.362493,
+                "Longitude": -87.337439,
+                "HotelCategory": {
+                  "name": "5 Stars",
+                  "Type": "5Est",
+                  "Code": "5"
+                },
+                "City": {
+                  "name": "Tulum",
+                  "Id": "4381",
+                  "JPDCode": "JPD039371"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP408570",
+                "HasSynonyms": "true",
+                "Name": "Kore Tulum Retreat &amp; Spa Resort",
+                "Zone": {
+                  "JPDCode": "JPD039371",
+                  "Code": "4381",
+                  "Name": "Tulum|Quintana Roo|Mexico"
+                },
+                "Address": "Carretera Tulum - Boca Paila Km 3.8 Lote 48, Zona Hotelera, 77789 Tulum, Q.R., Mexico",
+                "ZipCode": 77789,
+                "Latitude": 20.1879748,
+                "Longitude": -87.4423208,
+                "HotelCategory": {
+                  "name": "4 Stars",
+                  "Type": "4Est",
+                  "Code": "4"
+                },
+                "City": {
+                  "name": "Tulum",
+                  "Id": "4381",
+                  "JPDCode": "JPD039371"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP980400",
+                "HasSynonyms": "true",
+                "Name": "Dreams Tulum Resort &amp; Spa",
+                "Zone": {
+                  "JPDCode": "JPD039371",
+                  "Code": "4381",
+                  "Name": "Tulum|Quintana Roo|Mexico"
+                },
+                "Address": "Carretera Chetumal-Puerto Juárez Km. 236.7, No. 1, Juárez, 77761 Tulum, QROO, Mexico",
+                "ZipCode": 77761,
+                "Latitude": 20.254067,
+                "Longitude": -87.403633,
+                "HotelCategory": {
+                  "name": "5 Stars",
+                  "Type": "5Est",
+                  "Code": "5"
+                },
+                "City": {
+                  "name": "Tulum",
+                  "Id": "4381",
+                  "JPDCode": "JPD039371"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP195179",
+                "HasSynonyms": "false",
+                "Name": "Hotel Mira Corgo",
+                "Zone": {
+                  "JPDCode": "JPD039470",
+                  "Code": "4479",
+                  "Name": "Vila Real|Norte Region|Portugal"
+                },
+                "Address": "Avenida 1 de Maio, 76 a 78, 5000-651, Vila Real, Portugal",
+                "ZipCode": "5000-651",
+                "Latitude": 41.2954344,
+                "Longitude": -7.7439076,
+                "HotelCategory": {
+                  "name": "4 Stars",
+                  "Type": "4Est",
+                  "Code": "4"
+                },
+                "City": {
+                  "name": "Vila Real",
+                  "Id": "4479",
+                  "JPDCode": "JPD039470"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP739785",
+                "HasSynonyms": "false",
+                "Name": "Hotel Indigo Saint Petersburg Downtown",
+                "Zone": {
+                  "JPDCode": "JPD039727",
+                  "Code": "4725",
+                  "Name": "St Petersburg|Florida|USA"
+                },
+                "Address": "234 3rd Ave N, St. Petersburg, FL 33701, USA",
+                "ZipCode": 33701,
+                "Latitude": 27.774544,
+                "Longitude": -82.636415,
+                "HotelCategory": {
+                  "name": "4 Stars",
+                  "Type": "4Est",
+                  "Code": "4"
+                },
+                "City": {
+                  "name": "St Petersburg",
+                  "Id": "4725",
+                  "JPDCode": "JPD039727"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP343785",
+                "HasSynonyms": "false",
+                "Name": "Ramada Plaza Fort Walton Beach Resort/Destin",
+                "Zone": {
+                  "JPDCode": "JPD039736",
+                  "Code": "4734",
+                  "Name": "Fort Walton Beach|Florida|USA"
+                },
+                "Address": "1500 Miracle Strip Pkwy SE, Fort Walton Beach, FL 32548, USA",
+                "ZipCode": 32548,
+                "Latitude": 30.3945508,
+                "Longitude": -86.5888419,
+                "HotelCategory": {
+                  "name": "3 Stars",
+                  "Type": "3Est",
+                  "Code": "3"
+                },
+                "City": {
+                  "name": "Fort Walton Beach",
+                  "Id": "4734",
+                  "JPDCode": "JPD039736"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP037108",
+                "HasSynonyms": "false",
+                "Name": "Hyatt Regency Coral Gables",
+                "Zone": {
+                  "JPDCode": "JPD039737",
+                  "Code": "4735",
+                  "Name": "Coral Gables|Florida|USA"
+                },
+                "Address": "50 Alhambra Plaza, Coral Gables, FL 33134, USA",
+                "ZipCode": 33134,
+                "Latitude": 25.751942,
+                "Longitude": -80.255731,
+                "HotelCategory": {
+                  "name": "4 Stars",
+                  "Type": "4Est",
+                  "Code": "4"
+                },
+                "City": {
+                  "name": "Coral Gables",
+                  "Id": "4735",
+                  "JPDCode": "JPD039737"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP286781",
+                "HasSynonyms": "false",
+                "Name": "Biltmore Hotel Miami Coral Gables",
+                "Zone": {
+                  "JPDCode": "JPD039737",
+                  "Code": "4735",
+                  "Name": "Coral Gables|Florida|USA"
+                },
+                "Address": "1200 Anastasia Ave, Coral Gables, FL 33134, USA",
+                "ZipCode": 33134,
+                "Latitude": 25.7405562,
+                "Longitude": -80.2786051,
+                "HotelCategory": {
+                  "name": "4 Stars",
+                  "Type": "4Est",
+                  "Code": "4"
+                },
+                "City": {
+                  "name": "Coral Gables",
+                  "Id": "4735",
+                  "JPDCode": "JPD039737"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP796578",
+                "HasSynonyms": "false",
+                "Name": "Wyndham Grand Jupiter at Harbourside Place",
+                "Zone": {
+                  "JPDCode": "JPD039746",
+                  "Code": "4743",
+                  "Name": "Jupiter|Florida|USA"
+                },
+                "Address": "122 Soundings Ave, Jupiter, FL 33477, USA",
+                "ZipCode": 33477,
+                "Latitude": 26.935822,
+                "Longitude": -80.083075,
+                "HotelCategory": {
+                  "name": "4 Stars",
+                  "Type": "4Est",
+                  "Code": "4"
+                },
+                "City": {
+                  "name": "Jupiter",
+                  "Id": "4743",
+                  "JPDCode": "JPD039746"
+                }
+              },
+              {
+                "type": "JP_HotelInfoPortfolio",
+                "JPCode": "JP059937",
+                "HasSynonyms": "false",
+                "Name": "Hampton Inn by Hilton Miami-Coconut Grove/Coral Gables",
+                "Zone": {
+                  "JPDCode": "JPD039752",
+                  "Code": "4748",
+                  "Name": "Coconut Grove|Miami city|Florida|USA"
+                },
+                "Address": "2800 SW 28th Terrace, Coconut Grove, FL 33133, USA",
+                "ZipCode": 33133,
+                "Latitude": 25.7386036,
+                "Longitude": -80.2391436,
+                "HotelCategory": {
+                  "name": "3 Stars",
+                  "Type": "3Est",
+                  "Code": "3"
+                },
+                "City": {
+                  "name": "Miami city",
+                  "Id": "44515",
+                  "JPDCode": "JPD081673"
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}
