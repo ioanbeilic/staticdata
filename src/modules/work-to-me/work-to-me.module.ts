@@ -55,6 +55,7 @@ import { HotelDetailsService } from './services/hotel-details/hotel-details.serv
       { name: 'hotelContent', schema: HotelContentSchema },
       { name: 'rooms', schema: RoomSchema },
     ]),
+    ConfigModule,
   ],
   controllers: [HotelController, HotelDetailsController, RoomsController],
   providers: [HotelService, HotelDetailsService, RoomsService],

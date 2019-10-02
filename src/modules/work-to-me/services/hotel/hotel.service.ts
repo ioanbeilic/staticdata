@@ -10,6 +10,8 @@ import { Hotel } from '../../interfaces/hotel.interface';
 import axios from 'axios';
 import { ServerHotelInterface } from '../../interfaces/provider/hotel.interface';
 import { HotelServerResponse } from '../../interfaces/provider/server-hotel-response.interface';
+import { ConfigService } from '../../../../config/config.service';
+import { Configuration } from '../../../../config/config.keys';
 
 @Injectable()
 export class HotelService {
@@ -54,6 +56,7 @@ export class HotelService {
   constructor(
     public readonly amqpConnection: AmqpConnection,
     @InjectModel('hotels') private readonly hotelModel: Model<Hotel>,
+    private readonly configService: ConfigService,
   ) {}
 
   async publishHotels(): Promise<void> {
@@ -216,10 +219,16 @@ export class HotelService {
        * total pages init to 0 and pages init to 1
        * only corresponded the last page
        */
+
       if (Number(this.totalPages) === Number(page)) {
         // publish-hotels-content
         // console.log('run ');
-        const _ = await axios.get('hotel-details/publish-hotels-content');
+
+        const _ = await axios.get(
+          `${this.configService.get(
+            Configuration.HOST,
+          )}/hotel-details/publish-hotels-content`,
+        );
         // console.log(_.status);
         if (_.status === 204) {
           this.totalPages = 0;

@@ -23,6 +23,7 @@ export class ConfigService {
         PORT: process.env.PORT as string,
         MONGODB_URI: process.env.PORT as string,
         RABBITMQ_URI: process.env.RABBITMQ_URI as string,
+        HOST: process.env.HOST as string,
       };
     }
   }
