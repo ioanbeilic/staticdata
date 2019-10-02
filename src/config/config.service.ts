@@ -24,6 +24,9 @@ export class ConfigService {
         MONGODB_URI: process.env.PORT as string,
         RABBITMQ_URI: process.env.RABBITMQ_URI as string,
         HOST: process.env.HOST as string,
+        WORK_TO_ME_URL: process.env.WORK_TO_ME_URL as string,
+        WORK_TO_ME_PASSWORD: process.env.WORK_TO_ME_PASSWORD as string,
+        WORK_TO_ME_LOGIN: process.env.WORK_TO_ME_LOGIN as string,
       };
     }
   }

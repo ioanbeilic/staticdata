@@ -4,7 +4,7 @@ import { AxiosResponse } from 'axios';
 import { Page } from '../../dto/pages.dto';
 import { AmqpConnection, RabbitSubscribe, Nack } from '@nestjs-plus/rabbitmq';
 import { CreateHotelDto } from '../../dto/create-hotel.dto';
-import { Model } from 'mongoose';
+import { Model, Connection } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 import { Hotel } from '../../interfaces/hotel.interface';
 import axios from 'axios';
@@ -17,8 +17,8 @@ import { Configuration } from '../../../../config/config.keys';
 export class HotelService {
   version = '1.1';
   language = 'en';
-  pass = 'gw7yx6qU';
-  login = 'XMLTestCandamena';
+  pass: string;
+  login: string;
   totalPages = 0;
   page = 1;
 
@@ -26,8 +26,8 @@ export class HotelService {
     'Content-Type': 'text/xml',
     'Accept-Encoding': 'gzip, deflate',
   };
-  url =
-    'https://xml-uat.bookingengine.es/WebService/JP/Operations/StaticDataTransactions.asmx?WSDL';
+  query = '/WebService/JP/Operations/StaticDataTransactions.asmx?WSDL';
+  url: string;
 
   /**
    * pages Options - convert xml to json
@@ -57,7 +57,15 @@ export class HotelService {
     public readonly amqpConnection: AmqpConnection,
     @InjectModel('hotels') private readonly hotelModel: Model<Hotel>,
     private readonly configService: ConfigService,
-  ) {}
+  ) {
+    /**
+     * load data from process.env
+     */
+    this.pass = this.configService.get(Configuration.WORK_TO_ME_PASSWORD);
+    this.login = this.configService.get(Configuration.WORK_TO_ME_LOGIN);
+    this.url =
+      this.configService.get(Configuration.WORK_TO_ME_URL) + this.query;
+  }
 
   async publishHotels(): Promise<void> {
     let response: AxiosResponse;
