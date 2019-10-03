@@ -23,26 +23,17 @@ import { RoomSchema } from './schemas/room.schema';
     RabbitMQModule.forRootAsync({
       imports: [ConfigModule],
       useFactory: (configService: ConfigService) => ({
-        exchanges: [
-          {
-            name: 'beds_online_hotels',
-            type: 'fanout',
-          },
-          {
-            name: 'bed_online-detail',
-            type: 'fanout',
-          },
-        ],
         uri: configService.get('RABBITMQ_URI'),
         prefetchCount: 1, // only 1 request each time default 10
       }),
       inject: [ConfigService],
     }),
     MongooseModule.forFeature([
-      { name: 'hotels', schema: HotelSchema },
-      { name: 'hotelContent', schema: HotelDetailsSchema },
-      { name: 'rooms', schema: RoomSchema },
+      { name: 'beds_on_line_hotels', schema: HotelSchema },
+      { name: 'beds_on_line:hotelContent', schema: HotelDetailsSchema },
+      { name: 'beds_on_line_rooms', schema: RoomSchema },
     ]),
+    ConfigModule,
   ],
   controllers: [HotelsController, HotelDetailsController, ImagesController],
   providers: [HotelsService, HotelDetailsService, ImagesService],

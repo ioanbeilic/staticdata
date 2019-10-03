@@ -34,7 +34,7 @@ interface Room {
   };
 }
 
-interface Facility {
+export interface FacilityProvider {
   facilityCode: number;
   facilityGroupCode: number;
   description: {
@@ -45,7 +45,7 @@ interface Facility {
   voucher: boolean;
 }
 
-interface Image {
+export interface ImageProvider {
   type: {
     code: string;
     description: {
@@ -69,7 +69,7 @@ interface Wildcard {
   };
 }
 
-export interface HotelDetailsProvider {
+export interface HotelDetailsProviderResponse {
   auditData: {
     processTime: string;
     timestamp: string;
@@ -78,89 +78,91 @@ export interface HotelDetailsProvider {
     environment: string;
     release: string;
   };
-  hotel: {
-    code: number;
-    name: {
-      content: string;
-    };
+  hotel: HotelDetailsProvider;
+}
+
+export interface HotelDetailsProvider {
+  code: number;
+  name: {
+    content: string;
+  };
+  description: {
+    content: string;
+  };
+  country: {
+    code: string;
+    isoCode: string;
     description: {
       content: string;
     };
-    country: {
-      code: string;
-      isoCode: string;
-      description: {
-        content: string;
-      };
-    };
-    state: {
-      code: string;
-      name: string;
-    };
-    destination: {
-      code: string;
-      name: {
-        content: string;
-      };
-      countryCode: string;
-    };
-    zone: {
-      zoneCode: number;
-      name: string;
-      description: {
-        content: string;
-      };
-    };
-    coordinates: {
-      longitude: number;
-      latitude: number;
-    };
-    category: {
-      code: string;
-      description: {
-        content: string;
-      };
-    };
-    categoryGroup: {
-      code: string;
-      description: {
-        content: string;
-      };
-    };
-    chain: {
-      code: string;
-      description: {
-        content: string;
-      };
-    };
-    accommodationType: {
-      code: string;
-      typeMultiDescription: {
-        content: string;
-      };
-      typeDescription: 'Hotel';
-    };
-    boards: Board[];
-
-    segments: Segment[];
-
-    address: {
-      content: string;
-    };
-    postalCode: string;
-    city: {
-      content: string;
-    };
-    email: string;
-    license: string;
-    phones: Phone[];
-    rooms: Room[];
-    facilities: Facility[];
-    images: Image[];
-    wildcards: Wildcard[];
-    web: string;
-    lastUpdate: string;
-    S2C: string;
-    ranking: number;
   };
+  state: {
+    code: string;
+    name: string;
+  };
+  destination: {
+    code: string;
+    name: {
+      content: string;
+    };
+    countryCode: string;
+  };
+  zone: {
+    zoneCode: number;
+    name: string;
+    description: {
+      content: string;
+    };
+  };
+  coordinates: {
+    longitude: number;
+    latitude: number;
+  };
+  category: {
+    code: string;
+    description: {
+      content: string;
+    };
+  };
+  categoryGroup: {
+    code: string;
+    description: {
+      content: string;
+    };
+  };
+  chain: {
+    code: string;
+    description: {
+      content: string;
+    };
+  };
+  accommodationType: {
+    code: string;
+    typeMultiDescription: {
+      content: string;
+    };
+    typeDescription: string;
+  };
+  boards: Board[];
+
+  segments: Segment[];
+
+  address: {
+    content: string;
+  };
+  postalCode: string;
+  city: {
+    content: string;
+  };
+  email: string;
+  license: string;
+  phones: Phone[];
+  rooms: Room[];
+  facilities: FacilityProvider[];
+  images: ImageProvider[];
+  wildcards: Wildcard[];
+  web: string;
+  lastUpdate: string;
+  S2C: string;
+  ranking: number;
 }

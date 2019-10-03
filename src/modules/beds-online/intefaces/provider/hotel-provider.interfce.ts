@@ -79,7 +79,7 @@ interface Wildcard {
   };
 }
 
-interface HotelProvider {
+export interface HotelProvider {
   code: number;
   name: {
     content: string;

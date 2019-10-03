@@ -58,7 +58,7 @@ export class HotelDetailsService {
   constructor(
     private readonly hotelService: HotelService,
     private readonly amqpConnection: AmqpConnection,
-    @InjectModel('hotelContent')
+    @InjectModel('work_to_me_hotel-content')
     private readonly hotelContentModel: Model<HotelContent>,
   ) {}
 
@@ -85,7 +85,7 @@ export class HotelDetailsService {
   @RabbitSubscribe({
     exchange: 'work_to_me_hotel-detail',
     routingKey: 'hotelsContent',
-    queue: 'hotelsContent',
+    queue: 'work_to_me_hotels-content',
   })
   async HotelContent(hotelId: string): Promise<Nack | undefined> {
     // console.log(hotelId);
@@ -167,7 +167,7 @@ export class HotelDetailsService {
         );
       } catch (error) {
         // do do - implement log
-        // console.log(error);
+        console.log(error);
         this.HaveError = true;
       }
     }

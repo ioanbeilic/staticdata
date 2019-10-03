@@ -23,37 +23,15 @@ import { HotelDetailsService } from './services/hotel-details/hotel-details.serv
     RabbitMQModule.forRootAsync({
       imports: [ConfigModule],
       useFactory: (configService: ConfigService) => ({
-        exchanges: [
-          {
-            name: 'work-to-me',
-            type: 'fanout',
-            /*
-            options: {
-              durable?: boolean;
-              internal?: boolean;
-              autoDelete?: boolean;
-              alternateExchange?: string;
-            }
-            */
-          },
-          {
-            name: 'work_to_me_hotels',
-            type: 'fanout',
-          },
-          {
-            name: 'work_to_me_hotel-detail',
-            type: 'fanout',
-          },
-        ],
         uri: configService.get('RABBITMQ_URI'),
         prefetchCount: 1, // only 1 request each time default 10
       }),
       inject: [ConfigService],
     }),
     MongooseModule.forFeature([
-      { name: 'hotels', schema: HotelSchema },
-      { name: 'hotelContent', schema: HotelContentSchema },
-      { name: 'rooms', schema: RoomSchema },
+      { name: 'work_to_me_hotels', schema: HotelSchema },
+      { name: 'work_to_me_hotel-content', schema: HotelContentSchema },
+      { name: 'work_to_me_rooms', schema: RoomSchema },
     ]),
     ConfigModule,
   ],

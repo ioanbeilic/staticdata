@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, HttpCode, HttpStatus } from '@nestjs/common';
 import { HotelDetailsService } from '../../services/hotel-details/hotel-details.service';
 import {
   ApiOperation,
@@ -17,6 +17,7 @@ export class HotelDetailsController {
    */
 
   @Get('/publish-hotels-content')
+  @HttpCode(HttpStatus.NO_CONTENT)
   @ApiOperation({ title: 'initialize process for RabbitMq' })
   @ApiNoContentResponse({
     description:

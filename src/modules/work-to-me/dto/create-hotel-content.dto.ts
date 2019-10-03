@@ -11,7 +11,7 @@ export class CreateHotelContentDto {
   };
   public city: string;
   public address: string;
-  public province: string;
+  public province!: string;
   public country: string;
   public postalCode: string;
   public web: string;
@@ -24,6 +24,7 @@ export class CreateHotelContentDto {
 
   constructor(originalData: ServerHotelContentInterface) {
     this.hotelId = t(originalData, 'JPCode').safeObject || '';
+
     this.name = t(originalData, 'HotelName').safeObject || '';
     this.address = t(originalData, 'Address.Address').safeObject || '';
 
@@ -34,26 +35,7 @@ export class CreateHotelContentDto {
     } else {
       this.description = '';
     }
-    /*
-    console.log(
-      this.hotelId,
-      this.name,
-      this.address,
-      this.description,
-      //this.location,
-      //this.city,
-      //this.province,
-      //this.country,
-      //this.postalCode,
-      //this.web,
-      //this.phones,
-      //this.email,
-      //this.category,
-      //this.photos,
-      //this.facilities,
-      //this.currency,
-    );
-*/
+
     this.postalCode = t(originalData, 'Address.PostalCode').safeObject || '';
 
     this.location = {
@@ -61,21 +43,26 @@ export class CreateHotelContentDto {
       longitude: t(originalData, 'Address.Longitude').safeObject || '',
     };
 
-    if (t(originalData, 'Address.Zone.Name').isString) {
-      this.province = this.getProvince(
-        t(originalData, 'Address.Zone.Name').safeObject || '',
-      );
-      this.city = this.province;
+    if (t(originalData, 'Zone.Name').isString) {
+      this.city = this.getCity(t(originalData, 'Zone.Name').safeObject || '');
     } else {
-      this.province = '';
       this.city = '';
     }
 
-    if (t(originalData, 'Address.Zone.Name').isString) {
-      this.country = this.getCountry(
-        t(originalData, 'Address.Zone.Name').safeObject || '',
+    if (t(originalData, 'Address.Address').isString) {
+      this.province = this.getProvince(
+        t(originalData, 'Address.Address').safeObject,
       );
     } else {
+      this.province = '';
+    }
+
+    if (t(originalData, 'Zone.Name').isString) {
+      this.country = this.getCountry(
+        t(originalData, 'Zone.Name').safeObject || '',
+      );
+    } else {
+      // Zone
       this.country = '';
     }
 
@@ -91,10 +78,42 @@ export class CreateHotelContentDto {
     }
 
     this.email = '';
-    this.category = t(originalData, 'HotelCategory').safeObject || '';
-    this.photos = t(originalData, 'Images.Image').safeObject || '';
+
+    this.category = {
+      name: t(originalData, 'HotelCategory.name').safeObject || '',
+      value: t(originalData, 'HotelCategory.Type').safeObject || '',
+    };
+
+    // this.photos = t(originalData, 'Images.Image').safeObject || '';
+
+    if (t(originalData, 'Images.Image').isArray) {
+      this.photos = this.getImages(t(originalData, 'Images.Image').safeObject);
+    } else {
+      this.photos = [];
+    }
+
     this.facilities = [];
     this.currency = '';
+    /*
+    console.log(
+      this.hotelId,
+      this.name,
+      this.address,
+      this.description,
+      this.postalCode,
+      this.location,
+      this.city,
+      this.province,
+      this.country,
+      this.category,
+      this.web,
+      this.phones,
+      this.email,
+      this.photos,
+      this.facilities,
+      this.currency,
+    );
+    */
   }
 
   getDescription(descriptions: any): void {
@@ -109,12 +128,23 @@ export class CreateHotelContentDto {
     }
   }
 
-  getProvince(city: string) {
+  getCity(city: string) {
     return city.split(',')[0];
   }
 
-  getCountry(city: string) {
-    return city.split(',')[1];
+  getProvince(address: string) {
+    let temp = address.split(',')[1];
+    const re = /[0-9]/g;
+    let province = '';
+    if (temp.match(re)) {
+      province = temp.replace(/[0-9]/g, '');
+    }
+
+    return province;
+  }
+
+  getCountry(country: string) {
+    return country.split(',')[1];
   }
 
   getPhones(phones: Phone[] | Phone): void {
@@ -125,6 +155,35 @@ export class CreateHotelContentDto {
     } else {
       this.phones.push(phones);
     }
+  }
+
+  getImages(
+    images:
+      | { Type: string; FileName: string; Title: string }[]
+      | { Type: string; FileName: string; Title: string },
+  ) {
+    const photos = [];
+    if (Array.isArray(images)) {
+      images.forEach(
+        (img: { Type: string; FileName: string; Title: string }) => {
+          let newImg = {
+            type: img.Type,
+            fileName: img.FileName,
+            title: img.Title,
+          };
+
+          photos.push(newImg);
+        },
+      );
+    } else {
+      let newImg = {
+        type: images.Type,
+        fileName: images.FileName,
+        title: images.Title,
+      };
+      photos.push(newImg);
+    }
+    return photos;
   }
 }
 

@@ -27,6 +27,9 @@ export class ConfigService {
         WORK_TO_ME_URL: process.env.WORK_TO_ME_URL as string,
         WORK_TO_ME_PASSWORD: process.env.WORK_TO_ME_PASSWORD as string,
         WORK_TO_ME_LOGIN: process.env.WORK_TO_ME_LOGIN as string,
+        BEDS_ONLINE_URL: process.env.BEDS_ONLINE_URL as string,
+        BEDS_ONLINE_API_KEY: process.env.BEDS_ONLINE_API_KEY as string,
+        BEDS_ONLINE_SECRET: process.env.BEDS_ONLINE_SECRET as string,
       };
     }
   }

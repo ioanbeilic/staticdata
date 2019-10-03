@@ -55,7 +55,7 @@ export class HotelService {
 
   constructor(
     public readonly amqpConnection: AmqpConnection,
-    @InjectModel('hotels') private readonly hotelModel: Model<Hotel>,
+    @InjectModel('work_to_me_hotels') private readonly hotelModel: Model<Hotel>,
     private readonly configService: ConfigService,
   ) {
     /**
@@ -116,18 +116,26 @@ export class HotelService {
       if (pages.totalPages > 0) {
         for (let i = 1; i <= pages.totalPages; i++) {
           // lunch first que
-          this.amqpConnection.publish('work_to_me_hotels', 'hotels', i);
+          this.amqpConnection.publish(
+            'work_to_me_hotels',
+            'work_to_me_hotels',
+            i,
+          );
         }
       }
     } catch (error) {
       this.HaveError = true;
-      // console.log(error);
+      console.log(error);
     }
   }
 
   async publishHotelsPages(page: number): Promise<void> {
     try {
-      this.amqpConnection.publish('work_to_me_hotels', 'hotels', page);
+      this.amqpConnection.publish(
+        'work_to_me_hotels',
+        'work_to_me_hotels',
+        page,
+      );
     } catch (error) {
       this.HaveError = true;
       throw error;
@@ -136,8 +144,8 @@ export class HotelService {
 
   @RabbitSubscribe({
     exchange: 'work_to_me_hotels',
-    routingKey: 'hotels',
-    queue: 'hotels',
+    routingKey: 'work_to_me_hotels',
+    queue: 'work_to_me_hotels',
   })
   async subscribeHotels(page: number): Promise<Nack | undefined> {
     const request = `
@@ -230,8 +238,7 @@ export class HotelService {
 
       if (Number(this.totalPages) === Number(page)) {
         // publish-hotels-content
-        // console.log('run ');
-
+        console.log('run ');
         const _ = await axios.get(
           `${this.configService.get(
             Configuration.HOST,
