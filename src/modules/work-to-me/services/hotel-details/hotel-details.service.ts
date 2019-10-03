@@ -60,9 +60,11 @@ export class HotelDetailsService {
     private readonly amqpConnection: AmqpConnection,
     @InjectModel('work_to_me_hotel-content')
     private readonly hotelContentModel: Model<HotelContent>,
-  ) {}
+  ) { }
 
   async publishALlhHotelContent() {
+
+
     const hotels = await this.hotelService.getHotels();
     // console.log('hotel-details');
     hotels.forEach((hotel: Hotel) => {

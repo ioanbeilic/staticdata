@@ -25,7 +25,7 @@ export class HotelsService {
   headers = {};
 
   url = 'https://api.test.hotelbeds.com';
-  query = `/hotel-content-api/1.0/hotels?fields=${this.fields}&language=${this.language}&from=${this.from}&to=${this.to}&useSecondaryLanguage=${this.useSecondaryLanguage}`;
+  query!: string
   HaveError: boolean = false;
   totalPages: number = 0;
 
@@ -90,18 +90,22 @@ export class HotelsService {
         if (data.total > 0) {
           this.totalPages = data.total / 100;
           for (let i = 1; i <= this.totalPages; i++) {
-            this.from = i;
-
+            const from = i;
+            let to
             if (i * 100 > this.totalPages) {
-              this.to = this.totalPages;
+              to = this.totalPages;
             } else {
-              this.to = i * 100;
+              to = i * 100;
             }
+
+            const query = `/hotel-content-api/1.0/hotels?fields=${this.fields}
+            &language=${this.language}&from=${from}
+            &to=${to}&useSecondaryLanguage=${this.useSecondaryLanguage}`;
             // lunch first que
             this.amqpConnection.publish(
               'beds_online_hotels',
               'beds_online_hotels',
-              this.query,
+              query,
             );
           }
         }
@@ -126,6 +130,8 @@ export class HotelsService {
      * xml server response as type AxiosResponse
      */
     let response: AxiosResponse;
+
+    console.log(query)
 
     this.url = this.configService.get(Configuration.BEDS_ONLINE_URL) + query;
 
@@ -165,7 +171,7 @@ export class HotelsService {
             );
           } catch (error) {
             // do do - implement log
-            // console.log(error, 'hotel-database');
+            console.log(error, 'hotel-database');
             this.HaveError = true;
           }
         });

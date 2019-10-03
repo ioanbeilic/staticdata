@@ -69,7 +69,6 @@ export class HotelService {
 
   async publishHotels(): Promise<void> {
     let response: AxiosResponse;
-
     const request = `
     <soapenv:Envelope
         xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
@@ -93,7 +92,7 @@ export class HotelService {
       /**
        * validate if server response contain error message
        */
-
+      console.log(response)
       if (await this.Validator(String(response))) {
         throw new HttpException(
           String(response),
@@ -125,7 +124,7 @@ export class HotelService {
       }
     } catch (error) {
       this.HaveError = true;
-      // console.log(error);
+      console.log(error);
     }
   }
 
