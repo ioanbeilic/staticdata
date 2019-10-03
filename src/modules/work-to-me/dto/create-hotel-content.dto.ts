@@ -133,7 +133,7 @@ export class CreateHotelContentDto {
   }
 
   getProvince(address: string) {
-    let temp = address.split(',')[1];
+    const temp = address.split(',')[1];
     const re = /[0-9]/g;
     let province = '';
     if (temp.match(re)) {
@@ -159,14 +159,14 @@ export class CreateHotelContentDto {
 
   getImages(
     images:
-      | { Type: string; FileName: string; Title: string }[]
+      | Array<{ Type: string; FileName: string; Title: string }>
       | { Type: string; FileName: string; Title: string },
   ) {
     const photos = [];
     if (Array.isArray(images)) {
       images.forEach(
         (img: { Type: string; FileName: string; Title: string }) => {
-          let newImg = {
+          const newImg = {
             type: img.Type,
             fileName: img.FileName,
             title: img.Title,
@@ -176,7 +176,7 @@ export class CreateHotelContentDto {
         },
       );
     } else {
-      let newImg = {
+      const newImg = {
         type: images.Type,
         fileName: images.FileName,
         title: images.Title,

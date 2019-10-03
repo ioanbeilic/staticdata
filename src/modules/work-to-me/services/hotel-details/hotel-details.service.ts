@@ -167,7 +167,7 @@ export class HotelDetailsService {
         );
       } catch (error) {
         // do do - implement log
-        console.log(error);
+        // console.log(error);
         this.HaveError = true;
       }
     }

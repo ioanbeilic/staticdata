@@ -125,7 +125,7 @@ export class HotelService {
       }
     } catch (error) {
       this.HaveError = true;
-      console.log(error);
+      // console.log(error);
     }
   }
 
@@ -238,7 +238,7 @@ export class HotelService {
 
       if (Number(this.totalPages) === Number(page)) {
         // publish-hotels-content
-        console.log('run ');
+        // console.log('run ');
         const _ = await axios.get(
           `${this.configService.get(
             Configuration.HOST,

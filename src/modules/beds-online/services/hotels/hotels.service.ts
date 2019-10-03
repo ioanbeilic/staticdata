@@ -42,13 +42,13 @@ export class HotelsService {
    * generate app signature
    */
   generateApiKey() {
-    //Begin UTC creation
+    // Begin UTC creation
     const utcDate = Math.floor(new Date().getTime() / 1000);
-    //Begin Signature Assembly
+    // Begin Signature Assembly
     this.publicKey = this.configService.get(Configuration.BEDS_ONLINE_API_KEY);
     const privateKey = this.configService.get(Configuration.BEDS_ONLINE_SECRET);
     const assemble = this.publicKey + privateKey + utcDate;
-    //Begin SHA-256 Encryption
+    // Begin SHA-256 Encryption
     this.signature = CryptoJS.SHA256(assemble).toString(CryptoJS.enc.Hex);
   }
 
@@ -57,7 +57,8 @@ export class HotelsService {
     const headers = {
       'Api-key': this.publicKey,
       'X-Signature': this.signature,
-      Accept: 'application/json',
+      // prettier-ignore
+      'Accept': 'application/json',
       'Accept-Encoding': 'gzip',
     };
 
@@ -79,12 +80,12 @@ export class HotelsService {
        * validate if server response contain error message
        */
 
-      if (response.status == 200) {
+      if (response.status === 200) {
         const data: HotelProviderResponse = response.data;
         /**
          * save pages number to this.totalPages to be checkered on subscriber for the next que
          */
-        console.log(response.data.total);
+        // console.log(response.data.total);
 
         if (data.total > 0) {
           this.totalPages = data.total / 100;
@@ -133,7 +134,7 @@ export class HotelsService {
         headers: this.generateHeaders(),
       });
 
-      if (response.status == 200) {
+      if (response.status === 200) {
         const data: HotelProviderResponse = response.data;
 
         data.hotels.forEach(async hotel => {

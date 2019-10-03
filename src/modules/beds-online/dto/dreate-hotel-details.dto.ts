@@ -68,7 +68,7 @@ export class CreateHotelContentDto {
   getImages(images: ImageProvider[]) {
     if (Array.isArray(images)) {
       images.forEach(img => {
-        let newImg = {
+        const newImg = {
           type: img.type.code,
           fileName: img.path,
           title: img.type.description.content,
@@ -82,7 +82,7 @@ export class CreateHotelContentDto {
   getFacilities(facilities: FacilityProvider[]) {
     if (Array.isArray(facilities)) {
       facilities.forEach(facility => {
-        let newFacility = {
+        const newFacility = {
           id: facility.facilityCode,
           description: facility.description.content,
           groupId: facility.facilityGroupCode,
