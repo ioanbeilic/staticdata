@@ -99,3 +99,7 @@ services:
       - "ELASTIC_PASSWORD=asdfgh"
     depends_on:
       - "elasticsearch"
+
+  volumes:
+    esdata01:
+      driver: local
