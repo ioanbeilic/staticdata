@@ -30,6 +30,7 @@ export class ConfigService {
         BEDS_ONLINE_URL: process.env.BEDS_ONLINE_URL as string,
         BEDS_ONLINE_API_KEY: process.env.BEDS_ONLINE_API_KEY as string,
         BEDS_ONLINE_SECRET: process.env.BEDS_ONLINE_SECRET as string,
+        ELASTICSEARCH_HOST: process.env.ELASTICSEARCH_HOST as string,
       };
     }
   }

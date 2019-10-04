@@ -8,6 +8,7 @@ import { Configuration } from './config/config.keys';
 import { AmqpConnection, RabbitMQModule } from '@nestjs-plus/rabbitmq';
 import { WorkToMeModule } from './modules/work-to-me/work-to-me.module';
 import { BedsOnlineModule } from './modules/beds-online/beds-online.module';
+import { ElasticsearchModule } from '@nestjs/elasticsearch';
 
 @Module({
   imports: [
@@ -39,6 +40,15 @@ import { BedsOnlineModule } from './modules/beds-online/beds-online.module';
         ],
         uri: configService.get('RABBITMQ_URI'),
         prefetchCount: 1, // only 1 request each time default 10
+      }),
+      inject: [ConfigService],
+    }),
+
+    ElasticsearchModule.registerAsync({
+      imports: [ConfigModule],
+      useFactory: async (configService: ConfigService) => ({
+        host: configService.get('ELASTICSEARCH_HOST'),
+        log: 'trace',
       }),
       inject: [ConfigService],
     }),
