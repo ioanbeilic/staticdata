@@ -86,21 +86,35 @@ export class HotelsService {
          * save pages number to this.totalPages to be checkered on subscriber for the next que
          */
         // console.log(response.data.total);
-
+        /**
+         * initializr fom to to 0
+         */
+        let from: number = 0
+        let to: number = 0
         if (data.total > 0) {
+          /**
+           * calculate number of pages
+           */
           this.totalPages = data.total / 100;
           for (let i = 1; i <= this.totalPages; i++) {
-            const from = i;
-            let to
-            if (i * 100 > this.totalPages) {
-              to = this.totalPages;
+            /**
+             * 
+             */
+            if (from === 0) {
+              from = i
+
             } else {
-              to = i * 100;
+              from = i * 100 + 1
             }
+
+            to = to < this.totalPages ? i * 100 : this.totalPages
+
 
             const query = `/hotel-content-api/1.0/hotels?fields=${this.fields}
             &language=${this.language}&from=${from}
             &to=${to}&useSecondaryLanguage=${this.useSecondaryLanguage}`;
+
+            console.log(query)
             // lunch first que
             this.amqpConnection.publish(
               'beds_online_hotels',
@@ -126,12 +140,14 @@ export class HotelsService {
     queue: 'beds_online_hotels',
   })
   async subscribeHotels(query: string): Promise<Nack | undefined> {
+
+    console.log(query)
     /**
      * xml server response as type AxiosResponse
      */
     let response: AxiosResponse;
 
-    console.log(query)
+    // console.log(query)
 
     this.url = this.configService.get(Configuration.BEDS_ONLINE_URL) + query;
 
@@ -207,8 +223,13 @@ export class HotelsService {
       }
     } catch (error) {
       this.HaveError = true;
+      console.log(error)
       // do do - implement log
     }
+
+
+
+
     /**
      *  save data to database
      */

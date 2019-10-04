@@ -188,7 +188,7 @@ export class HotelService {
      */
 
     if (this.hotels) {
-      this.hotels.forEach(async (hotel: ServerHotelInterface) => {
+      for (const hotel of this.hotels) {
         const createHotel = new CreateHotelDto(hotel);
         const newHotel = new this.hotelModel(createHotel);
 
@@ -219,7 +219,8 @@ export class HotelService {
           // console.log(error, 'hotel-database');
           this.HaveError = true;
         }
-      });
+      }
+
 
       /**
        * check if the current page is the last page
