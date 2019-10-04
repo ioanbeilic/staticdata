@@ -17,14 +17,10 @@ export class HotelsService {
    */
   fields = 'all';
   language = 'ENG';
-  from = 1;
-  to = 1;
   useSecondaryLanguage = false;
   signature!: string;
   publicKey!: string;
   headers = {};
-
-  url = 'https://api.test.hotelbeds.com';
   query!: string;
   HaveError: boolean = false;
   totalPages: number = 0;
@@ -66,13 +62,21 @@ export class HotelsService {
   }
 
   async publishHotels(): Promise<void> {
+
+    let from: number = 1;
+    let to: number = 1;
+
     let response: AxiosResponse;
 
-    this.url =
-      this.configService.get(Configuration.BEDS_ONLINE_URL) + this.query;
+    const query = `/hotel-content-api/1.0/hotels?fields=${this.fields}
+    &language=${this.language}&from=${from}
+    &to=${to}&useSecondaryLanguage=${this.useSecondaryLanguage}`;
+
+    const url =
+      this.configService.get(Configuration.BEDS_ONLINE_URL) + query;
 
     try {
-      response = await axios.get(this.url, {
+      response = await axios.get(url, {
         headers: this.generateHeaders(),
       });
 
@@ -89,8 +93,7 @@ export class HotelsService {
         /**
          * initializr fom to to 0
          */
-        let from: number = 0;
-        let to: number = 0;
+
         if (data.total > 0) {
           /**
            * calculate number of pages
@@ -100,7 +103,7 @@ export class HotelsService {
             /**
              *
              */
-            if (from === 0) {
+            if (from === 1) {
               from = i;
             } else {
               from = i * 100 + 1;
@@ -108,16 +111,12 @@ export class HotelsService {
 
             to = to < this.totalPages ? i * 100 : this.totalPages;
 
-            const query = `/hotel-content-api/1.0/hotels?fields=${this.fields}
-            &language=${this.language}&from=${from}
-            &to=${to}&useSecondaryLanguage=${this.useSecondaryLanguage}`;
-
             // console.log(query);
             // lunch first que
             this.amqpConnection.publish(
               'beds_online_hotels',
               'beds_online_hotels',
-              query,
+              { from, to },
             );
           }
         }
@@ -137,19 +136,23 @@ export class HotelsService {
     routingKey: 'beds_online_hotels',
     queue: 'beds_online_hotels',
   })
-  async subscribeHotels(query: string): Promise<Nack | undefined> {
+  async subscribeHotels({ from, to }: any): Promise<Nack | undefined> {
     // console.log(query);
     /**
      * xml server response as type AxiosResponse
      */
     let response: AxiosResponse;
 
-    // console.log(query)
+    console.log(from, to)
 
-    this.url = this.configService.get(Configuration.BEDS_ONLINE_URL) + query;
+    const query = `/hotel-content-api/1.0/hotels?fields=${this.fields}
+    &language=${this.language}&from=${from}
+    &to=${to}&useSecondaryLanguage=${this.useSecondaryLanguage}`;
+
+    const url = this.configService.get(Configuration.BEDS_ONLINE_URL) + query;
 
     try {
-      response = await axios.get(this.url, {
+      response = await axios.get(url, {
         headers: this.generateHeaders(),
       });
 
@@ -202,26 +205,26 @@ export class HotelsService {
          * total pages init to 0 and pages init to 1
          * only corresponded the last page
          */
-        /*
-        if (Number(this.totalPages) === Number(this.to)) {
-          // publish-hotels-content
-          console.log('run ');
-          const _ = await axios.get(
-            `${this.configService.get(
-              Configuration.HOST,
-            )}/beds-online/hotel-details/publish-hotels-content`,
-          );
-          // console.log(_.status);
-          if (_.status === 204) {
-            this.totalPages = 0;
-          }
-        }
-        */
+
       }
     } catch (error) {
       this.HaveError = true;
       // console.log(error);
       // do do - implement log
+    }
+
+    if (Number(this.totalPages) === Number(to)) {
+      // publish-hotels-content
+      console.log('run ');
+      const _ = await axios.get(
+        `${this.configService.get(
+          Configuration.HOST,
+        )}/beds-online/hotel-details/publish-hotels-content`,
+      );
+      // console.log(_.status);
+      if (_.status === 204) {
+        this.totalPages = 0;
+      }
     }
   }
 }
