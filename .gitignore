@@ -36,5 +36,5 @@ lerna-debug.log*
 # user
 data
 dist
-elk-data
+esdata01/*
 .env
