@@ -62,7 +62,6 @@ export class HotelsService {
   }
 
   async publishHotels(): Promise<void> {
-
     let from: number = 1;
     let to: number = 1;
 
@@ -72,8 +71,7 @@ export class HotelsService {
     &language=${this.language}&from=${from}
     &to=${to}&useSecondaryLanguage=${this.useSecondaryLanguage}`;
 
-    const url =
-      this.configService.get(Configuration.BEDS_ONLINE_URL) + query;
+    const url = this.configService.get(Configuration.BEDS_ONLINE_URL) + query;
 
     try {
       response = await axios.get(url, {
@@ -98,14 +96,13 @@ export class HotelsService {
           /**
            * calculate number of pages
            */
-          this.totalPages = data.total / 100;
-          for (let i = 1; i <= this.totalPages; i++) {
+          this.totalPages = Math.ceil(data.total / 100);
+
+          for (let i = 1; i <= this.totalPages; i = i * 100) {
             /**
              *
              */
-            if (from === 1) {
-              from = i;
-            } else {
+            if (i > 1) {
               from = i * 100 + 1;
             }
 
@@ -137,13 +134,12 @@ export class HotelsService {
     queue: 'beds_online_hotels',
   })
   async subscribeHotels({ from, to }: any): Promise<Nack | undefined> {
-    // console.log(query);
+    // console.log(from, to);
     /**
      * xml server response as type AxiosResponse
      */
-    let response: AxiosResponse;
 
-    console.log(from, to)
+    let response: AxiosResponse;
 
     const query = `/hotel-content-api/1.0/hotels?fields=${this.fields}
     &language=${this.language}&from=${from}
@@ -159,7 +155,7 @@ export class HotelsService {
       if (response.status === 200) {
         const data: HotelProviderResponse = response.data;
 
-        data.hotels.forEach(async hotel => {
+        for (const hotel of data.hotels) {
           const createHotel = new CreateHotelDto(hotel);
           const newHotel = new this.hotelModel(createHotel);
           try {
@@ -190,7 +186,7 @@ export class HotelsService {
             // console.log(error, 'hotel-database');
             this.HaveError = true;
           }
-        });
+        }
 
         /**
          * check if the current page is the last page
@@ -200,31 +196,30 @@ export class HotelsService {
           return new Nack(true);
         }
 
+        if (Number(this.totalPages) === Number(to)) {
+          // publish-hotels-content
+          // console.log('run ');
+          const _ = await axios.get(
+            `${this.configService.get(
+              Configuration.HOST,
+            )}/beds-online/hotel-details/publish-hotels-content`,
+          );
+          // console.log(_.status);
+          if (_.status === 204) {
+            this.totalPages = 0;
+          }
+        }
+
         // to du automatic init next task
         /**
          * total pages init to 0 and pages init to 1
          * only corresponded the last page
          */
-
       }
     } catch (error) {
       this.HaveError = true;
       // console.log(error);
       // do do - implement log
-    }
-
-    if (Number(this.totalPages) === Number(to)) {
-      // publish-hotels-content
-      console.log('run ');
-      const _ = await axios.get(
-        `${this.configService.get(
-          Configuration.HOST,
-        )}/beds-online/hotel-details/publish-hotels-content`,
-      );
-      // console.log(_.status);
-      if (_.status === 204) {
-        this.totalPages = 0;
-      }
     }
   }
 }

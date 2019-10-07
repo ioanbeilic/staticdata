@@ -43,7 +43,7 @@ import { ElasticsearchModule } from '@nestjs/elasticsearch';
       }),
       inject: [ConfigService],
     }),
-
+    /*
     ElasticsearchModule.registerAsync({
       imports: [ConfigModule],
       useFactory: async (configService: ConfigService) => ({
@@ -52,7 +52,7 @@ import { ElasticsearchModule } from '@nestjs/elasticsearch';
       }),
       inject: [ConfigService],
     }),
-
+*/
     ConfigModule,
     DatabaseModule,
     HttpModule,
