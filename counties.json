@@ -1,0 +1,700 @@
+{
+  "OTA_ReadRS": {
+    "TimeStamp": "2019-10-07T02:01:53",
+    "Success": "",
+    "ReadResponse": {
+      "Countries": {
+        "Country": [
+          { "CountryCode": "36", "CountryName": "Andorra", "CountryISO": "AD" },
+          {
+            "CountryCode": "114",
+            "CountryName": "United Arab Emirates",
+            "CountryISO": "AE"
+          },
+          {
+            "CountryCode": "166",
+            "CountryName": "Afghanistan",
+            "CountryISO": "AF"
+          },
+          {
+            "CountryCode": "129",
+            "CountryName": "Antigua and Barbuda",
+            "CountryISO": "AG"
+          },
+          {
+            "CountryCode": "191",
+            "CountryName": "Anguilla",
+            "CountryISO": "AI"
+          },
+          { "CountryCode": "41", "CountryName": "Albania", "CountryISO": "AL" },
+          { "CountryCode": "42", "CountryName": "Armenia", "CountryISO": "AM" },
+          {
+            "CountryCode": "130",
+            "CountryName": "Netherlands Antilles",
+            "CountryISO": "AN"
+          },
+          { "CountryCode": "137", "CountryName": "Angola", "CountryISO": "AO" },
+          {
+            "CountryCode": "43",
+            "CountryName": "Argentina",
+            "CountryISO": "AR"
+          },
+          { "CountryCode": "6", "CountryName": "Austria", "CountryISO": "AT" },
+          {
+            "CountryCode": "23",
+            "CountryName": "Australia",
+            "CountryISO": "AU"
+          },
+          { "CountryCode": "139", "CountryName": "Aruba", "CountryISO": "AW" },
+          {
+            "CountryCode": "44",
+            "CountryName": "Azerbaijan",
+            "CountryISO": "AZ"
+          },
+          {
+            "CountryCode": "46",
+            "CountryName": "Bosnia and Herzegovina",
+            "CountryISO": "BA"
+          },
+          {
+            "CountryCode": "134",
+            "CountryName": "Barbados",
+            "CountryISO": "BB"
+          },
+          {
+            "CountryCode": "210",
+            "CountryName": "Bangladesh",
+            "CountryISO": "BD"
+          },
+          { "CountryCode": "19", "CountryName": "Belgium", "CountryISO": "BE" },
+          {
+            "CountryCode": "182",
+            "CountryName": "Burkina Faso",
+            "CountryISO": "BF"
+          },
+          {
+            "CountryCode": "45",
+            "CountryName": "Bulgaria",
+            "CountryISO": "BG"
+          },
+          { "CountryCode": "48", "CountryName": "Bahrain", "CountryISO": "BH" },
+          {
+            "CountryCode": "211",
+            "CountryName": "Burundi",
+            "CountryISO": "BI"
+          },
+          { "CountryCode": "192", "CountryName": "Benin", "CountryISO": "BJ" },
+          {
+            "CountryCode": "176",
+            "CountryName": "Bermuda",
+            "CountryISO": "BM"
+          },
+          { "CountryCode": "181", "CountryName": "Brunei", "CountryISO": "BN" },
+          { "CountryCode": "47", "CountryName": "Bolivia", "CountryISO": "BO" },
+          { "CountryCode": "10", "CountryName": "Brazil", "CountryISO": "BR" },
+          {
+            "CountryCode": "128",
+            "CountryName": "Bahamas",
+            "CountryISO": "BS"
+          },
+          { "CountryCode": "227", "CountryName": "Bhutan", "CountryISO": "BT" },
+          {
+            "CountryCode": "95",
+            "CountryName": "Botswana",
+            "CountryISO": "BW"
+          },
+          { "CountryCode": "49", "CountryName": "Belarus", "CountryISO": "BY" },
+          { "CountryCode": "167", "CountryName": "Belize", "CountryISO": "BZ" },
+          { "CountryCode": "9", "CountryName": "Canada", "CountryISO": "CA" },
+          {
+            "CountryCode": "194",
+            "CountryName": "Republic of the Congo",
+            "CountryISO": "CG"
+          },
+          {
+            "CountryCode": "18",
+            "CountryName": "Switzerland",
+            "CountryISO": "CH"
+          },
+          {
+            "CountryCode": "193",
+            "CountryName": "Ivory Coast",
+            "CountryISO": "CI"
+          },
+          {
+            "CountryCode": "205",
+            "CountryName": "Cook Islands",
+            "CountryISO": "CK"
+          },
+          { "CountryCode": "97", "CountryName": "Chile", "CountryISO": "CL" },
+          {
+            "CountryCode": "147",
+            "CountryName": "Cameroon",
+            "CountryISO": "CM"
+          },
+          { "CountryCode": "50", "CountryName": "China", "CountryISO": "CN" },
+          {
+            "CountryCode": "52",
+            "CountryName": "Colombia",
+            "CountryISO": "CO"
+          },
+          {
+            "CountryCode": "127",
+            "CountryName": "Costa Rica",
+            "CountryISO": "CR"
+          },
+          { "CountryCode": "141", "CountryName": "Cuba", "CountryISO": "CU" },
+          {
+            "CountryCode": "136",
+            "CountryName": "Cape Verde",
+            "CountryISO": "CV"
+          },
+          {
+            "CountryCode": "234",
+            "CountryName": "Curacao",
+            "CountryISO": "CW"
+          },
+          { "CountryCode": "53", "CountryName": "Cyprus", "CountryISO": "CY" },
+          {
+            "CountryCode": "32",
+            "CountryName": "Czech Republic",
+            "CountryISO": "CZ"
+          },
+          { "CountryCode": "4", "CountryName": "Germany", "CountryISO": "DE" },
+          { "CountryCode": "26", "CountryName": "Denmark", "CountryISO": "DK" },
+          {
+            "CountryCode": "208",
+            "CountryName": "Dominica",
+            "CountryISO": "DM"
+          },
+          {
+            "CountryCode": "138",
+            "CountryName": "Dominican Republic",
+            "CountryISO": "DO"
+          },
+          { "CountryCode": "54", "CountryName": "Algeria", "CountryISO": "DZ" },
+          {
+            "CountryCode": "237",
+            "CountryName": "Expo Abreu",
+            "CountryISO": "EA"
+          },
+          { "CountryCode": "56", "CountryName": "Ecuador", "CountryISO": "EC" },
+          { "CountryCode": "57", "CountryName": "Estonia", "CountryISO": "EE" },
+          { "CountryCode": "58", "CountryName": "Egypt", "CountryISO": "EG" },
+          {
+            "CountryCode": "168",
+            "CountryName": "Eritrea",
+            "CountryISO": "ER"
+          },
+          { "CountryCode": "2", "CountryName": "Spain", "CountryISO": "ES" },
+          {
+            "CountryCode": "154",
+            "CountryName": "Ethiopia",
+            "CountryISO": "ET"
+          },
+          { "CountryCode": "17", "CountryName": "Finland", "CountryISO": "FI" },
+          { "CountryCode": "149", "CountryName": "Fiji", "CountryISO": "FJ" },
+          { "CountryCode": "3", "CountryName": "France", "CountryISO": "FR" },
+          { "CountryCode": "195", "CountryName": "Gabon", "CountryISO": "GA" },
+          {
+            "CountryCode": "5",
+            "CountryName": "United Kingdom",
+            "CountryISO": "GB"
+          },
+          {
+            "CountryCode": "142",
+            "CountryName": "Grenada",
+            "CountryISO": "GD"
+          },
+          {
+            "CountryCode": "169",
+            "CountryName": "Georgia",
+            "CountryISO": "GE"
+          },
+          {
+            "CountryCode": "196",
+            "CountryName": "French Guiana",
+            "CountryISO": "GF"
+          },
+          { "CountryCode": "190", "CountryName": "Ghana", "CountryISO": "GH" },
+          {
+            "CountryCode": "60",
+            "CountryName": "Gibraltar",
+            "CountryISO": "GI"
+          },
+          { "CountryCode": "189", "CountryName": "Gambia", "CountryISO": "GM" },
+          { "CountryCode": "224", "CountryName": "Guinea", "CountryISO": "GN" },
+          {
+            "CountryCode": "172",
+            "CountryName": "Guadalupe",
+            "CountryISO": "GP"
+          },
+          {
+            "CountryCode": "232",
+            "CountryName": "Equatorial Guinea",
+            "CountryISO": "GQ"
+          },
+          { "CountryCode": "35", "CountryName": "Greece", "CountryISO": "GR" },
+          {
+            "CountryCode": "61",
+            "CountryName": "Guatemala",
+            "CountryISO": "GT"
+          },
+          { "CountryCode": "152", "CountryName": "Guam", "CountryISO": "GU" },
+          {
+            "CountryCode": "201",
+            "CountryName": "Guine-Bissau",
+            "CountryISO": "GW"
+          },
+          {
+            "CountryCode": "213",
+            "CountryName": "Guiana Francesa",
+            "CountryISO": "GY"
+          },
+          {
+            "CountryCode": "150",
+            "CountryName": "Honduras",
+            "CountryISO": "HN"
+          },
+          { "CountryCode": "64", "CountryName": "Croatia", "CountryISO": "HR" },
+          { "CountryCode": "198", "CountryName": "Haiti", "CountryISO": "HT" },
+          { "CountryCode": "20", "CountryName": "Hungary", "CountryISO": "HU" },
+          {
+            "CountryCode": "65",
+            "CountryName": "Indonesia",
+            "CountryISO": "ID"
+          },
+          { "CountryCode": "16", "CountryName": "Ireland", "CountryISO": "IE" },
+          { "CountryCode": "66", "CountryName": "Israel", "CountryISO": "IL" },
+          { "CountryCode": "67", "CountryName": "India", "CountryISO": "IN" },
+          { "CountryCode": "209", "CountryName": "Iraq", "CountryISO": "IQ" },
+          { "CountryCode": "68", "CountryName": "Iran", "CountryISO": "IR" },
+          { "CountryCode": "69", "CountryName": "Iceland", "CountryISO": "IS" },
+          { "CountryCode": "7", "CountryName": "Italy", "CountryISO": "IT" },
+          {
+            "CountryCode": "133",
+            "CountryName": "Jamaica",
+            "CountryISO": "JM"
+          },
+          { "CountryCode": "63", "CountryName": "Jordan", "CountryISO": "JO" },
+          { "CountryCode": "11", "CountryName": "Japan", "CountryISO": "JP" },
+          { "CountryCode": "55", "CountryName": "Kenya", "CountryISO": "KE" },
+          {
+            "CountryCode": "228",
+            "CountryName": "Kyrgyzstan",
+            "CountryISO": "KG"
+          },
+          {
+            "CountryCode": "140",
+            "CountryName": "Cambodia",
+            "CountryISO": "KH"
+          },
+          {
+            "CountryCode": "235",
+            "CountryName": "Comores",
+            "CountryISO": "KM"
+          },
+          {
+            "CountryCode": "171",
+            "CountryName": "Saint Kitts and Nevis",
+            "CountryISO": "KN"
+          },
+          {
+            "CountryCode": "101",
+            "CountryName": "North Korea",
+            "CountryISO": "KP"
+          },
+          {
+            "CountryCode": "71",
+            "CountryName": "South Korea",
+            "CountryISO": "KR"
+          },
+          { "CountryCode": "72", "CountryName": "Kuwait", "CountryISO": "KW" },
+          {
+            "CountryCode": "170",
+            "CountryName": "Cayman Islands",
+            "CountryISO": "KY"
+          },
+          {
+            "CountryCode": "121",
+            "CountryName": "Kazakhstan",
+            "CountryISO": "KZ"
+          },
+          { "CountryCode": "143", "CountryName": "Laos", "CountryISO": "LA" },
+          { "CountryCode": "99", "CountryName": "Lebanon", "CountryISO": "LB" },
+          {
+            "CountryCode": "135",
+            "CountryName": "Saint Lucia",
+            "CountryISO": "LC"
+          },
+          {
+            "CountryCode": "59",
+            "CountryName": "Liechtenstein",
+            "CountryISO": "LI"
+          },
+          {
+            "CountryCode": "51",
+            "CountryName": "Sri Lanka",
+            "CountryISO": "LK"
+          },
+          {
+            "CountryCode": "75",
+            "CountryName": "Lithuania",
+            "CountryISO": "LT"
+          },
+          {
+            "CountryCode": "14",
+            "CountryName": "Luxembourg",
+            "CountryISO": "LU"
+          },
+          { "CountryCode": "76", "CountryName": "Latvia", "CountryISO": "LV" },
+          { "CountryCode": "216", "CountryName": "Lybia", "CountryISO": "LY" },
+          { "CountryCode": "78", "CountryName": "Morocco", "CountryISO": "MA" },
+          { "CountryCode": "81", "CountryName": "Monaco", "CountryISO": "MC" },
+          { "CountryCode": "82", "CountryName": "Moldova", "CountryISO": "MD" },
+          {
+            "CountryCode": "164",
+            "CountryName": "Montenegro",
+            "CountryISO": "ME"
+          },
+          {
+            "CountryCode": "160",
+            "CountryName": "Madagascar",
+            "CountryISO": "MG"
+          },
+          {
+            "CountryCode": "199",
+            "CountryName": "Marshall Islands",
+            "CountryISO": "MH"
+          },
+          {
+            "CountryCode": "79",
+            "CountryName": "Macedonia",
+            "CountryISO": "MK"
+          },
+          { "CountryCode": "188", "CountryName": "Mali", "CountryISO": "ML" },
+          {
+            "CountryCode": "144",
+            "CountryName": "Myanmar",
+            "CountryISO": "MM"
+          },
+          {
+            "CountryCode": "225",
+            "CountryName": "Mongolia",
+            "CountryISO": "MN"
+          },
+          {
+            "CountryCode": "200",
+            "CountryName": "Northern Mariana Islands",
+            "CountryISO": "MP"
+          },
+          {
+            "CountryCode": "163",
+            "CountryName": "Martinique",
+            "CountryISO": "MQ"
+          },
+          {
+            "CountryCode": "223",
+            "CountryName": "Mauritania",
+            "CountryISO": "MR"
+          },
+          { "CountryCode": "77", "CountryName": "Malta", "CountryISO": "MT" },
+          {
+            "CountryCode": "122",
+            "CountryName": "Mauritius",
+            "CountryISO": "MU"
+          },
+          {
+            "CountryCode": "132",
+            "CountryName": "Maldives",
+            "CountryISO": "MV"
+          },
+          { "CountryCode": "226", "CountryName": "Malawi", "CountryISO": "MW" },
+          { "CountryCode": "83", "CountryName": "Mexico", "CountryISO": "MX" },
+          {
+            "CountryCode": "80",
+            "CountryName": "Malaysia",
+            "CountryISO": "MY"
+          },
+          {
+            "CountryCode": "161",
+            "CountryName": "Mozambique",
+            "CountryISO": "MZ"
+          },
+          {
+            "CountryCode": "145",
+            "CountryName": "Namibia",
+            "CountryISO": "NA"
+          },
+          {
+            "CountryCode": "187",
+            "CountryName": "New Caledonia",
+            "CountryISO": "NC"
+          },
+          {
+            "CountryCode": "236",
+            "CountryName": "Republic of Niger",
+            "CountryISO": "NE"
+          },
+          {
+            "CountryCode": "206",
+            "CountryName": "Norfolk Island",
+            "CountryISO": "NF"
+          },
+          {
+            "CountryCode": "155",
+            "CountryName": "Nigeria",
+            "CountryISO": "NG"
+          },
+          {
+            "CountryCode": "156",
+            "CountryName": "Nicaragua",
+            "CountryISO": "NI"
+          },
+          {
+            "CountryCode": "21",
+            "CountryName": "Netherlands",
+            "CountryISO": "NL"
+          },
+          { "CountryCode": "25", "CountryName": "Norway", "CountryISO": "NO" },
+          { "CountryCode": "157", "CountryName": "Nepal", "CountryISO": "NP" },
+          {
+            "CountryCode": "94",
+            "CountryName": "New Zealand",
+            "CountryISO": "NZ"
+          },
+          { "CountryCode": "85", "CountryName": "Oman", "CountryISO": "OM" },
+          { "CountryCode": "126", "CountryName": "Panama", "CountryISO": "PA" },
+          { "CountryCode": "87", "CountryName": "Peru", "CountryISO": "PE" },
+          {
+            "CountryCode": "159",
+            "CountryName": "French Polynesia",
+            "CountryISO": "PF"
+          },
+          {
+            "CountryCode": "158",
+            "CountryName": "Papua New Guinea",
+            "CountryISO": "PG"
+          },
+          {
+            "CountryCode": "88",
+            "CountryName": "Philippines",
+            "CountryISO": "PH"
+          },
+          {
+            "CountryCode": "86",
+            "CountryName": "Pakistan",
+            "CountryISO": "PK"
+          },
+          { "CountryCode": "33", "CountryName": "Poland", "CountryISO": "PL" },
+          {
+            "CountryCode": "28",
+            "CountryName": "Puerto Rico",
+            "CountryISO": "PR"
+          },
+          {
+            "CountryCode": "186",
+            "CountryName": "Palestine",
+            "CountryISO": "PS"
+          },
+          {
+            "CountryCode": "12",
+            "CountryName": "Country Test",
+            "CountryISO": "PT"
+          },
+          { "CountryCode": "1", "CountryName": "Portugal", "CountryISO": "PT" },
+          {
+            "CountryCode": "37",
+            "CountryName": "Mundo Abreu",
+            "CountryISO": "PT"
+          },
+          { "CountryCode": "40", "CountryName": "SPA", "CountryISO": "PT" },
+          { "CountryCode": "185", "CountryName": "Palau", "CountryISO": "PW" },
+          {
+            "CountryCode": "91",
+            "CountryName": "Paraguay",
+            "CountryISO": "PY"
+          },
+          { "CountryCode": "92", "CountryName": "Qatar", "CountryISO": "QA" },
+          {
+            "CountryCode": "183",
+            "CountryName": "Reunion Island",
+            "CountryISO": "RE"
+          },
+          { "CountryCode": "93", "CountryName": "Romania", "CountryISO": "RO" },
+          { "CountryCode": "120", "CountryName": "Serbia", "CountryISO": "RS" },
+          { "CountryCode": "22", "CountryName": "Russia", "CountryISO": "RU" },
+          { "CountryCode": "219", "CountryName": "Rwanda", "CountryISO": "RW" },
+          {
+            "CountryCode": "104",
+            "CountryName": "Saudi Arabia",
+            "CountryISO": "SA"
+          },
+          {
+            "CountryCode": "123",
+            "CountryName": "Seychelles",
+            "CountryISO": "SC"
+          },
+          { "CountryCode": "222", "CountryName": "Sudan", "CountryISO": "SD" },
+          { "CountryCode": "27", "CountryName": "Sweden", "CountryISO": "SE" },
+          {
+            "CountryCode": "105",
+            "CountryName": "Singapore",
+            "CountryISO": "SG"
+          },
+          {
+            "CountryCode": "107",
+            "CountryName": "Slovenia",
+            "CountryISO": "SI"
+          },
+          {
+            "CountryCode": "106",
+            "CountryName": "Slovakia",
+            "CountryISO": "SK"
+          },
+          {
+            "CountryCode": "103",
+            "CountryName": "San Marino",
+            "CountryISO": "SM"
+          },
+          {
+            "CountryCode": "108",
+            "CountryName": "Senegal",
+            "CountryISO": "SN"
+          },
+          {
+            "CountryCode": "162",
+            "CountryName": "Suriname",
+            "CountryISO": "SR"
+          },
+          {
+            "CountryCode": "184",
+            "CountryName": "Sao Tome and Principe",
+            "CountryISO": "ST"
+          },
+          {
+            "CountryCode": "151",
+            "CountryName": "El Salvador",
+            "CountryISO": "SV"
+          },
+          { "CountryCode": "109", "CountryName": "Syria", "CountryISO": "SY" },
+          {
+            "CountryCode": "180",
+            "CountryName": "Swaziland",
+            "CountryISO": "SZ"
+          },
+          {
+            "CountryCode": "125",
+            "CountryName": "Turks and Caicos Islands",
+            "CountryISO": "TC"
+          },
+          { "CountryCode": "221", "CountryName": "Chad", "CountryISO": "TD" },
+          { "CountryCode": "204", "CountryName": "Togo", "CountryISO": "TG" },
+          {
+            "CountryCode": "131",
+            "CountryName": "Thailand",
+            "CountryISO": "TH"
+          },
+          {
+            "CountryCode": "229",
+            "CountryName": "Tajikistan",
+            "CountryISO": "TJ"
+          },
+          {
+            "CountryCode": "230",
+            "CountryName": "East Timor",
+            "CountryISO": "TL"
+          },
+          {
+            "CountryCode": "231",
+            "CountryName": "Turkmenistan",
+            "CountryISO": "TM"
+          },
+          {
+            "CountryCode": "112",
+            "CountryName": "Tunisia",
+            "CountryISO": "TN"
+          },
+          { "CountryCode": "203", "CountryName": "Tonga", "CountryISO": "TO" },
+          { "CountryCode": "34", "CountryName": "Turkey", "CountryISO": "TR" },
+          {
+            "CountryCode": "146",
+            "CountryName": "Trinidad and Tobago",
+            "CountryISO": "TT"
+          },
+          { "CountryCode": "96", "CountryName": "Taiwan", "CountryISO": "TW" },
+          {
+            "CountryCode": "111",
+            "CountryName": "Tanzania",
+            "CountryISO": "TZ"
+          },
+          {
+            "CountryCode": "113",
+            "CountryName": "Ukraine",
+            "CountryISO": "UA"
+          },
+          { "CountryCode": "179", "CountryName": "Uganda", "CountryISO": "UG" },
+          {
+            "CountryCode": "8",
+            "CountryName": "United States of America",
+            "CountryISO": "US"
+          },
+          {
+            "CountryCode": "116",
+            "CountryName": "Uruguay",
+            "CountryISO": "UY"
+          },
+          {
+            "CountryCode": "117",
+            "CountryName": "Uzbekistan",
+            "CountryISO": "UZ"
+          },
+          {
+            "CountryCode": "153",
+            "CountryName": "Saint Vincent and the Grenadines",
+            "CountryISO": "VC"
+          },
+          {
+            "CountryCode": "29",
+            "CountryName": "Venezuela",
+            "CountryISO": "VE"
+          },
+          {
+            "CountryCode": "173",
+            "CountryName": "British Virgin Islands",
+            "CountryISO": "VG"
+          },
+          {
+            "CountryCode": "174",
+            "CountryName": "United States Virgin Islands",
+            "CountryISO": "VI"
+          },
+          {
+            "CountryCode": "148",
+            "CountryName": "Vietnam",
+            "CountryISO": "VN"
+          },
+          {
+            "CountryCode": "175",
+            "CountryName": "Vanuatu",
+            "CountryISO": "VU"
+          },
+          { "CountryCode": "207", "CountryName": "Samoa", "CountryISO": "WS" },
+          { "CountryCode": "215", "CountryName": "Kosovo", "CountryISO": "XK" },
+          { "CountryCode": "178", "CountryName": "Yemen", "CountryISO": "YE" },
+          {
+            "CountryCode": "24",
+            "CountryName": "South Africa",
+            "CountryISO": "ZA"
+          },
+          { "CountryCode": "177", "CountryName": "Zambia", "CountryISO": "ZM" },
+          {
+            "CountryCode": "119",
+            "CountryName": "Zimbabwe",
+            "CountryISO": "ZW"
+          }
+        ]
+      }
+    }
+  }
+}

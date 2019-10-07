@@ -31,6 +31,10 @@ export class ConfigService {
         BEDS_ONLINE_API_KEY: process.env.BEDS_ONLINE_API_KEY as string,
         BEDS_ONLINE_SECRET: process.env.BEDS_ONLINE_SECRET as string,
         ELASTICSEARCH_HOST: process.env.ELASTICSEARCH_HOST as string,
+        ABREU_URL: process.env.ABREU_URL as string,
+        ABREU_USERNAME: process.env.ABREU_USERNAME as string,
+        ABREU_PASSWORD: process.env.ABREU_PASSWORD as string,
+        ABREU_CONTEXT: process.env.ABREU_CONTEXT as string,
       };
     }
   }

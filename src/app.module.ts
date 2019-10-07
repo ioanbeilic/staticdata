@@ -9,6 +9,10 @@ import { AmqpConnection, RabbitMQModule } from '@nestjs-plus/rabbitmq';
 import { WorkToMeModule } from './modules/work-to-me/work-to-me.module';
 import { BedsOnlineModule } from './modules/beds-online/beds-online.module';
 import { ElasticsearchModule } from '@nestjs/elasticsearch';
+import { AbreuModule } from './modules/abreu/abreu.module';
+import { CustomLoggerModule } from './custom-logger/custom-logger.module';
+import { LoggerModule } from './logger/logger.module';
+import { CustomLoggerModule } from './custom-logger/custom-logger.module';
 
 @Module({
   imports: [
@@ -37,6 +41,14 @@ import { ElasticsearchModule } from '@nestjs/elasticsearch';
             name: 'bed_online_hotel-detail',
             type: 'fanout',
           },
+          {
+            name: 'abreu_hotels',
+            type: 'fanout',
+          },
+          {
+            name: 'abreu_hotel-detail',
+            type: 'fanout',
+          },
         ],
         uri: configService.get('RABBITMQ_URI'),
         prefetchCount: 1, // only 1 request each time default 10
@@ -58,6 +70,9 @@ import { ElasticsearchModule } from '@nestjs/elasticsearch';
     HttpModule,
     WorkToMeModule,
     BedsOnlineModule,
+    AbreuModule,
+    CustomLoggerModule,
+    LoggerModule,
   ],
   controllers: [AppController],
   providers: [AppService, AmqpConnection],
