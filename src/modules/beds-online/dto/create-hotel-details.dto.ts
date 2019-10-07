@@ -2,10 +2,10 @@ import {
   HotelDetailsProvider,
   ImageProvider,
   FacilityProvider,
-} from '../intefaces/provider/hotel-details-provider.interface';
+} from '../interfaces/provider/hotel-details-provider.interface';
 import t from 'typy';
 
-export class CreateHotelContentDto {
+export class CreateHotelDetailsDto {
   public hotelId: string;
   public name: string;
   public description: string;
@@ -30,21 +30,24 @@ export class CreateHotelContentDto {
     this.hotelId = String(t(originalData, 'code').safeObject || '');
     this.name = t(originalData, 'name.content').safeObject || '';
     this.description = t(originalData, 'description.content').safeObject || '';
+    this.country =
+      t(originalData, 'country.description.content').safeObject || '';
+    this.province = t(originalData, 'state.name').safeObject || '';
     this.location = {
       latitude:
         String(t(originalData, 'coordinates.latitude').safeObject) || '',
       longitude:
         String(t(originalData, 'coordinates.longitude').safeObject) || '',
     };
-    this.city = t(originalData, 'city.content').safeObject || '';
     this.address = t(originalData, 'address.content').safeObject || '';
-    this.province = t(originalData, 'state.name').safeObject || '';
-    this.country =
-      t(originalData, 'country.description.content').safeObject || '';
     this.postalCode = t(originalData, 'postalCode').safeObject || '';
+    this.city = t(originalData, 'city.content').safeObject || '';
+
     this.web = t(originalData, 'web').safeObject || '';
+
     this.phones = t(originalData, 'phones').safeObject || '';
     this.email = t(originalData, 'email').safeObject || '';
+
     this.category = {
       name: t(originalData, 'category.description.content').safeObject || '',
       value: t(originalData, 'category.description.code').safeObject || '',

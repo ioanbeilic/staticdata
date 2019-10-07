@@ -30,7 +30,7 @@ import { RoomSchema } from './schemas/room.schema';
     }),
     MongooseModule.forFeature([
       { name: 'beds_on_line_hotels', schema: HotelSchema },
-      { name: 'beds_on_line:hotelContent', schema: HotelDetailsSchema },
+      { name: 'beds_on_line_hotel-details', schema: HotelDetailsSchema },
       { name: 'beds_on_line_rooms', schema: RoomSchema },
     ]),
     ConfigModule,

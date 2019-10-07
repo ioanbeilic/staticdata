@@ -1,3 +1,15 @@
+export interface HotelDetailsProviderResponse {
+  auditData: {
+    processTime: string;
+    timestamp: string;
+    requestHost: string;
+    serverId: string;
+    environment: string;
+    release: string;
+  };
+  hotel: HotelDetailsProvider;
+}
+
 interface Board {
   code: string;
   description: {
@@ -17,7 +29,7 @@ interface Phone {
   phoneType: string;
 }
 
-interface Room {
+export interface Room {
   roomCode: string;
   description: string;
   type: {
@@ -32,6 +44,47 @@ interface Room {
       content: string;
     };
   };
+  roomFacilities: RoomFacilities[];
+  roomStays: RoomStays[];
+}
+
+interface RoomFacilities {
+  facilityCode: number;
+  facilityGroupCode: number;
+  description: {
+    content: string;
+  };
+  number: number;
+  indYesOrNo: boolean;
+  voucher: boolean;
+}
+
+interface RoomStays {
+  stayType: string;
+  order: number;
+  description: string;
+  roomStayFacilities: RoomStayFacilities[];
+}
+
+interface RoomStayFacilities {
+  facilityCode: number;
+  facilityGroupCode: number;
+  description: {
+    content: string;
+    number: number;
+  };
+}
+
+interface Terminal {
+  terminalCode: string;
+  terminalType: string;
+  distance: number;
+  name: {
+    content: string;
+  };
+  description: {
+    content: string;
+  };
 }
 
 export interface FacilityProvider {
@@ -41,8 +94,17 @@ export interface FacilityProvider {
     content: string;
   };
   order: number;
-  distance: number;
+  indYesOrNo: boolean;
+  number: number;
   voucher: boolean;
+}
+
+interface InterestPoint {
+  facilityCode: number;
+  facilityGroupCode: number;
+  order: number;
+  poiName: string;
+  distance: string;
 }
 
 export interface ImageProvider {
@@ -55,9 +117,9 @@ export interface ImageProvider {
   path: string;
   roomCode: string;
   roomType: string;
-  characteristicCode: string;
+  characteristicCode?: string;
   order: number;
-  visualOrder: number;
+  visualOrder: string;
 }
 
 interface Wildcard {
@@ -69,18 +131,6 @@ interface Wildcard {
   };
 }
 
-export interface HotelDetailsProviderResponse {
-  auditData: {
-    processTime: string;
-    timestamp: string;
-    requestHost: string;
-    serverId: string;
-    environment: string;
-    release: string;
-  };
-  hotel: HotelDetailsProvider;
-}
-
 export interface HotelDetailsProvider {
   code: number;
   name: {
@@ -89,6 +139,7 @@ export interface HotelDetailsProvider {
   description: {
     content: string;
   };
+
   country: {
     code: string;
     isoCode: string;
@@ -115,8 +166,8 @@ export interface HotelDetailsProvider {
     };
   };
   coordinates: {
-    longitude: number;
-    latitude: number;
+    longitude: string;
+    latitude: string;
   };
   category: {
     code: string;
@@ -146,7 +197,6 @@ export interface HotelDetailsProvider {
   boards: Board[];
 
   segments: Segment[];
-
   address: {
     content: string;
   };
@@ -159,6 +209,8 @@ export interface HotelDetailsProvider {
   phones: Phone[];
   rooms: Room[];
   facilities: FacilityProvider[];
+  terminals: Terminal[];
+  interestPoints: InterestPoint[];
   images: ImageProvider[];
   wildcards: Wildcard[];
   web: string;

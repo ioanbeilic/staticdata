@@ -60,7 +60,7 @@ interface InterestPoint {
   distance: string;
 }
 
-interface Image {
+export interface Image {
   imageTypeCode: string;
   path: string;
   order: number;

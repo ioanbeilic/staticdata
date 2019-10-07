@@ -1,5 +1,5 @@
 import t from 'typy';
-import { HotelProvider } from '../intefaces/provider/hotel-provider.interfce';
+import { HotelProvider } from '../interfaces/provider/hotel-provider.interfce';
 
 export class CreateHotelDto {
   hotelId: string;

@@ -4,9 +4,9 @@ import { Configuration } from '../../../../config/config.keys';
 import CryptoJS from 'crypto-js';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { Hotel } from '../../intefaces/hotel.interface';
+import { Hotel } from '../../interfaces/hotel.interface';
 import axios, { AxiosResponse } from 'axios';
-import { HotelProviderResponse } from '../../intefaces/provider/hotel-provider.interfce';
+import { HotelProviderResponse } from '../../interfaces/provider/hotel-provider.interfce';
 import { AmqpConnection, Nack, RabbitSubscribe } from '@nestjs-plus/rabbitmq';
 import { CreateHotelDto } from '../../dto/create-hotel.dto';
 
@@ -98,17 +98,18 @@ export class HotelsService {
            */
           this.totalPages = Math.ceil(data.total / 100);
 
-          for (let i = 1; i <= this.totalPages; i = i * 100) {
+          for (let i = 1; i <= this.totalPages; i++) {
             /**
-             *
+             * rf i < 1 run page from 1 to 100
+             * else run dorm 101 tp 200 .etc
              */
+
             if (i > 1) {
               from = i * 100 + 1;
             }
 
-            to = to < this.totalPages ? i * 100 : this.totalPages;
+            to = i < this.totalPages ? from + 100 - 1 : data.total;
 
-            // console.log(query);
             // lunch first que
             this.amqpConnection.publish(
               'beds_online_hotels',
@@ -134,7 +135,6 @@ export class HotelsService {
     queue: 'beds_online_hotels',
   })
   async subscribeHotels({ from, to }: any): Promise<Nack | undefined> {
-    // console.log(from, to);
     /**
      * xml server response as type AxiosResponse
      */
@@ -198,7 +198,7 @@ export class HotelsService {
 
         if (Number(this.totalPages) === Number(to)) {
           // publish-hotels-content
-          // console.log('run ');
+
           const _ = await axios.get(
             `${this.configService.get(
               Configuration.HOST,
@@ -221,5 +221,13 @@ export class HotelsService {
       // console.log(error);
       // do do - implement log
     }
+  }
+
+  async getHotels() {
+    return this.hotelModel.find();
+  }
+
+  async getHotel(hotelId: string) {
+    return this.hotelModel.findOne({ hotelId });
   }
 }
