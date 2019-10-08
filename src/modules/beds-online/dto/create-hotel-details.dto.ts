@@ -6,66 +6,72 @@ import {
 import t from 'typy';
 
 export class CreateHotelDetailsDto {
-  public hotelId: string;
-  public name: string;
-  public description: string;
+  public hotelId!: string;
+  public name!: string;
+  public description!: string;
   public location: Location = {
     latitude: '',
     longitude: '',
   };
-  public city: string;
-  public address: string;
-  public province: string;
-  public country: string;
-  public postalCode: string;
-  public web: string;
+  public city!: string;
+  public address!: string;
+  public province!: string;
+  public country!: string;
+  public postalCode!: string;
+  public web!: string;
   public phones: Phone[] = [];
-  public email: string;
-  public category: Category;
-  public photos!: Image[];
-  public facilities!: Facility[];
-  public currency: string;
+  public email!: string;
+  public category!: Category;
+  public photos: Image[] = [];
+  public facilities: Facility[] = [];
+  public currency!: string;
 
   constructor(originalData: HotelDetailsProvider) {
-    this.hotelId = String(t(originalData, 'code').safeObject || '');
-    this.name = t(originalData, 'name.content').safeObject || '';
-    this.description = t(originalData, 'description.content').safeObject || '';
-    this.country =
-      t(originalData, 'country.description.content').safeObject || '';
-    this.province = t(originalData, 'state.name').safeObject || '';
-    this.location = {
-      latitude:
-        String(t(originalData, 'coordinates.latitude').safeObject) || '',
-      longitude:
-        String(t(originalData, 'coordinates.longitude').safeObject) || '',
-    };
-    this.address = t(originalData, 'address.content').safeObject || '';
-    this.postalCode = t(originalData, 'postalCode').safeObject || '';
-    this.city = t(originalData, 'city.content').safeObject || '';
+    try {
 
-    this.web = t(originalData, 'web').safeObject || '';
+      this.hotelId = String(t(originalData, 'code').safeObject || '');
 
-    this.phones = t(originalData, 'phones').safeObject || '';
-    this.email = t(originalData, 'email').safeObject || '';
+      this.name = t(originalData, 'name.content').safeObject || '';
+      this.description = t(originalData, 'description.content').safeObject || '';
+      this.country =
+        t(originalData, 'country.description.content').safeObject || '';
+      this.province = t(originalData, 'state.name').safeObject || '';
+      this.location = {
+        latitude:
+          String(t(originalData, 'coordinates.latitude').safeObject) || '',
+        longitude:
+          String(t(originalData, 'coordinates.longitude').safeObject) || '',
+      };
+      this.address = t(originalData, 'address.content').safeObject || '';
+      this.postalCode = t(originalData, 'postalCode').safeObject || '';
+      this.city = t(originalData, 'city.content').safeObject || '';
 
-    this.category = {
-      name: t(originalData, 'category.description.content').safeObject || '',
-      value: t(originalData, 'category.description.code').safeObject || '',
-    };
+      this.web = t(originalData, 'web').safeObject || '';
 
-    if (t(originalData, 'images').isArray) {
-      this.getImages(t(originalData, 'images').safeObject);
-    } else {
-      this.photos = [];
+      this.phones = t(originalData, 'phones').safeObject || '';
+      this.email = t(originalData, 'email').safeObject || '';
+
+      this.category = {
+        name: t(originalData, 'category.description.content').safeObject || '',
+        value: t(originalData, 'category.description.code').safeObject || '',
+      };
+
+      if (t(originalData, 'images').isArray) {
+        this.getImages(t(originalData, 'images').safeObject);
+      } else {
+        this.photos = [];
+      }
+
+      if (t(originalData, 'facilities').isArray) {
+        this.getImages(t(originalData, 'facilities').safeObject);
+      } else {
+        this.facilities = [];
+      }
+
+      this.currency = '';
+    } catch (error) {
+      // console.log(error)
     }
-
-    if (t(originalData, 'facilities').isArray) {
-      this.getImages(t(originalData, 'facilities').safeObject);
-    } else {
-      this.facilities = [];
-    }
-
-    this.currency = '';
   }
 
   getImages(images: ImageProvider[]) {
@@ -83,6 +89,7 @@ export class CreateHotelDetailsDto {
   }
 
   getFacilities(facilities: FacilityProvider[]) {
+    console.log(Array.isArray(facilities))
     if (Array.isArray(facilities)) {
       facilities.forEach(facility => {
         const newFacility = {

@@ -40,7 +40,7 @@ const colorizer = winston.format.colorize();
             type: 'fanout',
           },
           {
-            name: 'beds_online_hotels-details',
+            name: 'beds_online_hotel-detail',
             type: 'fanout',
           },
           {

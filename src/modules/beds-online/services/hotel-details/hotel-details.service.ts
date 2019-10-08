@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Inject } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { ConfigService } from '../../../../config/config.service';
 import { AmqpConnection, RabbitSubscribe, Nack } from '@nestjs-plus/rabbitmq';
@@ -11,6 +11,7 @@ import { Configuration } from '../../../../config/config.keys';
 import { HotelProviderResponse } from '../../interfaces/provider/hotel-provider.interfce';
 import { HotelDetailsProviderResponse } from '../../interfaces/provider/hotel-details-provider.interface';
 import { CreateHotelDetailsDto } from '../../dto/create-hotel-details.dto';
+import { Logger } from 'winston';
 
 @Injectable()
 export class HotelDetailsService {
@@ -22,18 +23,25 @@ export class HotelDetailsService {
     @InjectModel('beds_on_line_hotel-details')
     private readonly hotelModel: Model<HotelDetails>,
     private hotelsService: HotelsService,
-  ) {}
+    @Inject('winston') private readonly logger: Logger,
+  ) { }
 
   async publishHotelsDetails() {
     const hotels = await this.hotelsService.getHotels();
 
-    hotels.forEach((hotel: Hotel) => {
-      this.amqpConnection.publish(
-        'beds_online_hotel-detail',
-        'hotelsContent',
-        hotel.hotelId,
-      );
-    });
+    try {
+      hotels.forEach((hotel: Hotel) => {
+        this.amqpConnection.publish(
+          'beds_online_hotel-detail',
+          'beds_online_hotel-detail',
+          hotel.hotelId,
+        );
+      });
+    } catch (error) {
+      this.logger.error(error);
+      throw error;
+    }
+
   }
 
   /**
@@ -43,9 +51,9 @@ export class HotelDetailsService {
    */
 
   @RabbitSubscribe({
-    exchange: 'beds_online_hotels-details',
-    routingKey: 'beds_online_hotels-details',
-    queue: 'beds_online_hotels-details',
+    exchange: 'beds_online_hotel-detail',
+    routingKey: 'beds_online_hotel-detail',
+    queue: 'beds_online_hotel-detail',
   })
   async subscribeHotelsDetails(hotelId: number): Promise<Nack | undefined> {
     /**
@@ -63,11 +71,13 @@ export class HotelDetailsService {
         headers: this.hotelsService.generateHeaders(),
       });
 
+
       if (response.status === 200) {
         const data: HotelDetailsProviderResponse = response.data;
 
         const createHotel = new CreateHotelDetailsDto(data.hotel);
         const newHotel = new this.hotelModel(createHotel);
+
         try {
           await this.hotelModel.findOneAndUpdate(
             { hotelId: newHotel.hotelId },
@@ -98,9 +108,12 @@ export class HotelDetailsService {
             },
           );
         } catch (error) {
+          this.HaveError = true;
+          this.logger.error('database', error);
+          throw error;
           // do do - implement log
           // console.log(error, 'hotel-database');
-          this.HaveError = true;
+
         }
       }
 
@@ -113,6 +126,8 @@ export class HotelDetailsService {
       }
     } catch (error) {
       this.HaveError = true;
+      this.logger.error(error);
+      throw error;
       // console.log(error);
       // do do - implement log
     }
