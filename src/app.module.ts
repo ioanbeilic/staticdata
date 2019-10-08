@@ -114,6 +114,7 @@ const colorizer = winston.format.colorize();
             ),
           }),
         ],
+        exitOnError: false,
       }),
       // future implementation of elastic search
       inject: [],

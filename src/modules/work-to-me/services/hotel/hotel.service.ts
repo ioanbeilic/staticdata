@@ -126,6 +126,7 @@ export class HotelService {
       }
     } catch (error) {
       this.HaveError = true;
+      this.logger.error(error);
       // console.log(error);
     }
   }

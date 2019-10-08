@@ -98,7 +98,7 @@ export class HotelsService {
           /**
            * calculate number of pages
            */
-          this.totalPages = Math.ceil(data.total / 100);
+          this.totalPages = Math.ceil(data.total / 500);
 
           for (let i = 1; i <= this.totalPages; i++) {
             /**
@@ -107,10 +107,10 @@ export class HotelsService {
              */
 
             if (i > 1) {
-              from = i * 100 + 1;
+              from = i * 500 + 1;
             }
 
-            to = i < this.totalPages ? from + 100 - 1 : data.total;
+            to = i < this.totalPages ? from + 500 - 1 : data.total;
 
             // lunch first que
             this.amqpConnection.publish(
@@ -123,6 +123,7 @@ export class HotelsService {
       }
     } catch (error) {
       this.HaveError = true;
+      this.logger.error(error);
       throw error;
     }
   }
@@ -187,7 +188,7 @@ export class HotelsService {
             // do do - implement log
             // console.log(error, 'hotel-database');
             this.HaveError = true;
-            this.logger.log(error);
+            this.logger.error(error);
           }
         }
 
@@ -221,17 +222,27 @@ export class HotelsService {
       }
     } catch (error) {
       this.HaveError = true;
-      this.logger.log(error);
+      this.logger.error(error);
       // console.log(error);
       // do do - implement log
     }
   }
 
   async getHotels() {
-    return this.hotelModel.find();
+    try {
+      return this.hotelModel.find();
+    } catch (error) {
+      this.logger.error(error);
+      throw error;
+    }
   }
 
   async getHotel(hotelId: string) {
-    return this.hotelModel.findOne({ hotelId });
+    try {
+      return this.hotelModel.findOne({ hotelId });
+    } catch (error) {
+      this.logger.error(error);
+      throw error;
+    }
   }
 }
