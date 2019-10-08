@@ -1,4 +1,4 @@
-import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
+import { Injectable, HttpException, HttpStatus, Inject } from '@nestjs/common';
 import * as parser from 'fast-xml-parser';
 import { AxiosResponse } from 'axios';
 import { Page } from '../../dto/pages.dto';
@@ -12,6 +12,7 @@ import { ServerHotelInterface } from '../../interfaces/provider/hotel.interface'
 import { HotelServerResponse } from '../../interfaces/provider/server-hotel-response.interface';
 import { ConfigService } from '../../../../config/config.service';
 import { Configuration } from '../../../../config/config.keys';
+import { Logger } from 'winston';
 
 @Injectable()
 export class HotelService {
@@ -57,6 +58,7 @@ export class HotelService {
     public readonly amqpConnection: AmqpConnection,
     @InjectModel('work_to_me_hotels') private readonly hotelModel: Model<Hotel>,
     private readonly configService: ConfigService,
+    @Inject('winston') private readonly logger: Logger,
   ) {
     /**
      * load data from process.env
@@ -137,7 +139,7 @@ export class HotelService {
       );
     } catch (error) {
       this.HaveError = true;
-      throw error;
+      this.logger.error(error);
     }
   }
 
@@ -182,7 +184,7 @@ export class HotelService {
       // provider error repeat this request request
       // console.log(error, 'hotes from query');
       this.HaveError = true;
-      // do do - implement log
+      this.logger.error(error);
     }
     /**
      *  save data to database
@@ -217,7 +219,7 @@ export class HotelService {
           );
         } catch (error) {
           // do do - implement log
-          // console.log(error, 'hotel-database');
+          this.logger.error(error);
           this.HaveError = true;
         }
       }

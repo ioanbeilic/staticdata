@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Inject } from '@nestjs/common';
 import { ServerHotelInterface } from '../../interfaces/provider/hotel.interface';
 import { Hotel } from '../../interfaces/hotel.interface';
 import { ServerHotelContentInterface } from '../../interfaces/provider/content.interface';
@@ -13,6 +13,7 @@ import { ServerContentResponse } from '../../interfaces/provider/server-content-
 import * as parser from 'fast-xml-parser';
 import { CreateHotelContentDto } from '../../dto/create-hotel-content.dto';
 import fs from 'fs';
+import { Logger } from 'winston';
 
 @Injectable()
 export class HotelDetailsService {
@@ -60,6 +61,7 @@ export class HotelDetailsService {
     private readonly amqpConnection: AmqpConnection,
     @InjectModel('work_to_me_hotel-content')
     private readonly hotelContentModel: Model<HotelContent>,
+    @Inject('winston') private readonly logger: Logger,
   ) {}
 
   async publishALlhHotelContent() {
@@ -112,7 +114,9 @@ export class HotelDetailsService {
       response = await axios.post(this.url, request, {
         headers: this.headers,
       });
+      this.logger.info(response);
     } catch (error) {
+      this.logger.error(error);
       this.HaveError = true;
       throw error;
     }
@@ -167,8 +171,9 @@ export class HotelDetailsService {
         );
       } catch (error) {
         // do do - implement log
-        // console.log(error);
+        this.logger.error(error);
         this.HaveError = true;
+        throw error;
       }
     }
     if (this.HaveError) {

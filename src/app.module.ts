@@ -12,6 +12,9 @@ import { ElasticsearchModule } from '@nestjs/elasticsearch';
 import { AbreuModule } from './modules/abreu/abreu.module';
 import { WinstonModule } from 'nest-winston';
 import * as winston from 'winston';
+import DailyRotateFile from 'winston-daily-rotate-file';
+
+const colorizer = winston.format.colorize();
 
 @Module({
   imports: [
@@ -63,14 +66,56 @@ import * as winston from 'winston';
           // - Write to all logs with level `info` and below to `combined.log`
           // - Write all logs error (and below) to `error.log`.
           //
-          new winston.transports.File({
-            filename: './logs/error.log',
+
+          new DailyRotateFile({
+            dirname: './logs/error/',
+            filename: 'error-',
+            datePattern: 'YYYY-MM-DD',
+            maxSize: '10m',
+            maxFiles: '14d',
             level: 'error',
+            format: winston.format.combine(
+              winston.format.timestamp({ format: 'HH:mm:ss' }),
+              winston.format.simple(),
+              winston.format.printf(
+                msg => `${msg.timestamp} - ${msg.level}: ${msg.message}`,
+              ),
+            ),
           }),
-          new winston.transports.File({ filename: './logs/combined.log' }),
+
+          new DailyRotateFile({
+            dirname: 'logs/info/',
+            filename: 'info-',
+            datePattern: 'YYYY-MM-DD',
+            maxSize: '10m',
+            maxFiles: '14d',
+
+            format: winston.format.combine(
+              winston.format.timestamp({ format: 'HH:mm:ss' }),
+              winston.format.simple(),
+              winston.format.printf(
+                msg => `${msg.timestamp} - ${msg.level}: ${msg.message}`,
+              ),
+            ),
+          }),
+
+          new winston.transports.Console({
+            level: 'debug',
+            handleExceptions: true,
+            format: winston.format.combine(
+              winston.format.timestamp({ format: 'HH:mm:ss' }),
+              winston.format.simple(),
+              winston.format.printf(msg =>
+                colorizer.colorize(
+                  msg.level,
+                  `${msg.timestamp} -  ${msg.level}: ${msg.message}`,
+                ),
+              ),
+            ),
+          }),
         ],
       }),
-      // injection for future implementation of elastic search
+      // future implementation of elastic search
       inject: [],
     }),
 

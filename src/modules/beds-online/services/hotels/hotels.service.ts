@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Inject } from '@nestjs/common';
 import { ConfigService } from '../../../../config/config.service';
 import { Configuration } from '../../../../config/config.keys';
 import CryptoJS from 'crypto-js';
@@ -9,6 +9,7 @@ import axios, { AxiosResponse } from 'axios';
 import { HotelProviderResponse } from '../../interfaces/provider/hotel-provider.interfce';
 import { AmqpConnection, Nack, RabbitSubscribe } from '@nestjs-plus/rabbitmq';
 import { CreateHotelDto } from '../../dto/create-hotel.dto';
+import { Logger } from 'winston';
 
 @Injectable()
 export class HotelsService {
@@ -30,6 +31,7 @@ export class HotelsService {
     public readonly amqpConnection: AmqpConnection,
     @InjectModel('beds_on_line_hotels')
     private readonly hotelModel: Model<Hotel>,
+    @Inject('winston') private readonly logger: Logger,
   ) {
     this.generateHeaders();
   }
@@ -185,6 +187,7 @@ export class HotelsService {
             // do do - implement log
             // console.log(error, 'hotel-database');
             this.HaveError = true;
+            this.logger.log(error);
           }
         }
 
@@ -218,6 +221,7 @@ export class HotelsService {
       }
     } catch (error) {
       this.HaveError = true;
+      this.logger.log(error);
       // console.log(error);
       // do do - implement log
     }

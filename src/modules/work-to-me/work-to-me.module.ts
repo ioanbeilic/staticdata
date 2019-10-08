@@ -12,6 +12,7 @@ import { HotelContentSchema } from './schemas/hotel-content.schema';
 import { RoomSchema } from './schemas/room.schema';
 import { HotelDetailsController } from './controllers/hotel-details/hotel-details.controller';
 import { HotelDetailsService } from './services/hotel-details/hotel-details.service';
+import { WinstonModule } from 'nest-winston';
 
 @Module({
   imports: [
@@ -34,6 +35,7 @@ import { HotelDetailsService } from './services/hotel-details/hotel-details.serv
       { name: 'work_to_me_rooms', schema: RoomSchema },
     ]),
     ConfigModule,
+    WinstonModule,
   ],
   controllers: [HotelController, HotelDetailsController, RoomsController],
   providers: [HotelService, HotelDetailsService, RoomsService],

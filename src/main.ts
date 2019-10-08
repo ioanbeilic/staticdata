@@ -3,7 +3,9 @@ import { AppModule } from './app.module';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule, {
+    logger: false,
+  });
 
   /**
    * winston logger across all app
@@ -30,4 +32,8 @@ async function bootstrap() {
    */
   await app.listen(AppModule.port);
 }
-bootstrap();
+bootstrap().catch(err => {
+  // tslint:disable-next-line:no-console
+  console.error(err);
+  process.exit(1);
+});
