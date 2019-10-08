@@ -15,7 +15,7 @@ import {
   FindOneHotel,
 } from '../parameters/find-one-hotel.params';
 
-@ApiUseTags('Work To Me / hotels')
+@ApiUseTags('Work To Me')
 @Controller('hotel')
 export class HotelController {
   constructor(private hotelService: HotelService) {}

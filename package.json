@@ -54,12 +54,14 @@
     "he": "^1.2.0",
     "mongoose": "^5.7.3",
     "mysql": "^2.17.1",
+    "nest-winston": "^1.1.2",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.0",
     "rxjs": "^6.5.3",
     "swagger-ui-express": "^4.1.1",
     "typeorm": "^0.2.19",
-    "typy": "^3.3.0"
+    "typy": "^3.3.0",
+    "winston": "^3.2.1"
   },
   "devDependencies": {
     "@nestjs/testing": "^6.8.1",

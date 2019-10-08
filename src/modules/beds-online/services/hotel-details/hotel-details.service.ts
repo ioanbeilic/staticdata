@@ -24,7 +24,7 @@ export class HotelDetailsService {
     private hotelsService: HotelsService,
   ) {}
 
-  async publishALlhHotelContent() {
+  async publishHotelsDetails() {
     const hotels = await this.hotelsService.getHotels();
 
     hotels.forEach((hotel: Hotel) => {

@@ -10,9 +10,8 @@ import { WorkToMeModule } from './modules/work-to-me/work-to-me.module';
 import { BedsOnlineModule } from './modules/beds-online/beds-online.module';
 import { ElasticsearchModule } from '@nestjs/elasticsearch';
 import { AbreuModule } from './modules/abreu/abreu.module';
-import { CustomLoggerModule } from './custom-logger/custom-logger.module';
-import { LoggerModule } from './logger/logger.module';
-import { CustomLoggerModule } from './custom-logger/custom-logger.module';
+import { WinstonModule } from 'nest-winston';
+import * as winston from 'winston';
 
 @Module({
   imports: [
@@ -55,6 +54,25 @@ import { CustomLoggerModule } from './custom-logger/custom-logger.module';
       }),
       inject: [ConfigService],
     }),
+
+    WinstonModule.forRootAsync({
+      useFactory: () => ({
+        // options
+        transports: [
+          //
+          // - Write to all logs with level `info` and below to `combined.log`
+          // - Write all logs error (and below) to `error.log`.
+          //
+          new winston.transports.File({
+            filename: 'error.log',
+            level: 'error',
+          }),
+          new winston.transports.File({ filename: 'combined.log' }),
+        ],
+      }),
+      inject: [],
+    }),
+
     /*
     ElasticsearchModule.registerAsync({
       imports: [ConfigModule],
@@ -71,8 +89,6 @@ import { CustomLoggerModule } from './custom-logger/custom-logger.module';
     WorkToMeModule,
     BedsOnlineModule,
     AbreuModule,
-    CustomLoggerModule,
-    LoggerModule,
   ],
   controllers: [AppController],
   providers: [AppService, AmqpConnection],

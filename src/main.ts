@@ -4,6 +4,11 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+
+  /**
+   * winston logger across all app
+   */
+  app.useLogger(app.get('NestWinston'));
   /**
    * prefix for application endpoint
    */
