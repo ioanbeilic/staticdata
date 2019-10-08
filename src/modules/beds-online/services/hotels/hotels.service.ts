@@ -202,15 +202,20 @@ export class HotelsService {
 
         if (Number(this.totalPages) === Number(to)) {
           // publish-hotels-content
-
-          const _ = await axios.get(
-            `${this.configService.get(
-              Configuration.HOST,
-            )}/beds-online/hotel-details/publish-hotels-content`,
-          );
-          // console.log(_.status);
-          if (_.status === 204) {
-            this.totalPages = 0;
+          try {
+            const _ = await axios.get(
+              `${this.configService.get(
+                Configuration.HOST,
+              )}/beds-online/hotel-details/publish-hotels-details`,
+            );
+            // console.log(_.status);
+            if (_.status === 204) {
+              this.totalPages = 0;
+            } else {
+              this.logger.error(String(_.status));
+            }
+          } catch (error) {
+            this.logger.error(error);
           }
         }
 

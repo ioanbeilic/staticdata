@@ -43,11 +43,11 @@ export class HotelDetailsService {
    */
 
   @RabbitSubscribe({
-    exchange: 'beds_online_hotels',
-    routingKey: 'beds_online_hotels',
-    queue: 'beds_online_hotels',
+    exchange: 'beds_online_hotels-details',
+    routingKey: 'beds_online_hotels-details',
+    queue: 'beds_online_hotels-details',
   })
-  async subscribeHotels(hotelId: number): Promise<Nack | undefined> {
+  async subscribeHotelsDetails(hotelId: number): Promise<Nack | undefined> {
     /**
      * xml server response as type AxiosResponse
      */
