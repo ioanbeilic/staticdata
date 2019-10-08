@@ -64,12 +64,13 @@ import * as winston from 'winston';
           // - Write all logs error (and below) to `error.log`.
           //
           new winston.transports.File({
-            filename: 'error.log',
+            filename: './logs/error.log',
             level: 'error',
           }),
-          new winston.transports.File({ filename: 'combined.log' }),
+          new winston.transports.File({ filename: './logs/combined.log' }),
         ],
       }),
+      // injection for future implementation of elastic search
       inject: [],
     }),
 
