@@ -1,4 +1,4 @@
-export class CreateHotelContentDto {
+export class CreateHotelDetailsDto {
   public hotelId!: string;
   public name!: string;
   public description!: string;

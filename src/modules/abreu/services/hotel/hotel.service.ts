@@ -135,7 +135,7 @@ export class HotelService {
     routingKey: 'abreu_country',
     queue: 'abreu_country',
   })
-  async getCity(countryISO: string) {
+  async hotelsPublisher(countryISO: string) {
     let response: AxiosResponse;
     let cities: CityProvider[] = [];
 
@@ -201,7 +201,7 @@ export class HotelService {
     routingKey: 'abreu_hotels',
     queue: 'abreu_hotels',
   })
-  async getHotels(cityCode: string) {
+  async hotelsSubscriber(cityCode: string) {
     let response: AxiosResponse;
     let hotels: PropertyResponse[] = [];
 
@@ -316,5 +316,21 @@ export class HotelService {
     }
   }
 
-  // async publishHotels(): Promise<void> {}
+  async getHotels() {
+    try {
+      return this.hotelModel.find();
+    } catch (error) {
+      this.logger.error(error);
+      throw error;
+    }
+  }
+
+  async getHotel(hotelId: string) {
+    try {
+      return this.hotelModel.findOne({ hotelId });
+    } catch (error) {
+      this.logger.error(error);
+      throw error;
+    }
+  }
 }

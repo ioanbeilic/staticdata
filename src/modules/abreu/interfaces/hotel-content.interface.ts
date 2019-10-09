@@ -1,6 +1,6 @@
 import { Document } from 'mongoose';
 
-export interface HotelContent extends Document {
+export interface HotelDetails extends Document {
   hotelId: string;
   name: string;
   description: string;

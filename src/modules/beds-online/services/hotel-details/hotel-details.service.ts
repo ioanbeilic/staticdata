@@ -8,9 +8,7 @@ import { HotelDetails } from '../../interfaces/hotel-details.interface';
 import { Hotel } from '../../interfaces/hotel.interface';
 import axios, { AxiosResponse } from 'axios';
 import { Configuration } from '../../../../config/config.keys';
-import { HotelProviderResponse } from '../../interfaces/provider/hotel-provider.interfce';
 import { HotelDetailsProviderResponse } from '../../interfaces/provider/hotel-details-provider.interface';
-import { CreateHotelDetailsDto } from '../../dto/create-hotel-details.dto';
 import { Logger } from 'winston';
 import { CreateHotelDetailsAdapter } from '../../adapters/hotel-details.adapter';
 

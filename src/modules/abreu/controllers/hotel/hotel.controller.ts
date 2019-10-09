@@ -16,7 +16,7 @@ export class HotelController {
    * get data for all hotels
    */
 
-  @Get('/countries')
+  @Get('/publish-hotels')
   @ApiOperation({ title: 'initialize process for RabbitMq' })
   @ApiNoContentResponse({
     description:
