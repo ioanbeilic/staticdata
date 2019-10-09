@@ -13,6 +13,10 @@ import { RoomSchema } from './schemas/room.schema';
 import { HotelDetailsController } from './controllers/hotel-details/hotel-details.controller';
 import { HotelDetailsService } from './services/hotel-details/hotel-details.service';
 import { WinstonModule } from 'nest-winston';
+import { CreateHotelDto } from './dto/create-hotel.dto';
+import { CreateHotelDetailsDto } from './dto/create-hotel-details.dto';
+import { CreateHotelAdapter } from './adapters/hotel.adapter';
+import { CreateHotelDetailsAdapter } from './adapters/hotel-details.adapter';
 
 @Module({
   imports: [
@@ -38,6 +42,12 @@ import { WinstonModule } from 'nest-winston';
     WinstonModule,
   ],
   controllers: [HotelController, HotelDetailsController, RoomsController],
-  providers: [HotelService, HotelDetailsService, RoomsService],
+  providers: [
+    HotelService,
+    HotelDetailsService,
+    RoomsService,
+    CreateHotelAdapter,
+    CreateHotelDetailsAdapter,
+  ],
 })
 export class WorkToMeModule {}

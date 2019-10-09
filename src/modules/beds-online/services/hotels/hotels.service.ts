@@ -10,6 +10,7 @@ import { HotelProviderResponse } from '../../interfaces/provider/hotel-provider.
 import { AmqpConnection, Nack, RabbitSubscribe } from '@nestjs-plus/rabbitmq';
 import { CreateHotelDto } from '../../dto/create-hotel.dto';
 import { Logger } from 'winston';
+import { CreateHotelAdapter } from '../../adapters/hotel.adapter';
 
 @Injectable()
 export class HotelsService {
@@ -32,6 +33,7 @@ export class HotelsService {
     @InjectModel('beds_on_line_hotels')
     private readonly hotelModel: Model<Hotel>,
     @Inject('winston') private readonly logger: Logger,
+    private createHotelAdapter: CreateHotelAdapter,
   ) {
     this.generateHeaders();
   }
@@ -159,8 +161,9 @@ export class HotelsService {
         const data: HotelProviderResponse = response.data;
 
         for (const hotel of data.hotels) {
-          const createHotel = new CreateHotelDto(hotel);
+          const createHotel = this.createHotelAdapter.transform(hotel);
           const newHotel = new this.hotelModel(createHotel);
+
           try {
             await this.hotelModel.findOneAndUpdate(
               { hotelId: newHotel.hotelId },
@@ -202,6 +205,7 @@ export class HotelsService {
 
         if (Number(this.totalPages) === Number(to)) {
           // publish-hotels-content
+          // /beds-online/hotel-details/publish-hotels-details
           try {
             const _ = await axios.get(
               `${this.configService.get(

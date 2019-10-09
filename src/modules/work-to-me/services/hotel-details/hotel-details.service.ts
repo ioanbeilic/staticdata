@@ -11,9 +11,10 @@ import { RabbitSubscribe, Nack } from '@nestjs-plus/rabbitmq';
 import axios, { AxiosResponse } from 'axios';
 import { ServerContentResponse } from '../../interfaces/provider/server-content-response.interface';
 import * as parser from 'fast-xml-parser';
-import { CreateHotelContentDto } from '../../dto/create-hotel-content.dto';
+import { CreateHotelDetailsDto } from '../../dto/create-hotel-details.dto';
 import fs from 'fs';
 import { Logger } from 'winston';
+import { CreateHotelDetailsAdapter } from '../../adapters/hotel-details.adapter';
 
 @Injectable()
 export class HotelDetailsService {
@@ -62,6 +63,7 @@ export class HotelDetailsService {
     @InjectModel('work_to_me_hotel-content')
     private readonly hotelContentModel: Model<HotelContent>,
     @Inject('winston') private readonly logger: Logger,
+    private createHotelDetailsAdapter: CreateHotelDetailsAdapter,
   ) {}
 
   async publishALlhHotelContent() {
@@ -138,8 +140,13 @@ export class HotelDetailsService {
     });
 */
     if (this.hotelContent !== undefined) {
-      const createHotelContent = new CreateHotelContentDto(this.hotelContent);
-      const newHotel = new this.hotelContentModel(createHotelContent);
+      // const createHotelContent = new createHotelDetails(this.hotelContent);
+
+      const hotelDetailsDto = this.createHotelDetailsAdapter.transform(
+        this.hotelContent,
+      );
+
+      const newHotel = new this.hotelContentModel(hotelDetailsDto);
 
       try {
         await this.hotelContentModel.findOneAndUpdate(

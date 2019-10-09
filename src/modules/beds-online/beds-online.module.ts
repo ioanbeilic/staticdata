@@ -12,6 +12,9 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { HotelSchema } from './schemas/hotel.schema';
 import { HotelDetailsSchema } from './schemas/hotel-details.schema';
 import { RoomSchema } from './schemas/room.schema';
+import { CreateHotelDto } from './dto/create-hotel.dto';
+import { CreateHotelAdapter } from './adapters/hotel.adapter';
+import { CreateHotelDetailsAdapter } from './adapters/hotel-details.adapter';
 
 @Module({
   imports: [
@@ -34,8 +37,15 @@ import { RoomSchema } from './schemas/room.schema';
       { name: 'beds_on_line_rooms', schema: RoomSchema },
     ]),
     ConfigModule,
+    CreateHotelDto,
   ],
   controllers: [HotelsController, HotelDetailsController, ImagesController],
-  providers: [HotelsService, HotelDetailsService, ImagesService],
+  providers: [
+    HotelsService,
+    HotelDetailsService,
+    ImagesService,
+    CreateHotelAdapter,
+    CreateHotelDetailsAdapter,
+  ],
 })
 export class BedsOnlineModule {}

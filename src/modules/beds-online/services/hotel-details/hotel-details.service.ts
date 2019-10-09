@@ -12,6 +12,7 @@ import { HotelProviderResponse } from '../../interfaces/provider/hotel-provider.
 import { HotelDetailsProviderResponse } from '../../interfaces/provider/hotel-details-provider.interface';
 import { CreateHotelDetailsDto } from '../../dto/create-hotel-details.dto';
 import { Logger } from 'winston';
+import { CreateHotelDetailsAdapter } from '../../adapters/hotel-details.adapter';
 
 @Injectable()
 export class HotelDetailsService {
@@ -24,7 +25,8 @@ export class HotelDetailsService {
     private readonly hotelModel: Model<HotelDetails>,
     private hotelsService: HotelsService,
     @Inject('winston') private readonly logger: Logger,
-  ) { }
+    private createHotelDetailsAdapter: CreateHotelDetailsAdapter,
+  ) {}
 
   async publishHotelsDetails() {
     const hotels = await this.hotelsService.getHotels();
@@ -41,7 +43,6 @@ export class HotelDetailsService {
       this.logger.error(error);
       throw error;
     }
-
   }
 
   /**
@@ -71,11 +72,12 @@ export class HotelDetailsService {
         headers: this.hotelsService.generateHeaders(),
       });
 
-
       if (response.status === 200) {
         const data: HotelDetailsProviderResponse = response.data;
 
-        const createHotel = new CreateHotelDetailsDto(data.hotel);
+        const createHotel = this.createHotelDetailsAdapter.transform(
+          data.hotel,
+        );
         const newHotel = new this.hotelModel(createHotel);
 
         try {
@@ -113,7 +115,6 @@ export class HotelDetailsService {
           throw error;
           // do do - implement log
           // console.log(error, 'hotel-database');
-
         }
       }
 

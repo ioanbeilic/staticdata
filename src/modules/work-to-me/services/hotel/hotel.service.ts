@@ -13,6 +13,7 @@ import { HotelServerResponse } from '../../interfaces/provider/server-hotel-resp
 import { ConfigService } from '../../../../config/config.service';
 import { Configuration } from '../../../../config/config.keys';
 import { Logger } from 'winston';
+import { CreateHotelAdapter } from '../../adapters/hotel.adapter';
 
 @Injectable()
 export class HotelService {
@@ -59,6 +60,7 @@ export class HotelService {
     @InjectModel('work_to_me_hotels') private readonly hotelModel: Model<Hotel>,
     private readonly configService: ConfigService,
     @Inject('winston') private readonly logger: Logger,
+    private createHotelAdapter: CreateHotelAdapter,
   ) {
     /**
      * load data from process.env
@@ -193,8 +195,8 @@ export class HotelService {
 
     if (this.hotels) {
       for (const hotel of this.hotels) {
-        const createHotel = new CreateHotelDto(hotel);
-        const newHotel = new this.hotelModel(createHotel);
+        const hotelDto = this.createHotelAdapter.transform(hotel);
+        const newHotel = new this.hotelModel(hotelDto);
 
         try {
           await this.hotelModel.findOneAndUpdate(

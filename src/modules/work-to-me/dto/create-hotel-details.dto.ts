@@ -1,4 +1,4 @@
-export class CreateHotelContentDto {
+export class CreateHotelDetailsDto {
   public hotelId!: string;
   public name!: string;
   public description!: string;
@@ -9,7 +9,7 @@ export class CreateHotelContentDto {
   public country!: string;
   public postalCode!: string;
   public web!: string;
-  public phones!: Phone[];
+  public phones: Phone[] = [];
   public email!: string;
   public category!: Category;
   public photos!: Image[];
