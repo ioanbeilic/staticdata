@@ -51,6 +51,10 @@ const colorizer = winston.format.colorize();
             name: 'abreu_hotel-detail',
             type: 'fanout',
           },
+          {
+            name: 'abreu_country',
+            type: 'fanout',
+          },
         ],
         uri: configService.get('RABBITMQ_URI'),
         prefetchCount: 1, // only 1 request each time default 10

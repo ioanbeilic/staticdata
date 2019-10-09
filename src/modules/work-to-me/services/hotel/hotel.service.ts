@@ -227,14 +227,6 @@ export class HotelService {
         }
       }
 
-      /**
-       * check if the current page is the last page
-       */
-
-      if (this.HaveError) {
-        return new Nack(true);
-      }
-
       // to du automatic init next task
       /**
        * total pages init to 0 and pages init to 1
@@ -254,6 +246,14 @@ export class HotelService {
           this.totalPages = 0;
         }
       }
+    }
+
+    /**
+     * check if the current page is the last page
+     */
+
+    if (this.HaveError) {
+      return new Nack(true);
     }
   }
 

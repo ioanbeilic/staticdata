@@ -7,6 +7,10 @@ import { HotelService } from './services/hotel/hotel.service';
 import { HotelDetailsService } from './services/hotel-details/hotel-details.service';
 import { HotelDetailsController } from './controllers/hotel-details/hotel-details.controller';
 import { HotelController } from './controllers/hotel/hotel.controller';
+import { HotelSchema } from './schemas/hotels.chema';
+import { HotelContentSchema } from './schemas/hotel-content.schema';
+import { WinstonModule } from 'nest-winston';
+import { CreateHotelAdapter } from './adapters/hotel.adapter';
 
 @Module({
   imports: [
@@ -24,13 +28,13 @@ import { HotelController } from './controllers/hotel/hotel.controller';
       inject: [ConfigService],
     }),
     MongooseModule.forFeature([
-      //  { name: 'abreu_hotels', schema: HotelSchema },
-      //  { name: 'abreu_hotel-details', schema: HotelContentSchema },
-      //  { name: 'work_to_me_rooms', schema: RoomSchema },
+      { name: 'abreu_hotels', schema: HotelSchema },
+      { name: 'abreu_hotel-details', schema: HotelContentSchema },
     ]),
     ConfigModule,
+    WinstonModule,
   ],
-  providers: [HotelService, HotelDetailsService],
+  providers: [HotelService, HotelDetailsService, CreateHotelAdapter],
   controllers: [HotelDetailsController, HotelController],
 })
 export class AbreuModule {}

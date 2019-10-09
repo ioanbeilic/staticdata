@@ -3,7 +3,9 @@ export interface CountryProviderResponse {
     TimeStamp: string;
     Success: string;
     ReadResponse: {
-      Countries?: CountryProvider[];
+      Countries: {
+        Country: CountryProvider[];
+      };
     };
   };
 }

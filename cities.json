@@ -1,1 +1,3456 @@
-{"OTA_ReadRS":{"TimeStamp":"2019-10-07T02:34:12","Success":"","ReadResponse":{"Cities":{"City":[{"CityCode":"258","CityName":"City Test","CountryName":"Country Test","CountryCode":12,"CountryISO":"PT"},{"CityCode":"721","CityName":"DELETE !!!","CountryName":"Country Test","CountryCode":12,"CountryISO":"PT"},{"CityCode":"1418","CityName":"DELETE !!! - OUT","CountryName":"Country Test","CountryCode":12,"CountryISO":"PT"},{"CityCode":"1733","CityName":"Dupl-Niagara Falls, Ontario","CountryName":"Country Test","CountryCode":12,"CountryISO":"PT"},{"CityCode":"1884","CityName":"Dupl-Vancouver, British Col.","CountryName":"Country Test","CountryCode":12,"CountryISO":"PT"},{"CityCode":"1890","CityName":"Dupl-Victoria, British Colum.","CountryName":"Country Test","CountryCode":12,"CountryISO":"PT"},{"CityCode":"1492","CityName":"Duplicate-Calgary, Alberta","CountryName":"Country Test","CountryCode":12,"CountryISO":"PT"},{"CityCode":"1550","CityName":"Duplicate-Edmonton, Alberta","CountryName":"Country Test","CountryCode":12,"CountryISO":"PT"},{"CityCode":"1712","CityName":"Duplicate-Montreal, Quebec","CountryName":"Country Test","CountryCode":12,"CountryISO":"PT"},{"CityCode":"1745","CityName":"Duplicate-Ottawa, Ontario","CountryName":"Country Test","CountryCode":12,"CountryISO":"PT"},{"CityCode":"883","CityName":"Feira Brasil","CountryName":"Country Test","CountryCode":12,"CountryISO":"PT"},{"CityCode":"882","CityName":"Mundo Abreu","CountryName":"Country Test","CountryCode":12,"CountryISO":"PT"},{"CityCode":"1410","CityName":"Mundo Abreu - ###","CountryName":"Country Test","CountryCode":12,"CountryISO":"PT"},{"CityCode":"10989","CityName":"Mundo Abreu 2009","CountryName":"Country Test","CountryCode":12,"CountryISO":"PT"},{"CityCode":"891","CityName":"NO BOOKINGS ALLOWED","CountryName":"Country Test","CountryCode":12,"CountryISO":"PT"},{"CityCode":"1419","CityName":"NO BOOKINGS ALLOWED - OUT","CountryName":"Country Test","CountryCode":12,"CountryISO":"PT"},{"CityCode":"889","CityName":"SPA","CountryName":"Country Test","CountryCode":12,"CountryISO":"PT"},{"CityCode":"5072","CityName":"Super Europa Prog. A e Prog. B","CountryName":"Country Test","CountryCode":12,"CountryISO":"PT"},{"CityCode":"5073","CityName":"Super Europa Prog. B","CountryName":"Country Test","CountryCode":12,"CountryISO":"PT"},{"CityCode":"5074","CityName":"Super Europa Prog. C","CountryName":"Country Test","CountryCode":12,"CountryISO":"PT"},{"CityCode":"1416","CityName":"Upload","CountryName":"Country Test","CountryCode":12,"CountryISO":"PT"},{"CityCode":"720","CityName":"_Pacotes","CountryName":"Country Test","CountryCode":12,"CountryISO":"PT"},{"CityCode":"11586","CityName":"Mundo Abreu 2010","CountryName":"Mundo Abreu","CountryCode":37,"CountryISO":"PT"},{"CityCode":"14279","CityName":"Mundo Abreu 2017","CountryName":"Mundo Abreu","CountryCode":37,"CountryISO":"PT"},{"CityCode":"73","CityName":"Abrantes","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"6437","CityName":"Abrunhosa-a-Velha","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9693","CityName":"Acores - Precos Imbativeis","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9497","CityName":"�guas de Moura","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9506","CityName":"�guas Santas","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"6138","CityName":"Agueda","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9844","CityName":"Aguiar da Beira","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9467","CityName":"Alagoa","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"113","CityName":"Alandroal","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9459","CityName":"Albernoa","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"20","CityName":"Albufeira","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9477","CityName":"Albufeira - Olhos de �gua","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9479","CityName":"Albufeira - Praia da Oura","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9484","CityName":"Albufeira - Santa Eul�lia","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"179","CityName":"Alcabideche","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"108","CityName":"Alcacer do Sal","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"6176","CityName":"Alca�ovas","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"816","CityName":"Alcanena","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"268","CityName":"Alcoba�a","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"155","CityName":"Alcochete","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"865","CityName":"Alcoutim","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"11171","CityName":"Alenquer","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9515","CityName":"Alf�ndega da F�","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"14276","CityName":"Algarve","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9058","CityName":"Alges","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"552","CityName":"Alijo","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"12679","CityName":"Aljezur","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"627","CityName":"Aljubarrota","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9059","CityName":"Almada","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"25","CityName":"Almancil","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"554","CityName":"Almeida","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9060","CityName":"Almeirim","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"309","CityName":"Alpalhao","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"8930","CityName":"Alpendorada","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"516","CityName":"Alpiar�a","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9468","CityName":"Alporchinhos","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"12930","CityName":"Alqueva","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9469","CityName":"Alte","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9460","CityName":"Alter do Ch�o","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"663","CityName":"Altura","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"6177","CityName":"Alvalade do Sado","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9061","CityName":"Alverca","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"515","CityName":"Alvito","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"26","CityName":"Alvor","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"6195","CityName":"Amadora","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"76","CityName":"Amarante","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"551","CityName":"Amares","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"5865","CityName":"Amares - Caldelas","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"1922","CityName":"Amieira","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"1923","CityName":"Anadia","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9516","CityName":"Ap�lia","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"1924","CityName":"Arcos de Valdevez","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9486","CityName":"Arganil","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"28","CityName":"Arma�ao de Pera","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9487","CityName":"Arouca","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"553","CityName":"Arraiolos","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9462","CityName":"Arraiolos - Igrejinha","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9517","CityName":"Arroios","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"318","CityName":"Atouguia da Baleia","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"12680","CityName":"Aveiras de Cima","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"58","CityName":"Aveiro","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"85","CityName":"Avis","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"343","CityName":"Azeit�o","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9500","CityName":"Azoia","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"40","CityName":"Azores - Faial Island - Horta","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"11208","CityName":"Azores - Flores Island - Cuada","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"48","CityName":"Azores - Flores Island - Santa Cruz","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"8932","CityName":"Azores - Graciosa Island - Santa Cruz da Graciosa","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"6143","CityName":"Azores - Pico Island - Lajes do Pico","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"2582","CityName":"Azores - Pico Island - Madalena","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"6144","CityName":"Azores - Pico Island - Sao Roque do Pico","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"8933","CityName":"Azores - Santa Maria Island - Vila do Porto","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"8934","CityName":"Azores - Sao Jorge Island - Velas","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"2580","CityName":"Azores - Sao Miguel Island - Capelas","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"6141","CityName":"Azores - Sao Miguel Island - Furnas","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"45","CityName":"Azores - Sao Miguel Island - Ponta Delgada","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"10340","CityName":"Azores - Sao Miguel Island - Povoa��o","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"8935","CityName":"Azores - Sao Miguel Island - Ribeira Grande","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"6142","CityName":"Azores - Sao Miguel Island - Vila do Nordeste","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"2588","CityName":"Azores - Sao Miguel Island - Vila Franca do Campo","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"27","CityName":"Azores - Terceira Island - Angra do Heroismo","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"6148","CityName":"Azores - Terceira Island - Praia da Vitoria","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9519","CityName":"Bai�o","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"29","CityName":"Baleeiro","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"1925","CityName":"Barcelos","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9470","CityName":"Barranco de Porto de M�s","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9062","CityName":"Barreiro","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"555","CityName":"Batalha","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"110","CityName":"Beja","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"12301","CityName":"Beja - Santa Vit�ria","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9063","CityName":"Belas","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"556","CityName":"Belmonte","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"91","CityName":"Belver","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"12664","CityName":"Benavente","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"6180","CityName":"Boliqueime","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"6196","CityName":"Bombarral","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"1926","CityName":"Borba","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"30","CityName":"Braga","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"119","CityName":"Braga - Sao Vicente","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"63","CityName":"Bragan�a","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9471","CityName":"Budens","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9472","CityName":"Burgau","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"1033","CityName":"Bussaco","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"6181","CityName":"Cabanas de Tavira","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"1927","CityName":"Cabeceiras de Basto","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"104","CityName":"Cabe�o de Vide","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"6187","CityName":"Caldas da Felgueira","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"31","CityName":"Caldas da Rainha","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"5862","CityName":"Caldas de Vizela","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"137","CityName":"Caminha","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"148","CityName":"Campo Maior","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"159","CityName":"Canas de Senhorim","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"265","CityName":"Caramulo","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"33","CityName":"Carcavelos","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9845","CityName":"Carnaxide","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9520","CityName":"Carrazeda de Ansi�es","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"56","CityName":"Cartaxo","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9461","CityName":"Carvalhal","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"23","CityName":"Carvoeiro","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"21","CityName":"Cascais","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"34","CityName":"Castelo Branco","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"8926","CityName":"Castelo de Paiva","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"53","CityName":"Castelo de Vide","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"558","CityName":"Castelo do Bode","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"272","CityName":"Castelo Rodrigo","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"149","CityName":"Castro Daire","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9521","CityName":"Castro Laboreiro","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"6145","CityName":"Castro Marim","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9064","CityName":"Celeiros","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"308","CityName":"Celorico da Beira","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"1928","CityName":"Celorico de Basto","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9488","CityName":"Cernache do Bonjardim","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"139","CityName":"Chaves","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"11169","CityName":"Cimbres - Armamar","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"273","CityName":"Cinfaes","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"16","CityName":"Coimbra","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"8965","CityName":"Coimbra - Cantanhede","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"6197","CityName":"Colares","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"12667","CityName":"Comporta","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"559","CityName":"Condeixa-a-Nova","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"11885","CityName":"Const�ncia","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9065","CityName":"Coruche","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"35","CityName":"Costa da Caparica","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"101","CityName":"Covilha","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"557","CityName":"Crato","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9181","CityName":"Cruises - Oporto","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"11858","CityName":"Cuba","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"154","CityName":"Cunheira","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"36","CityName":"Curia","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"100","CityName":"Elvas","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9066","CityName":"Entroncamento","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"140","CityName":"Ericeira","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9067","CityName":"Ermesinde","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"5861","CityName":"Esmoriz","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"75","CityName":"Espinho","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9507","CityName":"Espinho - S�o F�lix da Marinha","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"114","CityName":"Esposende","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"817","CityName":"Estarreja","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"6182","CityName":"Estoi","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9473","CityName":"Est�mbar","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"18","CityName":"Estoril","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"80","CityName":"Estremoz","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"22","CityName":"Evora","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"6178","CityName":"Evora - Azaruja","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"14280","CityName":"Expo Abreu 2017","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"59","CityName":"Fafe","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"628","CityName":"Faia","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"37","CityName":"Faro","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"69","CityName":"Fatima","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"1929","CityName":"Felgueiras","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"5837","CityName":"Fermentelos","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"6179","CityName":"Ferreira do Alentejo - Odivelas","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"124","CityName":"Ferreira do Zezere","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"38","CityName":"Figueira da Foz","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"10416","CityName":"Folgosa","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"632","CityName":"Foros de Mocho","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"86","CityName":"Fronteira","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"1396","CityName":"Fundao","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"158","CityName":"Gafanha da Nazare","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"6203","CityName":"Gavieira","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"134","CityName":"Geres-Cani�ada","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"8954","CityName":"Golega","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"5859","CityName":"Gouveia","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"262","CityName":"Grandola","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"435","CityName":"Grimancelos","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"77","CityName":"Guarda","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"64","CityName":"Guimaraes","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"6202","CityName":"Guimaraes - Caldas das Taipas","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"6186","CityName":"Idanha-a-Nova","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"6188","CityName":"Ilhavo","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"153","CityName":"Ladoeiro","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"316","CityName":"Lagares","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"102","CityName":"Lagoa","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9463","CityName":"Lagoa de Santo Andr�","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"42","CityName":"Lagos","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9480","CityName":"Lagos - Praia da Luz","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"278","CityName":"Lagos - Vila do Bispo","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"129","CityName":"Lamego","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"633","CityName":"Lanhelas","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"6194","CityName":"Le�a do Balio","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"70","CityName":"Leiria","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9509","CityName":"Leiria - Monte Real","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"121","CityName":"Linda-a-Velha","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9489","CityName":"Linhares da Beira","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"1","CityName":"Lisbon","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9846","CityName":"Lixa","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"379","CityName":"Loule","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"12678","CityName":"Loures","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9071","CityName":"Loures - Portela","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"578","CityName":"Lourinha","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"820","CityName":"Lousa","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"439","CityName":"Lousada","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"54","CityName":"Luso","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"1930","CityName":"Macedo de Cavaleiros","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"6140","CityName":"Maceira","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9691","CityName":"Madeira - Pre�os Imbativeis","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"2579","CityName":"Madeira Island - Calheta","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"6199","CityName":"Madeira Island - Camacha","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"507","CityName":"Madeira Island - Camara de Lobos","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"32","CityName":"Madeira Island - Cani�o","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9689","CityName":"Madeira Island - Cani�o de Baixo","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"11204","CityName":"Madeira Island - Curral das Freiras","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"39","CityName":"Madeira Island - Funchal","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"120","CityName":"Madeira Island - Machico","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"118","CityName":"Madeira Island - Pico do Arieiro","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"6200","CityName":"Madeira Island - Ponta Delgada","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"377","CityName":"Madeira Island - Ponta do Sol","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"6201","CityName":"Madeira Island - Porto da Cruz","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"117","CityName":"Madeira Island - Porto Moniz","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"11205","CityName":"Madeira Island - Porto Novo","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"47","CityName":"Madeira Island - Porto Santo","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"116","CityName":"Madeira Island - Ribeira Brava","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"886","CityName":"Madeira Island - Santa Cruz","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"702","CityName":"Madeira Island - Santana","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"887","CityName":"Madeira Island - Sao Vicente","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"2587","CityName":"Madeira Island - Serra de Agua","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"382","CityName":"Mafra","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"378","CityName":"Maia","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"626","CityName":"Mancelos","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"267","CityName":"Mangualde","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"350","CityName":"Manta Rota","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"563","CityName":"Manteigas","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"617","CityName":"Marao","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9522","CityName":"Marco de Canaveses","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"81","CityName":"Marinha Grande","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"639","CityName":"Martinchel","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"565","CityName":"Marvao","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"5225","CityName":"Matosinhos","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"6189","CityName":"Mealhada","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"380","CityName":"Melga�o","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9068","CityName":"Mem Martins","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"1399","CityName":"Mertola","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"629","CityName":"Meruge","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"562","CityName":"Mesao Frio","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"266","CityName":"Mira","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"8938","CityName":"Miranda do Douro","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"5864","CityName":"Mirandela","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"11165","CityName":"Mogadouro - Bemposta","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9069","CityName":"Moimenta da Beira","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"819","CityName":"Mon�ao","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"518","CityName":"Moncarapacho","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"403","CityName":"Monchique","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"437","CityName":"Mondim de Basto","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"611","CityName":"Monforte","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"136","CityName":"Monfortinho","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"566","CityName":"Monsanto","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"264","CityName":"Monsaraz","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"60","CityName":"Montalegre","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"8941","CityName":"Montargil","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9499","CityName":"Monte Belo","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9498","CityName":"Monte Estoril","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"43","CityName":"Monte Gordo","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"375","CityName":"Montijo","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"178","CityName":"Mora","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9491","CityName":"Mortagua","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9070","CityName":"Moscavide","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"1931","CityName":"Moura","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"6190","CityName":"Murtosa","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"112","CityName":"Nazare","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"269","CityName":"Nelas","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"15","CityName":"Obidos","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9508","CityName":"�bidos - Amoreira","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"10522","CityName":"Odemira","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"11206","CityName":"Odivelas","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"520","CityName":"Oeiras","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"634","CityName":"Ofir","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"6183","CityName":"Olhao","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"5717","CityName":"Oliveira de Azemeis","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"6191","CityName":"Oliveira do Bairro","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"6184","CityName":"Oliveira do Hospital","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"12","CityName":"Oporto","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"568","CityName":"Ourem","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9501","CityName":"Outeiro da Corti�ada","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"2583","CityName":"Ovar","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"19","CityName":"Pa�o de Arcos","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"381","CityName":"Pa�os de Ferreira","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"564","CityName":"Palmela","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"8931","CityName":"Paredes","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"1932","CityName":"Paredes de Coura","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9510","CityName":"Pataias","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"631","CityName":"Pavia","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9511","CityName":"Pederneira","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"135","CityName":"Pedras Salgadas","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"703","CityName":"Pedrogao Pequeno","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"6206","CityName":"Pego","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"130","CityName":"Penacova","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"1933","CityName":"Penafiel","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9187","CityName":"Penalva do Castelo","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"6185","CityName":"Penedono","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"125","CityName":"Peniche","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"4551","CityName":"Pera","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9512","CityName":"Pernes","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"341","CityName":"Peso da Regua","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"1934","CityName":"Pinhal Novo","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"103","CityName":"Pinhao","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"6192","CityName":"Pombal","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"434","CityName":"Ponte da Barca","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"138","CityName":"Ponte de Lima","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"92","CityName":"Ponte de Sor","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"46","CityName":"Porches","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"157","CityName":"Portalegre","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"150","CityName":"Portel","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"17","CityName":"Portimao","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"4550","CityName":"Portimao - Ferragudo","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"142","CityName":"Portimao - Praia da Rocha","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"5064","CityName":"Portimao - Praia do Vau","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"376","CityName":"Porto - Le�a da Palmeira","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"11167","CityName":"Porto Alto","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"5860","CityName":"Porto Covo","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"2585","CityName":"Porto Salvo","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"152","CityName":"Povoa de Lanhoso","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"55","CityName":"Povoa de Varzim","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9518","CityName":"P�voa de Varzim - Aver-o-Mar","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9492","CityName":"Praia da Barra","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"6193","CityName":"Praia de Mira","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9848","CityName":"Prior Velho","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"701","CityName":"Proenca a Nova","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"24","CityName":"Quarteira","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"2586","CityName":"Queijas","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"567","CityName":"Queluz","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9503","CityName":"Queluz - Tercena","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9481","CityName":"Quinta do Lago","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9149","CityName":"Raiva","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"181","CityName":"Redondo","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"144","CityName":"Reguengos de Monsaraz","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"672","CityName":"Rentacar Azores - Corvo","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"673","CityName":"Rentacar Azores - Faial","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"674","CityName":"Rentacar Azores - Flores","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"675","CityName":"Rentacar Azores - Graciosa","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"676","CityName":"Rentacar Azores - Pico","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"677","CityName":"Rentacar Azores - Santa Maria","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"678","CityName":"Rentacar Azores - Sao Jorge","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"679","CityName":"Rentacar Azores - Sao Miguel","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"680","CityName":"Rentacar Azores - Terceira","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"614","CityName":"Rentacar Madeira","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"1406","CityName":"Rentacar Mainland - Faro","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"613","CityName":"Rentacar Mainland - Lisboa","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"1407","CityName":"Rentacar Mainland - Porto","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"72","CityName":"Resende","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"78","CityName":"Ribeira de Sao Joao","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9072","CityName":"Rio de Mouro","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"79","CityName":"Rio Maior","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9073","CityName":"Rio Tinto","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9482","CityName":"Rocha","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"8937","CityName":"Rosmaninhal","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9074","CityName":"S. Pedro da Cova","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"57","CityName":"Sabrosa","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"312","CityName":"Sagres","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9483","CityName":"Salema","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"5863","CityName":"Salvaterra de Magos","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"6207","CityName":"Samora Correia","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9189","CityName":"Sangalhos","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"571","CityName":"Santa Clara-a-Velha","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"705","CityName":"Santa Iria da Azoia","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"67","CityName":"Santa Maria da Feira","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9494","CityName":"Santar","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"454","CityName":"Santarem","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"572","CityName":"Santiago do Cacem","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9465","CityName":"Santo Antonio das Areias","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"141","CityName":"Santo Tirso","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"6204","CityName":"Sao Bento da Porta Aberta","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"573","CityName":"Sao Bras de Alportel","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"708","CityName":"Sao Joao da Madeira","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9188","CityName":"Sao Martinho do Porto","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9505","CityName":"S�o Pedro da Afurada","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"1420","CityName":"Sao Pedro das Vinhas","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"311","CityName":"Sao Pedro do Sul","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"622","CityName":"Sao Pedro do Sul - Varzea","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9495","CityName":"Sao Romao","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"146","CityName":"Seia","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9493","CityName":"Seia - Sabugueiro","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9075","CityName":"Seixal","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"574","CityName":"Serpa","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9464","CityName":"Serpa - Pias","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"131","CityName":"Serta","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"49","CityName":"Sesimbra","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"71","CityName":"Setubal","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9502","CityName":"Set�bal - S�o Sebasti�o","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9504","CityName":"Set�bal - Vale da Rosa","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"6146","CityName":"Silveira","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"884","CityName":"Silves","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"156","CityName":"Sines","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"52","CityName":"Sintra","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"12929","CityName":"Sintra - Praia das Macas","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"6198","CityName":"Sintra - Praia Grande","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"575","CityName":"Sousel","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"145","CityName":"Tabua","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9523","CityName":"Tabua�o","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"143","CityName":"Tamengos","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9849","CityName":"Tarouca","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"50","CityName":"Tavira","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"630","CityName":"Terena","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9496","CityName":"Termas de Monfortinho","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9466","CityName":"Terrugem","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"12934","CityName":"TEST RD","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"123","CityName":"Tomar","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"1415","CityName":"Tondela","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"576","CityName":"Torrao","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"263","CityName":"Torreira","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9076","CityName":"Torres Novas","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"706","CityName":"Torres Vedras","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"11164","CityName":"Torres Vedras - Santa Cruz","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"1397","CityName":"Trancoso PT","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9524","CityName":"Travassos","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"65","CityName":"Trofa","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"128","CityName":"Troia","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9513","CityName":"Turcifal","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9180","CityName":"Unhais da Serra","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9525","CityName":"Valdosense","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9077","CityName":"Vale de Cambra","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9526","CityName":"Vale de Mendiz","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"4552","CityName":"Vale do Garrao","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"4553","CityName":"Vale do Lobo","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"577","CityName":"Valen�a do Minho","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"98","CityName":"Valongo","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"62","CityName":"Valpa�os","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9514","CityName":"Vau","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"11859","CityName":"Venda do Pinheiro","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9078","CityName":"Vendas Novas","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"74","CityName":"Viana do Castelo","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"133","CityName":"Vidago","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"10988","CityName":"Vidigueira","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"82","CityName":"Vieira de Leiria","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"560","CityName":"Vieira do Minho","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"261","CityName":"Vila do Conde","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"6205","CityName":"Vila do Geres","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"612","CityName":"Vila Franca de Xira","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"9485","CityName":"Vila Nova de Cacela","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"569","CityName":"Vila Nova de Cerveira","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"307","CityName":"Vila Nova de Famalicao","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"66","CityName":"Vila Nova de Gaia","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"132","CityName":"Vila Nova de Milfontes","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"438","CityName":"Vila Nova de Ourem","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"317","CityName":"Vila Nova de Santo Andre","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"570","CityName":"Vila Pouca da Beira","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"147","CityName":"Vila Praia de Ancora","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"61","CityName":"Vila Real","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"105","CityName":"Vila Real de Santo Antonio","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"1935","CityName":"Vila Verde","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"12666","CityName":"Vila Verde de Ficalho","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"517","CityName":"Vila Vi�osa","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"68","CityName":"Vilamoura","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"436","CityName":"Vilar Seco","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"8955","CityName":"Vimeiro","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"51","CityName":"Viseu","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"12658","CityName":"Viseu - Povolide","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"10520","CityName":"Viseu - Vouzela","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"},{"CityCode":"94","CityName":"Zambujeira do Mar","CountryName":"Portugal","CountryCode":1,"CountryISO":"PT"}]}}}}
+{
+  "OTA_ReadRS": {
+    "TimeStamp": "2019-10-07T02:34:12",
+    "Success": "",
+    "ReadResponse": {
+      "Cities": {
+        "City": [
+          {
+            "CityCode": "258",
+            "CityName": "City Test",
+            "CountryName": "Country Test",
+            "CountryCode": 12,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "721",
+            "CityName": "DELETE !!!",
+            "CountryName": "Country Test",
+            "CountryCode": 12,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "1418",
+            "CityName": "DELETE !!! - OUT",
+            "CountryName": "Country Test",
+            "CountryCode": 12,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "1733",
+            "CityName": "Dupl-Niagara Falls, Ontario",
+            "CountryName": "Country Test",
+            "CountryCode": 12,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "1884",
+            "CityName": "Dupl-Vancouver, British Col.",
+            "CountryName": "Country Test",
+            "CountryCode": 12,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "1890",
+            "CityName": "Dupl-Victoria, British Colum.",
+            "CountryName": "Country Test",
+            "CountryCode": 12,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "1492",
+            "CityName": "Duplicate-Calgary, Alberta",
+            "CountryName": "Country Test",
+            "CountryCode": 12,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "1550",
+            "CityName": "Duplicate-Edmonton, Alberta",
+            "CountryName": "Country Test",
+            "CountryCode": 12,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "1712",
+            "CityName": "Duplicate-Montreal, Quebec",
+            "CountryName": "Country Test",
+            "CountryCode": 12,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "1745",
+            "CityName": "Duplicate-Ottawa, Ontario",
+            "CountryName": "Country Test",
+            "CountryCode": 12,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "883",
+            "CityName": "Feira Brasil",
+            "CountryName": "Country Test",
+            "CountryCode": 12,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "882",
+            "CityName": "Mundo Abreu",
+            "CountryName": "Country Test",
+            "CountryCode": 12,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "1410",
+            "CityName": "Mundo Abreu - ###",
+            "CountryName": "Country Test",
+            "CountryCode": 12,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "10989",
+            "CityName": "Mundo Abreu 2009",
+            "CountryName": "Country Test",
+            "CountryCode": 12,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "891",
+            "CityName": "NO BOOKINGS ALLOWED",
+            "CountryName": "Country Test",
+            "CountryCode": 12,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "1419",
+            "CityName": "NO BOOKINGS ALLOWED - OUT",
+            "CountryName": "Country Test",
+            "CountryCode": 12,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "889",
+            "CityName": "SPA",
+            "CountryName": "Country Test",
+            "CountryCode": 12,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "5072",
+            "CityName": "Super Europa Prog. A e Prog. B",
+            "CountryName": "Country Test",
+            "CountryCode": 12,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "5073",
+            "CityName": "Super Europa Prog. B",
+            "CountryName": "Country Test",
+            "CountryCode": 12,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "5074",
+            "CityName": "Super Europa Prog. C",
+            "CountryName": "Country Test",
+            "CountryCode": 12,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "1416",
+            "CityName": "Upload",
+            "CountryName": "Country Test",
+            "CountryCode": 12,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "720",
+            "CityName": "_Pacotes",
+            "CountryName": "Country Test",
+            "CountryCode": 12,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "11586",
+            "CityName": "Mundo Abreu 2010",
+            "CountryName": "Mundo Abreu",
+            "CountryCode": 37,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "14279",
+            "CityName": "Mundo Abreu 2017",
+            "CountryName": "Mundo Abreu",
+            "CountryCode": 37,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "73",
+            "CityName": "Abrantes",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "6437",
+            "CityName": "Abrunhosa-a-Velha",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9693",
+            "CityName": "Acores - Precos Imbativeis",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9497",
+            "CityName": "�guas de Moura",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9506",
+            "CityName": "�guas Santas",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "6138",
+            "CityName": "Agueda",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9844",
+            "CityName": "Aguiar da Beira",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9467",
+            "CityName": "Alagoa",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "113",
+            "CityName": "Alandroal",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9459",
+            "CityName": "Albernoa",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "20",
+            "CityName": "Albufeira",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9477",
+            "CityName": "Albufeira - Olhos de �gua",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9479",
+            "CityName": "Albufeira - Praia da Oura",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9484",
+            "CityName": "Albufeira - Santa Eul�lia",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "179",
+            "CityName": "Alcabideche",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "108",
+            "CityName": "Alcacer do Sal",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "6176",
+            "CityName": "Alca�ovas",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "816",
+            "CityName": "Alcanena",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "268",
+            "CityName": "Alcoba�a",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "155",
+            "CityName": "Alcochete",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "865",
+            "CityName": "Alcoutim",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "11171",
+            "CityName": "Alenquer",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9515",
+            "CityName": "Alf�ndega da F�",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "14276",
+            "CityName": "Algarve",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9058",
+            "CityName": "Alges",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "552",
+            "CityName": "Alijo",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "12679",
+            "CityName": "Aljezur",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "627",
+            "CityName": "Aljubarrota",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9059",
+            "CityName": "Almada",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "25",
+            "CityName": "Almancil",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "554",
+            "CityName": "Almeida",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9060",
+            "CityName": "Almeirim",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "309",
+            "CityName": "Alpalhao",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "8930",
+            "CityName": "Alpendorada",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "516",
+            "CityName": "Alpiar�a",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9468",
+            "CityName": "Alporchinhos",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "12930",
+            "CityName": "Alqueva",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9469",
+            "CityName": "Alte",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9460",
+            "CityName": "Alter do Ch�o",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "663",
+            "CityName": "Altura",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "6177",
+            "CityName": "Alvalade do Sado",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9061",
+            "CityName": "Alverca",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "515",
+            "CityName": "Alvito",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "26",
+            "CityName": "Alvor",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "6195",
+            "CityName": "Amadora",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "76",
+            "CityName": "Amarante",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "551",
+            "CityName": "Amares",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "5865",
+            "CityName": "Amares - Caldelas",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "1922",
+            "CityName": "Amieira",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "1923",
+            "CityName": "Anadia",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9516",
+            "CityName": "Ap�lia",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "1924",
+            "CityName": "Arcos de Valdevez",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9486",
+            "CityName": "Arganil",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "28",
+            "CityName": "Arma�ao de Pera",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9487",
+            "CityName": "Arouca",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "553",
+            "CityName": "Arraiolos",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9462",
+            "CityName": "Arraiolos - Igrejinha",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9517",
+            "CityName": "Arroios",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "318",
+            "CityName": "Atouguia da Baleia",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "12680",
+            "CityName": "Aveiras de Cima",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "58",
+            "CityName": "Aveiro",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "85",
+            "CityName": "Avis",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "343",
+            "CityName": "Azeit�o",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9500",
+            "CityName": "Azoia",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "40",
+            "CityName": "Azores - Faial Island - Horta",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "11208",
+            "CityName": "Azores - Flores Island - Cuada",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "48",
+            "CityName": "Azores - Flores Island - Santa Cruz",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "8932",
+            "CityName": "Azores - Graciosa Island - Santa Cruz da Graciosa",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "6143",
+            "CityName": "Azores - Pico Island - Lajes do Pico",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "2582",
+            "CityName": "Azores - Pico Island - Madalena",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "6144",
+            "CityName": "Azores - Pico Island - Sao Roque do Pico",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "8933",
+            "CityName": "Azores - Santa Maria Island - Vila do Porto",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "8934",
+            "CityName": "Azores - Sao Jorge Island - Velas",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "2580",
+            "CityName": "Azores - Sao Miguel Island - Capelas",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "6141",
+            "CityName": "Azores - Sao Miguel Island - Furnas",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "45",
+            "CityName": "Azores - Sao Miguel Island - Ponta Delgada",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "10340",
+            "CityName": "Azores - Sao Miguel Island - Povoa��o",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "8935",
+            "CityName": "Azores - Sao Miguel Island - Ribeira Grande",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "6142",
+            "CityName": "Azores - Sao Miguel Island - Vila do Nordeste",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "2588",
+            "CityName": "Azores - Sao Miguel Island - Vila Franca do Campo",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "27",
+            "CityName": "Azores - Terceira Island - Angra do Heroismo",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "6148",
+            "CityName": "Azores - Terceira Island - Praia da Vitoria",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9519",
+            "CityName": "Bai�o",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "29",
+            "CityName": "Baleeiro",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "1925",
+            "CityName": "Barcelos",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9470",
+            "CityName": "Barranco de Porto de M�s",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9062",
+            "CityName": "Barreiro",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "555",
+            "CityName": "Batalha",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "110",
+            "CityName": "Beja",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "12301",
+            "CityName": "Beja - Santa Vit�ria",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9063",
+            "CityName": "Belas",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "556",
+            "CityName": "Belmonte",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "91",
+            "CityName": "Belver",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "12664",
+            "CityName": "Benavente",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "6180",
+            "CityName": "Boliqueime",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "6196",
+            "CityName": "Bombarral",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "1926",
+            "CityName": "Borba",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "30",
+            "CityName": "Braga",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "119",
+            "CityName": "Braga - Sao Vicente",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "63",
+            "CityName": "Bragan�a",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9471",
+            "CityName": "Budens",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9472",
+            "CityName": "Burgau",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "1033",
+            "CityName": "Bussaco",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "6181",
+            "CityName": "Cabanas de Tavira",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "1927",
+            "CityName": "Cabeceiras de Basto",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "104",
+            "CityName": "Cabe�o de Vide",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "6187",
+            "CityName": "Caldas da Felgueira",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "31",
+            "CityName": "Caldas da Rainha",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "5862",
+            "CityName": "Caldas de Vizela",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "137",
+            "CityName": "Caminha",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "148",
+            "CityName": "Campo Maior",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "159",
+            "CityName": "Canas de Senhorim",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "265",
+            "CityName": "Caramulo",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "33",
+            "CityName": "Carcavelos",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9845",
+            "CityName": "Carnaxide",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9520",
+            "CityName": "Carrazeda de Ansi�es",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "56",
+            "CityName": "Cartaxo",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9461",
+            "CityName": "Carvalhal",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "23",
+            "CityName": "Carvoeiro",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "21",
+            "CityName": "Cascais",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "34",
+            "CityName": "Castelo Branco",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "8926",
+            "CityName": "Castelo de Paiva",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "53",
+            "CityName": "Castelo de Vide",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "558",
+            "CityName": "Castelo do Bode",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "272",
+            "CityName": "Castelo Rodrigo",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "149",
+            "CityName": "Castro Daire",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9521",
+            "CityName": "Castro Laboreiro",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "6145",
+            "CityName": "Castro Marim",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9064",
+            "CityName": "Celeiros",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "308",
+            "CityName": "Celorico da Beira",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "1928",
+            "CityName": "Celorico de Basto",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9488",
+            "CityName": "Cernache do Bonjardim",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "139",
+            "CityName": "Chaves",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "11169",
+            "CityName": "Cimbres - Armamar",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "273",
+            "CityName": "Cinfaes",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "16",
+            "CityName": "Coimbra",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "8965",
+            "CityName": "Coimbra - Cantanhede",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "6197",
+            "CityName": "Colares",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "12667",
+            "CityName": "Comporta",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "559",
+            "CityName": "Condeixa-a-Nova",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "11885",
+            "CityName": "Const�ncia",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9065",
+            "CityName": "Coruche",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "35",
+            "CityName": "Costa da Caparica",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "101",
+            "CityName": "Covilha",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "557",
+            "CityName": "Crato",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9181",
+            "CityName": "Cruises - Oporto",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "11858",
+            "CityName": "Cuba",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "154",
+            "CityName": "Cunheira",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "36",
+            "CityName": "Curia",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "100",
+            "CityName": "Elvas",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9066",
+            "CityName": "Entroncamento",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "140",
+            "CityName": "Ericeira",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9067",
+            "CityName": "Ermesinde",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "5861",
+            "CityName": "Esmoriz",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "75",
+            "CityName": "Espinho",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9507",
+            "CityName": "Espinho - S�o F�lix da Marinha",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "114",
+            "CityName": "Esposende",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "817",
+            "CityName": "Estarreja",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "6182",
+            "CityName": "Estoi",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9473",
+            "CityName": "Est�mbar",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "18",
+            "CityName": "Estoril",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "80",
+            "CityName": "Estremoz",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "22",
+            "CityName": "Evora",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "6178",
+            "CityName": "Evora - Azaruja",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "14280",
+            "CityName": "Expo Abreu 2017",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "59",
+            "CityName": "Fafe",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "628",
+            "CityName": "Faia",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "37",
+            "CityName": "Faro",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "69",
+            "CityName": "Fatima",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "1929",
+            "CityName": "Felgueiras",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "5837",
+            "CityName": "Fermentelos",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "6179",
+            "CityName": "Ferreira do Alentejo - Odivelas",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "124",
+            "CityName": "Ferreira do Zezere",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "38",
+            "CityName": "Figueira da Foz",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "10416",
+            "CityName": "Folgosa",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "632",
+            "CityName": "Foros de Mocho",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "86",
+            "CityName": "Fronteira",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "1396",
+            "CityName": "Fundao",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "158",
+            "CityName": "Gafanha da Nazare",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "6203",
+            "CityName": "Gavieira",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "134",
+            "CityName": "Geres-Cani�ada",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "8954",
+            "CityName": "Golega",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "5859",
+            "CityName": "Gouveia",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "262",
+            "CityName": "Grandola",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "435",
+            "CityName": "Grimancelos",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "77",
+            "CityName": "Guarda",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "64",
+            "CityName": "Guimaraes",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "6202",
+            "CityName": "Guimaraes - Caldas das Taipas",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "6186",
+            "CityName": "Idanha-a-Nova",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "6188",
+            "CityName": "Ilhavo",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "153",
+            "CityName": "Ladoeiro",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "316",
+            "CityName": "Lagares",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "102",
+            "CityName": "Lagoa",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9463",
+            "CityName": "Lagoa de Santo Andr�",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "42",
+            "CityName": "Lagos",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9480",
+            "CityName": "Lagos - Praia da Luz",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "278",
+            "CityName": "Lagos - Vila do Bispo",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "129",
+            "CityName": "Lamego",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "633",
+            "CityName": "Lanhelas",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "6194",
+            "CityName": "Le�a do Balio",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "70",
+            "CityName": "Leiria",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9509",
+            "CityName": "Leiria - Monte Real",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "121",
+            "CityName": "Linda-a-Velha",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9489",
+            "CityName": "Linhares da Beira",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "1",
+            "CityName": "Lisbon",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9846",
+            "CityName": "Lixa",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "379",
+            "CityName": "Loule",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "12678",
+            "CityName": "Loures",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9071",
+            "CityName": "Loures - Portela",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "578",
+            "CityName": "Lourinha",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "820",
+            "CityName": "Lousa",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "439",
+            "CityName": "Lousada",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "54",
+            "CityName": "Luso",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "1930",
+            "CityName": "Macedo de Cavaleiros",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "6140",
+            "CityName": "Maceira",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9691",
+            "CityName": "Madeira - Pre�os Imbativeis",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "2579",
+            "CityName": "Madeira Island - Calheta",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "6199",
+            "CityName": "Madeira Island - Camacha",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "507",
+            "CityName": "Madeira Island - Camara de Lobos",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "32",
+            "CityName": "Madeira Island - Cani�o",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9689",
+            "CityName": "Madeira Island - Cani�o de Baixo",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "11204",
+            "CityName": "Madeira Island - Curral das Freiras",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "39",
+            "CityName": "Madeira Island - Funchal",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "120",
+            "CityName": "Madeira Island - Machico",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "118",
+            "CityName": "Madeira Island - Pico do Arieiro",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "6200",
+            "CityName": "Madeira Island - Ponta Delgada",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "377",
+            "CityName": "Madeira Island - Ponta do Sol",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "6201",
+            "CityName": "Madeira Island - Porto da Cruz",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "117",
+            "CityName": "Madeira Island - Porto Moniz",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "11205",
+            "CityName": "Madeira Island - Porto Novo",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "47",
+            "CityName": "Madeira Island - Porto Santo",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "116",
+            "CityName": "Madeira Island - Ribeira Brava",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "886",
+            "CityName": "Madeira Island - Santa Cruz",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "702",
+            "CityName": "Madeira Island - Santana",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "887",
+            "CityName": "Madeira Island - Sao Vicente",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "2587",
+            "CityName": "Madeira Island - Serra de Agua",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "382",
+            "CityName": "Mafra",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "378",
+            "CityName": "Maia",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "626",
+            "CityName": "Mancelos",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "267",
+            "CityName": "Mangualde",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "350",
+            "CityName": "Manta Rota",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "563",
+            "CityName": "Manteigas",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "617",
+            "CityName": "Marao",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9522",
+            "CityName": "Marco de Canaveses",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "81",
+            "CityName": "Marinha Grande",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "639",
+            "CityName": "Martinchel",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "565",
+            "CityName": "Marvao",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "5225",
+            "CityName": "Matosinhos",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "6189",
+            "CityName": "Mealhada",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "380",
+            "CityName": "Melga�o",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9068",
+            "CityName": "Mem Martins",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "1399",
+            "CityName": "Mertola",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "629",
+            "CityName": "Meruge",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "562",
+            "CityName": "Mesao Frio",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "266",
+            "CityName": "Mira",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "8938",
+            "CityName": "Miranda do Douro",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "5864",
+            "CityName": "Mirandela",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "11165",
+            "CityName": "Mogadouro - Bemposta",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9069",
+            "CityName": "Moimenta da Beira",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "819",
+            "CityName": "Mon�ao",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "518",
+            "CityName": "Moncarapacho",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "403",
+            "CityName": "Monchique",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "437",
+            "CityName": "Mondim de Basto",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "611",
+            "CityName": "Monforte",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "136",
+            "CityName": "Monfortinho",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "566",
+            "CityName": "Monsanto",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "264",
+            "CityName": "Monsaraz",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "60",
+            "CityName": "Montalegre",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "8941",
+            "CityName": "Montargil",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9499",
+            "CityName": "Monte Belo",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9498",
+            "CityName": "Monte Estoril",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "43",
+            "CityName": "Monte Gordo",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "375",
+            "CityName": "Montijo",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "178",
+            "CityName": "Mora",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9491",
+            "CityName": "Mortagua",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9070",
+            "CityName": "Moscavide",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "1931",
+            "CityName": "Moura",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "6190",
+            "CityName": "Murtosa",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "112",
+            "CityName": "Nazare",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "269",
+            "CityName": "Nelas",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "15",
+            "CityName": "Obidos",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9508",
+            "CityName": "�bidos - Amoreira",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "10522",
+            "CityName": "Odemira",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "11206",
+            "CityName": "Odivelas",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "520",
+            "CityName": "Oeiras",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "634",
+            "CityName": "Ofir",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "6183",
+            "CityName": "Olhao",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "5717",
+            "CityName": "Oliveira de Azemeis",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "6191",
+            "CityName": "Oliveira do Bairro",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "6184",
+            "CityName": "Oliveira do Hospital",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "12",
+            "CityName": "Oporto",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "568",
+            "CityName": "Ourem",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9501",
+            "CityName": "Outeiro da Corti�ada",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "2583",
+            "CityName": "Ovar",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "19",
+            "CityName": "Pa�o de Arcos",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "381",
+            "CityName": "Pa�os de Ferreira",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "564",
+            "CityName": "Palmela",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "8931",
+            "CityName": "Paredes",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "1932",
+            "CityName": "Paredes de Coura",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9510",
+            "CityName": "Pataias",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "631",
+            "CityName": "Pavia",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9511",
+            "CityName": "Pederneira",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "135",
+            "CityName": "Pedras Salgadas",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "703",
+            "CityName": "Pedrogao Pequeno",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "6206",
+            "CityName": "Pego",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "130",
+            "CityName": "Penacova",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "1933",
+            "CityName": "Penafiel",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9187",
+            "CityName": "Penalva do Castelo",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "6185",
+            "CityName": "Penedono",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "125",
+            "CityName": "Peniche",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "4551",
+            "CityName": "Pera",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9512",
+            "CityName": "Pernes",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "341",
+            "CityName": "Peso da Regua",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "1934",
+            "CityName": "Pinhal Novo",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "103",
+            "CityName": "Pinhao",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "6192",
+            "CityName": "Pombal",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "434",
+            "CityName": "Ponte da Barca",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "138",
+            "CityName": "Ponte de Lima",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "92",
+            "CityName": "Ponte de Sor",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "46",
+            "CityName": "Porches",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "157",
+            "CityName": "Portalegre",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "150",
+            "CityName": "Portel",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "17",
+            "CityName": "Portimao",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "4550",
+            "CityName": "Portimao - Ferragudo",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "142",
+            "CityName": "Portimao - Praia da Rocha",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "5064",
+            "CityName": "Portimao - Praia do Vau",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "376",
+            "CityName": "Porto - Le�a da Palmeira",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "11167",
+            "CityName": "Porto Alto",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "5860",
+            "CityName": "Porto Covo",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "2585",
+            "CityName": "Porto Salvo",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "152",
+            "CityName": "Povoa de Lanhoso",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "55",
+            "CityName": "Povoa de Varzim",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9518",
+            "CityName": "P�voa de Varzim - Aver-o-Mar",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9492",
+            "CityName": "Praia da Barra",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "6193",
+            "CityName": "Praia de Mira",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9848",
+            "CityName": "Prior Velho",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "701",
+            "CityName": "Proenca a Nova",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "24",
+            "CityName": "Quarteira",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "2586",
+            "CityName": "Queijas",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "567",
+            "CityName": "Queluz",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9503",
+            "CityName": "Queluz - Tercena",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9481",
+            "CityName": "Quinta do Lago",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9149",
+            "CityName": "Raiva",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "181",
+            "CityName": "Redondo",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "144",
+            "CityName": "Reguengos de Monsaraz",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "672",
+            "CityName": "Rentacar Azores - Corvo",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "673",
+            "CityName": "Rentacar Azores - Faial",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "674",
+            "CityName": "Rentacar Azores - Flores",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "675",
+            "CityName": "Rentacar Azores - Graciosa",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "676",
+            "CityName": "Rentacar Azores - Pico",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "677",
+            "CityName": "Rentacar Azores - Santa Maria",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "678",
+            "CityName": "Rentacar Azores - Sao Jorge",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "679",
+            "CityName": "Rentacar Azores - Sao Miguel",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "680",
+            "CityName": "Rentacar Azores - Terceira",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "614",
+            "CityName": "Rentacar Madeira",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "1406",
+            "CityName": "Rentacar Mainland - Faro",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "613",
+            "CityName": "Rentacar Mainland - Lisboa",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "1407",
+            "CityName": "Rentacar Mainland - Porto",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "72",
+            "CityName": "Resende",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "78",
+            "CityName": "Ribeira de Sao Joao",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9072",
+            "CityName": "Rio de Mouro",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "79",
+            "CityName": "Rio Maior",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9073",
+            "CityName": "Rio Tinto",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9482",
+            "CityName": "Rocha",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "8937",
+            "CityName": "Rosmaninhal",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9074",
+            "CityName": "S. Pedro da Cova",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "57",
+            "CityName": "Sabrosa",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "312",
+            "CityName": "Sagres",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9483",
+            "CityName": "Salema",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "5863",
+            "CityName": "Salvaterra de Magos",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "6207",
+            "CityName": "Samora Correia",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9189",
+            "CityName": "Sangalhos",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "571",
+            "CityName": "Santa Clara-a-Velha",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "705",
+            "CityName": "Santa Iria da Azoia",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "67",
+            "CityName": "Santa Maria da Feira",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9494",
+            "CityName": "Santar",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "454",
+            "CityName": "Santarem",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "572",
+            "CityName": "Santiago do Cacem",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9465",
+            "CityName": "Santo Antonio das Areias",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "141",
+            "CityName": "Santo Tirso",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "6204",
+            "CityName": "Sao Bento da Porta Aberta",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "573",
+            "CityName": "Sao Bras de Alportel",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "708",
+            "CityName": "Sao Joao da Madeira",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9188",
+            "CityName": "Sao Martinho do Porto",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9505",
+            "CityName": "S�o Pedro da Afurada",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "1420",
+            "CityName": "Sao Pedro das Vinhas",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "311",
+            "CityName": "Sao Pedro do Sul",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "622",
+            "CityName": "Sao Pedro do Sul - Varzea",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9495",
+            "CityName": "Sao Romao",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "146",
+            "CityName": "Seia",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9493",
+            "CityName": "Seia - Sabugueiro",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9075",
+            "CityName": "Seixal",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "574",
+            "CityName": "Serpa",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9464",
+            "CityName": "Serpa - Pias",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "131",
+            "CityName": "Serta",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "49",
+            "CityName": "Sesimbra",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "71",
+            "CityName": "Setubal",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9502",
+            "CityName": "Set�bal - S�o Sebasti�o",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9504",
+            "CityName": "Set�bal - Vale da Rosa",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "6146",
+            "CityName": "Silveira",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "884",
+            "CityName": "Silves",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "156",
+            "CityName": "Sines",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "52",
+            "CityName": "Sintra",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "12929",
+            "CityName": "Sintra - Praia das Macas",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "6198",
+            "CityName": "Sintra - Praia Grande",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "575",
+            "CityName": "Sousel",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "145",
+            "CityName": "Tabua",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9523",
+            "CityName": "Tabua�o",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "143",
+            "CityName": "Tamengos",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9849",
+            "CityName": "Tarouca",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "50",
+            "CityName": "Tavira",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "630",
+            "CityName": "Terena",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9496",
+            "CityName": "Termas de Monfortinho",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9466",
+            "CityName": "Terrugem",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "12934",
+            "CityName": "TEST RD",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "123",
+            "CityName": "Tomar",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "1415",
+            "CityName": "Tondela",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "576",
+            "CityName": "Torrao",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "263",
+            "CityName": "Torreira",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9076",
+            "CityName": "Torres Novas",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "706",
+            "CityName": "Torres Vedras",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "11164",
+            "CityName": "Torres Vedras - Santa Cruz",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "1397",
+            "CityName": "Trancoso PT",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9524",
+            "CityName": "Travassos",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "65",
+            "CityName": "Trofa",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "128",
+            "CityName": "Troia",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9513",
+            "CityName": "Turcifal",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9180",
+            "CityName": "Unhais da Serra",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9525",
+            "CityName": "Valdosense",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9077",
+            "CityName": "Vale de Cambra",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9526",
+            "CityName": "Vale de Mendiz",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "4552",
+            "CityName": "Vale do Garrao",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "4553",
+            "CityName": "Vale do Lobo",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "577",
+            "CityName": "Valen�a do Minho",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "98",
+            "CityName": "Valongo",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "62",
+            "CityName": "Valpa�os",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9514",
+            "CityName": "Vau",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "11859",
+            "CityName": "Venda do Pinheiro",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9078",
+            "CityName": "Vendas Novas",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "74",
+            "CityName": "Viana do Castelo",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "133",
+            "CityName": "Vidago",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "10988",
+            "CityName": "Vidigueira",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "82",
+            "CityName": "Vieira de Leiria",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "560",
+            "CityName": "Vieira do Minho",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "261",
+            "CityName": "Vila do Conde",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "6205",
+            "CityName": "Vila do Geres",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "612",
+            "CityName": "Vila Franca de Xira",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "9485",
+            "CityName": "Vila Nova de Cacela",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "569",
+            "CityName": "Vila Nova de Cerveira",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "307",
+            "CityName": "Vila Nova de Famalicao",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "66",
+            "CityName": "Vila Nova de Gaia",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "132",
+            "CityName": "Vila Nova de Milfontes",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "438",
+            "CityName": "Vila Nova de Ourem",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "317",
+            "CityName": "Vila Nova de Santo Andre",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "570",
+            "CityName": "Vila Pouca da Beira",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "147",
+            "CityName": "Vila Praia de Ancora",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "61",
+            "CityName": "Vila Real",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "105",
+            "CityName": "Vila Real de Santo Antonio",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "1935",
+            "CityName": "Vila Verde",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "12666",
+            "CityName": "Vila Verde de Ficalho",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "517",
+            "CityName": "Vila Vi�osa",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "68",
+            "CityName": "Vilamoura",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "436",
+            "CityName": "Vilar Seco",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "8955",
+            "CityName": "Vimeiro",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "51",
+            "CityName": "Viseu",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "12658",
+            "CityName": "Viseu - Povolide",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "10520",
+            "CityName": "Viseu - Vouzela",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          },
+          {
+            "CityCode": "94",
+            "CityName": "Zambujeira do Mar",
+            "CountryName": "Portugal",
+            "CountryCode": 1,
+            "CountryISO": "PT"
+          }
+        ]
+      }
+    }
+  }
+}

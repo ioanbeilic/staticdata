@@ -3,7 +3,9 @@ export interface CityProviderResponse {
     TimeStamp: string;
     Success: string;
     ReadResponse: {
-      Cities?: CityProvider[];
+      Cities: {
+        City: CityProvider[];
+      };
     };
   };
 }
