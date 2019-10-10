@@ -20,13 +20,7 @@ export interface HotelDetails extends Document {
     name: string;
     value: string;
   };
-  photos: [
-    {
-      type: string;
-      fileName: string;
-      title: string;
-    },
-  ];
+  photos: Image[];
   facilities: [
     {
       id: number;
@@ -35,4 +29,10 @@ export interface HotelDetails extends Document {
     },
   ];
   currency: string;
+}
+
+export interface Image {
+  type: string;
+  fileName: string;
+  title: string;
 }

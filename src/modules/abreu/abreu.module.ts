@@ -11,6 +11,7 @@ import { HotelSchema } from './schemas/hotels.chema';
 import { HotelContentSchema } from './schemas/hotel-content.schema';
 import { WinstonModule } from 'nest-winston';
 import { CreateHotelAdapter } from './adapters/hotel.adapter';
+import { CreateHotelDetailsAdapter } from './adapters/hotel-details.adapter';
 
 @Module({
   imports: [
@@ -34,7 +35,12 @@ import { CreateHotelAdapter } from './adapters/hotel.adapter';
     ConfigModule,
     WinstonModule,
   ],
-  providers: [HotelService, HotelDetailsService, CreateHotelAdapter],
+  providers: [
+    HotelService,
+    HotelDetailsService,
+    CreateHotelAdapter,
+    CreateHotelDetailsAdapter,
+  ],
   controllers: [HotelDetailsController, HotelController],
 })
 export class AbreuModule {}

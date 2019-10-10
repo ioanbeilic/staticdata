@@ -3,7 +3,7 @@ export interface HotelDetailsProviderResponse {
     TimeStamp: string;
     Id: string;
     Hotel: {
-      Info: Info;
+      Info: HotelDetailsProvider;
     };
   };
 }
@@ -23,7 +23,7 @@ export interface Descriptive {
   };
 }
 
-export interface Info {
+export interface HotelDetailsProvider {
   HotelCode: string;
   HotelName: string;
   HotelCityCode: string;

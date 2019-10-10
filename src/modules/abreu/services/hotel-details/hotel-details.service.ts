@@ -2,17 +2,25 @@ import { Injectable, Inject, HttpException, HttpStatus } from '@nestjs/common';
 import { ConfigService } from '../../../../config/config.service';
 import { AmqpConnection, RabbitSubscribe, Nack } from '@nestjs-plus/rabbitmq';
 import { InjectModel } from '@nestjs/mongoose';
-import { HotelDetails } from '../../interfaces/hotel-content.interface';
+import { HotelDetails } from '../../interfaces/hotel-details.interface';
 import { HotelService } from '../hotel/hotel.service';
 import { Logger } from 'winston';
 import { Hotel } from '../../interfaces/hotel.interface';
 import axios, { AxiosResponse } from 'axios';
 import { Configuration } from '../../../../config/config.keys';
 import { Model } from 'mongoose';
-import { HotelProviderResponse } from '../../interfaces/provider/hotel-provider-response.interface';
+import {
+  HotelProviderResponse,
+  PropertyResponse,
+} from '../../interfaces/provider/hotel-provider-response.interface';
 import * as parser from 'fast-xml-parser';
-
 import path from 'path';
+import fs from 'fs';
+import { CreateHotelDetailsAdapter } from '../../adapters/hotel-details.adapter';
+import {
+  HotelDetailsProvider,
+  HotelDetailsProviderResponse,
+} from '../../interfaces/provider/hotel-details-response.interface';
 
 @Injectable()
 export class HotelDetailsService {
@@ -52,7 +60,8 @@ export class HotelDetailsService {
     @InjectModel('abreu_hotel-details')
     private readonly hotelModel: Model<HotelDetails>,
     private hotelService: HotelService,
-    @Inject('winston') private readonly logger: Logger, // private createHotelDetailsAdapter: CreateHotelDetailsAdapter,
+    @Inject('winston') private readonly logger: Logger,
+    private createHotelDetailsAdapter: CreateHotelDetailsAdapter,
   ) {
     this.context = this.configService.get(Configuration.ABREU_CONTEXT);
     this.password = this.configService.get(Configuration.ABREU_PASSWORD);
@@ -92,7 +101,7 @@ export class HotelDetailsService {
   })
   async subscribeHotelsDetails(hotelId: string): Promise<Nack | undefined> {
     let response: AxiosResponse;
-    //  let hotels: any[] = [];
+    let hotel: HotelDetailsProvider;
 
     const request = `
     <soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
@@ -128,52 +137,54 @@ export class HotelDetailsService {
       );
     }
 
-    const json: HotelProviderResponse = await parser.parse(
+    const json: HotelDetailsProviderResponse = await parser.parse(
       response.data,
       this.options,
     );
 
-    // console.log(JSON.stringify(json));
+    hotel = json.OTA_HotelInfoRS.Hotel.Info;
 
-    // hotels = hotels.concat(json.OTA_HotelSearchRS.Properties.Property);
+    if (hotel) {
+      const hotelDto = this.createHotelDetailsAdapter.transform(hotel);
+      const newHotel = new this.hotelModel(hotelDto);
 
-    /*
-    if (hotels) {
-      for (const hotel of hotels) {
-        const hotelDto = this.createHotelAdapter.transform(hotel);
-        const newHotel = new this.hotelModel(hotelDto);
-
-        try {
-          await this.hotelModel.findOneAndUpdate(
-            { hotelId: newHotel.hotelId },
-            {
-              hotelId: newHotel.hotelId,
-              name: newHotel.name,
-              zone: newHotel.zone,
-              address: newHotel.address,
-              zipCode: newHotel.zipCode,
-              latitude: newHotel.latitude,
-              longitude: newHotel.longitude,
-              hotelCategory: newHotel.hotelCategory,
-              city: newHotel.city,
-            },
-            {
-                upsert: true,
-              new: true,
-            },
-          );
-        } catch (error) {
-          // do do - implement log
-          this.logger.error('Error saving to database', error);
-          this.HaveError = true;
-        }
+      try {
+        await this.hotelModel.findOneAndUpdate(
+          { hotelId: newHotel.hotelId },
+          {
+            name: newHotel.name,
+            description: newHotel.description,
+            location: newHotel.location,
+            city: newHotel.city,
+            address: newHotel.address,
+            province: newHotel.province,
+            country: newHotel.country,
+            postalCode: newHotel.postalCode,
+            web: newHotel.web,
+            phones: newHotel.phones,
+            email: newHotel.email,
+            category: newHotel.country,
+            photos: newHotel.photos,
+            facilities: newHotel.facilities,
+            currency: newHotel.currency,
+          },
+          {
+            upsert: true,
+            new: true,
+          },
+        );
+      } catch (error) {
+        // do do - implement log
+        this.logger.error('Error saving to database', error);
+        this.HaveError = true;
       }
+    }
 
-      // to du automatic init next task
-      /**
-       * total pages init to 0 and pages init to 1
-       * only corresponded the last page
-       */
+    // to du automatic init next task
+    /**
+     * total pages init to 0 and pages init to 1
+     * only corresponded the last page
+     */
     /*
       if (this.countCityQue === this.countHotelQue) {
         // publish-hotels-content
