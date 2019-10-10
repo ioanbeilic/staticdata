@@ -102,7 +102,7 @@ const colorizer = winston.format.colorize();
               ),
             ),
           }),
-
+          /*
           new winston.transports.Console({
             level: 'debug',
             handleExceptions: true,
@@ -117,6 +117,7 @@ const colorizer = winston.format.colorize();
               ),
             ),
           }),
+          */
         ],
         exitOnError: false,
       }),
