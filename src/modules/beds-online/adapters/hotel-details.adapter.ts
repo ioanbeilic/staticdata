@@ -11,6 +11,7 @@ import {
   Image,
   Facility,
 } from '../dto/create-hotel-details.dto';
+import path from 'path';
 
 @Injectable()
 export class CreateHotelDetailsAdapter {
@@ -18,56 +19,64 @@ export class CreateHotelDetailsAdapter {
 
   transform(originalData: HotelDetailsProvider) {
     const hotelDetails = new CreateHotelDetailsDto();
-    try {
-      hotelDetails.hotelId = String(t(originalData, 'code').safeObject || '');
 
-      hotelDetails.name = t(originalData, 'name.content').safeObject || '';
-      hotelDetails.description =
-        t(originalData, 'description.content').safeObject || '';
-      hotelDetails.country =
-        t(originalData, 'country.description.content').safeObject || '';
-      hotelDetails.province = t(originalData, 'state.name').safeObject || '';
-      hotelDetails.location = {
-        latitude:
-          String(t(originalData, 'coordinates.latitude').safeObject) || '',
-        longitude:
-          String(t(originalData, 'coordinates.longitude').safeObject) || '',
-      };
-      hotelDetails.address =
-        t(originalData, 'address.content').safeObject || '';
-      hotelDetails.postalCode = t(originalData, 'postalCode').safeObject || '';
-      hotelDetails.city = t(originalData, 'city.content').safeObject || '';
+    hotelDetails.hotelId = String(t(originalData, 'code').safeObject || '');
 
-      hotelDetails.web = t(originalData, 'web').safeObject || '';
+    hotelDetails.name = t(originalData, 'name.content').safeObject || '';
+    hotelDetails.description =
+      t(originalData, 'description.content').safeObject || '';
+    hotelDetails.country =
+      t(originalData, 'country.description.content').safeObject || '';
+    hotelDetails.province = t(originalData, 'state.name').safeObject || '';
+    hotelDetails.location = {
+      latitude:
+        String(t(originalData, 'coordinates.latitude').safeObject) || '',
+      longitude:
+        String(t(originalData, 'coordinates.longitude').safeObject) || '',
+    };
+    hotelDetails.address = t(originalData, 'address.content').safeObject || '';
+    hotelDetails.postalCode = t(originalData, 'postalCode').safeObject || '';
+    hotelDetails.city = t(originalData, 'city.content').safeObject || '';
 
-      hotelDetails.phones = t(originalData, 'phones').safeObject || '';
-      hotelDetails.email = t(originalData, 'email').safeObject || '';
+    hotelDetails.web = t(originalData, 'web').safeObject || '';
 
-      hotelDetails.category = {
-        name: t(originalData, 'category.description.content').safeObject || '',
-        value: t(originalData, 'category.description.code').safeObject || '',
-      };
+    hotelDetails.phones = t(originalData, 'phones').safeObject || '';
+    hotelDetails.email = t(originalData, 'email').safeObject || '';
 
-      if (t(originalData, 'images').isArray) {
+    hotelDetails.category = {
+      name: t(originalData, 'category.description.content').safeObject || '',
+      value: t(originalData, 'category.description.code').safeObject || '',
+    };
+
+    if (t(originalData, 'images').isArray) {
+      try {
         hotelDetails.photos = this.getImages(
           t(originalData, 'images').safeObject,
         );
-      } else {
-        hotelDetails.photos = [];
+      } catch (error) {
+        this.logger.error(
+          path.resolve(__filename) + ' ---> ' + JSON.stringify(error),
+        );
       }
+    } else {
+      hotelDetails.photos = [];
+    }
 
-      if (t(originalData, 'facilities').isArray) {
+    if (t(originalData, 'facilities').isArray) {
+      try {
         hotelDetails.facilities = this.getFacilities(
           t(originalData, 'facilities').safeObject,
         );
-      } else {
-        hotelDetails.facilities = [];
+      } catch (error) {
+        this.logger.error(
+          path.resolve(__filename) + ' ---> ' + JSON.stringify(error),
+        );
       }
-
-      hotelDetails.currency = '';
-    } catch (error) {
-      this.logger.error(error);
+    } else {
+      hotelDetails.facilities = [];
     }
+
+    hotelDetails.currency = '';
   }
 
   private getImages(images: ImageProvider[]) {

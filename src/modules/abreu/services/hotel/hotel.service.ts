@@ -22,6 +22,7 @@ import {
   PropertyResponse,
 } from '../../interfaces/provider/hotel-provider-response.interface';
 import { CreateHotelAdapter } from '../../adapters/hotel.adapter';
+import path from 'path';
 
 @Injectable()
 export class HotelService {
@@ -171,7 +172,9 @@ export class HotelService {
       });
     } catch (error) {
       // console.log(error);
-      this.logger.error(error);
+      this.logger.error(
+        path.resolve(__filename) + ' ---> ' + JSON.stringify(error),
+      );
       throw new HttpException('error', error);
     }
     const json: CityProviderResponse = await parser.parse(
@@ -237,7 +240,9 @@ export class HotelService {
       });
     } catch (error) {
       this.HaveError = true;
-      this.logger.error(error);
+      this.logger.error(
+        path.resolve(__filename) + ' ---> ' + JSON.stringify(error),
+      );
 
       throw new HttpException(
         'Abreu - provider error',
@@ -320,7 +325,9 @@ export class HotelService {
     try {
       return this.hotelModel.find();
     } catch (error) {
-      this.logger.error(error);
+      this.logger.error(
+        path.resolve(__filename) + ' ---> ' + JSON.stringify(error),
+      );
       throw error;
     }
   }
@@ -329,7 +336,9 @@ export class HotelService {
     try {
       return this.hotelModel.findOne({ hotelId });
     } catch (error) {
-      this.logger.error(error);
+      this.logger.error(
+        path.resolve(__filename) + ' ---> ' + JSON.stringify(error),
+      );
       throw error;
     }
   }

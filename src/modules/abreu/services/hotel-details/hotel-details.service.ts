@@ -12,6 +12,8 @@ import { Model } from 'mongoose';
 import { HotelProviderResponse } from '../../interfaces/provider/hotel-provider-response.interface';
 import * as parser from 'fast-xml-parser';
 
+import path from 'path';
+
 @Injectable()
 export class HotelDetailsService {
   password: string;
@@ -70,7 +72,9 @@ export class HotelDetailsService {
         );
       });
     } catch (error) {
-      this.logger.error(error);
+      this.logger.error(
+        path.resolve(__filename) + ' ---> ' + JSON.stringify(error),
+      );
       throw error;
     }
   }
@@ -114,7 +118,9 @@ export class HotelDetailsService {
       });
     } catch (error) {
       this.HaveError = true;
-      this.logger.error(error);
+      this.logger.error(
+        path.resolve(__filename) + ' ---> ' + JSON.stringify(error),
+      );
 
       throw new HttpException(
         'Abreu - provider error',

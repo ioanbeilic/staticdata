@@ -3,12 +3,13 @@ import t from 'typy';
 import { Inject, Injectable } from '@nestjs/common';
 import { Logger } from 'winston';
 import { CreateHotelDto } from '../dto/create-hotel.dto';
+import path from 'path';
 
 @Injectable()
 export class CreateHotelAdapter {
   constructor(@Inject('winston') private readonly logger: Logger) {}
 
-  transform(originalData: ServerHotelInterface): CreateHotelDto {
+  transform(originalData: ServerHotelInterface[]): CreateHotelDto {
     const hotel = new CreateHotelDto();
     try {
       hotel.hotelId = t(originalData, 'JPCode').safeObject || '';
@@ -22,8 +23,11 @@ export class CreateHotelAdapter {
         t(originalData, 'HotelCategory.name').safeObject || '';
       hotel.city = t(originalData, 'HotelCategory.City').safeObject || '';
     } catch (error) {
-      this.logger.error(error);
+      this.logger.error(
+        path.resolve(__filename) + ' ---> ' + JSON.stringify(error),
+      );
     }
+
     return hotel;
   }
 }

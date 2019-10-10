@@ -15,6 +15,7 @@ export const databaseProviders = [
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useFindAndModify: false,
+      useCreateIndex: true,
     }),
     inject: [ConfigService],
   }),

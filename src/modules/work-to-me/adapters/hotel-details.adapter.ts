@@ -4,6 +4,7 @@ import { Inject, Injectable } from '@nestjs/common';
 import { Logger } from 'winston';
 import { CreateHotelDetailsDto } from '../dto/create-hotel-details.dto';
 import { Phone } from 'src/modules/beds-online/dto/create-hotel-details.dto';
+import path from 'path';
 
 @Injectable()
 export class CreateHotelDetailsAdapter {
@@ -20,9 +21,17 @@ export class CreateHotelDetailsAdapter {
         t(originalData, 'Address.Address').safeObject || '';
 
       if (t(originalData, 'Descriptions.Description').isObject) {
-        hotelDetails.description = this.getDescription(
-          t(originalData, 'Descriptions.Description').safeObject || '',
-        );
+        try {
+          hotelDetails.description = this.getDescription(
+            t(originalData, 'Descriptions.Description').safeObject || '',
+          );
+        } catch (error) {
+          this.logger.error(
+            path.resolve(__filename) +
+              ' ---> ' +
+              `hotelDetails.description, ${hotelDetails.hotelId}`,
+          );
+        }
       } else {
         hotelDetails.description = '';
       }
@@ -36,25 +45,49 @@ export class CreateHotelDetailsAdapter {
       };
 
       if (t(originalData, 'Zone.Name').isString) {
-        hotelDetails.city = this.getCity(
-          t(originalData, 'Zone.Name').safeObject || '',
-        );
+        try {
+          hotelDetails.city = this.getCity(
+            t(originalData, 'Zone.Name').safeObject || '',
+          );
+        } catch (error) {
+          this.logger.error(
+            path.resolve(__filename) +
+              ' ---> ' +
+              `hotelDetails.city, ${hotelDetails.hotelId}`,
+          );
+        }
       } else {
         hotelDetails.city = '';
       }
 
       if (t(originalData, 'Address.Address').isString) {
-        hotelDetails.province = this.getProvince(
-          t(originalData, 'Address.Address').safeObject,
-        );
+        try {
+          hotelDetails.province = this.getProvince(
+            t(originalData, 'Address.Address').safeObject,
+          );
+        } catch (error) {
+          this.logger.error(
+            path.resolve(__filename) +
+              ' ---> ' +
+              `hotelDetails.address, ${hotelDetails.hotelId}`,
+          );
+        }
       } else {
         hotelDetails.province = '';
       }
 
       if (t(originalData, 'Zone.Name').isString) {
-        hotelDetails.country = this.getCountry(
-          t(originalData, 'Zone.Name').safeObject || '',
-        );
+        try {
+          hotelDetails.country = this.getCountry(
+            t(originalData, 'Zone.Name').safeObject || '',
+          );
+        } catch (error) {
+          this.logger.error(
+            path.resolve(__filename) +
+              ' ---> ' +
+              `hotelDetails.country, ${hotelDetails.hotelId}`,
+          );
+        }
       } else {
         // Zone
         hotelDetails.country = '';
@@ -66,9 +99,17 @@ export class CreateHotelDetailsAdapter {
         t(originalData, 'ContactInfo.PhoneNumbers').isString ||
         t(originalData, 'ContactInfo.PhoneNumbers').isObject
       ) {
-        hotelDetails.phones = this.getPhones(
-          t(originalData, 'ContactInfo.PhoneNumbers').safeObject || '',
-        );
+        try {
+          hotelDetails.phones = this.getPhones(
+            t(originalData, 'ContactInfo.PhoneNumbers').safeObject || '',
+          );
+        } catch (error) {
+          this.logger.error(
+            path.resolve(__filename) +
+              ' ---> ' +
+              `hotelDetails.phones, ${hotelDetails.hotelId}`,
+          );
+        }
       }
 
       hotelDetails.email = '';
@@ -81,9 +122,17 @@ export class CreateHotelDetailsAdapter {
       // this.photos = t(originalData, 'Images.Image').safeObject || '';
 
       if (t(originalData, 'Images.Image').isArray) {
-        hotelDetails.photos = this.getImages(
-          t(originalData, 'Images.Image').safeObject,
-        );
+        try {
+          hotelDetails.photos = this.getImages(
+            t(originalData, 'Images.Image').safeObject,
+          );
+        } catch (error) {
+          this.logger.error(
+            path.resolve(__filename) +
+              ' ---> ' +
+              `hotelDetails.image, ${hotelDetails.hotelId}`,
+          );
+        }
       } else {
         hotelDetails.photos = [];
       }
@@ -91,8 +140,11 @@ export class CreateHotelDetailsAdapter {
       hotelDetails.facilities = [];
       hotelDetails.currency = '';
     } catch (error) {
-      this.logger.error(error);
+      this.logger.error(
+        path.resolve(__filename) + ' ---> ' + `${hotelDetails.hotelId}`,
+      );
     }
+
     return hotelDetails;
   }
 

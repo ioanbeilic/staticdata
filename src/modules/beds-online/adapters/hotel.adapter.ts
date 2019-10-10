@@ -3,6 +3,7 @@ import { HotelProvider } from '../interfaces/provider/hotel-provider.interfce';
 import { Injectable, Inject } from '@nestjs/common';
 import { Logger } from 'winston';
 import { CreateHotelDto } from '../dto/create-hotel.dto';
+import path from 'path';
 
 Injectable();
 export class CreateHotelAdapter {
@@ -25,7 +26,9 @@ export class CreateHotelAdapter {
       hotel.hotelCategory = t(originalData, 'categoryCode').safeObject || '';
       hotel.city = t(originalData, 'city.content').safeObject || '';
     } catch (error) {
-      this.logger.error(error);
+      this.logger.error(
+        path.resolve(__filename) + ' ---> ' + JSON.stringify(error),
+      );
     }
 
     return hotel;

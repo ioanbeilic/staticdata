@@ -14,6 +14,7 @@ import { ConfigService } from '../../../../config/config.service';
 import { Configuration } from '../../../../config/config.keys';
 import { Logger } from 'winston';
 import { CreateHotelAdapter } from '../../adapters/hotel.adapter';
+import path from 'path';
 
 @Injectable()
 export class HotelService {
@@ -53,7 +54,6 @@ export class HotelService {
   };
   hotels: ServerHotelInterface[] | undefined;
   hotelsIds!: Hotel[];
-  HaveError: boolean = false;
 
   constructor(
     public readonly amqpConnection: AmqpConnection,
@@ -73,6 +73,7 @@ export class HotelService {
 
   async publishHotels(): Promise<void> {
     let response: AxiosResponse;
+
     const request = `
     <soapenv:Envelope
         xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
@@ -127,8 +128,9 @@ export class HotelService {
         }
       }
     } catch (error) {
-      this.HaveError = true;
-      this.logger.error(error);
+      this.logger.error(
+        path.resolve(__filename) + ' ---> ' + JSON.stringify(error),
+      );
       // console.log(error);
     }
   }
@@ -141,8 +143,9 @@ export class HotelService {
         page,
       );
     } catch (error) {
-      this.HaveError = true;
-      this.logger.error(error);
+      this.logger.error(
+        path.resolve(__filename) + ' ---> ' + JSON.stringify(error),
+      );
     }
   }
 
@@ -152,6 +155,10 @@ export class HotelService {
     queue: 'work_to_me_hotels',
   })
   async subscribeHotels(page: number): Promise<Nack | undefined> {
+    this.logger.info(`Processing work to me hotels - page: ${page}`);
+    let hotels: any;
+    let haveError: boolean = false;
+
     const request = `
     <soapenv:Envelope
     xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
@@ -181,22 +188,25 @@ export class HotelService {
         this.options,
       );
 
-      this.hotels =
-        json.Envelope.Body.HotelPortfolioResponse.HotelPortfolioRS.HotelPortfolio.Hotel;
+      hotels =
+        json.Envelope.Body.HotelPortfolioResponse.HotelPortfolioRS
+          .HotelPortfolio.Hotel;
     } catch (error) {
       // provider error repeat this request request
       // console.log(error, 'hotes from query');
-      this.HaveError = true;
-      this.logger.error(error);
+      haveError = true;
+      this.logger.error(
+        path.resolve(__filename) + ' ---> ' + JSON.stringify(error),
+      );
     }
     /**
      *  save data to database
      */
 
-    if (this.hotels) {
-      for (const hotel of this.hotels) {
-        const hotelDto = this.createHotelAdapter.transform(hotel);
-        const newHotel = new this.hotelModel(hotelDto);
+    if (hotels) {
+      for (const hotel of hotels) {
+        const createHotel = this.createHotelAdapter.transform(hotel);
+        const newHotel = new this.hotelModel(createHotel);
 
         try {
           await this.hotelModel.findOneAndUpdate(
@@ -212,6 +222,7 @@ export class HotelService {
               hotelCategory: newHotel.hotelCategory,
               city: newHotel.city,
             },
+
             {
               /**
                * if is not exist create new one
@@ -222,17 +233,18 @@ export class HotelService {
           );
         } catch (error) {
           // do do - implement log
-          this.logger.error(error);
-          this.HaveError = true;
+          this.logger.error(
+            path.resolve(__filename) + ' ---> ' + JSON.stringify(error),
+          );
+          haveError = true;
         }
+
+        // to du automatic init next task
+        /**
+         * total pages init to 0 and pages init to 1
+         * only corresponded the last page
+         */
       }
-
-      // to du automatic init next task
-      /**
-       * total pages init to 0 and pages init to 1
-       * only corresponded the last page
-       */
-
       if (Number(this.totalPages) === Number(page)) {
         // publish-hotels-content
         // console.log('run ');
@@ -247,12 +259,11 @@ export class HotelService {
         }
       }
     }
-
     /**
      * check if the current page is the last page
      */
 
-    if (this.HaveError) {
+    if (haveError) {
       return new Nack(true);
     }
   }

@@ -11,6 +11,7 @@ import { AmqpConnection, Nack, RabbitSubscribe } from '@nestjs-plus/rabbitmq';
 import { CreateHotelDto } from '../../dto/create-hotel.dto';
 import { Logger } from 'winston';
 import { CreateHotelAdapter } from '../../adapters/hotel.adapter';
+import path from 'path';
 
 @Injectable()
 export class HotelsService {
@@ -125,7 +126,9 @@ export class HotelsService {
       }
     } catch (error) {
       this.HaveError = true;
-      this.logger.error(error);
+      this.logger.error(
+        path.resolve(__filename) + ' ---> ' + JSON.stringify(error),
+      );
       throw error;
     }
   }
@@ -191,7 +194,9 @@ export class HotelsService {
             // do do - implement log
             // console.log(error, 'hotel-database');
             this.HaveError = true;
-            this.logger.error(error);
+            this.logger.error(
+              path.resolve(__filename) + ' ---> ' + JSON.stringify(error),
+            );
           }
         }
 
@@ -219,7 +224,9 @@ export class HotelsService {
               this.logger.error(String(_.status));
             }
           } catch (error) {
-            this.logger.error(error);
+            this.logger.error(
+              path.resolve(__filename) + ' ---> ' + JSON.stringify(error),
+            );
           }
         }
 
@@ -231,7 +238,9 @@ export class HotelsService {
       }
     } catch (error) {
       this.HaveError = true;
-      this.logger.error(error);
+      this.logger.error(
+        path.resolve(__filename) + ' ---> ' + JSON.stringify(error),
+      );
       // console.log(error);
       // do do - implement log
     }
@@ -241,7 +250,9 @@ export class HotelsService {
     try {
       return this.hotelModel.find();
     } catch (error) {
-      this.logger.error(error);
+      this.logger.error(
+        path.resolve(__filename) + ' ---> ' + JSON.stringify(error),
+      );
       throw error;
     }
   }
@@ -250,7 +261,9 @@ export class HotelsService {
     try {
       return this.hotelModel.findOne({ hotelId });
     } catch (error) {
-      this.logger.error(error);
+      this.logger.error(
+        path.resolve(__filename) + ' ---> ' + JSON.stringify(error),
+      );
       throw error;
     }
   }

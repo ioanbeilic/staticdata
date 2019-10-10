@@ -15,6 +15,7 @@ import { CreateHotelDetailsDto } from '../../dto/create-hotel-details.dto';
 import fs from 'fs';
 import { Logger } from 'winston';
 import { CreateHotelDetailsAdapter } from '../../adapters/hotel-details.adapter';
+import path from 'path';
 
 @Injectable()
 export class HotelDetailsService {
@@ -93,6 +94,9 @@ export class HotelDetailsService {
   })
   async HotelContent(hotelId: string): Promise<Nack | undefined> {
     // console.log(hotelId);
+
+    this.logger.info(` Processing work to me hotel-details id: ${hotelId}`);
+
     let response: AxiosResponse;
     const request = `
       <soapenv:Envelope
@@ -116,9 +120,10 @@ export class HotelDetailsService {
       response = await axios.post(this.url, request, {
         headers: this.headers,
       });
-      this.logger.info(response);
     } catch (error) {
-      this.logger.error(error);
+      this.logger.error(
+        path.resolve(__filename) + ' ---> ' + JSON.stringify(error),
+      );
       this.HaveError = true;
       throw error;
     }
@@ -178,7 +183,9 @@ export class HotelDetailsService {
         );
       } catch (error) {
         // do do - implement log
-        this.logger.error(error);
+        this.logger.error(
+          path.resolve(__filename) + ' ---> ' + JSON.stringify(error),
+        );
         this.HaveError = true;
         throw error;
       }

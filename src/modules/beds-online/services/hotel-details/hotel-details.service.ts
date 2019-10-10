@@ -11,6 +11,7 @@ import { Configuration } from '../../../../config/config.keys';
 import { HotelDetailsProviderResponse } from '../../interfaces/provider/hotel-details-provider.interface';
 import { Logger } from 'winston';
 import { CreateHotelDetailsAdapter } from '../../adapters/hotel-details.adapter';
+import path from 'path';
 
 @Injectable()
 export class HotelDetailsService {
@@ -38,7 +39,9 @@ export class HotelDetailsService {
         );
       });
     } catch (error) {
-      this.logger.error(error);
+      this.logger.error(
+        path.resolve(__filename) + ' ---> ' + JSON.stringify(error),
+      );
       throw error;
     }
   }
@@ -125,7 +128,9 @@ export class HotelDetailsService {
       }
     } catch (error) {
       this.HaveError = true;
-      this.logger.error(error);
+      this.logger.error(
+        path.resolve(__filename) + ' ---> ' + JSON.stringify(error),
+      );
       throw error;
       // console.log(error);
       // do do - implement log
