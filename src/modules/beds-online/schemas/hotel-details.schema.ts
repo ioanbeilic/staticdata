@@ -14,7 +14,12 @@ export const HotelDetailsSchema = new Schema({
   country: String,
   postalCode: String,
   web: String,
-  phones: [String],
+  phones: [
+    {
+      number: String,
+      type: String,
+    },
+  ],
   email: String,
   category: {
     name: String,

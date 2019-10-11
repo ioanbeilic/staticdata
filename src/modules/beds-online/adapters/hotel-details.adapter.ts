@@ -2,6 +2,7 @@ import {
   HotelDetailsProvider,
   ImageProvider,
   FacilityProvider,
+  PhoneProvider,
 } from '../interfaces/provider/hotel-details-provider.interface';
 import t from 'typy';
 import { Inject, Injectable } from '@nestjs/common';
@@ -10,6 +11,7 @@ import {
   CreateHotelDetailsDto,
   Image,
   Facility,
+  Phone,
 } from '../dto/create-hotel-details.dto';
 import path from 'path';
 
@@ -17,7 +19,7 @@ import path from 'path';
 export class CreateHotelDetailsAdapter {
   constructor(@Inject('winston') private readonly logger: Logger) {}
 
-  transform(originalData: HotelDetailsProvider) {
+  async transform(originalData: HotelDetailsProvider) {
     const hotelDetails = new CreateHotelDetailsDto();
 
     hotelDetails.hotelId = String(t(originalData, 'code').safeObject || '');
@@ -41,6 +43,21 @@ export class CreateHotelDetailsAdapter {
     hotelDetails.web = t(originalData, 'web').safeObject || '';
 
     hotelDetails.phones = t(originalData, 'phones').safeObject || '';
+
+    if (t(originalData, 'phones').isArray) {
+      try {
+        hotelDetails.phones = await this.getPhones(
+          t(originalData, 'phones').safeObject,
+        );
+      } catch (error) {
+        this.logger.error(
+          path.resolve(__filename) + ' ---> ' + JSON.stringify(error),
+        );
+      }
+    } else {
+      hotelDetails.phones = [];
+    }
+
     hotelDetails.email = t(originalData, 'email').safeObject || '';
 
     hotelDetails.category = {
@@ -50,7 +67,7 @@ export class CreateHotelDetailsAdapter {
 
     if (t(originalData, 'images').isArray) {
       try {
-        hotelDetails.photos = this.getImages(
+        hotelDetails.photos = await this.getImages(
           t(originalData, 'images').safeObject,
         );
       } catch (error) {
@@ -64,7 +81,7 @@ export class CreateHotelDetailsAdapter {
 
     if (t(originalData, 'facilities').isArray) {
       try {
-        hotelDetails.facilities = this.getFacilities(
+        hotelDetails.facilities = await this.getFacilities(
           t(originalData, 'facilities').safeObject,
         );
       } catch (error) {
@@ -77,28 +94,32 @@ export class CreateHotelDetailsAdapter {
     }
 
     hotelDetails.currency = '';
+
+    return hotelDetails;
   }
 
-  private getImages(images: ImageProvider[]) {
+  private async getImages(images: ImageProvider[]): Promise<Image[]> {
     const photos: Image[] = [];
 
-    images.forEach(img => {
-      const newImg = {
+    for (const img of images) {
+      const newImg = await {
         type: img.type.code,
         fileName: img.path,
         title: img.type.description.content,
       };
 
       photos.push(newImg);
-    });
+    }
 
     return photos;
   }
 
-  private getFacilities(facilities: FacilityProvider[]) {
+  private async getFacilities(
+    facilities: FacilityProvider[],
+  ): Promise<Facility[]> {
     const newFacilities: Facility[] = [];
 
-    facilities.forEach(facility => {
+    for (const facility of facilities) {
       const newFacility = {
         id: facility.facilityCode,
         description: facility.description.content,
@@ -106,7 +127,23 @@ export class CreateHotelDetailsAdapter {
       };
 
       newFacilities.push(newFacility);
-    });
+    }
+
     return newFacilities;
+  }
+
+  private async getPhones(phones: PhoneProvider[]): Promise<Phone[]> {
+    const newPhones: Phone[] = [];
+
+    for (const phone of phones) {
+      const newPhone = {
+        number: phone.phoneNumber,
+        type: phone.phoneType,
+      };
+
+      newPhones.push(newPhone);
+    }
+
+    return newPhones;
   }
 }

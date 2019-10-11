@@ -8,7 +8,6 @@ import { Hotel } from '../../interfaces/hotel.interface';
 import axios, { AxiosResponse } from 'axios';
 import { HotelProviderResponse } from '../../interfaces/provider/hotel-provider.interfce';
 import { AmqpConnection, Nack, RabbitSubscribe } from '@nestjs-plus/rabbitmq';
-import { CreateHotelDto } from '../../dto/create-hotel.dto';
 import { Logger } from 'winston';
 import { CreateHotelAdapter } from '../../adapters/hotel.adapter';
 import path from 'path';

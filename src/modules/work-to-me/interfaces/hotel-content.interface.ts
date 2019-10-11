@@ -14,7 +14,12 @@ export interface HotelContent extends Document {
   country: string;
   postalCode: string;
   web: string;
-  phones: string[];
+  phones: [
+    {
+      number: string;
+      type: string;
+    },
+  ];
   email: string;
   category: {
     name: string;

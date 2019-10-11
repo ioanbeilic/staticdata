@@ -24,7 +24,7 @@ interface Segment {
   };
 }
 
-interface Phone {
+export interface PhoneProvider {
   phoneNumber: string;
   phoneType: string;
 }
@@ -217,4 +217,9 @@ export interface HotelDetailsProvider {
   lastUpdate: string;
   S2C: string;
   ranking: number;
+}
+
+interface Phone {
+  phoneNumber: string;
+  phoneType: string;
 }
