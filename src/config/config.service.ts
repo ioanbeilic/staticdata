@@ -36,6 +36,9 @@ export class ConfigService {
         ABREU_USERNAME: process.env.ABREU_USERNAME as string,
         ABREU_PASSWORD: process.env.ABREU_PASSWORD as string,
         ABREU_CONTEXT: process.env.ABREU_CONTEXT as string,
+        TOUR_DIEZ_URL: process.env.TOUR_DIEZ_URL as string,
+        TOUR_DIEZ_uSER: process.env.TOUR_DIEZ_uSER as string,
+        TOUR_DIEZ_PASSWORD: process.env.TOUR_DIEZ_PASSWORD as string,
       };
     }
   }
