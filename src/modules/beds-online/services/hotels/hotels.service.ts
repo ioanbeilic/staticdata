@@ -107,9 +107,10 @@ export class HotelsService {
              * rf i < 1 run page from 1 to 100
              * else run dorm 101 tp 200 .etc
              */
-
             if (i > 1) {
               from = i * 500 + 1;
+            } else if (i === this.totalPages) {
+              from = data.total % 500;
             }
 
             to = i < this.totalPages ? from + 500 - 1 : data.total;
