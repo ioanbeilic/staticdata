@@ -8,7 +8,6 @@ import { Configuration } from './config/config.keys';
 import { AmqpConnection, RabbitMQModule } from '@nestjs-plus/rabbitmq';
 import { WorkToMeModule } from './modules/work-to-me/work-to-me.module';
 import { BedsOnlineModule } from './modules/beds-online/beds-online.module';
-import { ElasticsearchModule } from '@nestjs/elasticsearch';
 import { AbreuModule } from './modules/abreu/abreu.module';
 import { WinstonModule } from 'nest-winston';
 import * as winston from 'winston';

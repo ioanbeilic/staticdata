@@ -210,6 +210,7 @@ export class HotelsService {
         if (Number(this.totalPages) === Number(to)) {
           // publish-hotels-content
           // /beds-online/hotel-details/publish-hotels-details
+          // beds-online/hotel-details/publish-hotels-details
           try {
             const _ = await axios.get(
               `${this.configService.get(
