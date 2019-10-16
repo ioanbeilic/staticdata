@@ -22,7 +22,7 @@ export const HotelContentSchema = new Schema({
   },
   photos: [
     {
-      type: String,
+      info: String,
       fileName: String,
       title: String,
     },

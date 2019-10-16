@@ -103,7 +103,7 @@ export class CreateHotelDetailsAdapter {
 
     for (const img of images) {
       const newImg = await {
-        type: img.type.code,
+        info: img.type.code,
         fileName: img.path,
         title: img.type.description.content,
       };
@@ -138,7 +138,7 @@ export class CreateHotelDetailsAdapter {
     for (const phone of phones) {
       const newPhone = {
         number: phone.phoneNumber,
-        type: phone.phoneType,
+        info: phone.phoneType,
       };
 
       newPhones.push(newPhone);

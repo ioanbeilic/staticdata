@@ -1,0 +1,291 @@
+{
+  "phones": [],
+
+  "photos": [],
+  "_id": "5da74c8d48b6581ef0af7fc7",
+  "hotelId": "3523",
+  "name": "Xalet Besoli",
+  "description": "",
+  "country": "Andorra",
+  "province": "ANDORRA",
+  "location": { "latitude": "42.568464", "longitude": "1.489507" },
+  "address": "Carretera De L Escladella,13  ",
+  "postalCode": "AD 300",
+  "city": "ARINSAL",
+  "web": "",
+  "email": "HOTELBESOLI@ANDORRA.AD",
+  "category": { "name": "3 STARS", "value": "" },
+  "facilities": [
+    {
+      "_id": "5da74c8d48b6581ef0af7ff4",
+      "id": 20,
+      "description": "Year of construction",
+      "groupId": 10
+    },
+    {
+      "_id": "5da74c8d48b6581ef0af7ff3",
+      "id": 70,
+      "description": "Total number of rooms",
+      "groupId": 10
+    },
+    {
+      "_id": "5da74c8d48b6581ef0af7ff2",
+      "id": 50,
+      "description": "Number of floors (main building)",
+      "groupId": 10
+    },
+    {
+      "_id": "5da74c8d48b6581ef0af7ff1",
+      "id": 90,
+      "description": "Double rooms",
+      "groupId": 10
+    },
+    {
+      "_id": "5da74c8d48b6581ef0af7ff0",
+      "id": 110,
+      "description": "Apartments",
+      "groupId": 10
+    },
+    {
+      "_id": "5da74c8d48b6581ef0af7fef",
+      "id": 56,
+      "description": "Connecting rooms",
+      "groupId": 10
+    },
+    {
+      "_id": "5da74c8d48b6581ef0af7fee",
+      "id": 10,
+      "description": "hotel",
+      "groupId": 20
+    },
+    {
+      "_id": "5da74c8d48b6581ef0af7fed",
+      "id": 50,
+      "description": "MasterCard",
+      "groupId": 30
+    },
+    {
+      "_id": "5da74c8d48b6581ef0af7fec",
+      "id": 60,
+      "description": "Visa",
+      "groupId": 30
+    },
+    {
+      "_id": "5da74c8d48b6581ef0af7feb",
+      "id": 160,
+      "description": "Ski slopes",
+      "groupId": 40
+    },
+    {
+      "_id": "5da74c8d48b6581ef0af7fea",
+      "id": 295,
+      "description": "Room size (sqm)",
+      "groupId": 60
+    },
+    {
+      "_id": "5da74c8d48b6581ef0af7fe9",
+      "id": 298,
+      "description": "Number of bedrooms",
+      "groupId": 60
+    },
+    {
+      "_id": "5da74c8d48b6581ef0af7fe8",
+      "id": 10,
+      "description": "Bathroom",
+      "groupId": 60
+    },
+    {
+      "_id": "5da74c8d48b6581ef0af7fe7",
+      "id": 260,
+      "description": "Disability-friendly bathroom",
+      "groupId": 60
+    },
+    {
+      "_id": "5da74c8d48b6581ef0af7fe6",
+      "id": 20,
+      "description": "Shower",
+      "groupId": 60
+    },
+    {
+      "_id": "5da74c8d48b6581ef0af7fe5",
+      "id": 40,
+      "description": "Hairdryer",
+      "groupId": 60
+    },
+    {
+      "_id": "5da74c8d48b6581ef0af7fe4",
+      "id": 261,
+      "description": "Wi-fi",
+      "groupId": 60
+    },
+    {
+      "_id": "5da74c8d48b6581ef0af7fe3",
+      "id": 100,
+      "description": "Internet access",
+      "groupId": 60
+    },
+    {
+      "_id": "5da74c8d48b6581ef0af7fe2",
+      "id": 50,
+      "description": "Direct dial telephone",
+      "groupId": 60
+    },
+    {
+      "_id": "5da74c8d48b6581ef0af7fe1",
+      "id": 190,
+      "description": "Central heating",
+      "groupId": 60
+    },
+    {
+      "_id": "5da74c8d48b6581ef0af7fe0",
+      "id": 200,
+      "description": "Safe",
+      "groupId": 60
+    },
+    {
+      "_id": "5da74c8d48b6581ef0af7fdf",
+      "id": 230,
+      "description": "Balcony",
+      "groupId": 60
+    },
+    {
+      "_id": "5da74c8d48b6581ef0af7fde",
+      "id": 250,
+      "description": "Wheelchair-accessible",
+      "groupId": 60
+    },
+    {
+      "_id": "5da74c8d48b6581ef0af7fdd",
+      "id": 287,
+      "description": "Smoking rooms",
+      "groupId": 60
+    },
+    {
+      "_id": "5da74c8d48b6581ef0af7fdc",
+      "id": 297,
+      "description": "Smoke detector",
+      "groupId": 60
+    },
+    {
+      "_id": "5da74c8d48b6581ef0af7fdb",
+      "id": 275,
+      "description": "Extra beds on demand",
+      "groupId": 60
+    },
+    {
+      "_id": "5da74c8d48b6581ef0af7fda",
+      "id": 264,
+      "description": "Cot on demand",
+      "groupId": 60
+    },
+    {
+      "_id": "5da74c8d48b6581ef0af7fd9",
+      "id": 535,
+      "description": "Small pets allowed (under 5 kg)",
+      "groupId": 70
+    },
+    {
+      "_id": "5da74c8d48b6581ef0af7fd8",
+      "id": 540,
+      "description": "Large pets allowed (over 5 kg)",
+      "groupId": 70
+    },
+    {
+      "_id": "5da74c8d48b6581ef0af7fd7",
+      "id": 295,
+      "description": "Wheelchair-accessible",
+      "groupId": 70
+    },
+    {
+      "_id": "5da74c8d48b6581ef0af7fd6",
+      "id": 320,
+      "description": "Car park",
+      "groupId": 70
+    },
+    {
+      "_id": "5da74c8d48b6581ef0af7fd5",
+      "id": 330,
+      "description": "Garage",
+      "groupId": 70
+    },
+    {
+      "_id": "5da74c8d48b6581ef0af7fd4",
+      "id": 30,
+      "description": "24-hour reception",
+      "groupId": 70
+    },
+    {
+      "_id": "5da74c8d48b6581ef0af7fd3",
+      "id": 250,
+      "description": "Wired Internet",
+      "groupId": 70
+    },
+    {
+      "_id": "5da74c8d48b6581ef0af7fd2",
+      "id": 550,
+      "description": "Wi-fi",
+      "groupId": 70
+    },
+    {
+      "_id": "5da74c8d48b6581ef0af7fd1",
+      "id": 280,
+      "description": "Laundry service",
+      "groupId": 70
+    },
+    {
+      "_id": "5da74c8d48b6581ef0af7fd0",
+      "id": 310,
+      "description": "Bicycle hire service",
+      "groupId": 70
+    },
+    {
+      "_id": "5da74c8d48b6581ef0af7fcf",
+      "id": 40,
+      "description": "Hotel safe",
+      "groupId": 70
+    },
+    {
+      "_id": "5da74c8d48b6581ef0af7fce",
+      "id": 70,
+      "description": "Lift access",
+      "groupId": 70
+    },
+    {
+      "_id": "5da74c8d48b6581ef0af7fcd",
+      "id": 300,
+      "description": "Bicycle storage",
+      "groupId": 70
+    },
+    {
+      "_id": "5da74c8d48b6581ef0af7fcc",
+      "id": 130,
+      "description": "Bar",
+      "groupId": 71
+    },
+    {
+      "_id": "5da74c8d48b6581ef0af7fcb",
+      "id": 200,
+      "description": "Restaurant",
+      "groupId": 71
+    },
+    {
+      "_id": "5da74c8d48b6581ef0af7fca",
+      "id": 30,
+      "description": "Breakfast buffet",
+      "groupId": 80
+    },
+    {
+      "_id": "5da74c8d48b6581ef0af7fc9",
+      "id": 100,
+      "description": "Set menu dinner",
+      "groupId": 80
+    },
+    {
+      "_id": "5da74c8d48b6581ef0af7fc8",
+      "id": 350,
+      "description": "Billiards",
+      "groupId": 90
+    }
+  ],
+  "currency": ""
+}

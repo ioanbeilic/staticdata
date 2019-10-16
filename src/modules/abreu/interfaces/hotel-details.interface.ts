@@ -32,7 +32,7 @@ export interface HotelDetails extends Document {
 }
 
 export interface Image {
-  type: string;
+  info: string;
   fileName: string;
   title: string;
 }

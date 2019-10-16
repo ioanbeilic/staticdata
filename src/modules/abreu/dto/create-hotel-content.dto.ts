@@ -19,7 +19,7 @@ export class CreateHotelDetailsDto {
 
 export interface Phone {
   number: string;
-  type: string;
+  info: string;
 }
 
 export interface Category {
@@ -34,11 +34,11 @@ export interface Location {
 
 export interface Description {
   description: string;
-  type: string;
+  info: string;
 }
 
 export interface Image {
-  type: string;
+  info: string;
   fileName: string;
   title: string;
 }

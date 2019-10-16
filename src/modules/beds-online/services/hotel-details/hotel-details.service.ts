@@ -76,9 +76,10 @@ export class HotelDetailsService {
       if (response.status === 200) {
         const data: HotelDetailsProviderResponse = response.data;
 
-        const createHotel = this.createHotelDetailsAdapter.transform(
+        const createHotel = await this.createHotelDetailsAdapter.transform(
           data.hotel,
         );
+
         const newHotel = new this.hotelModel(createHotel);
 
         try {

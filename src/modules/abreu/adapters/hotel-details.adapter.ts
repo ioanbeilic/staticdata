@@ -85,7 +85,7 @@ export class CreateHotelDetailsAdapter {
 
     images.forEach(img => {
       const newImg = {
-        type: img.Category,
+        info: img.Category,
         fileName: img.URL,
         title: img.Category,
       };

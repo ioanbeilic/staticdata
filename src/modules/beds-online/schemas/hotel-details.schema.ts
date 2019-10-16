@@ -17,7 +17,7 @@ export const HotelDetailsSchema = new Schema({
   phones: [
     {
       number: String,
-      type: String,
+      info: String,
     },
   ],
   email: String,
@@ -27,7 +27,7 @@ export const HotelDetailsSchema = new Schema({
   },
   photos: [
     {
-      type: String,
+      info: String,
       fileName: String,
       title: String,
     },

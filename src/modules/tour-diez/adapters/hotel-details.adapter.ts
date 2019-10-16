@@ -206,7 +206,7 @@ export class CreateHotelDetailsAdapter {
       images.forEach(
         (img: { Type: string; FileName: string; Title: string }) => {
           const newImg = {
-            type: img.Type,
+            info: img.Type,
             fileName: img.FileName,
             title: img.Title,
           };
@@ -216,7 +216,7 @@ export class CreateHotelDetailsAdapter {
       );
     } else {
       const newImg = {
-        type: images.Type,
+        info: images.Type,
         fileName: images.FileName,
         title: images.Title,
       };

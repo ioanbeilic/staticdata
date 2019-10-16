@@ -17,7 +17,7 @@ export interface HotelContent extends Document {
   phones: [
     {
       number: string;
-      type: string;
+      info: string;
     },
   ];
   email: string;
@@ -27,7 +27,7 @@ export interface HotelContent extends Document {
   };
   photos: [
     {
-      type: string;
+      info: string;
       fileName: string;
       title: string;
     },
