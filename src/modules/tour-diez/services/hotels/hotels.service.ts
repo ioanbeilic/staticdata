@@ -15,7 +15,7 @@ export class HotelsService {
 
   headers = {
     'Content-Type': 'application/x-www-form-urlencoded',
-    'Accept-Encoding': 'gzip, deflate',
+    // 'Accept-Encoding': 'gzip, deflate',
   };
   url: string;
 
@@ -71,6 +71,7 @@ export class HotelsService {
       });
 
       const json: any = await parser.parse(response.data, this.options);
+
       /*
       hotels =
         json.Envelope.Body.HotelPortfolioResponse.HotelPortfolioRS
@@ -80,6 +81,12 @@ export class HotelsService {
       this.logger.error(
         path.resolve(__filename) + ' ---> ' + JSON.stringify(error),
       );
+
+      throw error;
     }
+  }
+
+  async publishHotels() {
+    await this.login();
   }
 }
