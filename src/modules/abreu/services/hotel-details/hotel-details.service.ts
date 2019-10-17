@@ -9,10 +9,6 @@ import { Hotel } from '../../interfaces/hotel.interface';
 import axios, { AxiosResponse } from 'axios';
 import { Configuration } from '../../../../config/config.keys';
 import { Model } from 'mongoose';
-import {
-  HotelProviderResponse,
-  PropertyResponse,
-} from '../../interfaces/provider/hotel-provider-response.interface';
 import * as parser from 'fast-xml-parser';
 import path from 'path';
 import fs from 'fs';
@@ -73,13 +69,13 @@ export class HotelDetailsService {
     const hotels = await this.hotelService.getHotels();
 
     try {
-      hotels.forEach((hotel: Hotel) => {
+      for (const hotel of hotels) {
         this.amqpConnection.publish(
           'abreu_hotel-detail',
           'abreu_hotel-detail',
           hotel.hotelId,
         );
-      });
+      }
     } catch (error) {
       this.logger.error(
         path.resolve(__filename) + ' ---> ' + JSON.stringify(error),
@@ -145,7 +141,7 @@ export class HotelDetailsService {
     hotel = json.OTA_HotelInfoRS.Hotel.Info;
 
     if (hotel) {
-      const hotelDto = this.createHotelDetailsAdapter.transform(hotel);
+      const hotelDto = await this.createHotelDetailsAdapter.transform(hotel);
       const newHotel = new this.hotelModel(hotelDto);
 
       try {

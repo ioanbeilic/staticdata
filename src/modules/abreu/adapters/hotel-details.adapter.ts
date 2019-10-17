@@ -6,7 +6,7 @@ import {
   ImageProvider,
   Descriptive,
 } from '../interfaces/provider/hotel-details-response.interface';
-import { CreateHotelDetailsDto } from '../dto/create-hotel-content.dto';
+import { CreateHotelDetailsDto, Phone } from '../dto/create-hotel-content.dto';
 import t from 'typy';
 import { Image } from '../interfaces/hotel-details.interface';
 
@@ -14,7 +14,7 @@ import { Image } from '../interfaces/hotel-details.interface';
 export class CreateHotelDetailsAdapter {
   constructor(@Inject('winston') private readonly logger: Logger) {}
 
-  transform(originalData: HotelDetailsProvider) {
+  async transform(originalData: HotelDetailsProvider) {
     const hotelDetails = new CreateHotelDetailsDto();
 
     hotelDetails.hotelId = String(
@@ -52,7 +52,22 @@ export class CreateHotelDetailsAdapter {
 
     hotelDetails.web = t(originalData, 'Contacts.Website').safeObject || '';
 
-    hotelDetails.phones = t(originalData, 'Contacts.Phone').safeObject || '';
+    // hotelDetails.phones = t(originalData, 'Contacts.Phone').safeObject || '';
+
+    if (t(originalData, 'Contacts.Phone').isString) {
+      try {
+        hotelDetails.phones = await this.getPhones(
+          t(originalData, 'Contacts.Phone').safeObject,
+        );
+      } catch (error) {
+        this.logger.error(
+          path.resolve(__filename) + ' ---> ' + JSON.stringify(error),
+        );
+      }
+    } else {
+      hotelDetails.phones = [];
+    }
+
     hotelDetails.email = t(originalData, 'Contacts.Email').safeObject || '';
 
     hotelDetails.category = {
@@ -99,5 +114,18 @@ export class CreateHotelDetailsAdapter {
   private getDescription(descriptions: Descriptive[]) {
     const description = descriptions.filter(el => el.Type === 'General');
     return description[0].Text.__cdata;
+  }
+
+  private async getPhones(phones: string): Promise<Phone[]> {
+    const newPhones: Phone[] = [];
+
+    const newPhone = {
+      number: phones,
+      info: '',
+    };
+
+    newPhones.push(newPhone);
+
+    return newPhones;
   }
 }

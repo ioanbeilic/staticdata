@@ -255,9 +255,14 @@ export class HotelService {
       this.options,
     );
 
-    hotels = hotels.concat(json.OTA_HotelSearchRS.Properties.Property);
+    if (Array.isArray(json.OTA_HotelSearchRS.Properties.Property)) {
+      hotels = json.OTA_HotelSearchRS.Properties.Property as PropertyResponse[];
+    } else if (json.OTA_HotelSearchRS.Properties.Property) {
+      hotels.push(json.OTA_HotelSearchRS.Properties
+        .Property as PropertyResponse);
+    }
 
-    if (hotels) {
+    if (hotels.length > 0) {
       for (const hotel of hotels) {
         const hotelDto = this.createHotelAdapter.transform(hotel);
         const newHotel = new this.hotelModel(hotelDto);

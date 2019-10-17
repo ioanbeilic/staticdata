@@ -23,7 +23,7 @@ export class HotelDetailsController {
       'Call app first time an get a county list, automatic run task to get all city list and for each city get the hotels',
   })
   @ApiBadRequestResponse({ description: 'The provider server is down' })
-  public getCountries() {
+  public publishHotelsDetails() {
     return this.hotelDetailsService.publishHotelsDetails();
   }
 }

@@ -3,7 +3,7 @@ export interface HotelProviderResponse {
     TimeStamp: string;
     Success: string;
     Properties: {
-      Property: PropertyResponse;
+      Property: PropertyResponse | PropertyResponse[];
     };
   };
 }
