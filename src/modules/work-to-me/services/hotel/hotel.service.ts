@@ -81,7 +81,7 @@ export class HotelService {
         <soapenv:Header/>
         <soapenv:Body>
             <HotelPortfolio>
-                <HotelPortfolioRQ Version="${this.version}" Language="${this.language}"  >
+                <HotelPortfolioRQ Version="${this.version}" Language="${this.language}">
                     <Login Password="${this.pass}" Email="${this.login}"/>
                 </HotelPortfolioRQ>
             </HotelPortfolio>

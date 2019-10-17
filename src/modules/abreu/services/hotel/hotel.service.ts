@@ -312,7 +312,17 @@ export class HotelService {
         );
         // console.log(_.status);
         if (_.status === 204) {
-          // this.totalPages = 0;
+          this.logger.error(
+            path.resolve(__filename) +
+              ' ---> ' +
+              JSON.stringify('Obtaining Abreu hotel details'),
+          );
+        } else {
+          this.logger.error(
+            path.resolve(__filename) +
+              ' ---> ' +
+              JSON.stringify('Error obtains Abreu hotel details'),
+          );
         }
       }
     }

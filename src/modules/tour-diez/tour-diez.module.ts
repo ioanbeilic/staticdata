@@ -8,6 +8,9 @@ import { ConfigModule } from '../..//config/config.module';
 import { ConfigService } from '../../config/config.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { WinstonModule } from 'nest-winston';
+import { HotelSchema } from './schemas/hotels.chema';
+import { HotelContentSchema } from './schemas/hotel-content.schema';
+import { RoomSchema } from './schemas/room.schema';
 
 @Module({
   imports: [
@@ -20,14 +23,14 @@ import { WinstonModule } from 'nest-winston';
       imports: [ConfigModule],
       useFactory: (configService: ConfigService) => ({
         uri: configService.get('RABBITMQ_URI'),
-        prefetchCount: 5, // only 1 request each time default 10
+        prefetchCount: 1, // only 1 request each time default 10
       }),
       inject: [ConfigService],
     }),
     MongooseModule.forFeature([
-      //  { name: 'tour_diez_hotels', schema: HotelSchema },
-      //  { name: 'tour_diez_hotel-content', schema: HotelContentSchema },
-      //  { name: 'tour_diez_rooms', schema: RoomSchema },
+      { name: 'tour_diez_hotels', schema: HotelSchema },
+      { name: 'tour_diez_hotel-content', schema: HotelContentSchema },
+      { name: 'tour_diez_rooms', schema: RoomSchema },
     ]),
     ConfigModule,
     WinstonModule,
