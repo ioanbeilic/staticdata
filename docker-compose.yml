@@ -7,6 +7,10 @@ services:
     restart: always
     volumes:
       - ./data/db:/data/db
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGODB_ROOT_PASSWORD=pass
 
   mongo-express:
     image: mongo-express
