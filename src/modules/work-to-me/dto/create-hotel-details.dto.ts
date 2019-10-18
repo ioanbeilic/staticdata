@@ -44,7 +44,7 @@ export interface Image {
 }
 
 export interface Facility {
-  id: number;
+  id: string;
   description: string;
-  groupId: number;
+  groupId: string;
 }

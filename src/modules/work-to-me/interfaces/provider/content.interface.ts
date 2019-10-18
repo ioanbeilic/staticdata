@@ -26,6 +26,11 @@ export interface ServerHotelContentInterface {
   Descriptions: {
     Description: Description[];
   };
+
+  Features: {
+    Feature: Feature[];
+  };
+
   JPRooms: {
     JPRoom: [
       {
@@ -45,6 +50,11 @@ export interface Description {
   Type: string;
 }
 export interface PhoneNumber {
+  name: string;
+  Type: string;
+}
+
+export interface Feature {
   name: string;
   Type: string;
 }

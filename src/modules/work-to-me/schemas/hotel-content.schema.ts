@@ -34,9 +34,9 @@ export const HotelContentSchema = new Schema({
   ],
   facilities: [
     {
-      id: Number,
+      id: String,
       description: String,
-      groupId: Number,
+      groupId: String,
     },
   ],
   currency: String,

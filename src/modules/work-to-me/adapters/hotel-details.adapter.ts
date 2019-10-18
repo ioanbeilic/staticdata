@@ -1,11 +1,16 @@
 import {
   ServerHotelContentInterface,
   PhoneNumber,
+  Feature,
 } from '../interfaces/provider/content.interface';
 import t from 'typy';
 import { Inject, Injectable } from '@nestjs/common';
 import { Logger } from 'winston';
-import { CreateHotelDetailsDto, Phone } from '../dto/create-hotel-details.dto';
+import {
+  CreateHotelDetailsDto,
+  Phone,
+  Facility,
+} from '../dto/create-hotel-details.dto';
 import path from 'path';
 
 @Injectable()
@@ -140,7 +145,22 @@ export class CreateHotelDetailsAdapter {
         hotelDetails.photos = [];
       }
 
-      hotelDetails.facilities = [];
+      if (t(originalData, 'Features.Feature').isArray) {
+        try {
+          hotelDetails.facilities = await this.getFacilities(
+            t(originalData, 'Features.Feature').safeObject,
+          );
+        } catch (error) {
+          this.logger.error(
+            path.resolve(__filename) +
+              ' ---> ' +
+              `hotelDetails.facilities, ${hotelDetails.hotelId}`,
+          );
+        }
+      } else {
+        hotelDetails.facilities = [];
+      }
+
       hotelDetails.currency = '';
     } catch (error) {
       this.logger.error(
@@ -151,13 +171,38 @@ export class CreateHotelDetailsAdapter {
     return hotelDetails;
   }
 
+  async getFacilities(facilities: Feature[] | Feature): Promise<Facility[]> {
+    const newFacilities = [];
+
+    if (Array.isArray(facilities)) {
+      facilities.forEach((el: Feature) => {
+        const newFacility: Facility = {
+          groupId: el.Type,
+          description: el.name,
+          id: el.Type,
+        };
+
+        newFacilities.push(newFacility);
+      });
+    } else {
+      const newFacility: Facility = {
+        groupId: facilities.Type,
+        description: facilities.name,
+        id: facilities.Type,
+      };
+
+      newFacilities.push(newFacility);
+    }
+    return newFacilities;
+  }
+
   async getDescription(descriptions: any): Promise<string> {
     let description: string = '';
 
     if (Array.isArray(descriptions)) {
       descriptions.forEach((el: { Type: string; name: string }) => {
         if (el.Type === 'LNG') {
-          description = el.name;
+          description += ' ' + el.name;
         }
       });
     } else {
