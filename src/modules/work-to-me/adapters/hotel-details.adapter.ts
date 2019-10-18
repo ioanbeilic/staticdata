@@ -1,16 +1,18 @@
-import { ServerHotelContentInterface } from '../interfaces/provider/content.interface';
+import {
+  ServerHotelContentInterface,
+  PhoneNumber,
+} from '../interfaces/provider/content.interface';
 import t from 'typy';
 import { Inject, Injectable } from '@nestjs/common';
 import { Logger } from 'winston';
-import { CreateHotelDetailsDto } from '../dto/create-hotel-details.dto';
-import { Phone } from 'src/modules/beds-online/dto/create-hotel-details.dto';
+import { CreateHotelDetailsDto, Phone } from '../dto/create-hotel-details.dto';
 import path from 'path';
 
 @Injectable()
 export class CreateHotelDetailsAdapter {
   constructor(@Inject('winston') private readonly logger: Logger) {}
 
-  transform(originalData: ServerHotelContentInterface) {
+  async transform(originalData: ServerHotelContentInterface) {
     const hotelDetails = new CreateHotelDetailsDto();
 
     try {
@@ -22,7 +24,7 @@ export class CreateHotelDetailsAdapter {
 
       if (t(originalData, 'Descriptions.Description').isObject) {
         try {
-          hotelDetails.description = this.getDescription(
+          hotelDetails.description = await this.getDescription(
             t(originalData, 'Descriptions.Description').safeObject || '',
           );
         } catch (error) {
@@ -46,7 +48,7 @@ export class CreateHotelDetailsAdapter {
 
       if (t(originalData, 'Zone.Name').isString) {
         try {
-          hotelDetails.city = this.getCity(
+          hotelDetails.city = await this.getCity(
             t(originalData, 'Zone.Name').safeObject || '',
           );
         } catch (error) {
@@ -62,7 +64,7 @@ export class CreateHotelDetailsAdapter {
 
       if (t(originalData, 'Address.Address').isString) {
         try {
-          hotelDetails.province = this.getProvince(
+          hotelDetails.province = await this.getProvince(
             t(originalData, 'Address.Address').safeObject,
           );
         } catch (error) {
@@ -78,7 +80,7 @@ export class CreateHotelDetailsAdapter {
 
       if (t(originalData, 'Zone.Name').isString) {
         try {
-          hotelDetails.country = this.getCountry(
+          hotelDetails.country = await this.getCountry(
             t(originalData, 'Zone.Name').safeObject || '',
           );
         } catch (error) {
@@ -96,12 +98,13 @@ export class CreateHotelDetailsAdapter {
       hotelDetails.web = '';
 
       if (
-        t(originalData, 'ContactInfo.PhoneNumbers').isString ||
-        t(originalData, 'ContactInfo.PhoneNumbers').isObject
+        t(originalData, 'ContactInfo.PhoneNumbers.PhoneNumber').isString ||
+        t(originalData, 'ContactInfo.PhoneNumbers.PhoneNumber').isObject
       ) {
         try {
-          hotelDetails.phones = this.getPhones(
-            t(originalData, 'ContactInfo.PhoneNumbers').safeObject || '',
+          hotelDetails.phones = await this.getPhones(
+            t(originalData, 'ContactInfo.PhoneNumbers.PhoneNumber')
+              .safeObject || '',
           );
         } catch (error) {
           this.logger.error(
@@ -123,7 +126,7 @@ export class CreateHotelDetailsAdapter {
 
       if (t(originalData, 'Images.Image').isArray) {
         try {
-          hotelDetails.photos = this.getImages(
+          hotelDetails.photos = await this.getImages(
             t(originalData, 'Images.Image').safeObject,
           );
         } catch (error) {
@@ -148,7 +151,7 @@ export class CreateHotelDetailsAdapter {
     return hotelDetails;
   }
 
-  private getDescription(descriptions: any): string {
+  async getDescription(descriptions: any): Promise<string> {
     let description: string = '';
 
     if (Array.isArray(descriptions)) {
@@ -164,11 +167,11 @@ export class CreateHotelDetailsAdapter {
     return description;
   }
 
-  private getCity(city: string) {
+  async getCity(city: string) {
     return city.split(',')[0];
   }
 
-  private getProvince(address: string) {
+  async getProvince(address: string) {
     const temp = address.split(',')[1];
     const re = /[0-9]/g;
     let province = '';
@@ -179,24 +182,33 @@ export class CreateHotelDetailsAdapter {
     return province;
   }
 
-  private getCountry(country: string) {
+  async getCountry(country: string) {
     return country.split(',')[1];
   }
 
-  private getPhones(phones: Phone[] | Phone): Phone[] {
+  async getPhones(phones: PhoneNumber[] | PhoneNumber): Promise<Phone[]> {
     const newPhones = [];
+
     if (Array.isArray(phones)) {
-      phones.forEach((phone: Phone) => {
-        newPhones.push(phone);
-      });
+      for (const phone of phones) {
+        const newPhone: Phone = {
+          number: phone.name,
+          info: phone.Type,
+        };
+        newPhones.push(newPhone);
+      }
     } else {
-      newPhones.push(phones);
+      const newPhone: Phone = {
+        number: phones.name,
+        info: phones.Type,
+      };
+      newPhones.push(newPhone);
     }
 
     return newPhones;
   }
 
-  private getImages(
+  private async getImages(
     images:
       | Array<{ Type: string; FileName: string; Title: string }>
       | { Type: string; FileName: string; Title: string },

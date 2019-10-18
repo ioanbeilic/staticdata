@@ -147,11 +147,11 @@ export class HotelDetailsService {
     if (this.hotelContent !== undefined) {
       // const createHotelContent = new createHotelDetails(this.hotelContent);
 
-      const hotelDetailsDto = this.createHotelDetailsAdapter.transform(
+      const hotelDetails = await this.createHotelDetailsAdapter.transform(
         this.hotelContent,
       );
 
-      const newHotel = new this.hotelContentModel(hotelDetailsDto);
+      const newHotel = new this.hotelContentModel(hotelDetails);
 
       try {
         await this.hotelContentModel.findOneAndUpdate(
