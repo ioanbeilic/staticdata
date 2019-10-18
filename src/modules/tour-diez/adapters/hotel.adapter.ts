@@ -1,4 +1,7 @@
-import { ServerHotelInterface } from '../interfaces/provider/hotel.interface';
+import {
+  ServerHotelInterface,
+  HotelDescriptionsBean,
+} from '../interfaces/provider/hotel.interface';
 import t from 'typy';
 import { Inject, Injectable } from '@nestjs/common';
 import { Logger } from 'winston';
@@ -9,19 +12,18 @@ import path from 'path';
 export class CreateHotelAdapter {
   constructor(@Inject('winston') private readonly logger: Logger) {}
 
-  transform(originalData: ServerHotelInterface[]): CreateHotelDto {
+  transform(originalData: HotelDescriptionsBean): CreateHotelDto {
     const hotel = new CreateHotelDto();
     try {
-      hotel.hotelId = t(originalData, 'JPCode').safeObject || '';
-      hotel.name = t(originalData, 'Name').safeObject || '';
-      hotel.zone = t(originalData, 'Zone.Name').safeObject || '';
-      hotel.address = t(originalData, 'Zone.Address').safeObject || '';
-      hotel.zipCode = t(originalData, 'ZipCode').safeObject || '';
-      hotel.latitude = t(originalData, 'Latitude').safeObject || '';
-      hotel.longitude = t(originalData, 'Longitude').safeObject || '';
-      hotel.hotelCategory =
-        t(originalData, 'HotelCategory.name').safeObject || '';
-      hotel.city = t(originalData, 'HotelCategory.City').safeObject || '';
+      hotel.hotelId = t(originalData, 'hotelID').safeObject || '';
+      hotel.name = t(originalData, 'hotelName').safeObject || '';
+      hotel.zone = t(originalData, 'district').safeObject || '';
+      hotel.address = t(originalData, 'address').safeObject || '';
+      hotel.zipCode = t(originalData, 'postalCode').safeObject || '';
+      hotel.latitude = t(originalData, 'latitude').safeObject || '';
+      hotel.longitude = t(originalData, 'longitude').safeObject || '';
+      hotel.hotelCategory = t(originalData, 'category.nombre').safeObject || '';
+      hotel.city = t(originalData, 'city').safeObject || '';
     } catch (error) {
       this.logger.error(
         path.resolve(__filename) + ' ---> ' + JSON.stringify(error),

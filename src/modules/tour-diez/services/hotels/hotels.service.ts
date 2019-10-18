@@ -8,6 +8,11 @@ import path from 'path';
 import axios from 'axios';
 import * as parser from 'fast-xml-parser';
 import qs from 'querystring';
+import { ServerHotelInterface } from '../../interfaces/provider/hotel.interface';
+import { Model } from 'mongoose';
+import { Hotel } from '../../interfaces/hotel.interface';
+import { InjectModel } from '@nestjs/mongoose';
+import { CreateHotelAdapter } from '../../adapters/hotel.adapter';
 
 @Injectable()
 export class HotelsService {
@@ -44,9 +49,10 @@ export class HotelsService {
 
   constructor(
     public readonly amqpConnection: AmqpConnection,
-    // @InjectModel('work_to_me_hotels') private readonly hotelModel: Model<Hotel>,
+    @InjectModel('tour_diez_hotels') private readonly hotelModel: Model<Hotel>,
     private readonly configService: ConfigService,
-    @Inject('winston') private readonly logger: Logger, // private createHotelAdapter: CreateHotelAdapter,
+    @Inject('winston') private readonly logger: Logger,
+    private createHotelAdapter: CreateHotelAdapter,
   ) {
     /**
      * load data from process.env
@@ -98,79 +104,13 @@ export class HotelsService {
   async publishHotels() {
     await this.login();
 
-    let response: AxiosResponse;
-
     const pRequest = `<?xml version="1.0" encoding="ISO-8859-1"?><getAllHotels><sessionID>${this.sessionID}</sessionID></getAllHotels>`;
 
-    try {
-      response = await axios.post(
-        this.url,
-        qs.stringify({
-          pOperacion: 'getAllHotels',
-          pRequest,
-        }),
-        {
-          headers: this.headers,
-        },
-      );
-
-      /**
-       * validate if server response contain error message
-       */
-
-      /*
-      if (await this.Validator(String(response.data))) {
-        throw new HttpException(
-          String(response),
-          HttpStatus.INTERNAL_SERVER_ERROR,
-        );
-      }
-*/
-
-      /**
-       * {
-       *    hotelDescriptionsResult: {
-       *      result: {
-       *        cod_result: 'M3',
-       *        des_result: 'Se ha producido un error en el Sistema. Reintente la operaci�n y si el error persiste contacte con el proveedor.',
-       *        type_message: 'E'
-       *      }
-       *    }
-       *  }
-       */
-      const json = parser.parse(response.data, this.options);
-
-      if (json.hotelDescriptionsResult.result.cod_result === 'M5') {
-        this.login();
-      }
-
-      /*
-      const pages = new Page(json);
-
-      /**
-       * save pages number to this.page to be checkered on subscriber for the next que
-       */
-
-      /*
-      this.totalPages = pages.totalPages;
-
-      if (pages.totalPages > 0) {
-        for (let i = 1; i <= pages.totalPages; i++) {
-          // lunch first que
-          this.amqpConnection.publish(
-            'work_to_me_hotels',
-            'work_to_me_hotels',
-            i,
-          );
-        }
-      }
-         */
-    } catch (error) {
-      this.logger.error(
-        path.resolve(__filename) + ' ---> ' + JSON.stringify(error),
-      );
-      // console.log(error);
-    }
+    this.amqpConnection.publish(
+      'tour_diez_hotels',
+      'tour_diez_hotels',
+      pRequest,
+    );
   }
 
   Validator = async (response: string): Promise<boolean> => {
@@ -180,15 +120,95 @@ export class HotelsService {
   }; // tslint:disable-line
 
   @RabbitSubscribe({
-    exchange: 'work_to_me_hotels',
-    routingKey: 'work_to_me_hotels',
-    queue: 'work_to_me_hotels',
+    exchange: 'tour_diez_hotels',
+    routingKey: 'tour_diez_hotels',
+    queue: 'tour_diez_hotels',
   })
-  async subscribeHotels(page: number): Promise<Nack | undefined> {
-    const haveError = false;
+  async subscribeHotels(pRequest: string) {
+    let response: AxiosResponse;
+
+    // console.log(pRequest); // tslint ignore
+
+    let haveError = false;
+
+    response = await axios.post(
+      this.url,
+      qs.stringify({
+        pOperacion: 'getAllHotels',
+        pRequest,
+      }),
+      {
+        headers: this.headers,
+      },
+    );
+
+    const json: ServerHotelInterface = await parser.parse(
+      response.data,
+      this.options,
+    );
+
+    const operationCode = json.hotelDescriptionsResult.operationCode;
+
+    const hotels =
+      json.hotelDescriptionsResult.hotelDescriptions.hotelDescriptionsBean;
+
+    if (hotels) {
+      for (const hotel of hotels) {
+        const createHotel = this.createHotelAdapter.transform(hotel);
+        const newHotel = new this.hotelModel(createHotel);
+
+        try {
+          await this.hotelModel.findOneAndUpdate(
+            { hotelId: newHotel.hotelId },
+            {
+              hotelId: newHotel.hotelId,
+              name: newHotel.name,
+              zone: newHotel.zone,
+              address: newHotel.address,
+              zipCode: newHotel.zipCode,
+              latitude: newHotel.latitude,
+              longitude: newHotel.longitude,
+              hotelCategory: newHotel.hotelCategory,
+              city: newHotel.city,
+            },
+
+            {
+              /**
+               * if is not exist create new one
+               */
+              upsert: true,
+              new: true,
+            },
+          );
+        } catch (error) {
+          // do do - implement log
+          haveError = true;
+          this.logger.error(
+            path.resolve(__filename) + ' ---> ' + JSON.stringify(error),
+          );
+        }
+
+        // to du automatic init next task
+        /**
+         * total pages init to 0 and pages init to 1
+         * only corresponded the last page
+         */
+      }
+    }
 
     if (haveError) {
-      return new Nack(true);
+      this.publishHotels();
+      return new Nack(false);
+    } else {
+      const _ = `<?xml version="1.0" encoding="ISO-8859-1"?><getAllHotels><operationCode>${operationCode}</operationCode><sessionID>${this.sessionID}</sessionID></getAllHotels>`;
+
+      this.amqpConnection.publish('tour_diez_hotels', 'tour_diez_hotels', _);
     }
   }
+
+  // to du automatic init next task
+  /**
+   * total pages init to 0 and pages init to 1
+   * only corresponded the last page
+   */
 }

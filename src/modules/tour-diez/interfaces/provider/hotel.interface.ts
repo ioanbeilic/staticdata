@@ -1,25 +1,36 @@
 export interface ServerHotelInterface {
-  type: string;
-  JPCode: string;
-  HasSynonyms: boolean;
-  Name: string;
-  Zone: {
-    JPDCode: string;
-    Code: number;
-    Name: string;
+  hotelDescriptionsResult: {
+    result: {
+      cod_result: string;
+      des_result: string;
+      type_message: string;
+    };
+    totalHotels: number;
+    totalHotelsRetrieved: number;
+    operationCode: string;
+    hotelDescriptions: {
+      hotelDescriptionsBean: HotelDescriptionsBean[];
+    };
   };
-  Address: string;
-  ZipCode: string;
-  Latitude: string;
-  Longitude: string;
-  HotelCategory: {
-    name: string;
-    Type: string;
-    Code: number;
-  };
-  City: {
-    name: string;
-    Id: number;
-    JPDCode: string;
-  };
+}
+
+export interface HotelDescriptionsBean {
+  hotelName: string;
+  hotelID: string;
+  address: string;
+  country: string;
+  codeCountry: string;
+  city: string;
+  codeCity: string;
+  district: string;
+  codeDistrict: string;
+  category: { claveCategoria: string; nombre: string };
+  postalCode: string;
+  telephoneNumber: string;
+  faxNumber: string;
+  url: { nil: boolean };
+  emailAddress: { nil: boolean };
+  latitude: string;
+  longitude: string;
+  description: { nil: boolean };
 }

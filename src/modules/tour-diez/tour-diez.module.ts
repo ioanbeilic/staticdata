@@ -11,6 +11,8 @@ import { WinstonModule } from 'nest-winston';
 import { HotelSchema } from './schemas/hotels.chema';
 import { HotelContentSchema } from './schemas/hotel-content.schema';
 import { RoomSchema } from './schemas/room.schema';
+import { CreateHotelAdapter } from './adapters/hotel.adapter';
+import { CreateHotelDetailsAdapter } from './adapters/hotel-details.adapter';
 
 @Module({
   imports: [
@@ -23,7 +25,7 @@ import { RoomSchema } from './schemas/room.schema';
       imports: [ConfigModule],
       useFactory: (configService: ConfigService) => ({
         uri: configService.get('RABBITMQ_URI'),
-        prefetchCount: 1, // only 1 request each time default 10
+        prefetchCount: 2, // only 1 request each time default 10
       }),
       inject: [ConfigService],
     }),
@@ -36,6 +38,11 @@ import { RoomSchema } from './schemas/room.schema';
     WinstonModule,
   ],
   controllers: [HotelsController, HotelDetailsController],
-  providers: [HotelsService, HotelDetailsService],
+  providers: [
+    HotelsService,
+    HotelDetailsService,
+    CreateHotelAdapter,
+    CreateHotelDetailsAdapter,
+  ],
 })
 export class TourDiezModule {}
