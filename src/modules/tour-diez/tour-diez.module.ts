@@ -25,7 +25,7 @@ import { CreateHotelDetailsAdapter } from './adapters/hotel-details.adapter';
       imports: [ConfigModule],
       useFactory: (configService: ConfigService) => ({
         uri: configService.get('RABBITMQ_URI'),
-        prefetchCount: 2, // only 1 request each time default 10
+        prefetchCount: 1, // only 1 request each time default 10
       }),
       inject: [ConfigService],
     }),
