@@ -154,73 +154,65 @@ export class HotelsService {
       const hotels =
         json.hotelDescriptionsResult.hotelDescriptions.hotelDescriptionsBean;
 
-      if (hotels) {
-        for (const hotel of hotels) {
-          const createHotel = this.createHotelAdapter.transform(hotel);
-          const newHotel = new this.hotelModel(createHotel);
+      for (const hotel of hotels) {
+        const createHotel = this.createHotelAdapter.transform(hotel);
+        const newHotel = new this.hotelModel(createHotel);
 
-          try {
-            this.hotelModel.findOneAndUpdate(
-              { hotelId: newHotel.hotelId },
-              {
-                hotelId: newHotel.hotelId,
-                name: newHotel.name,
-                zone: newHotel.zone,
-                address: newHotel.address,
-                zipCode: newHotel.zipCode,
-                latitude: newHotel.latitude,
-                longitude: newHotel.longitude,
-                hotelCategory: newHotel.hotelCategory,
-                city: newHotel.city,
-              },
+        try {
+          await this.hotelModel.findOneAndUpdate(
+            { hotelId: newHotel.hotelId },
+            {
+              hotelId: newHotel.hotelId,
+              name: newHotel.name,
+              zone: newHotel.zone,
+              address: newHotel.address,
+              zipCode: newHotel.zipCode,
+              latitude: newHotel.latitude,
+              longitude: newHotel.longitude,
+              hotelCategory: newHotel.hotelCategory,
+              city: newHotel.city,
+            },
 
-              {
-                /**
-                 * if is not exist create new one
-                 */
-                upsert: true,
-                new: true,
-              },
-            );
+            {
+              /**
+               * if is not exist create new one
+               */
+              upsert: true,
+              new: true,
+            },
+          );
 
-            /**
-             * after save to database send new requset
-             */
-          } catch (error) {
-            // do do - implement log
-
-            haveError = true;
-            this.logger.error(
-              path.resolve(__filename) + ' ---> ' + JSON.stringify(error),
-            );
-          }
-        }
-
-        // to du automatic init next task
-        /**
-         * total pages init to 0 and pages init to 1
-         * only corresponded the last page
-         */
-
-        if (haveError) {
-          operationCode = '';
-          this.publishHotels();
-          return new Nack(false);
-        }
-
-        /**
-         * total pages init to 0 and pages init to 1
-         * only corresponded the last page
-         */
-        if (operationCode) {
-          const _ = `<?xml version="1.0" encoding="ISO-8859-1"?><getAllHotels><operationCode>${operationCode}</operationCode><sessionID>${this.sessionID}</sessionID></getAllHotels>`;
-          this.amqpConnection.publish(
-            'tour_diez_hotels',
-            'tour_diez_hotels',
-            _,
+          /**
+           * after save to database send new requset
+           */
+        } catch (error) {
+          haveError = true;
+          this.logger.error(
+            path.resolve(__filename) + ' ---> ' + JSON.stringify(error),
           );
         }
       }
+
+      // to du automatic init next task
+      /**
+       * total pages init to 0 and pages init to 1
+       * only corresponded the last page
+       */
+    }
+
+    if (haveError) {
+      operationCode = '';
+      this.publishHotels();
+      return new Nack(false);
+    }
+
+    /**
+     * total pages init to 0 and pages init to 1
+     * only corresponded the last page
+     */
+    if (operationCode) {
+      const _ = `<?xml version="1.0" encoding="ISO-8859-1"?><getAllHotels><operationCode>${operationCode}</operationCode><sessionID>${this.sessionID}</sessionID></getAllHotels>`;
+      this.amqpConnection.publish('tour_diez_hotels', 'tour_diez_hotels', _);
     }
   }
 }
