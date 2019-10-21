@@ -8,11 +8,15 @@ import path from 'path';
 import axios from 'axios';
 import * as parser from 'fast-xml-parser';
 import qs from 'querystring';
-import { ServerHotelInterface } from '../../interfaces/provider/hotel.interface';
+import {
+  ServerHotelInterface,
+  ServerErrorResult,
+} from '../../interfaces/provider/hotel.interface';
 import { Model } from 'mongoose';
 import { Hotel } from '../../interfaces/hotel.interface';
 import { InjectModel } from '@nestjs/mongoose';
 import { CreateHotelAdapter } from '../../adapters/hotel.adapter';
+import _ from 'lodash';
 
 @Injectable()
 export class HotelsService {
@@ -45,7 +49,9 @@ export class HotelsService {
     attrValueProcessor: (a: any) => a,
     tagValueProcessor: (a: any) => a,
   };
-  sessionID!: string;
+
+  count = 0;
+  hotels: any;
 
   constructor(
     public readonly amqpConnection: AmqpConnection,
@@ -57,13 +63,15 @@ export class HotelsService {
     /**
      * load data from process.env
      */
-    this.pass = this.configService.get(Configuration.TOUR_DIEZ_PASSWORD);
-    this.user = this.configService.get(Configuration.TOUR_DIEZ_uSER);
-    this.url = this.configService.get(Configuration.TOUR_DIEZ_URL);
+    this.pass = this.configService.get(Configuration.TOUR_DIEZ_PASSWORD_V3);
+    this.user = this.configService.get(Configuration.TOUR_DIEZ_USER_V3);
+    this.url = this.configService.get(Configuration.TOUR_DIEZ_URL_V3);
   }
 
-  async login() {
+  async login(): Promise<string | undefined> {
     let response: AxiosResponse;
+
+    let providerSessionID: string;
 
     const pRequest = `<?xml version="1.0" encoding="ISO-8859-1"?><Login><user>${this.user}</user><password>${this.pass}</password></Login>`;
 
@@ -93,7 +101,9 @@ export class HotelsService {
        * }
        */
 
-      this.sessionID = json.LoginResult.sessionID;
+      providerSessionID = json.LoginResult.sessionID;
+
+      return providerSessionID;
     } catch (error) {
       this.logger.error(
         path.resolve(__filename) + ' ---> ' + JSON.stringify(error),
@@ -102,117 +112,126 @@ export class HotelsService {
   }
 
   async publishHotels() {
-    await this.login();
+    const providerSessionID = await this.login();
 
-    const pRequest = `<?xml version="1.0" encoding="ISO-8859-1"?><getAllHotels><sessionID>${this.sessionID}</sessionID></getAllHotels>`;
+    const pRequest = `<?xml version="1.0" encoding="ISO-8859-1"?><getAllHotels><sessionID>${providerSessionID}</sessionID></getAllHotels>`;
 
-    this.amqpConnection.publish(
-      'tour_diez_hotels',
-      'tour_diez_hotels',
+    this.amqpConnection.publish('tour_diez_hotels', 'tour_diez_hotels', {
       pRequest,
-    );
+      providerSessionID,
+    });
   }
-
-  Validator = async (response: string): Promise<boolean> => {
-    const re = new RegExp('\b(w*[Ee][Rr][Rr][Oo][Rr]w*)\b');
-    return re.test(response.slice(0, 10000));
-    // tslint:disable-next-line
-  }; // tslint:disable-line
 
   @RabbitSubscribe({
     exchange: 'tour_diez_hotels',
     routingKey: 'tour_diez_hotels',
     queue: 'tour_diez_hotels',
   })
-  async subscribeHotels(pRequest: string) {
+  async subscribeHotels(que: { pRequest: string; providerSessionID: string }) {
     let response: AxiosResponse;
 
+    const providerSessionID: string = que.providerSessionID;
     let haveError: boolean = false;
+    let operationCode: string;
+
+    // console.log(que.providerSessionID);
 
     response = await axios.post(
       this.url,
       qs.stringify({
         pOperacion: 'getAllHotels',
-        pRequest,
+        pRequest: que.pRequest,
       }),
       {
         headers: this.headers,
       },
     );
 
-    const json: ServerHotelInterface = await parser.parse(
-      response.data,
-      this.options,
-    );
+    const json = await parser.parse(response.data, this.options);
 
-    const codResult = json.hotelDescriptionsResult.result.cod_result;
-    let operationCode = json.hotelDescriptionsResult.operationCode;
-
-    if (codResult !== 'M1') {
+    if (_.has(json, 'ErrorResult')) {
       haveError = true;
     } else {
-      const hotels =
-        json.hotelDescriptionsResult.hotelDescriptions.hotelDescriptionsBean;
+      /**
+       * {
+       *  ErrorResult: {
+       *    result: {
+       *      cod_result: 'M16',
+       *      des_result: 'XML de entrada Incorrecto, no existe o no puede ser procesado.',
+       *      type_message: 'E'
+       *    }
+       *  }
+       * }
+       */
 
-      for (const hotel of hotels) {
-        const createHotel = this.createHotelAdapter.transform(hotel);
-        const newHotel = new this.hotelModel(createHotel);
+      const codResult = json.hotelDescriptionsResult.result.cod_result;
+      operationCode = json.hotelDescriptionsResult.operationCode;
 
-        try {
-          await this.hotelModel.findOneAndUpdate(
-            { hotelId: newHotel.hotelId },
-            {
-              hotelId: newHotel.hotelId,
-              name: newHotel.name,
-              zone: newHotel.zone,
-              address: newHotel.address,
-              zipCode: newHotel.zipCode,
-              latitude: newHotel.latitude,
-              longitude: newHotel.longitude,
-              hotelCategory: newHotel.hotelCategory,
-              city: newHotel.city,
-            },
+      if (codResult !== 'M1') {
+        haveError = true;
+      } else {
+        const hotels =
+          json.hotelDescriptionsResult.hotelDescriptions.hotelDescriptionsBean;
 
-            {
-              /**
-               * if is not exist create new one
-               */
-              upsert: true,
-              new: true,
-            },
-          );
+        for (const hotel of hotels) {
+          const createHotel = this.createHotelAdapter.transform(hotel);
+          const newHotel = new this.hotelModel(createHotel);
 
-          /**
-           * after save to database send new requset
-           */
-        } catch (error) {
-          haveError = true;
-          this.logger.error(
-            path.resolve(__filename) + ' ---> ' + JSON.stringify(error),
-          );
+          try {
+            await this.hotelModel.findOneAndUpdate(
+              { hotelId: newHotel.hotelId },
+              {
+                hotelId: newHotel.hotelId,
+                name: newHotel.name,
+                zone: newHotel.zone,
+                address: newHotel.address,
+                zipCode: newHotel.zipCode,
+                latitude: newHotel.latitude,
+                longitude: newHotel.longitude,
+                hotelCategory: newHotel.hotelCategory,
+                city: newHotel.city,
+              },
+
+              {
+                /**
+                 * if is not exist create new one
+                 */
+                upsert: true,
+                new: true,
+              },
+            );
+
+            /**
+             * after save to database send new requset
+             */
+          } catch (error) {
+            haveError = true;
+            this.logger.error(
+              path.resolve(__filename) + ' ---> ' + JSON.stringify(error),
+            );
+          }
+        }
+
+        // to du automatic init next task
+        /**
+         * total pages init to 0 and pages init to 1
+         * only corresponded the last page
+         */
+
+        if (operationCode) {
+          const pRequest = `<?xml version="1.0" encoding="ISO-8859-1"?><getAllHotels><operationCode>${operationCode}</operationCode><sessionID>${providerSessionID}</sessionID></getAllHotels>`;
+          this.amqpConnection.publish('tour_diez_hotels', 'tour_diez_hotels', {
+            pRequest,
+            providerSessionID,
+          });
         }
       }
-
-      // to du automatic init next task
-      /**
-       * total pages init to 0 and pages init to 1
-       * only corresponded the last page
-       */
     }
 
     if (haveError) {
       operationCode = '';
       this.publishHotels();
-      return new Nack(false);
-    }
-
-    /**
-     * total pages init to 0 and pages init to 1
-     * only corresponded the last page
-     */
-    if (operationCode) {
-      const _ = `<?xml version="1.0" encoding="ISO-8859-1"?><getAllHotels><operationCode>${operationCode}</operationCode><sessionID>${this.sessionID}</sessionID></getAllHotels>`;
-      this.amqpConnection.publish('tour_diez_hotels', 'tour_diez_hotels', _);
+      // return new Nack(false);
     }
   }
 }

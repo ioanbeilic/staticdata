@@ -37,8 +37,11 @@ export class ConfigService {
         ABREU_PASSWORD: process.env.ABREU_PASSWORD as string,
         ABREU_CONTEXT: process.env.ABREU_CONTEXT as string,
         TOUR_DIEZ_URL: process.env.TOUR_DIEZ_URL as string,
-        TOUR_DIEZ_uSER: process.env.TOUR_DIEZ_uSER as string,
+        TOUR_DIEZ_USER: process.env.TOUR_DIEZ_USER as string,
         TOUR_DIEZ_PASSWORD: process.env.TOUR_DIEZ_PASSWORD as string,
+        TOUR_DIEZ_URL_V3: process.env.TOUR_DIEZ_URL_V3 as string,
+        TOUR_DIEZ_USER_V3: process.env.TOUR_DIEZ_USER_V3 as string,
+        TOUR_DIEZ_PASSWORD_V3: process.env.TOUR_DIEZ_PASSWORD_V3 as string,
       };
     }
   }

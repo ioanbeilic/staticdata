@@ -14,6 +14,16 @@ export interface ServerHotelInterface {
   };
 }
 
+export interface ServerErrorResult {
+  ErrorResult: {
+    result: {
+      cod_result: string;
+      des_result: string;
+      type_message: string;
+    };
+  };
+}
+
 export interface HotelDescriptionsBean {
   hotelName: string;
   hotelID: string;
