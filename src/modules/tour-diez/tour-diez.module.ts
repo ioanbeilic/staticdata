@@ -9,7 +9,7 @@ import { ConfigService } from '../../config/config.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { WinstonModule } from 'nest-winston';
 import { HotelSchema } from './schemas/hotels.chema';
-import { HotelContentSchema } from './schemas/hotel-content.schema';
+import { HotelDetailsSchema } from './schemas/hotel-details.schema';
 import { RoomSchema } from './schemas/room.schema';
 import { CreateHotelAdapter } from './adapters/hotel.adapter';
 import { CreateHotelDetailsAdapter } from './adapters/hotel-details.adapter';
@@ -31,7 +31,7 @@ import { CreateHotelDetailsAdapter } from './adapters/hotel-details.adapter';
     }),
     MongooseModule.forFeature([
       { name: 'tour_diez_hotels', schema: HotelSchema },
-      { name: 'tour_diez_hotel-content', schema: HotelContentSchema },
+      { name: 'tour_diez_hotel-details', schema: HotelDetailsSchema },
       { name: 'tour_diez_rooms', schema: RoomSchema },
     ]),
     ConfigModule,

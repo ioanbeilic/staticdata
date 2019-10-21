@@ -10,6 +10,8 @@ import axios, { AxiosResponse } from 'axios';
 import * as parser from 'fast-xml-parser';
 import path from 'path';
 import qs from 'querystring';
+import { HotelsService } from '../hotels/hotels.service';
+import { Hotel } from '../../interfaces/hotel.interface';
 
 @Injectable()
 export class HotelDetailsService {
@@ -46,11 +48,12 @@ export class HotelDetailsService {
 
   constructor(
     public readonly amqpConnection: AmqpConnection,
-    @InjectModel('tour_diez_hotels')
+    @InjectModel('tour_diez_hotel-details')
     private readonly hotelModel: Model<HotelDetails>,
     private readonly configService: ConfigService,
     @Inject('winston') private readonly logger: Logger,
     private createHotelAdapter: CreateHotelAdapter,
+    private readonly hotelsService: HotelsService,
   ) {
     /**
      * load data from process.env
@@ -78,20 +81,7 @@ export class HotelDetailsService {
 
       const json: any = await parser.parse(response.data, this.options);
 
-      /**
-       * {
-       *  LoginResult: {
-       *    result: {
-       *      cod_result: 'M1',
-       *      des_result: 'Operaci�n correcta.',
-       *      type_message: 'I'
-       *    },
-       *    sessionID: 'e49f7d42-053a-4ba5-8cec-f8db55a1dfc2'
-       *  }
-       * }
-       */
-
-      this.sessionID = json.LoginResult.sessionID;
+      return json.LoginResult.sessionID;
     } catch (error) {
       this.logger.error(
         path.resolve(__filename) + ' ---> ' + JSON.stringify(error),
@@ -99,38 +89,41 @@ export class HotelDetailsService {
     }
   }
 
-  async publishHotels() {
-    await this.login();
-
-    const pRequest = `<?xml version="1.0" encoding="ISO-8859-1"?><getAllHotels><sessionID>${this.sessionID}</sessionID></getAllHotels>`;
-
-    this.amqpConnection.publish(
-      'tour_diez_hotels',
-      'tour_diez_hotels',
-      pRequest,
-    );
+  async publishALlhHotelDetails() {
+    const hotels = await this.hotelsService.getHotels();
+    // console.log('hotel-details');
+    hotels.forEach((hotel: Hotel) => {
+      this.amqpConnection.publish(
+        'tour_diez_hotel-details',
+        'tour_diez_hotel-details',
+        hotel.hotelId,
+      );
+    });
   }
-
-  Validator = async (response: string): Promise<boolean> => {
-    const re = new RegExp('\b(w*[Ee][Rr][Rr][Oo][Rr]w*)\b');
-    return re.test(response.slice(0, 10000));
-    // tslint:disable-next-line
-  }; // tslint:disable-line
 
   @RabbitSubscribe({
     exchange: 'tour_diez_hotel-details',
     routingKey: 'tour_diez_hotel-details',
     queue: 'tour_diez_hotel-details',
   })
-  async subscribeHotels(pRequest: string) {
+  async subscribeHotelDetails(hotelId: string) {
     let response: AxiosResponse;
+    const providerSessionID = await this.login();
 
     // let haveError: boolean = false;
+
+    const pRequest: string = `
+    <?xml version="1.0" encoding="ISO-8859-1"?>
+    <getHotelDetails>
+      <sessionID>${providerSessionID}</sessionID>
+      <hotelID>${hotelId}</hotelID>
+    </getHotelDetails>
+    `;
 
     response = await axios.post(
       this.url,
       qs.stringify({
-        pOperacion: 'getAllHotels',
+        pOperacion: 'getHotelDetails',
         pRequest,
       }),
       {

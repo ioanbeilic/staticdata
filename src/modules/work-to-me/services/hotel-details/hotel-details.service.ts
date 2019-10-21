@@ -202,9 +202,4 @@ export class HotelDetailsService {
         console.log('The file was saved!');
       });
       */
-
-  Validator = async (response: string): Promise<boolean> => {
-    const re = new RegExp('\b(w*[Ee][Rr][Rr][Oo][Rr]w*)\b');
-    return re.test(response.slice(0, 10000));
-  }; // tslint:disable-line
 }

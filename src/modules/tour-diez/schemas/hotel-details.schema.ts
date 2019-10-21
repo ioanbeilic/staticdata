@@ -1,6 +1,6 @@
 import { Schema } from 'mongoose';
 
-export const HotelContentSchema = new Schema({
+export const HotelDetailsSchema = new Schema({
   hotelId: String,
   name: String,
   description: String,

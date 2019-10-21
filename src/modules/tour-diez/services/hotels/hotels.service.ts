@@ -234,4 +234,8 @@ export class HotelsService {
       // return new Nack(false);
     }
   }
+
+  async getHotels() {
+    return this.hotelModel.find();
+  }
 }
