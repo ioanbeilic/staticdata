@@ -6,8 +6,8 @@ export interface Hotel extends Document {
   zone: string;
   address: string;
   zipCode: string;
-  latitude: number;
-  longitude: number;
+  latitude: string;
+  longitude: string;
   hotelCategory: string;
   city: string;
 }

@@ -17,6 +17,7 @@ import { Hotel } from '../../interfaces/hotel.interface';
 import { InjectModel } from '@nestjs/mongoose';
 import { CreateHotelAdapter } from '../../adapters/hotel.adapter';
 import _ from 'lodash';
+import * as iconv from 'iconv-lite';
 
 @Injectable()
 export class HotelsService {
@@ -147,7 +148,10 @@ export class HotelsService {
       },
     );
 
-    const json = await parser.parse(response.data, this.options);
+    const json = await parser.parse(
+      iconv.decode(response.data, 'ISO-8859-1'),
+      this.options,
+    );
 
     if (_.has(json, 'ErrorResult')) {
       haveError = true;

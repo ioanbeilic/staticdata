@@ -1,130 +1,63 @@
-import { ServerHotelContentInterface } from '../interfaces/provider/content.interface';
 import t from 'typy';
 import { Inject, Injectable } from '@nestjs/common';
 import { Logger } from 'winston';
 import { CreateHotelDetailsDto } from '../dto/create-hotel-details.dto';
-import { Phone } from 'src/modules/beds-online/dto/create-hotel-details.dto';
 import path from 'path';
+import _ from 'lodash';
+import { Hotel } from '../interfaces/hotel.interface';
+import { HotelDetailsBean } from '../interfaces/provider/server-content-response.interface';
 
 @Injectable()
 export class CreateHotelDetailsAdapter {
   constructor(@Inject('winston') private readonly logger: Logger) {}
 
-  transform(originalData: ServerHotelContentInterface) {
+  async transform(originalData: HotelDetailsBean, hotel: Hotel) {
     const hotelDetails = new CreateHotelDetailsDto();
 
     try {
-      hotelDetails.hotelId = t(originalData, 'JPCode').safeObject || '';
+      hotelDetails.hotelId = hotel.hotelId;
+      hotelDetails.name = t(originalData, 'nombre').safeObject || '';
+      hotelDetails.address = t(originalData, 'direccion').safeObject || '';
 
-      hotelDetails.name = t(originalData, 'HotelName').safeObject || '';
-      hotelDetails.address =
-        t(originalData, 'Address.Address').safeObject || '';
+      hotelDetails.description =
+        t(originalData, 'descripcion').safeObject || '';
 
-      if (t(originalData, 'Descriptions.Description').isObject) {
-        try {
-          hotelDetails.description = this.getDescription(
-            t(originalData, 'Descriptions.Description').safeObject || '',
-          );
-        } catch (error) {
-          this.logger.error(
-            path.resolve(__filename) +
-              ' ---> ' +
-              `hotelDetails.description, ${hotelDetails.hotelId}`,
-          );
-        }
-      } else {
-        hotelDetails.description = '';
-      }
-
-      hotelDetails.postalCode =
-        t(originalData, 'Address.PostalCode').safeObject || '';
+      hotelDetails.postalCode = t(originalData, 'codPostal').safeObject || '';
 
       hotelDetails.location = {
-        latitude: t(originalData, 'Address.Latitude').safeObject || '',
-        longitude: t(originalData, 'Address.Longitude').safeObject || '',
+        latitude: hotel.latitude,
+        longitude: hotel.longitude,
       };
 
-      if (t(originalData, 'Zone.Name').isString) {
-        try {
-          hotelDetails.city = this.getCity(
-            t(originalData, 'Zone.Name').safeObject || '',
-          );
-        } catch (error) {
-          this.logger.error(
-            path.resolve(__filename) +
-              ' ---> ' +
-              `hotelDetails.city, ${hotelDetails.hotelId}`,
-          );
-        }
-      } else {
-        hotelDetails.city = '';
-      }
+      hotelDetails.postalCode = hotel.zipCode;
 
-      if (t(originalData, 'Address.Address').isString) {
-        try {
-          hotelDetails.province = this.getProvince(
-            t(originalData, 'Address.Address').safeObject,
-          );
-        } catch (error) {
-          this.logger.error(
-            path.resolve(__filename) +
-              ' ---> ' +
-              `hotelDetails.address, ${hotelDetails.hotelId}`,
-          );
-        }
-      } else {
-        hotelDetails.province = '';
-      }
+      hotelDetails.city = t(originalData, 'ciudad').safeObject || '';
 
-      if (t(originalData, 'Zone.Name').isString) {
-        try {
-          hotelDetails.country = this.getCountry(
-            t(originalData, 'Zone.Name').safeObject || '',
-          );
-        } catch (error) {
-          this.logger.error(
-            path.resolve(__filename) +
-              ' ---> ' +
-              `hotelDetails.country, ${hotelDetails.hotelId}`,
-          );
-        }
-      } else {
-        // Zone
-        hotelDetails.country = '';
-      }
+      hotelDetails.province = t(originalData, 'provincia').safeObject || '';
 
       hotelDetails.web = '';
 
-      if (
-        t(originalData, 'ContactInfo.PhoneNumbers').isString ||
-        t(originalData, 'ContactInfo.PhoneNumbers').isObject
-      ) {
-        try {
-          hotelDetails.phones = this.getPhones(
-            t(originalData, 'ContactInfo.PhoneNumbers').safeObject || '',
-          );
-        } catch (error) {
-          this.logger.error(
-            path.resolve(__filename) +
-              ' ---> ' +
-              `hotelDetails.phones, ${hotelDetails.hotelId}`,
-          );
-        }
-      }
+      hotelDetails.phones = [
+        {
+          number: t(originalData, 'ContactInfo.PhoneNumbers').safeObject || '',
+          info: '',
+        },
+      ];
 
       hotelDetails.email = '';
 
       hotelDetails.category = {
-        name: t(originalData, 'HotelCategory.name').safeObject || '',
-        value: t(originalData, 'HotelCategory.Type').safeObject || '',
+        name: t(originalData, 'categoria.nombre').safeObject || '',
+        value: t(originalData, 'categoria.claveCategoria').safeObject || '',
       };
 
-      // this.photos = t(originalData, 'Images.Image').safeObject || '';
-
-      if (t(originalData, 'Images.Image').isArray) {
+      if (
+        t(originalData, 'imagenes.nombreImagen').isArray ||
+        t(originalData, 'imagenes.nombreImagen').isString
+      ) {
         try {
-          hotelDetails.photos = this.getImages(
-            t(originalData, 'Images.Image').safeObject,
+          hotelDetails.photos = await this.getImages(
+            t(originalData, 'imagenes.nombreImagen').safeObject,
           );
         } catch (error) {
           this.logger.error(
@@ -148,77 +81,23 @@ export class CreateHotelDetailsAdapter {
     return hotelDetails;
   }
 
-  private getDescription(descriptions: any): string {
-    let description: string = '';
-
-    if (Array.isArray(descriptions)) {
-      descriptions.forEach((el: { Type: string; name: string }) => {
-        if (el.Type === 'LNG') {
-          description = el.name;
-        }
-      });
-    } else {
-      description = descriptions.name;
-    }
-
-    return description;
-  }
-
-  private getCity(city: string) {
-    return city.split(',')[0];
-  }
-
-  private getProvince(address: string) {
-    const temp = address.split(',')[1];
-    const re = /[0-9]/g;
-    let province = '';
-    if (temp.match(re)) {
-      province = temp.replace(/[0-9]/g, '');
-    }
-
-    return province;
-  }
-
-  private getCountry(country: string) {
-    return country.split(',')[1];
-  }
-
-  private getPhones(phones: Phone[] | Phone): Phone[] {
-    const newPhones = [];
-    if (Array.isArray(phones)) {
-      phones.forEach((phone: Phone) => {
-        newPhones.push(phone);
-      });
-    } else {
-      newPhones.push(phones);
-    }
-
-    return newPhones;
-  }
-
-  private getImages(
-    images:
-      | Array<{ Type: string; FileName: string; Title: string }>
-      | { Type: string; FileName: string; Title: string },
-  ) {
+  async getImages(images: string | string[]) {
     const photos = [];
     if (Array.isArray(images)) {
-      images.forEach(
-        (img: { Type: string; FileName: string; Title: string }) => {
-          const newImg = {
-            info: img.Type,
-            fileName: img.FileName,
-            title: img.Title,
-          };
+      images.forEach(img => {
+        const newImg = {
+          info: '',
+          fileName: img,
+          title: '',
+        };
 
-          photos.push(newImg);
-        },
-      );
+        photos.push(newImg);
+      });
     } else {
       const newImg = {
-        info: images.Type,
-        fileName: images.FileName,
-        title: images.Title,
+        info: '',
+        fileName: images,
+        title: '',
       };
       photos.push(newImg);
     }
