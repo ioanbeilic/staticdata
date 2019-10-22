@@ -228,6 +228,22 @@ export class HotelsService {
             pRequest,
             providerSessionID,
           });
+        } else {
+          // curl -X GET "http://localhost:4000/tour-diez/publish-hotel-details" -H "accept: application/json"
+
+          const __ = await axios.get(
+            `${this.configService.get(
+              Configuration.HOST,
+            )}/tour-diez/publish-hotel-details`,
+          );
+          // console.log(_.status);
+          if (__.status !== 204) {
+            this.logger.error(
+              path.resolve(__filename) +
+                ' ---> ' +
+                'Failed to start Tour Diez hotel static data download',
+            );
+          }
         }
       }
     }
