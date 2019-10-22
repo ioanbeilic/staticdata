@@ -44,7 +44,7 @@ export class CreateHotelDetailsAdapter {
         },
       ];
 
-      hotelDetails.email = '';
+      hotelDetails.email = t(originalData, 'email').safeObject || '';
 
       hotelDetails.category = {
         name: t(originalData, 'categoria.nombre').safeObject || '',
