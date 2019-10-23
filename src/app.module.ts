@@ -11,6 +11,7 @@ import { BedsOnlineModule } from './modules/beds-online/beds-online.module';
 import { AbreuModule } from './modules/abreu/abreu.module';
 import { WinstonModule } from 'nest-winston';
 import { TourDiezModule } from './modules/tour-diez/tour-diez.module';
+import { TorTravelModule } from './modules/tor-travel/tor-travel.module';
 import * as winston from 'winston';
 import DailyRotateFile from 'winston-daily-rotate-file';
 
@@ -150,6 +151,7 @@ const colorizer = winston.format.colorize();
     BedsOnlineModule,
     AbreuModule,
     TourDiezModule,
+    TorTravelModule,
   ],
   controllers: [AppController],
   providers: [AppService, AmqpConnection],

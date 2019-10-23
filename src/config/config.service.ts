@@ -42,6 +42,10 @@ export class ConfigService {
         TOUR_DIEZ_URL_V3: process.env.TOUR_DIEZ_URL_V3 as string,
         TOUR_DIEZ_USER_V3: process.env.TOUR_DIEZ_USER_V3 as string,
         TOUR_DIEZ_PASSWORD_V3: process.env.TOUR_DIEZ_PASSWORD_V3 as string,
+        TOR_TRAVEL_FTP_HOST: process.env.TOR_TRAVEL_FTP_HOST as string,
+        TOR_TRAVEL_FTP_PORT: process.env.TOR_TRAVEL_FTP_PORT as string,
+        TOR_TRAVEL_FTP_USERNAME: process.env.TOR_TRAVEL_FTP_USERNAME as string,
+        TOR_TRAVEL_FTP_PASSWORD: process.env.TOR_TRAVEL_FTP_PASSWORD as string,
       };
     }
   }

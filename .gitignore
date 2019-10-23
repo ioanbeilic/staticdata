@@ -37,3 +37,4 @@ lerna-debug.log*
 data
 dist
 esdata01/*
+downloads/*
