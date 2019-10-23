@@ -19,7 +19,7 @@ import path from 'path';
 @Injectable()
 export class HotelService {
   version = '1.1';
-  language = 'en';
+  language = 'es';
   pass: string;
   login: string;
   totalPages = 0;

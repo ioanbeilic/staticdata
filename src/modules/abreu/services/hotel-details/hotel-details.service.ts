@@ -49,6 +49,7 @@ export class HotelDetailsService {
 
   countCityQue = 0;
   countHotelQue = 0;
+  language = 'ES';
 
   constructor(
     private readonly configService: ConfigService,
@@ -109,7 +110,7 @@ export class HotelDetailsService {
             </wsse:Security>
         </soap-env:Header>
         <soap-env:Body>
-            <OTA_HotelInfoRQ xmlns="http://www.opentravel.org/OTA/2003/05/common" LanguageId="ES">
+            <OTA_HotelInfoRQ xmlns="http://www.opentravel.org/OTA/2003/05/common" LanguageId="${this.language}">
                 <HotelRef HotelCode="${hotelId}"/>
             </OTA_HotelInfoRQ>
         </soap-env:Body>
@@ -175,33 +176,6 @@ export class HotelDetailsService {
         this.HaveError = true;
       }
     }
-
-    // to du automatic init next task
-    /**
-     * total pages init to 0 and pages init to 1
-     * only corresponded the last page
-     */
-    /*
-      if (this.countCityQue === this.countHotelQue) {
-        // publish-hotels-content
-        // console.log('run ');
-        const _ = await axios.get(
-          `${this.configService.get(
-            Configuration.HOST,
-          )}/abreu//hotel-details/publish-hotels-content`,
-        );
-        // console.log(_.status);
-        if (_.status === 204) {
-          // this.totalPages = 0;
-        }
-      }
-    }
-
-    */
-
-    /**
-     * check if the current page is the last page
-     */
 
     if (this.HaveError) {
       return new Nack(true);

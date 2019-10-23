@@ -16,6 +16,8 @@ import path from 'path';
 @Injectable()
 export class HotelDetailsService {
   HaveError: boolean = false;
+  language = 'ESP';
+  useSecondaryLanguage = false;
 
   constructor(
     private readonly configService: ConfigService,
@@ -64,7 +66,7 @@ export class HotelDetailsService {
 
     let response: AxiosResponse;
 
-    const query = `/hotel-content-api/1.0/hotels/${hotelId}/details?language=ENG&useSecondaryLanguage=False`;
+    const query = `/hotel-content-api/1.0/hotels/${hotelId}/details?language=${this.language}&useSecondaryLanguage=${this.useSecondaryLanguage}`;
 
     const url = this.configService.get(Configuration.BEDS_ONLINE_URL) + query;
 

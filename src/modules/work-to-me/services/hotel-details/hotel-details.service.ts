@@ -20,7 +20,7 @@ import path from 'path';
 @Injectable()
 export class HotelDetailsService {
   version = '1.1';
-  language = 'en';
+  language = 'es';
   pass = 'gw7yx6qU';
   login = 'XMLTestCandamena';
   totalPages = 0;

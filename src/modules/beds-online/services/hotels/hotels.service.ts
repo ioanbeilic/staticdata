@@ -18,7 +18,7 @@ export class HotelsService {
    * provider query param
    */
   fields = 'all';
-  language = 'ENG';
+  language = 'ESP';
   useSecondaryLanguage = false;
   signature!: string;
   publicKey!: string;
