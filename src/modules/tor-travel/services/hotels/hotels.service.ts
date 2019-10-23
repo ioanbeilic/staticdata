@@ -33,9 +33,7 @@ export class HotelsService {
     try {
       await this.sftp.connect(this.config);
 
-      let list = await this.sftp.list('/');
-
-      console.log(list);
+      const list = await this.sftp.list('/');
 
       for (const el of list) {
         if (el.name === 'Cities_ES.csv.gz') {
@@ -54,7 +52,7 @@ export class HotelsService {
       });
 */
     } catch (error) {
-      console.log(error, 'catch error');
+      // console.log(error, 'catch error');
     }
   }
 }
