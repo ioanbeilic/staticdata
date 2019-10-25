@@ -29,11 +29,11 @@ const colorizer = winston.format.colorize();
       useFactory: (configService: ConfigService) => ({
         exchanges: [
           {
-            name: 'word_to_me_hotels',
+            name: 'word_to_meet_hotels',
             type: 'fanout',
           },
           {
-            name: 'word_to_me_hotel-detail',
+            name: 'word_to_meet_hotel-detail',
             type: 'fanout',
           },
           {
