@@ -34,9 +34,9 @@ import { CreateHotelDetailsAdapter } from './adapters/hotel-details.adapter';
       inject: [ConfigService],
     }),
     MongooseModule.forFeature([
-      { name: 'word_to_me_hotels', schema: HotelSchema },
-      { name: 'word_to_me_hotel-content', schema: HotelContentSchema },
-      { name: 'word_to_me_rooms', schema: RoomSchema },
+      { name: 'word_to_meet_hotels', schema: HotelSchema },
+      { name: 'word_to_meet_hotel-content', schema: HotelContentSchema },
+      { name: 'word_to_meet_rooms', schema: RoomSchema },
     ]),
     ConfigModule,
     WinstonModule,

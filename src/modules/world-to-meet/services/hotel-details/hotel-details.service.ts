@@ -61,7 +61,7 @@ export class HotelDetailsService {
   constructor(
     private readonly hotelService: HotelService,
     private readonly amqpConnection: AmqpConnection,
-    @InjectModel('word_to_me_hotel-content')
+    @InjectModel('word_to_meet_hotel-content')
     private readonly hotelContentModel: Model<HotelContent>,
     @Inject('winston') private readonly logger: Logger,
     private createHotelDetailsAdapter: CreateHotelDetailsAdapter,
@@ -72,7 +72,7 @@ export class HotelDetailsService {
     // console.log('hotel-details');
     hotels.forEach((hotel: Hotel) => {
       this.amqpConnection.publish(
-        'word_to_me_hotel-detail',
+        'word_to_meet_hotel-detail',
         'hotelsContent',
         hotel.hotelId,
       );
@@ -81,16 +81,16 @@ export class HotelDetailsService {
 
   async publishHotelContent(hotelId: string) {
     this.amqpConnection.publish(
-      'word_to_me_hotel-detail',
+      'word_to_meet_hotel-detail',
       'hotelsContent',
       hotelId,
     );
   }
 
   @RabbitSubscribe({
-    exchange: 'word_to_me_hotel-detail',
+    exchange: 'word_to_meet_hotel-detail',
     routingKey: 'hotelsContent',
-    queue: 'word_to_me_hotels-content',
+    queue: 'word_to_meet_hotels-content',
   })
   async HotelContent(hotelId: string): Promise<Nack | undefined> {
     // console.log(hotelId);

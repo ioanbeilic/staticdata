@@ -57,7 +57,8 @@ export class HotelService {
 
   constructor(
     public readonly amqpConnection: AmqpConnection,
-    @InjectModel('word_to_me_hotels') private readonly hotelModel: Model<Hotel>,
+    @InjectModel('word_to_meet_hotels')
+    private readonly hotelModel: Model<Hotel>,
     private readonly configService: ConfigService,
     @Inject('winston') private readonly logger: Logger,
     private createHotelAdapter: CreateHotelAdapter,
@@ -121,8 +122,8 @@ export class HotelService {
         for (let i = 1; i <= pages.totalPages; i++) {
           // lunch first que
           this.amqpConnection.publish(
-            'word_to_me_hotels',
-            'word_to_me_hotels',
+            'word_to_meet_hotels',
+            'word_to_meet_hotels',
             i,
           );
         }
@@ -138,8 +139,8 @@ export class HotelService {
   async publishHotelsPages(page: number): Promise<void> {
     try {
       this.amqpConnection.publish(
-        'word_to_me_hotels',
-        'word_to_me_hotels',
+        'word_to_meet_hotels',
+        'word_to_meet_hotels',
         page,
       );
     } catch (error) {
