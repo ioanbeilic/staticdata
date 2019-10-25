@@ -115,7 +115,7 @@ export class HotelsService {
   async publishHotels() {
     const providerSessionID = await this.login();
 
-    const pRequest = `<?xml version="1.0" encoding="ISO-8859-1"?><getAllHotels><sessionID>${providerSessionID}</sessionID></getAllHotels>`;
+    const pRequest = `<?xml version="1.0" encoding="ISO-8859-1"?><getAllHotels><user>${this.user}</user><password>${this.pass}</password></getAllHotels>`;
 
     this.amqpConnection.publish('tour_diez_hotels', 'tour_diez_hotels', {
       pRequest,
@@ -223,7 +223,7 @@ export class HotelsService {
          */
 
         if (operationCode) {
-          const pRequest = `<?xml version="1.0" encoding="ISO-8859-1"?><getAllHotels><operationCode>${operationCode}</operationCode><sessionID>${providerSessionID}</sessionID></getAllHotels>`;
+          const pRequest = `<?xml version="1.0" encoding="ISO-8859-1"?><getAllHotels><user>${this.user}</user><password>${this.pass}</password><operationCode>${operationCode}</operationCode></getAllHotels>`;
           this.amqpConnection.publish('tour_diez_hotels', 'tour_diez_hotels', {
             pRequest,
             providerSessionID,

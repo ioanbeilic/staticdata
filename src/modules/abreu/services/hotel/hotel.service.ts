@@ -85,7 +85,7 @@ export class HotelService {
     </soap-env:Header>
     <soap-env:Body>
       <OTA_ReadRQ xmlns:ns="http://www.opentravel.org/OTA/2003/05/common"
-        xmlns="http://www.opentravel.org/OTA/2003/05" TimeStamp="2015-07-16T06:38:10.60">
+        xmlns="http://www.opentravel.org/OTA/2003/05" TimeStamp="${new Date().toISOString()}">
         <ReadRequests>
           <HotelReadRequest>
             <TPA_Extensions>
@@ -126,7 +126,6 @@ export class HotelService {
         );
       }
     } catch (error) {
-      // console.log(error);
       throw new HttpException('error', error);
     }
   }
