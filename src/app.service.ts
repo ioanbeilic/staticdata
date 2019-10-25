@@ -11,7 +11,7 @@ export class AppService {
   ) {}
 
   getHello(): string {
-    this.logger.error('Hello World');
+    this.logger.error('Hello world');
     return `
     ApiRest - Tecnoturis - static data</br>
     <a href = "${this.configService.get(Configuration.HOST)}/api">Swagger</a>

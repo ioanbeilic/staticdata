@@ -6,7 +6,7 @@ export const databaseProviders = [
   /**
    * mongo database connection with mongoose
    * inject ConfigModule and ConfigService to Mongoose module
-   * useNewUrlParser and useUnifiedTopology - fix mongoose insure (is work without this, default value 'false)
+   * useNewUrlParser and useUnifiedTopology - fix mongoose insure (is world without this, default value 'false)
    */
   MongooseModule.forRootAsync({
     imports: [ConfigModule],

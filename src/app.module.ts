@@ -6,7 +6,6 @@ import { DatabaseModule } from './database/database.module';
 import { ConfigService } from './config/config.service';
 import { Configuration } from './config/config.keys';
 import { AmqpConnection, RabbitMQModule } from '@nestjs-plus/rabbitmq';
-import { WorkToMeModule } from './modules/work-to-me/work-to-me.module';
 import { BedsOnlineModule } from './modules/beds-online/beds-online.module';
 import { AbreuModule } from './modules/abreu/abreu.module';
 import { WinstonModule } from 'nest-winston';
@@ -14,6 +13,7 @@ import { TourDiezModule } from './modules/tour-diez/tour-diez.module';
 import { TorTravelModule } from './modules/tor-travel/tor-travel.module';
 import * as winston from 'winston';
 import DailyRotateFile from 'winston-daily-rotate-file';
+import { WorldToMeetModule } from './modules/world-to-meet/world-to-meet.module';
 
 const colorizer = winston.format.colorize();
 
@@ -29,11 +29,11 @@ const colorizer = winston.format.colorize();
       useFactory: (configService: ConfigService) => ({
         exchanges: [
           {
-            name: 'work_to_me_hotels',
+            name: 'word_to_me_hotels',
             type: 'fanout',
           },
           {
-            name: 'work_to_me_hotel-detail',
+            name: 'word_to_me_hotel-detail',
             type: 'fanout',
           },
           {
@@ -147,7 +147,7 @@ const colorizer = winston.format.colorize();
     ConfigModule,
     DatabaseModule,
     HttpModule,
-    WorkToMeModule,
+    WorldToMeetModule,
     BedsOnlineModule,
     AbreuModule,
     TourDiezModule,

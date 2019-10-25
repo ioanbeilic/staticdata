@@ -38,7 +38,7 @@ AppModule.port = this._configService.get(Configuration.PORT);
       type: 'postgres',
       host: config.get(Configuration.HOST),
       username: config.get(Configuration.USERNAME),
-      password: config.get(Configuration.PASSWORD),
+      password: config.get(Configuration.PASSWORLD),
       entities: [__dirname + '/../**/*.entity{.ts,.js}'],
       migrations: [__dirname + '/migrations/*{.ts,.js}'],
     } as ConnectionOptions;

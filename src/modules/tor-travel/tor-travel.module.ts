@@ -1,13 +1,20 @@
 import { Module } from '@nestjs/common';
-import { HotelsService } from './services/hotels/hotels.service';
 import { HotelDetailsService } from './services/hotel-details/hotel-details.service';
 import { HotelDetailsController } from './controllers/hotel-details/hotel-details.controller';
-import { HotelsController } from './controllers/hotels/hotels.controller';
 import { RabbitMQModule } from '@nestjs-plus/rabbitmq';
 import { ConfigModule } from '../../config/config.module';
 import { ConfigService } from '../../config/config.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { WinstonModule } from 'nest-winston/dist/winston.module';
+import { DownloadService } from './services/download/download.service';
+import { HotelDetailsSchema } from './schemas/hotel-details.schema';
+import { RoomSchema } from './schemas/room.schema';
+import { CreateHotelDetailsAdapter } from './adapters/hotel-details.adapter';
+import { AccommodationsAmenitiesSchema } from './schemas/temporal/accommodations-amenities.interface';
+import { AccommodationsPicturesSchema } from './schemas/temporal/accommodations-pictures.interface';
+import { AccommodationsSchema } from './schemas/temporal/accommodations.interface';
+import { CitiesSchema } from './schemas/temporal/cities.interface';
+import { DefaultSchema } from './schemas/temporal/default.interface';
 
 @Module({
   imports: [
@@ -25,14 +32,46 @@ import { WinstonModule } from 'nest-winston/dist/winston.module';
       inject: [ConfigService],
     }),
     MongooseModule.forFeature([
-      //  { name: 'tour_diez_hotels', schema: HotelSchema },
-      //  { name: 'tour_diez_hotel-details', schema: HotelDetailsSchema },
-      //  { name: 'tour_diez_rooms', schema: RoomSchema },
+      { name: 'tor_travel_hotel-details', schema: HotelDetailsSchema },
+      { name: 'tor_travel_rooms', schema: RoomSchema },
+      // temporal schema
+      {
+        name: 'tor_travel_provider_accommodations-amenities',
+        schema: AccommodationsAmenitiesSchema,
+      },
+      {
+        name: 'tor_travel_provider_accommodations-pictures',
+        schema: AccommodationsPicturesSchema,
+      },
+      {
+        name: 'tor_travel_provider_accommodations',
+        schema: AccommodationsSchema,
+      },
+      {
+        name: 'tor_travel_provider_accommodations',
+        schema: AccommodationsSchema,
+      },
+      {
+        name: 'tor_travel_provider_cities',
+        schema: CitiesSchema,
+      },
+      {
+        name: 'tor_travel_provider_accommodations-types',
+        schema: DefaultSchema,
+      },
+      {
+        name: 'tor_travel_provider_meal_plans',
+        schema: DefaultSchema,
+      },
+      {
+        name: 'tor_travel_provider_rooms',
+        schema: DefaultSchema,
+      },
     ]),
     ConfigModule,
     WinstonModule,
   ],
-  providers: [HotelsService, HotelDetailsService],
-  controllers: [HotelDetailsController, HotelsController],
+  providers: [HotelDetailsService, DownloadService, CreateHotelDetailsAdapter],
+  controllers: [HotelDetailsController],
 })
 export class TorTravelModule {}

@@ -64,7 +64,7 @@ export class HotelService {
     private createHotelAdapter: CreateHotelAdapter,
   ) {
     this.context = this.configService.get(Configuration.ABREU_CONTEXT);
-    this.password = this.configService.get(Configuration.ABREU_PASSWORD);
+    this.password = this.configService.get(Configuration.ABREU_PASSWORLD);
     this.username = this.configService.get(Configuration.ABREU_USERNAME);
     this.url = this.configService.get(Configuration.ABREU_URL);
   }

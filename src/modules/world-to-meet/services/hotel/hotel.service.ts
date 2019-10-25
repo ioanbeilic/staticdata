@@ -57,7 +57,7 @@ export class HotelService {
 
   constructor(
     public readonly amqpConnection: AmqpConnection,
-    @InjectModel('work_to_me_hotels') private readonly hotelModel: Model<Hotel>,
+    @InjectModel('word_to_me_hotels') private readonly hotelModel: Model<Hotel>,
     private readonly configService: ConfigService,
     @Inject('winston') private readonly logger: Logger,
     private createHotelAdapter: CreateHotelAdapter,
@@ -65,10 +65,10 @@ export class HotelService {
     /**
      * load data from process.env
      */
-    this.pass = this.configService.get(Configuration.WORK_TO_ME_PASSWORD);
-    this.login = this.configService.get(Configuration.WORK_TO_ME_LOGIN);
+    this.pass = this.configService.get(Configuration.WORLD_TO_ME_PASSWORLD);
+    this.login = this.configService.get(Configuration.WORLD_TO_ME_LOGIN);
     this.url =
-      this.configService.get(Configuration.WORK_TO_ME_URL) + this.query;
+      this.configService.get(Configuration.WORLD_TO_ME_URL) + this.query;
   }
 
   async publishHotels(): Promise<void> {
@@ -121,8 +121,8 @@ export class HotelService {
         for (let i = 1; i <= pages.totalPages; i++) {
           // lunch first que
           this.amqpConnection.publish(
-            'work_to_me_hotels',
-            'work_to_me_hotels',
+            'word_to_me_hotels',
+            'word_to_me_hotels',
             i,
           );
         }
@@ -138,8 +138,8 @@ export class HotelService {
   async publishHotelsPages(page: number): Promise<void> {
     try {
       this.amqpConnection.publish(
-        'work_to_me_hotels',
-        'work_to_me_hotels',
+        'word_to_me_hotels',
+        'word_to_me_hotels',
         page,
       );
     } catch (error) {
@@ -150,12 +150,12 @@ export class HotelService {
   }
 
   @RabbitSubscribe({
-    exchange: 'work_to_me_hotels',
-    routingKey: 'work_to_me_hotels',
-    queue: 'work_to_me_hotels',
+    exchange: 'word_to_me_hotels',
+    routingKey: 'word_to_me_hotels',
+    queue: 'word_to_me_hotels',
   })
   async subscribeHotels(page: number): Promise<Nack | undefined> {
-    this.logger.info(`Processing work to me hotels - page: ${page}`);
+    this.logger.info(`Processing world to me hotels - page: ${page}`);
     let hotels: any;
     let haveError: boolean = false;
 
