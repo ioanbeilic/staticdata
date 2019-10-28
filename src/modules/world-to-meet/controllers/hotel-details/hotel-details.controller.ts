@@ -16,7 +16,7 @@ export class HotelDetailsController {
    * get data for all hotels
    */
 
-  @Get('/publish-hotels-content')
+  @Get('/publish-hotels-details')
   @HttpCode(HttpStatus.NO_CONTENT)
   @ApiOperation({ title: 'initialize process for RabbitMq' })
   @ApiNoContentResponse({

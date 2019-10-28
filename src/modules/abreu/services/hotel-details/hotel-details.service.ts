@@ -72,8 +72,8 @@ export class HotelDetailsService {
     try {
       for (const hotel of hotels) {
         this.amqpConnection.publish(
-          'abreu_hotel-detail',
-          'abreu_hotel-detail',
+          'abreu_hotel-details',
+          'abreu_hotel-details',
           hotel.hotelId,
         );
       }
@@ -92,9 +92,9 @@ export class HotelDetailsService {
    */
 
   @RabbitSubscribe({
-    exchange: 'abreu_hotel-detail',
-    routingKey: 'abreu_hotel-detail',
-    queue: 'abreu_hotel-detail',
+    exchange: 'abreu_hotel-details',
+    routingKey: 'abreu_hotel-details',
+    queue: 'abreu_hotel-details',
   })
   async subscribeHotelsDetails(hotelId: string): Promise<Nack | undefined> {
     let response: AxiosResponse;

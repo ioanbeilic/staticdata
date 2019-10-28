@@ -33,7 +33,7 @@ const colorizer = winston.format.colorize();
             type: 'fanout',
           },
           {
-            name: 'word_to_meet_hotel-detail',
+            name: 'word_to_meet_hotel-details',
             type: 'fanout',
           },
           {
@@ -41,7 +41,7 @@ const colorizer = winston.format.colorize();
             type: 'fanout',
           },
           {
-            name: 'beds_online_hotel-detail',
+            name: 'beds_online_hotel-details',
             type: 'fanout',
           },
           {
@@ -49,7 +49,7 @@ const colorizer = winston.format.colorize();
             type: 'fanout',
           },
           {
-            name: 'abreu_hotel-detail',
+            name: 'abreu_hotel-details',
             type: 'fanout',
           },
           {

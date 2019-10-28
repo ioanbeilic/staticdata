@@ -71,9 +71,7 @@ export class HotelsService {
 
     let response: AxiosResponse;
 
-    const query = `/hotel-content-api/1.0/hotels?fields=${this.fields}
-    &language=${this.language}&from=${from}
-    &to=${to}&useSecondaryLanguage=${this.useSecondaryLanguage}`;
+    const query = `/hotel-content-api/1.0/hotels?fields=${this.fields}&language=${this.language}&from=${from}&to=${to}&useSecondaryLanguage=${this.useSecondaryLanguage}`;
 
     const url = this.configService.get(Configuration.BEDS_ONLINE_URL) + query;
 
@@ -81,7 +79,6 @@ export class HotelsService {
       response = await axios.get(url, {
         headers: this.generateHeaders(),
       });
-
       /**
        * validate if server response contain error message
        */

@@ -3,7 +3,6 @@ import { ConfigService } from '../../../../config/config.service';
 import { Configuration } from '../../../../config/config.keys';
 import axios, { AxiosResponse } from 'axios';
 import * as parser from 'fast-xml-parser';
-import fs from 'fs';
 import {
   CountryProviderResponse,
   CountryProvider,
@@ -108,15 +107,7 @@ export class HotelService {
         response.data,
         this.options,
       );
-      /*
-      fs.writeFile('./counties.json', JSON.stringify(json), (err: any) => {
-        if (err) {
-          return console.log(err);
-        }
 
-        console.log('The file was saved!');
-      });
-*/
       countries = json.OTA_ReadRS.ReadResponse.Countries.Country;
 
       for (const country of countries) {

@@ -35,8 +35,8 @@ export class HotelDetailsService {
     try {
       hotels.forEach((hotel: Hotel) => {
         this.amqpConnection.publish(
-          'beds_online_hotel-detail',
-          'beds_online_hotel-detail',
+          'beds_online_hotel-details',
+          'beds_online_hotel-details',
           hotel.hotelId,
         );
       });
@@ -55,9 +55,9 @@ export class HotelDetailsService {
    */
 
   @RabbitSubscribe({
-    exchange: 'beds_online_hotel-detail',
-    routingKey: 'beds_online_hotel-detail',
-    queue: 'beds_online_hotel-detail',
+    exchange: 'beds_online_hotel-details',
+    routingKey: 'beds_online_hotel-details',
+    queue: 'beds_online_hotel-details',
   })
   async subscribeHotelsDetails(hotelId: number): Promise<Nack | undefined> {
     /**

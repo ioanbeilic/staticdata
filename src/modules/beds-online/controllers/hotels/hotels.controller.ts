@@ -8,7 +8,7 @@ import {
 } from '@nestjs/swagger';
 
 @ApiUseTags('Beds Online')
-@Controller('beds-online/hotels')
+@Controller('beds-online')
 export class HotelsController {
   constructor(private hotelsService: HotelsService) {}
 

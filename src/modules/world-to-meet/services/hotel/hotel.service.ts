@@ -252,7 +252,7 @@ export class HotelService {
         const _ = await axios.get(
           `${this.configService.get(
             Configuration.HOST,
-          )}/hotel-details/publish-hotels-content`,
+          )}/hotel-details/publish-hotels-details`,
         );
         // console.log(_.status);
         if (_.status === 204) {

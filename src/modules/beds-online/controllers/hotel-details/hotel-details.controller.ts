@@ -8,7 +8,7 @@ import {
 import { HotelDetailsService } from '../../services/hotel-details/hotel-details.service';
 
 @ApiUseTags('Beds Online')
-@Controller('beds-online/hotel-details')
+@Controller('beds-online')
 export class HotelDetailsController {
   constructor(private hotelDetailsService: HotelDetailsService) {}
 
