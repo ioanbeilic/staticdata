@@ -16,7 +16,7 @@ import path from 'path';
 @Injectable()
 export class HotelDetailsService {
   HaveError: boolean = false;
-  language = 'ESP';
+  language = 'CAS';
   useSecondaryLanguage = false;
 
   constructor(
