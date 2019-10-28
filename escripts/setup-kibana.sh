@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-es_url=http://elastic:${ELASTIC_PASSWORLD}@elasticsearch:9200
+es_url=http://elastic:${ELASTIC_PASSWORD}@elasticsearch:9200
 
 # Wait for Elasticsearch to start up before doing anything.
 until curl -s $es_url -o /dev/null; do
@@ -13,7 +13,7 @@ done
 # REF: https://www.elastic.co/guide/en/x-pack/6.0/setting-up-authentication.html#set-built-in-user-passwords
 until curl -s -H 'Content-Type:application/json' \
      -XPUT $es_url/_xpack/security/user/kibana/_password \
-     -d "{\"password\": \"${ELASTIC_PASSWORLD}\"}"
+     -d "{\"password\": \"${ELASTIC_PASSWORD}\"}"
 do
     sleep 2
     echo Retrying...

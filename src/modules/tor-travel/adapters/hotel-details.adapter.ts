@@ -32,40 +32,49 @@ export class CreateHotelDetailsAdapter {
   ) {}
 
   async transform() {
-    const test = await csv()
+    await csv()
       .fromFile('./tor-travel-files/csv/Accommodations_ES.csv')
       .preFileLine((fileLineString, lineIdx) => {
         return new Promise(async (resolve, reject) => {
           if (lineIdx > 0) {
-            return await csv({
-              noheader: false,
-              delimiter: '|',
-              quote: '"',
-              headers: [
-                'ID',
-                'Name',
-                'Address',
-                'Zip',
-                'Giata',
-                'City ID',
-                'Phone',
-                'Fax',
-                'Category',
-                'Accommodation Type ID',
-                'Latitude',
-                'Longitude',
-                'Status',
-                'Description',
-              ],
-            })
-              .fromString(fileLineString)
-              .subscribe(data => data);
-          }
+            try {
+              await csv({
+                noheader: true,
+                delimiter: '|',
+                quote: '"',
+                trim: true,
+                headers: [
+                  'ID',
+                  'Name',
+                  'Address',
+                  'Zip',
+                  'Giata',
+                  'City ID',
+                  'Phone',
+                  'Fax',
+                  'Category',
+                  'Accommodation Type ID',
+                  'Latitude',
+                  'Longitude',
+                  'Status',
+                  'Description',
+                ],
+              })
+                .fromString(fileLineString)
+                .subscribe(data => {
+                  // console.log(data);
+                });
+            } catch (error) {
+              resolve();
+            }
 
-          resolve();
+            //  console.log(lineIdx);
+
+            //
+          } else {
+            resolve();
+          }
         });
       });
-
-    //  console.log(test);
   }
 }

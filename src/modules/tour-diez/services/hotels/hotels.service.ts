@@ -64,7 +64,7 @@ export class HotelsService {
     /**
      * load data from process.env
      */
-    this.pass = this.configService.get(Configuration.TOUR_DIEZ_PASSWORLD_V3);
+    this.pass = this.configService.get(Configuration.TOUR_DIEZ_PASSWORD_V3);
     this.user = this.configService.get(Configuration.TOUR_DIEZ_USER_V3);
     this.url = this.configService.get(Configuration.TOUR_DIEZ_URL_V3);
   }

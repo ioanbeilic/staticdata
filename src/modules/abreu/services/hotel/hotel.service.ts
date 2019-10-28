@@ -64,7 +64,7 @@ export class HotelService {
     private createHotelAdapter: CreateHotelAdapter,
   ) {
     this.context = this.configService.get(Configuration.ABREU_CONTEXT);
-    this.password = this.configService.get(Configuration.ABREU_PASSWORLD);
+    this.password = this.configService.get(Configuration.ABREU_PASSWORD);
     this.username = this.configService.get(Configuration.ABREU_USERNAME);
     this.url = this.configService.get(Configuration.ABREU_URL);
   }
@@ -72,6 +72,7 @@ export class HotelService {
   async getCountry() {
     let response: AxiosResponse;
     let countries: CountryProvider[];
+    const requestType = 'GetCountries';
 
     const request = `
     <soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
@@ -89,7 +90,7 @@ export class HotelService {
         <ReadRequests>
           <HotelReadRequest>
             <TPA_Extensions>
-              <RequestType>GetCountries</RequestType>
+              <RequestType>${requestType}</RequestType>
             </TPA_Extensions>
           </HotelReadRequest>
         </ReadRequests>
@@ -126,6 +127,9 @@ export class HotelService {
         );
       }
     } catch (error) {
+      this.logger.error(
+        path.resolve(__filename) + ' ---> ' + JSON.stringify(error),
+      );
       throw new HttpException('error', error);
     }
   }

@@ -28,7 +28,7 @@ export class DownloadService {
       host: this.configService.get(Configuration.TOR_TRAVEL_FTP_HOST),
       port: Number(this.configService.get(Configuration.TOR_TRAVEL_FTP_PORT)),
       username: this.configService.get(Configuration.TOR_TRAVEL_FTP_USERNAME),
-      password: this.configService.get(Configuration.TOR_TRAVEL_FTP_PASSWORLD),
+      password: this.configService.get(Configuration.TOR_TRAVEL_FTP_PASSWORD),
     };
   }
 
