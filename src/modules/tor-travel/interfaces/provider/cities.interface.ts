@@ -1,4 +1,6 @@
-export interface Cities {
+import { Document } from 'mongoose';
+
+export interface CityProvider extends Document {
   ID: string;
   Name: string;
   'Province/region/state ID': string;

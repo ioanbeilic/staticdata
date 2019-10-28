@@ -1,19 +1,16 @@
-import t from 'typy';
 import { Inject, Injectable } from '@nestjs/common';
 import { Logger } from 'winston';
 import path from 'path';
 import _ from 'lodash';
-import { CreateHotelDetailsDto } from '../dto/create-hotel-details.dto';
 import { Accommodations } from '../interfaces/provider/accommodations.interface';
-import { AccommodationsAmenities } from '../interfaces/provider/accommodations-amenities.interface';
-import { AccommodationsPictures } from '../interfaces/provider/accommodations-pictures.interface';
-import { Default } from '../interfaces/provider/default.interface';
-import { Cities } from '../interfaces/provider/cities.interface';
 import { HotelDetailsService } from '../services/hotel-details/hotel-details.service';
-import { HotelDetails } from '../interfaces/hotel-details.interface';
-import readline from 'readline';
-import fs from 'fs';
 import csv from 'csvtojson';
+import { AccommodationsService } from '../services/temporal-data/Accommodations.service';
+import { AccommodationsAmenitiesServices } from '../services/temporal-data/Accommodations_amenities.service';
+import { AccommodationsPicturesServices } from '../services/temporal-data/Accommodations_pictures.service';
+import { AccommodationsTypesServices } from '../services/temporal-data/Accommodations_types_ES.service';
+import { AmenitiesService } from '../services/temporal-data/Amenities_ES.service';
+import { CitiesService } from '../services/temporal-data/Cities_ES.service';
 
 @Injectable()
 export class CreateHotelDetailsAdapter {
@@ -29,6 +26,12 @@ export class CreateHotelDetailsAdapter {
   constructor(
     @Inject('winston') private readonly logger: Logger,
     private readonly hotelDetailsService: HotelDetailsService,
+    private readonly accommodationsService: AccommodationsService,
+    private readonly accommodationsAmenitiesServices: AccommodationsAmenitiesServices,
+    private readonly accommodationsPicturesServices: AccommodationsPicturesServices,
+    private readonly accommodationsTypesServices: AccommodationsTypesServices,
+    private readonly amenitiesService: AmenitiesService,
+    private readonly citiesService: CitiesService,
   ) {}
 
   async transform() {
@@ -61,16 +64,11 @@ export class CreateHotelDetailsAdapter {
                 ],
               })
                 .fromString(fileLineString)
-                .subscribe(data => {
-                  // console.log(data);
-                });
+                .subscribe(async (hotel: Accommodations) => {});
+              resolve();
             } catch (error) {
               resolve();
             }
-
-            //  console.log(lineIdx);
-
-            //
           } else {
             resolve();
           }

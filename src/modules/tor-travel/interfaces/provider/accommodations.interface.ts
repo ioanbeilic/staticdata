@@ -1,4 +1,6 @@
-export interface Accommodations {
+import { Document } from 'mongoose';
+
+export interface Accommodations extends Document {
   ID: string;
   Name: string;
   Address: string;

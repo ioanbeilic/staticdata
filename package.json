@@ -99,9 +99,6 @@
     "typescript": "^3.7.0-beta"
   },
   "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint",
-      "pre-push": "npm run lint"
-    }
+    "hooks": {}
   }
 }

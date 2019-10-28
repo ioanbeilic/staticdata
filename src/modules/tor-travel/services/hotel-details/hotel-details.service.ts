@@ -5,6 +5,8 @@ import { Model } from 'mongoose';
 import { HotelDetails } from '../../interfaces/hotel-details.interface';
 import { ConfigService } from '../../../../config/config.service';
 import { Logger } from 'winston';
+import path from 'path';
+import { Room } from '../../interfaces/room.interface';
 
 @Injectable()
 export class HotelDetailsService {
@@ -40,15 +42,35 @@ export class HotelDetailsService {
           currency: newHotel.currency,
         },
         {
-          /**
-           * if is not exist create new one
-           */
           upsert: true,
           new: true,
         },
       );
     } catch (error) {
-      //  console.log(error);
+      this.logger.error(
+        path.resolve(__filename) + ' ---> ' + JSON.stringify(error),
+      );
+    }
+  }
+
+  async saveRooms(rooms: Room[]) {
+    for (const room of rooms) {
+      try {
+        await this.hotelDetailsModel.findOneAndUpdate(
+          { hotelId: room.hotelId },
+          {
+            name: room.name,
+          },
+          {
+            upsert: true,
+            new: true,
+          },
+        );
+      } catch (error) {
+        this.logger.error(
+          path.resolve(__filename) + ' ---> ' + JSON.stringify(error),
+        );
+      }
     }
   }
 }

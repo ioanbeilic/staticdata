@@ -7,7 +7,13 @@ import path from 'path';
 import zlib from 'zlib';
 import fs from 'fs';
 import csv from 'csvtojson';
-import { CreateHotelDetailsAdapter } from '../../adapters/hotel-details.adapter';
+import { AccommodationsService } from '../temporal-data/Accommodations.service';
+import { AccommodationsAmenitiesServices } from '../temporal-data/Accommodations_amenities.service';
+import { AccommodationsPicturesServices } from '../temporal-data/Accommodations_pictures.service';
+import { AccommodationsTypesServices } from '../temporal-data/Accommodations_types_ES.service';
+import { AmenitiesService } from '../temporal-data/Amenities_ES.service';
+import { CitiesService } from '../temporal-data/Cities_ES.service';
+import { HotelDetailsService } from '../hotel-details/hotel-details.service';
 
 @Injectable()
 export class DownloadService {
@@ -22,7 +28,13 @@ export class DownloadService {
   constructor(
     private readonly configService: ConfigService,
     @Inject('winston') private readonly logger: Logger,
-    private readonly createHotelDetailsAdapter: CreateHotelDetailsAdapter,
+    private readonly accommodationsService: AccommodationsService,
+    private readonly accommodationsAmenitiesServices: AccommodationsAmenitiesServices,
+    private readonly accommodationsPicturesServices: AccommodationsPicturesServices,
+    private readonly accommodationsTypesServices: AccommodationsTypesServices,
+    private readonly amenitiesService: AmenitiesService,
+    private readonly citiesService: CitiesService,
+    private readonly hotelDetailsService: HotelDetailsService,
   ) {
     this.config = {
       host: this.configService.get(Configuration.TOR_TRAVEL_FTP_HOST),
@@ -82,7 +94,9 @@ export class DownloadService {
             }
             count++;
             if (count === files.length) {
-              await this.createHotelDetailsAdapter.transform();
+              // await this.createHotelDetailsAdapter.transform();
+
+              await this.cvsToJson();
             }
           });
       }
@@ -93,181 +107,109 @@ export class DownloadService {
     }
   }
 
-  async cvsToJson(file: string, filename: string) {
-    const newName = filename.slice(0, -4);
+  async cvsToJson() {
+    const files = fs.readdirSync('./tor-travel-files/csv/');
 
-    if (filename === 'Accommodations_amenities.csv') {
-      const jsonData = await csv({
-        noheader: false,
-        delimiter: '|',
-        quote: '"',
-        headers: ['ID Hotel', 'ID Amenity'],
-      }).fromFile(file);
+    for (const file of files) {
+      if (file === 'Accommodations_amenities.csv') {
+        try {
+          const jsonData = await csv({
+            noheader: false,
+            delimiter: '|',
+            quote: '"',
+            headers: ['ID Hotel', 'ID Amenity'],
+          }).fromFile(file);
 
-      fs.writeFile(
-        `./tor-travel-files/json/${newName}.json`,
-        JSON.stringify(jsonData),
-        err => {
-          if (err) {
-            this.logger.error(
-              path.resolve(__filename) + ' ---> ' + JSON.stringify(err),
-            );
-          }
-        },
-      );
-    }
-    if (filename === 'Accommodations_ES.csv') {
-      const jsonData = await csv({
-        noheader: false,
-        delimiter: '|',
-        quote: '"',
-        headers: [
-          'ID',
-          'Name',
-          'Address',
-          'Zip',
-          'Giata',
-          'City ID',
-          'Phone',
-          'Fax',
-          'Category',
-          'Accommodation Type ID',
-          'Latitude',
-          'Longitude',
-          'Status',
-          'Description',
-        ],
-      }).fromFile(file);
+          this.accommodationsAmenitiesServices.saveAccommodationsAmenities(
+            jsonData,
+          );
+        } catch (error) {
+          console.log(error);
+        }
+      }
+      if (file === 'Accommodations_ES.csv') {
+        const jsonData = await csv({
+          noheader: false,
+          delimiter: '|',
+          quote: '"',
+          headers: [
+            'ID',
+            'Name',
+            'Address',
+            'Zip',
+            'Giata',
+            'City ID',
+            'Phone',
+            'Fax',
+            'Category',
+            'Accommodation Type ID',
+            'Latitude',
+            'Longitude',
+            'Status',
+            'Description',
+          ],
+        }).fromFile(file);
 
-      fs.writeFile(
-        `./tor-travel-files/json/${newName}.json`,
-        JSON.stringify(jsonData),
-        err => {
-          if (err) {
-            this.logger.error(
-              path.resolve(__filename) + ' ---> ' + JSON.stringify(err),
-            );
-          }
-        },
-      );
-    }
-    if (filename === 'Accommodations_pictures.csv') {
-      const jsonData = await csv({
-        noheader: false,
-        delimiter: '|',
-        quote: '"',
-        headers: ['Hotel ID', 'Picture path'],
-      }).fromFile(file);
-      fs.writeFile(
-        `./tor-travel-files/json/${newName}.json`,
-        JSON.stringify(jsonData),
-        err => {
-          if (err) {
-            this.logger.error(
-              path.resolve(__filename) + ' ---> ' + JSON.stringify(err),
-            );
-          }
-        },
-      );
-    }
-    if (filename === 'Accommodations_types_ES.csv') {
-      const jsonData = await csv({
-        noheader: false,
-        delimiter: '|',
-        headers: ['ID', 'Name'],
-      }).fromFile(file);
-      fs.writeFile(
-        `./tor-travel-files/json/${newName}.json`,
-        JSON.stringify(jsonData),
-        err => {
-          if (err) {
-            this.logger.error(
-              path.resolve(__filename) + ' ---> ' + JSON.stringify(err),
-            );
-          }
-        },
-      );
-    }
-    if (filename === 'Amenities_ES.csv') {
-      const jsonData = await csv({
-        noheader: false,
-        delimiter: '|',
-        headers: ['ID', 'Name'],
-      }).fromFile(file);
-      fs.writeFile(
-        `./tor-travel-files/json/${newName}.json`,
-        JSON.stringify(jsonData),
-        err => {
-          if (err) {
-            this.logger.error(
-              path.resolve(__filename) + ' ---> ' + JSON.stringify(err),
-            );
-          }
-        },
-      );
-    }
+        this.accommodationsService.saveAccommodations(jsonData);
+      }
+      if (file === 'Accommodations_pictures.csv') {
+        const jsonData = await csv({
+          noheader: false,
+          delimiter: '|',
+          quote: '"',
+          headers: ['Hotel ID', 'Picture path'],
+        }).fromFile(file);
 
-    if (filename === 'Cities_ES.csv') {
-      const jsonData = await csv({
-        noheader: false,
-        delimiter: '|',
-        quote: '"',
-        headers: [
-          'ID',
-          'Name',
-          'Province/region/state ID',
-          'Province/region/state Name',
-          'Country ID',
-          'Country Name',
-        ],
-      }).fromFile(file);
-      fs.writeFile(
-        `./tor-travel-files/json/${newName}.json`,
-        JSON.stringify(jsonData),
-        err => {
-          if (err) {
-            this.logger.error(
-              path.resolve(__filename) + ' ---> ' + JSON.stringify(err),
-            );
-          }
-        },
-      );
-    }
-    if (filename === 'Meal_plans_ES.csv') {
-      const jsonData = await csv({
-        noheader: false,
-        delimiter: '|',
-        headers: ['ID', 'Name'],
-      }).fromFile(file);
-      fs.writeFile(
-        `./tor-travel-files/json/${newName}.json`,
-        JSON.stringify(jsonData),
-        err => {
-          if (err) {
-            this.logger.error(
-              path.resolve(__filename) + ' ---> ' + JSON.stringify(err),
-            );
-          }
-        },
-      );
-    }
-    if (filename === 'Rooms_ES.csv') {
-      const jsonData = await csv({
-        noheader: false,
-        delimiter: '|',
-        headers: ['ID', 'Name'],
-      }).fromFile(file);
-      fs.writeFile(
-        `./tor-travel-files/json/${newName}.json`,
-        JSON.stringify(jsonData),
-        err => {
-          if (err) {
-            this.logger.error(
-              path.resolve(__filename) + ' ---> ' + JSON.stringify(err),
-            );
-          }
-        },
-      );
+        this.accommodationsPicturesServices.saveAccommodationsPictures(
+          jsonData,
+        );
+      }
+      if (file === 'Accommodations_types_ES.csv') {
+        const jsonData = await csv({
+          noheader: false,
+          delimiter: '|',
+          headers: ['ID', 'Name'],
+        }).fromFile(file);
+
+        this.accommodationsTypesServices.saveAccommodationsTypes(jsonData);
+      }
+      if (file === 'Amenities_ES.csv') {
+        const jsonData = await csv({
+          noheader: false,
+          delimiter: '|',
+          headers: ['ID', 'Name'],
+        }).fromFile(file);
+
+        this.amenitiesService.saveAmenities(jsonData);
+      }
+
+      if (file === 'Cities_ES.csv') {
+        const jsonData = await csv({
+          noheader: false,
+          delimiter: '|',
+          quote: '"',
+          headers: [
+            'ID',
+            'Name',
+            'Province/region/state ID',
+            'Province/region/state Name',
+            'Country ID',
+            'Country Name',
+          ],
+        }).fromFile(file);
+
+        this.citiesService.saveCities(jsonData);
+      }
+
+      if (file === 'Rooms_ES.csv') {
+        const jsonData = await csv({
+          noheader: false,
+          delimiter: '|',
+          headers: ['hotelId', 'name'],
+        }).fromFile(file);
+
+        this.hotelDetailsService.saveRooms(jsonData);
+      }
     }
   }
 }

@@ -187,7 +187,6 @@ export class HotelDetailsService {
             },
           );
         } catch (error) {
-          // do do - implement log
           this.logger.error(
             path.resolve(__filename) + ' ---> ' + JSON.stringify(error),
           );
