@@ -13,7 +13,9 @@ import { AccommodationsPicturesServices } from '../temporal-data/Accommodations_
 import { AccommodationsTypesServices } from '../temporal-data/Accommodations_types_ES.service';
 import { AmenitiesService } from '../temporal-data/Amenities_ES.service';
 import { CitiesService } from '../temporal-data/Cities_ES.service';
-import { HotelDetailsService } from '../hotel-details/hotel-details.service';
+import { RoomService } from '../room/room.service';
+import { CreateHotelDetailsAdapter } from '../../adapters/hotel-details.adapter';
+import * as iconv from 'iconv-lite';
 
 @Injectable()
 export class DownloadService {
@@ -34,7 +36,8 @@ export class DownloadService {
     private readonly accommodationsTypesServices: AccommodationsTypesServices,
     private readonly amenitiesService: AmenitiesService,
     private readonly citiesService: CitiesService,
-    private readonly hotelDetailsService: HotelDetailsService,
+    private readonly roomService: RoomService,
+    private readonly createHotelDetailsAdapter: CreateHotelDetailsAdapter,
   ) {
     this.config = {
       host: this.configService.get(Configuration.TOR_TRAVEL_FTP_HOST),
@@ -77,6 +80,8 @@ export class DownloadService {
         const fileContent = fs.createReadStream(file);
         fileContent
           .pipe(zlib.createGunzip())
+          .pipe(iconv.decodeStream('ISO-8859-1'))
+          .pipe(iconv.encodeStream('utf8'))
           .pipe(fs.createWriteStream(csvName))
           .on('finish', async (error: Error) => {
             if (error) {
@@ -97,6 +102,12 @@ export class DownloadService {
               // await this.createHotelDetailsAdapter.transform();
 
               await this.cvsToJson();
+              await this.createHotelDetailsAdapter.publish();
+
+              this.logger.info(
+                path.resolve(__filename) +
+                  ' ---> Download Ok -> store to database',
+              );
             }
           });
       }
@@ -109,6 +120,7 @@ export class DownloadService {
 
   async cvsToJson() {
     const files = fs.readdirSync('./tor-travel-files/csv/');
+    const csvPath = './tor-travel-files/csv/';
 
     for (const file of files) {
       if (file === 'Accommodations_amenities.csv') {
@@ -117,98 +129,155 @@ export class DownloadService {
             noheader: false,
             delimiter: '|',
             quote: '"',
-            headers: ['ID Hotel', 'ID Amenity'],
-          }).fromFile(file);
+            headers: ['hotelId', 'amenityId'],
+          }).fromFile(csvPath + file);
 
-          this.accommodationsAmenitiesServices.saveAccommodationsAmenities(
+          await this.accommodationsAmenitiesServices.saveAccommodationsAmenities(
             jsonData,
           );
         } catch (error) {
-          console.log(error);
+          this.logger.error(
+            path.resolve(__filename) +
+              ' ---> Accommodations_amenities ' +
+              JSON.stringify(csvPath + file),
+          );
         }
       }
-      if (file === 'Accommodations_ES.csv') {
-        const jsonData = await csv({
-          noheader: false,
-          delimiter: '|',
-          quote: '"',
-          headers: [
-            'ID',
-            'Name',
-            'Address',
-            'Zip',
-            'Giata',
-            'City ID',
-            'Phone',
-            'Fax',
-            'Category',
-            'Accommodation Type ID',
-            'Latitude',
-            'Longitude',
-            'Status',
-            'Description',
-          ],
-        }).fromFile(file);
 
-        this.accommodationsService.saveAccommodations(jsonData);
+      if (file === 'Accommodations_ES.csv') {
+        try {
+          const jsonData = await csv({
+            noheader: false,
+            delimiter: '|',
+            quote: '"',
+            headers: [
+              'hotelId',
+              'name',
+              'address',
+              'postalCode',
+              'Giata',
+              'cityId',
+              'phone',
+              'fax',
+              'category',
+              'accommodationTypeId',
+              'latitude',
+              'longitude',
+              'status',
+              'description',
+            ],
+          }).fromFile(csvPath + file);
+
+          await this.accommodationsService.saveAccommodations(jsonData);
+        } catch (error) {
+          this.logger.error(
+            path.resolve(__filename) +
+              ' ---> Accommodations_ES ' +
+              JSON.stringify(csvPath + file),
+          );
+        }
       }
       if (file === 'Accommodations_pictures.csv') {
-        const jsonData = await csv({
-          noheader: false,
-          delimiter: '|',
-          quote: '"',
-          headers: ['Hotel ID', 'Picture path'],
-        }).fromFile(file);
+        try {
+          const jsonData = await csv({
+            noheader: false,
+            delimiter: '|',
+            quote: '"',
+            headers: ['hotelId', 'path'],
+          }).fromFile(csvPath + file);
 
-        this.accommodationsPicturesServices.saveAccommodationsPictures(
-          jsonData,
-        );
+          await this.accommodationsPicturesServices.saveAccommodationsPictures(
+            jsonData,
+          );
+        } catch (error) {
+          this.logger.error(
+            path.resolve(__filename) +
+              ' ---> Accommodations_pictures ' +
+              JSON.stringify(csvPath + file),
+          );
+        }
       }
+
       if (file === 'Accommodations_types_ES.csv') {
-        const jsonData = await csv({
-          noheader: false,
-          delimiter: '|',
-          headers: ['ID', 'Name'],
-        }).fromFile(file);
+        try {
+          const jsonData = await csv({
+            noheader: false,
+            delimiter: '|',
+            headers: ['hotelId', 'name'],
+          }).fromFile(csvPath + file);
 
-        this.accommodationsTypesServices.saveAccommodationsTypes(jsonData);
+          await this.accommodationsTypesServices.saveAccommodationsTypes(
+            jsonData,
+          );
+        } catch (error) {
+          this.logger.error(
+            path.resolve(__filename) +
+              ' ---> ' +
+              JSON.stringify(csvPath + file),
+          );
+        }
       }
-      if (file === 'Amenities_ES.csv') {
-        const jsonData = await csv({
-          noheader: false,
-          delimiter: '|',
-          headers: ['ID', 'Name'],
-        }).fromFile(file);
 
-        this.amenitiesService.saveAmenities(jsonData);
+      if (file === 'Amenities_ES.csv') {
+        try {
+          const jsonData = await csv({
+            noheader: false,
+            delimiter: '|',
+            headers: ['amenityId', 'name'],
+          }).fromFile(csvPath + file);
+
+          await this.amenitiesService.saveAmenities(jsonData);
+        } catch (error) {
+          this.logger.error(
+            path.resolve(__filename) +
+              ' ---> Amenities_ES' +
+              JSON.stringify(csvPath + file),
+          );
+        }
       }
 
       if (file === 'Cities_ES.csv') {
-        const jsonData = await csv({
-          noheader: false,
-          delimiter: '|',
-          quote: '"',
-          headers: [
-            'ID',
-            'Name',
-            'Province/region/state ID',
-            'Province/region/state Name',
-            'Country ID',
-            'Country Name',
-          ],
-        }).fromFile(file);
+        try {
+          const jsonData = await csv({
+            noheader: false,
+            delimiter: '|',
+            quote: '"',
+            headers: [
+              'cityId',
+              'name',
+              'provinceId',
+              'province',
+              'countryId',
+              'country',
+            ],
+          }).fromFile(csvPath + file);
 
-        this.citiesService.saveCities(jsonData);
+          await this.citiesService.saveCities(jsonData);
+        } catch (error) {
+          this.logger.error(
+            path.resolve(__filename) +
+              ' ---> Cities_ES' +
+              JSON.stringify(csvPath + file),
+          );
+        }
       }
 
       if (file === 'Rooms_ES.csv') {
-        const jsonData = await csv({
-          noheader: false,
-          delimiter: '|',
-          headers: ['hotelId', 'name'],
-        }).fromFile(file);
+        try {
+          const jsonData = await csv({
+            noheader: false,
+            delimiter: '|',
+            headers: ['hotelId', 'name'],
+          }).fromFile(csvPath + file);
 
-        this.hotelDetailsService.saveRooms(jsonData);
+          await this.roomService.saveRooms(jsonData);
+        } catch (error) {
+          this.logger.error(
+            path.resolve(__filename) +
+              ' ---> Rooms_ES' +
+              JSON.stringify(csvPath + file),
+          );
+        }
       }
     }
   }

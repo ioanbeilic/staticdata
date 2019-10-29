@@ -64,6 +64,11 @@ const colorizer = winston.format.colorize();
             name: 'tour_diez_hotel-details',
             type: 'fanout',
           },
+          // tor_travel_hotel-details
+          {
+            name: 'tor_travel_hotel-details',
+            type: 'fanout',
+          },
         ],
         uri: configService.get('RABBITMQ_URI'),
         prefetchCount: 1, // only 1 request each time default 10

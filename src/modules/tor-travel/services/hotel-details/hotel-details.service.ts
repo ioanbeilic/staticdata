@@ -52,25 +52,4 @@ export class HotelDetailsService {
       );
     }
   }
-
-  async saveRooms(rooms: Room[]) {
-    for (const room of rooms) {
-      try {
-        await this.hotelDetailsModel.findOneAndUpdate(
-          { hotelId: room.hotelId },
-          {
-            name: room.name,
-          },
-          {
-            upsert: true,
-            new: true,
-          },
-        );
-      } catch (error) {
-        this.logger.error(
-          path.resolve(__filename) + ' ---> ' + JSON.stringify(error),
-        );
-      }
-    }
-  }
 }

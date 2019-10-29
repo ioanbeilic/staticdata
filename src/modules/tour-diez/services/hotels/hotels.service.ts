@@ -8,10 +8,6 @@ import path from 'path';
 import axios from 'axios';
 import * as parser from 'fast-xml-parser';
 import qs from 'querystring';
-import {
-  ServerHotelInterface,
-  ServerErrorResult,
-} from '../../interfaces/provider/hotel.interface';
 import { Model } from 'mongoose';
 import { Hotel } from '../../interfaces/hotel.interface';
 import { InjectModel } from '@nestjs/mongoose';

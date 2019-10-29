@@ -1,18 +1,18 @@
 import { Document } from 'mongoose';
 
 export interface Accommodations extends Document {
-  ID: string;
-  Name: string;
-  Address: string;
-  Zip: string;
+  hotelId: string;
+  name: string;
+  address: string;
+  postalCode: string;
   Giata: string;
-  'City ID': string;
-  Phone: string;
-  Fax: string;
-  Category: string;
-  'Accommodation Type ID': string;
-  Latitude: string;
-  Longitude: string;
-  Status: string;
-  Description: string;
+  cityId: string;
+  phone: string;
+  fax: string;
+  category: string;
+  accommodationTypeId: string;
+  latitude: string;
+  longitude: string;
+  status: string;
+  description: string;
 }

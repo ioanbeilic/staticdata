@@ -22,6 +22,7 @@ import { AccommodationsPicturesServices } from './services/temporal-data/Accommo
 import { AccommodationsTypesServices } from './services/temporal-data/Accommodations_types_ES.service';
 import { AmenitiesService } from './services/temporal-data/Amenities_ES.service';
 import { CitiesService } from './services/temporal-data/Cities_ES.service';
+import { RoomService } from './services/room/room.service';
 
 @Module({
   imports: [
@@ -77,6 +78,7 @@ import { CitiesService } from './services/temporal-data/Cities_ES.service';
     AccommodationsTypesServices,
     AmenitiesService,
     CitiesService,
+    RoomService,
   ],
   controllers: [HotelDetailsController],
 })

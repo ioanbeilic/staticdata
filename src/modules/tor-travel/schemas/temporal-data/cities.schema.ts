@@ -1,10 +1,10 @@
 import { Schema } from 'mongoose';
 
 export const CitiesSchema = new Schema({
-  ID: String,
-  Name: String,
-  'Province/region/state ID': String,
-  'Province/region/state Name': String,
-  'Country ID': String,
-  'Country Name': String,
+  cityId: String,
+  name: String,
+  provinceId: String,
+  province: String,
+  countryId: String,
+  country: String,
 });

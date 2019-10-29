@@ -9,17 +9,29 @@ import { CityProvider } from '../../interfaces/provider/cities.interface';
 export class CitiesService {
   constructor(
     @InjectModel('temporal_cities')
-    private readonly hotelDetailsModel: Model<CityProvider>,
+    private readonly cityProviderModel: Model<CityProvider>,
     @Inject('winston') private readonly logger: Logger,
   ) {}
 
-  async saveCities(amenities: CityProvider[]) {
+  async saveCities(cities: CityProvider[]) {
     try {
-      await this.hotelDetailsModel.collection.insertMany(amenities);
+      await this.cityProviderModel.collection.insertOne(cities);
     } catch (error) {
       this.logger.error(
         path.resolve(__filename) + ' ---> ' + JSON.stringify(error),
       );
     }
+  }
+
+  async getCities() {
+    return this.cityProviderModel.find();
+  }
+
+  async getCityByHotelId(cityId: string) {
+    return this.cityProviderModel.findOne({ cityId });
+  }
+
+  async deleteCityByHotelId(cityId: string) {
+    return this.cityProviderModel.deleteMany({ cityId });
   }
 }
