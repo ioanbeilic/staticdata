@@ -15,7 +15,7 @@ export class CitiesService {
 
   async saveCities(cities: CityProvider[]) {
     try {
-      await this.cityProviderModel.collection.insertOne(cities);
+      await this.cityProviderModel.collection.insert(cities);
     } catch (error) {
       this.logger.error(
         path.resolve(__filename) + ' ---> ' + JSON.stringify(error),
