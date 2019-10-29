@@ -151,9 +151,9 @@ export class HotelService {
   }
 
   @RabbitSubscribe({
-    exchange: 'word_to_me_hotels',
-    routingKey: 'word_to_me_hotels',
-    queue: 'word_to_me_hotels',
+    exchange: 'word_to_meet_hotels',
+    routingKey: 'word_to_meet_hotels',
+    queue: 'word_to_meet_hotels',
   })
   async subscribeHotels(page: number): Promise<Nack | undefined> {
     this.logger.info(`Processing world to me hotels - page: ${page}`);
