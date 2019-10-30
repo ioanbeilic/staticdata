@@ -159,6 +159,10 @@ export class HotelDetailsService {
         return new Nack(false);
       }
 
+      if (json.hotelDetails.result.cod_result === 'M16') {
+        return new Nack(true);
+      }
+
       const hotelContent = json.hotelDetails.HotelDetailsBean;
 
       if (hotelContent !== undefined) {
