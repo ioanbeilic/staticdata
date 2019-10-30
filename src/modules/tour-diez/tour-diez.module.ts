@@ -45,4 +45,4 @@ import { CreateHotelDetailsAdapter } from './adapters/hotel-details.adapter';
     CreateHotelDetailsAdapter,
   ],
 })
-export class TourDiezModule {}
+export class TourDiezModule { }

@@ -9,7 +9,7 @@ import { HotelDetailsBean } from '../interfaces/provider/server-content-response
 
 @Injectable()
 export class CreateHotelDetailsAdapter {
-  constructor(@Inject('winston') private readonly logger: Logger) {}
+  constructor(@Inject('winston') private readonly logger: Logger) { }
 
   async transform(originalData: HotelDetailsBean, hotel: Hotel) {
     const hotelDetails = new CreateHotelDetailsDto();
@@ -17,6 +17,7 @@ export class CreateHotelDetailsAdapter {
     try {
       hotelDetails.hotelId = hotel.hotelId;
       hotelDetails.name = t(originalData, 'nombre').safeObject || '';
+
       hotelDetails.address = t(originalData, 'direccion').safeObject || '';
 
       hotelDetails.description =
@@ -62,8 +63,8 @@ export class CreateHotelDetailsAdapter {
         } catch (error) {
           this.logger.error(
             path.resolve(__filename) +
-              ' ---> ' +
-              `hotelDetails.image, ${hotelDetails.hotelId}`,
+            ' ---> ' +
+            `hotelDetails.image, ${hotelDetails.hotelId}`,
           );
         }
       } else {

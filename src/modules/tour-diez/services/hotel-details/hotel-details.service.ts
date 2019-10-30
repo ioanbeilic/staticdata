@@ -48,6 +48,8 @@ export class HotelDetailsService {
     tagValueProcessor: (a: any) => a,
   };
   providerSessionID!: string;
+  count!: number;
+  temporalID!: string;
 
   constructor(
     public readonly amqpConnection: AmqpConnection,
@@ -116,6 +118,17 @@ export class HotelDetailsService {
     let response: AxiosResponse;
 
     let haveError: boolean = false;
+
+    if (hotel.hotelId === this.temporalID) {
+
+      if (this.count === 20) {
+        return new Nack();
+      }
+      this.count++;
+    } else {
+      this.temporalID = hotel.hotelId;
+      this.count = 0;
+    }
 
     if (!this.providerSessionID) {
       this.login();
